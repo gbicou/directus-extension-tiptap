@@ -36,6 +36,7 @@
 		"@tiptap/pm": "2.0.0-beta.220",
 		"@tiptap/starter-kit": "2.0.0-beta.220",
 		"@tiptap/vue-3": "2.0.0-beta.220",
+		"sass": "^1.60.0",
 		"semantic-release": "^21.0.0",
 		"typescript": "^5.0.2",
 		"vue": "^3.2.47",
