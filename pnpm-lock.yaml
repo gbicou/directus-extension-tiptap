@@ -14,11 +14,9 @@ specifiers:
   typescript: ^5.0.2
   vue: ^3.2.47
 
-dependencies:
-  '@directus/tsconfig': 0.0.6
-
 devDependencies:
   '@directus/extensions-sdk': 9.23.4
+  '@directus/tsconfig': 0.0.6
   '@semantic-release/changelog': 6.0.3_semantic-release@21.0.0
   '@semantic-release/git': 10.0.1_semantic-release@21.0.0
   '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
@@ -158,7 +156,7 @@ packages:
 
   /@directus/tsconfig/0.0.6:
     resolution: {integrity: sha512-fCkuc5xodi79T5UGV9JYfjuTjQT4QObbyeqtX8ZVCdyGtaHlJpvCYIM0B1GLc8co4l6RIOiyvAXiPFLIut+a1A==}
-    dev: false
+    dev: true
 
   /@esbuild/android-arm/0.17.11:
     resolution: {integrity: sha512-CdyX6sRVh1NzFCsf5vw3kULwlAhfy9wVt8SZlrhQ7eL2qBjGbFhRBWkkAzuZm9IIEOCKJw4DXA6R85g+qc8RDw==}
