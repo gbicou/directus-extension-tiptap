@@ -26,21 +26,28 @@
 		"build": "directus-extension build",
 		"dev": "directus-extension build -w --no-minify",
 		"link": "directus-extension link",
+		"lint": "eslint .",
 		"release": "semantic-release"
 	},
 	"devDependencies": {
 		"@directus/extensions-sdk": "9.23.4",
+		"@directus/tsconfig": "^0.0.6",
+		"@rushstack/eslint-patch": "^1.2.0",
 		"@semantic-release/changelog": "^6.0.3",
 		"@semantic-release/git": "^10.0.1",
 		"@tiptap/core": "2.0.0-beta.220",
 		"@tiptap/pm": "2.0.0-beta.220",
 		"@tiptap/starter-kit": "2.0.0-beta.220",
 		"@tiptap/vue-3": "2.0.0-beta.220",
+		"@vue/eslint-config-prettier": "^7.1.0",
+		"@vue/eslint-config-typescript": "^11.0.2",
+		"eslint": "^8.36.0",
+		"eslint-plugin-vue": "^9.10.0",
+		"prettier": "^2.8.7",
 		"sass": "^1.60.0",
 		"semantic-release": "^21.0.0",
 		"typescript": "^5.0.2",
-		"vue": "^3.2.47",
-		"@directus/tsconfig": "^0.0.6"
+		"vue": "^3.2.47"
 	},
 	"publishConfig": {
 		"access": "public"

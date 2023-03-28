@@ -1,12 +1,12 @@
 <template>
-    <div class="tiptap-editor">
-        <!--
+  <div class="tiptap-editor">
+    <!--
         <button @click="editor.chain().focus().toggleBold().run()">
             Bold
         </button>
         -->
-        <editor-content class="tiptap-editor__content" :editor="editor" />
-    </div>
+    <editor-content class="tiptap-editor__content" :editor="editor" />
+  </div>
 </template>
 
 <style lang="scss">
@@ -54,40 +54,43 @@
 </style>
 
 <script setup lang="ts">
-import {Editor, EditorContent, JSONContent} from '@tiptap/vue-3'
-import StarterKit from '@tiptap/starter-kit'
-import {onBeforeUnmount, watch} from "vue";
+import { Editor, EditorContent, JSONContent } from "@tiptap/vue-3";
+import StarterKit from "@tiptap/starter-kit";
+import { onBeforeUnmount, watch } from "vue";
 
-const props = withDefaults(defineProps<{
-  value: JSONContent | null
-}>(), { value: null })
+const props = withDefaults(
+  defineProps<{
+    value: JSONContent | null;
+  }>(),
+  { value: null }
+);
 
 const emit = defineEmits<{
-  (e: 'input', value: JSONContent): void
-}>()
+  (e: "input", value: JSONContent): void;
+}>();
 
 const editor = new Editor({
   content: props.value,
-  extensions: [
-    StarterKit,
-  ],
+  extensions: [StarterKit],
   onUpdate: () => {
-    emit('input', editor.getJSON())
+    emit("input", editor.getJSON());
   },
-})
+});
 
-watch(() => props.value, (value) => {
-  const isSame = JSON.stringify(editor.getJSON()) === JSON.stringify(value)
+watch(
+  () => props.value,
+  (value) => {
+    const isSame = JSON.stringify(editor.getJSON()) === JSON.stringify(value);
 
-  if (isSame) {
-    return
+    if (isSame) {
+      return;
+    }
+
+    editor.commands.setContent(value, false);
   }
-
-  editor.commands.setContent(value, false)
-})
+);
 
 onBeforeUnmount(() => {
-  editor.destroy()
-})
-
+  editor.destroy();
+});
 </script>
