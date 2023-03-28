@@ -59,7 +59,7 @@ import StarterKit from '@tiptap/starter-kit'
 import {onBeforeUnmount, watch} from "vue";
 
 const props = withDefaults(defineProps<{
-  value: JSONContent
+  value: JSONContent | null
 }>(), { value: null })
 
 const emit = defineEmits<{
@@ -76,8 +76,14 @@ const editor = new Editor({
   },
 })
 
-watch(() => props.value, () => {
-  editor.commands.setContent(props.value, false)
+watch(() => props.value, (value) => {
+  const isSame = JSON.stringify(editor.getJSON()) === JSON.stringify(value)
+
+  if (isSame) {
+    return
+  }
+
+  editor.commands.setContent(value, false)
 })
 
 onBeforeUnmount(() => {
