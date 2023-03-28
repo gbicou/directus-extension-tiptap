@@ -1,5 +1,5 @@
 {
-	"name": "directus-extension-tiptap",
+	"name": "@bicou/directus-extension-tiptap",
 	"description": "Tiptap rich text editor interface for directus",
 	"icon": "extension",
 	"version": "0.0.0",
