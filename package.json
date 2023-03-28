@@ -38,7 +38,8 @@
 		"@tiptap/vue-3": "2.0.0-beta.220",
 		"semantic-release": "^21.0.0",
 		"typescript": "^5.0.2",
-		"vue": "^3.2.47"
+		"vue": "^3.2.47",
+		"@directus/tsconfig": "^0.0.6"
 	},
 	"publishConfig": {
 		"access": "public"
