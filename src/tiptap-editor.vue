@@ -72,13 +72,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    // min-height: 40px;
-    // padding: 0 4px;
+    min-height: 40px;
+    padding: 0 2px;
     background-color: var(--background-subdued);
     border-bottom: 2px solid var(--border-normal);
 
     .v-button + .v-button {
-      //  margin-left: 2px;
+      margin-left: 2px;
     }
 
     /*
