@@ -54,33 +54,44 @@
 </style>
 
 <script setup lang="ts">
-import { Editor, EditorContent, JSONContent } from "@tiptap/vue-3";
+import { Editor, EditorContent, HTMLContent, JSONContent } from "@tiptap/vue-3";
 import StarterKit from "@tiptap/starter-kit";
 import { onBeforeUnmount, watch } from "vue";
 
+type ValueType = "json" | "text";
+
 const props = withDefaults(
   defineProps<{
-    value: JSONContent | null;
+    value: JSONContent | HTMLContent | null;
+    type: ValueType;
   }>(),
   { value: null }
 );
 
 const emit = defineEmits<{
-  (e: "input", value: JSONContent): void;
+  (e: "input", value: JSONContent | HTMLContent): void;
 }>();
 
 const editor = new Editor({
   content: props.value,
   extensions: [StarterKit],
   onUpdate: () => {
-    emit("input", editor.getJSON());
+    switch (props.type) {
+      case "json":
+        emit("input", editor.getJSON());
+        break;
+      case "text":
+        emit("input", editor.getHTML());
+        break;
+    }
   },
 });
 
 watch(
   () => props.value,
   (value) => {
-    const isSame = JSON.stringify(editor.getJSON()) === JSON.stringify(value);
+    const isSame =
+      props.type === "json" ? JSON.stringify(editor.getJSON()) === JSON.stringify(value) : editor.getHTML() === value;
 
     if (isSame) {
       return;
