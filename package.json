@@ -47,10 +47,14 @@
 		"sass": "^1.60.0",
 		"semantic-release": "^21.0.0",
 		"typescript": "^5.0.2",
-		"vue": "^3.2.47"
+		"vue": "^3.2.47",
+		"vue-i18n": "^9.2.2"
 	},
 	"publishConfig": {
 		"access": "public"
 	},
-	"packageManager": "pnpm@7.29.3"
+	"packageManager": "pnpm@7.29.3",
+	"peerDependencies": {
+		"vue-i18n": "^9.2.2"
+	}
 }

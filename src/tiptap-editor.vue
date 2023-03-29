@@ -1,15 +1,22 @@
 <template>
   <div class="tiptap-editor">
-    <!--
-        <button @click="editor.chain().focus().toggleBold().run()">
-            Bold
-        </button>
-        -->
+    <div class="tiptap-editor__toolbar">
+      <v-button
+        v-tooltip="t('wysiwyg_options.bold')"
+        small
+        icon
+        :active="editor.isActive('bold')"
+        @click="editor.chain().focus().toggleBold().run()"
+      >
+        <v-icon name="format_bold" />
+      </v-button>
+    </div>
+
     <editor-content class="tiptap-editor__content" :editor="editor" />
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .tiptap-editor {
   color: var(--v-input-color);
   font-family: var(--v-input-font-family);
@@ -17,10 +24,7 @@
   border: var(--border-width) solid var(--border-normal);
   border-radius: var(--border-radius);
   transition: border-color var(--fast) var(--transition);
-
-  .tiptap-editor__content {
-    padding: var(--input-padding);
-  }
+  min-height: 300px;
 
   &:hover {
     --arrow-color: var(--border-normal-alt);
@@ -45,6 +49,38 @@
     border-color: var(--border-normal);
   }
 
+  &__toolbar {
+    --v-button-background-color: transparent;
+    --v-button-color: var(--foreground-normal);
+    --v-button-background-color-hover: var(--border-normal);
+    --v-button-color-hover: var(--foreground-normal);
+    --v-button-background-color-active: var(--border-normal);
+    --v-button-color-active: var(--foreground-normal);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    // min-height: 40px;
+    // padding: 0 4px;
+    background-color: var(--background-subdued);
+    border-bottom: 2px solid var(--border-normal);
+
+    .v-button + .v-button {
+      //  margin-left: 2px;
+    }
+
+    /*
+    .spacer {
+      flex-grow: 1;
+    }
+    */
+  }
+
+  &__content {
+    font-family: var(--family-sans-serif);
+    padding: var(--input-padding);
+  }
+
   .ProseMirror {
     > * + * {
       margin-top: 0.75em;
@@ -57,6 +93,9 @@
 import { Editor, EditorContent, HTMLContent, JSONContent } from "@tiptap/vue-3";
 import StarterKit from "@tiptap/starter-kit";
 import { onBeforeUnmount, watch } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
 
 type ValueType = "json" | "text";
 
