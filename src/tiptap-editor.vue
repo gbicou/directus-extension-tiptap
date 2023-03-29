@@ -2,7 +2,7 @@
   <div class="tiptap-editor" :class="{ disabled: props.disabled }">
     <div class="tiptap-editor__toolbar">
       <v-button
-        v-tooltip="t('wysiwyg_options.bold')"
+        v-tooltip="t('wysiwyg_options.bold') + ' - ' + translateShortcut(['meta', 'b'])"
         small
         icon
         :disabled="props.disabled"
@@ -13,7 +13,7 @@
       </v-button>
 
       <v-button
-        v-tooltip="t('wysiwyg_options.italic')"
+        v-tooltip="t('wysiwyg_options.italic') + ' - ' + translateShortcut(['meta', 'i'])"
         small
         icon
         :disabled="props.disabled"
@@ -21,6 +21,93 @@
         @click="editor.chain().focus().toggleItalic().run()"
       >
         <v-icon name="format_italic" />
+      </v-button>
+
+      <v-button
+        v-tooltip="t('wysiwyg_options.strikethrough') + ' - ' + translateShortcut(['meta', 'shift', 'x'])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('strike')"
+        @click="editor.chain().focus().toggleStrike().run()"
+      >
+        <v-icon name="format_strikethrough" />
+      </v-button>
+
+      <v-button
+        v-tooltip="t('wysiwyg_options.bullist') + ' - ' + translateShortcut(['meta', 'shift', '8'])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('bulletList')"
+        @click="editor.chain().focus().toggleBulletList().run()"
+      >
+        <v-icon name="format_list_bulleted" />
+      </v-button>
+
+      <v-button
+        v-tooltip="t('wysiwyg_options.numlist') + ' - ' + translateShortcut(['meta', 'shift', '7'])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('orderedList')"
+        @click="editor.chain().focus().toggleOrderedList().run()"
+      >
+        <v-icon name="format_list_numbered" />
+      </v-button>
+
+      <v-button
+        v-tooltip="t('wysiwyg_options.blockquote') + ' - ' + translateShortcut(['meta', 'shift', 'b'])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('blockquote')"
+        @click="editor.chain().focus().toggleBlockquote().run()"
+      >
+        <v-icon name="format_quote" />
+      </v-button>
+
+      <v-button
+        v-tooltip="t('wysiwyg_options.codeblock') + ' - ' + translateShortcut(['meta', 'e'])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('code')"
+        @click="editor.chain().focus().toggleCode().run()"
+      >
+        <v-icon name="code" />
+      </v-button>
+
+      <v-button
+        v-tooltip="t('wysiwyg_options.hr')"
+        small
+        icon
+        :disabled="props.disabled"
+        @click="editor.chain().focus().setHorizontalRule().run()"
+      >
+        <v-icon name="horizontal_rule" />
+      </v-button>
+
+      <div class="spacer" />
+
+      <v-button
+        v-tooltip="t('wysiwyg_options.undo') + ' - ' + translateShortcut(['meta', 'z'])"
+        small
+        icon
+        :disabled="props.disabled || !editor.can().undo()"
+        @click="editor.chain().focus().undo().run()"
+      >
+        <v-icon name="undo" />
+      </v-button>
+
+      <v-button
+        v-tooltip="t('wysiwyg_options.redo') + ' - ' + translateShortcut(['meta', 'shift', 'z'])"
+        small
+        icon
+        :disabled="props.disabled || !editor.can().redo()"
+        @click="editor.chain().focus().redo().run()"
+      >
+        <v-icon name="redo" />
       </v-button>
     </div>
 
@@ -68,6 +155,7 @@
     --v-button-color-hover: var(--foreground-normal);
     --v-button-background-color-active: var(--border-normal);
     --v-button-color-active: var(--foreground-normal);
+    --v-button-background-color-disabled: transparent;
 
     display: flex;
     flex-wrap: wrap;
@@ -81,11 +169,9 @@
       margin-left: 2px;
     }
 
-    /*
     .spacer {
       flex-grow: 1;
     }
-    */
   }
 
   &__content {
@@ -103,6 +189,7 @@ import { Editor, EditorContent, HTMLContent, JSONContent } from "@tiptap/vue-3";
 import StarterKit from "@tiptap/starter-kit";
 import { onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
+import { translateShortcut } from "./utils/translate-shortcut";
 
 const { t } = useI18n();
 
