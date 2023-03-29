@@ -11,6 +11,17 @@
       >
         <v-icon name="format_bold" />
       </v-button>
+
+      <v-button
+        v-tooltip="t('wysiwyg_options.italic')"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('italic')"
+        @click="editor.chain().focus().toggleItalic().run()"
+      >
+        <v-icon name="format_italic" />
+      </v-button>
     </div>
 
     <editor-content class="tiptap-editor__content" :editor="editor" />
