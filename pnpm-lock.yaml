@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@directus/extensions-sdk': 9.23.4
-  '@directus/tsconfig': ^0.0.6
   '@rushstack/eslint-patch': ^1.2.0
   '@semantic-release/changelog': ^6.0.3
   '@semantic-release/git': ^10.0.1
@@ -11,11 +10,14 @@ specifiers:
   '@tiptap/pm': 2.0.0-beta.220
   '@tiptap/starter-kit': 2.0.0-beta.220
   '@tiptap/vue-3': 2.0.0-beta.220
+  '@types/lodash': ^4.14.192
   '@vue/eslint-config-prettier': ^7.1.0
   '@vue/eslint-config-typescript': ^11.0.2
+  '@vue/tsconfig': ^0.1.3
   autoprefixer: ^10.4.14
   eslint: ^8.36.0
   eslint-plugin-vue: ^9.10.0
+  lodash: ^4.17.21
   postcss: ^8.4.21
   prettier: ^2.8.7
   sass: ^1.60.0
@@ -27,7 +29,6 @@ specifiers:
 
 devDependencies:
   '@directus/extensions-sdk': 9.23.4
-  '@directus/tsconfig': 0.0.6
   '@rushstack/eslint-patch': 1.2.0
   '@semantic-release/changelog': 6.0.3_semantic-release@21.0.0
   '@semantic-release/git': 10.0.1_semantic-release@21.0.0
@@ -36,11 +37,14 @@ devDependencies:
   '@tiptap/pm': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
   '@tiptap/starter-kit': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
   '@tiptap/vue-3': 2.0.0-beta.220_a54wo5ees24qu72lw5umr67ute
+  '@types/lodash': 4.14.192
   '@vue/eslint-config-prettier': 7.1.0_46eickiazn37rcnqccwnhqcaki
   '@vue/eslint-config-typescript': 11.0.2_lawzt7dmfqaotzbm75kfdoil5a
+  '@vue/tsconfig': 0.1.3
   autoprefixer: 10.4.14_postcss@8.4.21
   eslint: 8.36.0
   eslint-plugin-vue: 9.10.0_eslint@8.36.0
+  lodash: 4.17.21
   postcss: 8.4.21
   prettier: 2.8.7
   sass: 1.60.0
@@ -174,10 +178,6 @@ packages:
       - sqlite3
       - supports-color
       - tedious
-    dev: true
-
-  /@directus/tsconfig/0.0.6:
-    resolution: {integrity: sha512-fCkuc5xodi79T5UGV9JYfjuTjQT4QObbyeqtX8ZVCdyGtaHlJpvCYIM0B1GLc8co4l6RIOiyvAXiPFLIut+a1A==}
     dev: true
 
   /@esbuild/android-arm/0.17.11:
@@ -1265,6 +1265,10 @@ packages:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
 
+  /@types/lodash/4.14.192:
+    resolution: {integrity: sha512-km+Vyn3BYm5ytMO13k9KTp27O75rbQ0NFw+U//g+PX7VZyjCioXaRFisqSIJRECljcTv73G3i6BpglNGHgUQ5A==}
+    dev: true
+
   /@types/minimist/1.2.2:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: true
@@ -1549,6 +1553,15 @@ packages:
 
   /@vue/shared/3.2.47:
     resolution: {integrity: sha512-BHGyyGN3Q97EZx0taMQ+OLNuZcW3d37ZEVmEAyeoA9ERdGvm9Irc/0Fua8SNyOtV1w6BS4q25wbMzJujO9HIfQ==}
+    dev: true
+
+  /@vue/tsconfig/0.1.3:
+    resolution: {integrity: sha512-kQVsh8yyWPvHpb8gIc9l/HIDiiVUy1amynLNpCy8p+FoCiZXCo6fQos5/097MmnNZc9AtseDsCrfkhqCrJ8Olg==}
+    peerDependencies:
+      '@types/node': '*'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
     dev: true
 
   /JSONStream/1.3.5:
