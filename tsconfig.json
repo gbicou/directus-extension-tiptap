@@ -1,5 +1,5 @@
 {
-  "extends": "@directus/tsconfig/node18-esm.json",
+  "extends": "@vue/tsconfig/tsconfig.web.json",
   "compilerOptions": {
     "rootDir": "./src"
   },

@@ -1,5 +1,6 @@
 import { defineInterface } from "@directus/extensions-sdk";
 import TiptapEditor from "./tiptap-editor.vue";
+import "./index.css";
 
 export default defineInterface({
   id: "tiptap",
