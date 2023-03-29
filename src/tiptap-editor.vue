@@ -1,10 +1,11 @@
 <template>
-  <div class="tiptap-editor">
+  <div class="tiptap-editor" :class="{ disabled: props.disabled }">
     <div class="tiptap-editor__toolbar">
       <v-button
         v-tooltip="t('wysiwyg_options.bold')"
         small
         icon
+        :disabled="props.disabled"
         :active="editor.isActive('bold')"
         @click="editor.chain().focus().toggleBold().run()"
       >
@@ -103,8 +104,9 @@ const props = withDefaults(
   defineProps<{
     value: JSONContent | HTMLContent | null;
     type: ValueType;
+    disabled: boolean;
   }>(),
-  { value: null }
+  { value: null, disabled: false }
 );
 
 const emit = defineEmits<{
@@ -112,6 +114,7 @@ const emit = defineEmits<{
 }>();
 
 const editor = new Editor({
+  editable: !props.disabled,
   content: props.value,
   extensions: [StarterKit],
   onUpdate: () => {
