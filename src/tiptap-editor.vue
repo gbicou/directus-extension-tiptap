@@ -35,6 +35,17 @@
       </v-button>
 
       <v-button
+        v-tooltip="t('wysiwyg_options.underline') + ' - ' + translateShortcut(['meta', 'u'])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('underline')"
+        @click="editor.chain().focus().toggleUnderline().run()"
+      >
+        <v-icon name="format_underline" />
+      </v-button>
+
+      <v-button
         v-tooltip="t('wysiwyg_options.bullist') + ' - ' + translateShortcut(['meta', 'shift', '8'])"
         small
         icon
@@ -187,6 +198,7 @@
 <script setup lang="ts">
 import { Editor, EditorContent, HTMLContent, JSONContent } from "@tiptap/vue-3";
 import StarterKit from "@tiptap/starter-kit";
+import Underline from "@tiptap/extension-underline";
 import { onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
@@ -211,7 +223,7 @@ const emit = defineEmits<{
 const editor = new Editor({
   editable: !props.disabled,
   content: props.value,
-  extensions: [StarterKit],
+  extensions: [StarterKit, Underline],
   onUpdate: () => {
     switch (props.type) {
       case "json":

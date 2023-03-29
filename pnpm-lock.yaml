@@ -7,6 +7,7 @@ specifiers:
   '@semantic-release/git': ^10.0.1
   '@tailwindcss/typography': ^0.5.9
   '@tiptap/core': 2.0.0-beta.220
+  '@tiptap/extension-underline': ^2.0.0
   '@tiptap/pm': 2.0.0-beta.220
   '@tiptap/starter-kit': 2.0.0-beta.220
   '@tiptap/vue-3': 2.0.0-beta.220
@@ -34,6 +35,7 @@ devDependencies:
   '@semantic-release/git': 10.0.1_semantic-release@21.0.0
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.3.0
   '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
+  '@tiptap/extension-underline': 2.0.0_7w7m52asdh3tod4ocz57yex63q
   '@tiptap/pm': 2.0.0-beta.220_7w7m52asdh3tod4ocz57yex63q
   '@tiptap/starter-kit': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
   '@tiptap/vue-3': 2.0.0-beta.220_a54wo5ees24qu72lw5umr67ute
@@ -1168,6 +1170,14 @@ packages:
     resolution: {integrity: sha512-3tnffc2YMjNyv7Lbad6fx9wYDE/Buz8vhx76M2AOSrjYbzmTJf7mLkgdlPM0VTy7FGZD5CGgHJAgYNt5HIqPkQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0-beta.209
+    dependencies:
+      '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
+    dev: true
+
+  /@tiptap/extension-underline/2.0.0_7w7m52asdh3tod4ocz57yex63q:
+    resolution: {integrity: sha512-I44iXWqc5Qin9JosM9wD5b0QgBuaxqnsJRtqX/Gmo/ldHW6QKFXe3o0AJkMQHW6cEA2D3ZnKSmgbBwzrRmTkRQ==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
     dependencies:
       '@tiptap/core': 2.0.0-beta.220_@tiptap+pm@2.0.0-beta.220
     dev: true
