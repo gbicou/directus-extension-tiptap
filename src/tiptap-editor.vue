@@ -24,7 +24,7 @@
       </v-button>
     </div>
 
-    <editor-content class="tiptap-editor__content" :editor="editor" />
+    <editor-content class="tiptap-editor__content prose" :editor="editor" />
   </div>
 </template>
 
@@ -90,13 +90,10 @@
 
   &__content {
     font-family: var(--family-sans-serif);
-    padding: var(--input-padding);
+    padding: 0 var(--input-padding);
   }
 
   .ProseMirror {
-    > * + * {
-      margin-top: 0.75em;
-    }
   }
 }
 </style>
