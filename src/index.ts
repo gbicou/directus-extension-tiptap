@@ -7,7 +7,7 @@ export default defineInterface({
   icon: "text_fields",
   description: "Tip Tap editor",
   component: TiptapEditor,
-  types: ["json"],
+  types: ["json", "text"],
   group: "standard",
   options: null,
 });
