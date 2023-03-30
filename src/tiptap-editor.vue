@@ -122,11 +122,11 @@
       </v-button>
     </div>
 
-    <editor-content class="tiptap-editor__content prose" :editor="editor" />
+    <editor-content class="tiptap-editor__content" :editor="editor" />
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .tiptap-editor {
   color: var(--v-input-color);
   font-family: var(--v-input-font-family);
@@ -187,10 +187,17 @@
 
   &__content {
     font-family: var(--family-sans-serif);
+    margin: var(--input-padding) 0;
     padding: 0 var(--input-padding);
-  }
 
-  .ProseMirror {
+    * {
+      margin: revert;
+    }
+
+    b,
+    strong {
+      font-weight: 700;
+    }
   }
 }
 </style>
