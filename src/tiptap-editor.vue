@@ -81,7 +81,7 @@
             :key="n"
             clickable
             :active="editor.isActive('heading', { level: n })"
-            @click="editor.chain().focus().toggleHeading({ level: n })"
+            @click="editor.chain().focus().toggleHeading({ level: n }).run()"
           >
             <v-list-item-content><v-text-overflow :text="t(`wysiwyg_options.h${n}`)" /></v-list-item-content>
             <v-list-item-hint>{{ translateShortcut(["meta", "alt"]) }} {{ n }}</v-list-item-hint>
