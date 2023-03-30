@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.0.1...v1.1.0) (2023-03-30)
+
+
+### Features
+
+* include a custom display rendering content as text ([a99e873](https://github.com/gbicou/directus-extension-tiptap/commit/a99e873028fa1e0e089a98c3cc4627adec9f6da5))
+
 ## [1.0.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.0.0...v1.0.1) (2023-03-30)
 
 
