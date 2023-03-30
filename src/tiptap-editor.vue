@@ -1,6 +1,8 @@
 <template>
   <div class="tiptap-editor" :class="{ disabled: props.disabled }">
     <div class="tiptap-editor__toolbar">
+      <!-- marks -->
+
       <v-button
         v-tooltip="t('wysiwyg_options.bold') + ' - ' + translateShortcut(['meta', 'b'])"
         small
@@ -46,6 +48,21 @@
       </v-button>
 
       <v-button
+        v-tooltip="t('wysiwyg_options.codeblock') + ' - ' + translateShortcut(['meta', 'e'])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('code')"
+        @click="editor.chain().focus().toggleCode().run()"
+      >
+        <v-icon name="code" />
+      </v-button>
+
+      <div class="divider" />
+
+      <!-- nodes -->
+
+      <v-button
         v-tooltip="t('wysiwyg_options.bullist') + ' - ' + translateShortcut(['meta', 'shift', '8'])"
         small
         icon
@@ -79,17 +96,6 @@
       </v-button>
 
       <v-button
-        v-tooltip="t('wysiwyg_options.codeblock') + ' - ' + translateShortcut(['meta', 'e'])"
-        small
-        icon
-        :disabled="props.disabled"
-        :active="editor.isActive('code')"
-        @click="editor.chain().focus().toggleCode().run()"
-      >
-        <v-icon name="code" />
-      </v-button>
-
-      <v-button
         v-tooltip="t('wysiwyg_options.hr')"
         small
         icon
@@ -100,6 +106,8 @@
       </v-button>
 
       <div class="spacer" />
+
+      <!-- history -->
 
       <v-button
         v-tooltip="t('wysiwyg_options.undo') + ' - ' + translateShortcut(['meta', 'z'])"
@@ -178,6 +186,14 @@
 
     .v-button + .v-button {
       margin-left: 2px;
+    }
+
+    .divider {
+      width: 2px;
+      height: 24px;
+      background: var(--border-normal);
+      margin: 0 4px;
+      opacity: 0.5;
     }
 
     .spacer {
