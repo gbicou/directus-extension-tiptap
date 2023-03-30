@@ -230,11 +230,15 @@
 
   &__content {
     font-family: var(--family-sans-serif);
+    font-weight: 400;
     margin: var(--input-padding) 0;
     padding: 0 var(--input-padding);
 
     * {
       margin: revert;
+      font-size: revert;
+      font-weight: revert;
+      line-height: revert;
     }
 
     b,
