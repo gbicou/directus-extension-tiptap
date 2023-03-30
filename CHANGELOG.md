@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.0.0...v1.0.1) (2023-03-30)
+
+
+### Bug Fixes
+
+* rearrange toolbar icons by marks, nodes and history ([1841fef](https://github.com/gbicou/directus-extension-tiptap/commit/1841fef7969b00452c5e274fe31667bd9821554c))
+
 # 1.0.0 (2023-03-30)
 
 
