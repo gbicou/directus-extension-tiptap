@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.1.0...v1.1.1) (2023-03-30)
+
+
+### Bug Fixes
+
+* header in toolbar ([75c6f0a](https://github.com/gbicou/directus-extension-tiptap/commit/75c6f0a41e73cf26699b5cec46f82e28cfa048c7))
+* revert font size and weight ([ce91777](https://github.com/gbicou/directus-extension-tiptap/commit/ce91777d444887c5d522202da38b6dbcad4ead53))
+
 # [1.1.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.0.1...v1.1.0) (2023-03-30)
 
 
