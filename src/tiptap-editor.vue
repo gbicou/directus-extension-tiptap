@@ -62,6 +62,33 @@
 
       <!-- nodes -->
 
+      <v-menu show-arrow placement="bottom-start">
+        <template #activator="{ toggle }">
+          <v-button
+            v-tooltip="t('wysiwyg_options.heading')"
+            :disabled="props.disabled"
+            small
+            icon
+            :active="editor.isActive('heading')"
+            @click="toggle"
+          >
+            <v-icon name="title" />
+          </v-button>
+        </template>
+        <v-list>
+          <v-list-item
+            v-for="n in 6"
+            :key="n"
+            clickable
+            :active="editor.isActive('heading', { level: n })"
+            @click="editor.chain().focus().toggleHeading({ level: n })"
+          >
+            <v-list-item-content><v-text-overflow :text="t(`wysiwyg_options.h${n}`)" /></v-list-item-content>
+            <v-list-item-hint>{{ translateShortcut(["meta", "alt"]) }} {{ n }}</v-list-item-hint>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+
       <v-button
         v-tooltip="t('wysiwyg_options.bullist') + ' - ' + translateShortcut(['meta', 'shift', '8'])"
         small
