@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.1.1...v1.1.2) (2023-03-30)
+
+
+### Bug Fixes
+
+* run heading command ([a64b208](https://github.com/gbicou/directus-extension-tiptap/commit/a64b2088164a17337c3ac0c9a0a5c096e75651b3))
+
 ## [1.1.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.1.0...v1.1.1) (2023-03-30)
 
 
