@@ -1,4 +1,4 @@
-import { capitalize } from "lodash";
+const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 
 export function translateShortcut(keys: string[]): string {
   const isMac = navigator.platform.toLowerCase().startsWith("mac") || navigator.platform.startsWith("iP");
