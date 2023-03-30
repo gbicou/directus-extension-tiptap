@@ -6,7 +6,9 @@
   "keywords": [
     "directus",
     "directus-extension",
+    "directus-custom-bundle",
     "directus-custom-interface",
+    "directus-custom-display",
     "tiptap"
   ],
   "homepage": "https://github.com/gbicou/directus-extension-tiptap",
@@ -14,10 +16,24 @@
   "license": "MIT",
   "repository": "github:gbicou/directus-extension-tiptap",
   "directus:extension": {
-    "type": "interface",
-    "path": "dist/index.js",
-    "source": "src/index.ts",
-    "host": "^9.23.4"
+    "host": "^9.23.4",
+    "type": "bundle",
+    "path": {
+      "app": "dist/app.js",
+      "api": "dist/api.js"
+    },
+    "entries": [
+      {
+        "type": "interface",
+        "name": "directus-extension-tiptap-interface",
+        "source": "src/interface.ts"
+      },
+      {
+        "type": "display",
+        "name": "directus-extension-tiptap-display",
+        "source": "src/display.ts"
+      }
+    ]
   },
   "files": [
     "dist"

@@ -219,28 +219,27 @@
 </style>
 
 <script setup lang="ts">
-import { Editor, EditorContent, HTMLContent, JSONContent } from "@tiptap/vue-3";
+import { Editor, EditorContent } from "@tiptap/vue-3";
 import StarterKit from "@tiptap/starter-kit";
 import Underline from "@tiptap/extension-underline";
 import { onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
+import type { TypeType, ValueType } from "./types";
 
 const { t } = useI18n();
 
-type ValueType = "json" | "text";
-
 const props = withDefaults(
   defineProps<{
-    value: JSONContent | HTMLContent | null;
-    type: ValueType;
+    value: ValueType | null;
+    type: TypeType;
     disabled: boolean;
   }>(),
   { value: null, disabled: false }
 );
 
 const emit = defineEmits<{
-  (e: "input", value: JSONContent | HTMLContent): void;
+  (e: "input", value: ValueType): void;
 }>();
 
 const editor = new Editor({

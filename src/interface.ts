@@ -10,4 +10,5 @@ export default defineInterface({
   types: ["json", "text"],
   group: "standard",
   options: null,
+  recommendedDisplays: ["tiptap"],
 });
