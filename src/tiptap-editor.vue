@@ -302,6 +302,11 @@ watch(
   }
 );
 
+watch(
+  () => props.disabled,
+  (disabled) => editor.setEditable(!disabled)
+);
+
 onBeforeUnmount(() => {
   editor.destroy();
 });
