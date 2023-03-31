@@ -251,12 +251,11 @@
 
 <script setup lang="ts">
 import { Editor, EditorContent } from "@tiptap/vue-3";
-import StarterKit from "@tiptap/starter-kit";
-import Underline from "@tiptap/extension-underline";
 import { onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
 import type { TypeType, ValueType } from "./types";
+import { extensions } from "./extensions";
 
 const { t } = useI18n();
 
@@ -276,7 +275,7 @@ const emit = defineEmits<{
 const editor = new Editor({
   editable: !props.disabled,
   content: props.value,
-  extensions: [StarterKit, Underline],
+  extensions,
   onUpdate: () => {
     switch (props.type) {
       case "json":

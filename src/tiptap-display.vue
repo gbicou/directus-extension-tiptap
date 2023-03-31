@@ -6,8 +6,7 @@
 import { computed } from "vue";
 import type { TypeType, ValueType } from "./types";
 import { generateText } from "@tiptap/core";
-import StarterKit from "@tiptap/starter-kit";
-import Underline from "@tiptap/extension-underline";
+import { extensions } from "./extensions";
 
 const props = withDefaults(
   defineProps<{
@@ -19,7 +18,7 @@ const props = withDefaults(
 
 const text = computed(() => {
   if (props.type === "json") {
-    return generateText(props.value, [StarterKit, Underline]);
+    return generateText(props.value, extensions);
   }
   return props.value;
 });
