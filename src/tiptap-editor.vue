@@ -1,5 +1,17 @@
 <template>
   <div class="tiptap-editor" :class="{ disabled: props.disabled }">
+    <bubble-menu class="tiptap-editor__bubble" :editor="editor" :tippy-options="{ duration: 100 }">
+      <v-chip x-small @click="editor.chain().focus().toggleBold().run()" :outlined="!editor.isActive('bold')">
+        {{ t("wysiwyg_options.bold").toLowerCase() }}
+      </v-chip>
+      <v-chip x-small @click="editor.chain().focus().toggleItalic().run()" :outlined="!editor.isActive('italic')">
+        {{ t("wysiwyg_options.italic").toLowerCase() }}
+      </v-chip>
+      <v-chip x-small @click="editor.chain().focus().toggleStrike().run()" :outlined="!editor.isActive('strike')">
+        {{ t("wysiwyg_options.strikethrough").toLowerCase() }}
+      </v-chip>
+    </bubble-menu>
+
     <div class="tiptap-editor__toolbar">
       <!-- marks -->
 
@@ -269,6 +281,17 @@
     }
   }
 
+  &__bubble {
+    .v-chip {
+      margin-left: 2px;
+      cursor: pointer;
+
+      &.outlined {
+        background-color: var(--background-page);
+      }
+    }
+  }
+
   &__content {
     font-family: var(--family-sans-serif);
     font-weight: 400;
@@ -291,7 +314,7 @@
 </style>
 
 <script setup lang="ts">
-import { Editor, EditorContent } from "@tiptap/vue-3";
+import { Editor, EditorContent, BubbleMenu } from "@tiptap/vue-3";
 import { onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
