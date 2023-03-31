@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/gbicou/directus-extension-tiptap/compare/v1.1.3...v1.1.4) (2023-03-31)
+
+
+### Bug Fixes
+
+* bubble menu ([82d40a6](https://github.com/gbicou/directus-extension-tiptap/commit/82d40a6cb74862ee268a934edfb3bd2cbb9d56c3)), closes [#11](https://github.com/gbicou/directus-extension-tiptap/issues/11)
+
 ## [1.1.3](https://github.com/gbicou/directus-extension-tiptap/compare/v1.1.2...v1.1.3) (2023-03-31)
 
 
