@@ -30,6 +30,8 @@ npm install @bicou/directus-extension-tiptap
 
 ## Usage
 
+### Field
+
 When creating a field in Directus choose TipTap.
 
 ![field creation](docs/field.png)
@@ -38,6 +40,26 @@ Choosing **Type** allows you to store your content as a JSON object or as a good
 
 - _JSON_ : the JSON object of the [ProseMirror](https://prosemirror.net/) nodes
 - _Text_ : the HTML content as string
+
+### Editor
+
+When editing content items, the Tiptap WYSIWG editor will show up :
+
+![editor](docs/editor.png)
+
+### Field data and display
+
+By default, the data is shown as raw JSON :
+
+![json render](docs/render.png)
+
+Edit the field to select Tiptap as display ...
+
+![display](docs/display.png)
+
+... to render the text of the field in content browsing :
+
+![text render](docs/display-render.png)
 
 ## License
 
