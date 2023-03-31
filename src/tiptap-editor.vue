@@ -11,7 +11,7 @@
         :active="editor.isActive('bold')"
         @click="editor.chain().focus().toggleBold().run()"
       >
-        <v-icon name="format_bold" />
+        <icon-bold />
       </v-button>
 
       <v-button
@@ -22,7 +22,7 @@
         :active="editor.isActive('italic')"
         @click="editor.chain().focus().toggleItalic().run()"
       >
-        <v-icon name="format_italic" />
+        <icon-italic />
       </v-button>
 
       <v-button
@@ -33,7 +33,7 @@
         :active="editor.isActive('strike')"
         @click="editor.chain().focus().toggleStrike().run()"
       >
-        <v-icon name="format_strikethrough" />
+        <icon-strikethrough />
       </v-button>
 
       <v-button
@@ -44,7 +44,7 @@
         :active="editor.isActive('underline')"
         @click="editor.chain().focus().toggleUnderline().run()"
       >
-        <v-icon name="format_underline" />
+        <icon-underline />
       </v-button>
 
       <v-button
@@ -55,7 +55,7 @@
         :active="editor.isActive('code')"
         @click="editor.chain().focus().toggleCode().run()"
       >
-        <v-icon name="code" />
+        <icon-code-line />
       </v-button>
 
       <div class="divider" />
@@ -72,7 +72,7 @@
             :active="editor.isActive('heading')"
             @click="toggle"
           >
-            <v-icon name="title" />
+            <icon-heading />
           </v-button>
         </template>
         <v-list>
@@ -90,6 +90,17 @@
       </v-menu>
 
       <v-button
+        v-tooltip="t('tiptap.paragraph') + ' - ' + translateShortcut(['meta', 'shift', '0'])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('paragraph')"
+        @click="editor.chain().focus().setParagraph().run()"
+      >
+        <icon-paragraph />
+      </v-button>
+
+      <v-button
         v-tooltip="t('wysiwyg_options.bullist') + ' - ' + translateShortcut(['meta', 'shift', '8'])"
         small
         icon
@@ -97,7 +108,7 @@
         :active="editor.isActive('bulletList')"
         @click="editor.chain().focus().toggleBulletList().run()"
       >
-        <v-icon name="format_list_bulleted" />
+        <icon-list-unordered />
       </v-button>
 
       <v-button
@@ -108,7 +119,7 @@
         :active="editor.isActive('orderedList')"
         @click="editor.chain().focus().toggleOrderedList().run()"
       >
-        <v-icon name="format_list_numbered" />
+        <icon-list-ordered />
       </v-button>
 
       <v-button
@@ -119,8 +130,10 @@
         :active="editor.isActive('blockquote')"
         @click="editor.chain().focus().toggleBlockquote().run()"
       >
-        <v-icon name="format_quote" />
+        <icon-double-quotes-r />
       </v-button>
+
+      <div class="divider" />
 
       <v-button
         v-tooltip="t('wysiwyg_options.hr')"
@@ -129,7 +142,27 @@
         :disabled="props.disabled"
         @click="editor.chain().focus().setHorizontalRule().run()"
       >
-        <v-icon name="horizontal_rule" />
+        <icon-separator />
+      </v-button>
+
+      <v-button
+        v-tooltip="t('tiptap.br') + ' - ' + translateShortcut(['shift', 'enter'])"
+        small
+        icon
+        :disabled="props.disabled"
+        @click="editor.chain().focus().setHardBreak().run()"
+      >
+        <icon-text-wrap />
+      </v-button>
+
+      <v-button
+        v-tooltip="t('tiptap.clear_format')"
+        small
+        icon
+        :disabled="props.disabled"
+        @click="editor.chain().focus().unsetAllMarks().clearNodes().run()"
+      >
+        <icon-format-clear />
       </v-button>
 
       <div class="spacer" />
@@ -143,7 +176,7 @@
         :disabled="props.disabled || !editor.can().undo()"
         @click="editor.chain().focus().undo().run()"
       >
-        <v-icon name="undo" />
+        <icon-arrow-go-back-line />
       </v-button>
 
       <v-button
@@ -153,7 +186,7 @@
         :disabled="props.disabled || !editor.can().redo()"
         @click="editor.chain().focus().redo().run()"
       >
-        <v-icon name="redo" />
+        <icon-arrow-go-forward-line />
       </v-button>
     </div>
 
@@ -202,6 +235,14 @@
     --v-button-background-color-active: var(--border-normal);
     --v-button-color-active: var(--foreground-normal);
     --v-button-background-color-disabled: transparent;
+
+    svg {
+      fill: var(--v-input-color);
+    }
+
+    [disabled] svg {
+      fill: var(--foreground-subdued);
+    }
 
     display: flex;
     flex-wrap: wrap;
@@ -256,8 +297,24 @@ import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
 import type { TypeType, ValueType } from "./types";
 import { extensions } from "./extensions";
+import messages from "./messages.json";
+import IconArrowGoBackLine from "./icons/arrow-go-back-line.vue";
+import IconParagraph from "./icons/paragraph.vue";
+import IconListUnordered from "./icons/list-unordered.vue";
+import IconListOrdered from "./icons/list-ordered.vue";
+import IconBold from "./icons/bold.vue";
+import IconItalic from "./icons/italic.vue";
+import IconStrikethrough from "./icons/strikethrough.vue";
+import IconUnderline from "./icons/underline.vue";
+import IconHeading from "./icons/heading.vue";
+import IconSeparator from "./icons/separator.vue";
+import IconArrowGoForwardLine from "./icons/arrow-go-forward-line.vue";
+import IconCodeLine from "./icons/code-line.vue";
+import IconDoubleQuotesR from "./icons/double-quotes-r.vue";
+import IconTextWrap from "./icons/text-wrap.vue";
+import IconFormatClear from "./icons/format-clear.vue";
 
-const { t } = useI18n();
+const { t } = useI18n({ messages });
 
 const props = withDefaults(
   defineProps<{

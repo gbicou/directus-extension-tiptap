@@ -1,0 +1,16 @@
+{
+  "en": {
+    "tiptap": {
+      "paragraph": "Paragraph",
+      "br": "Hard break",
+      "clear_format": "Clear text formatting"
+    }
+  },
+  "fr": {
+    "tiptap": {
+      "paragraph": "Paragraphe",
+      "br": "Saut de ligne",
+      "clear_format": "Effacer la mise en forme"
+    }
+  }
+}

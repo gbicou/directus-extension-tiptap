@@ -9,4 +9,7 @@ module.exports = {
     "@vue/eslint-config-prettier",
   ],
   root: true,
+  rules: {
+    "vue/multi-word-component-names": "off",
+  },
 };
