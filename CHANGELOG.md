@@ -1,3 +1,11 @@
+## [1.1.3](https://github.com/gbicou/directus-extension-tiptap/compare/v1.1.2...v1.1.3) (2023-03-31)
+
+
+### Bug Fixes
+
+* paragraph, break and clear tools ([16bcbcd](https://github.com/gbicou/directus-extension-tiptap/commit/16bcbcd0e4b190f5fa95fb13222a149ada3bf837))
+* watch disabled prop ([167f66a](https://github.com/gbicou/directus-extension-tiptap/commit/167f66aa4c6ac3048104f57b858f57f76fd52ff2))
+
 ## [1.1.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.1.1...v1.1.2) (2023-03-30)
 
 
