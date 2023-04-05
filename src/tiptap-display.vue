@@ -1,12 +1,11 @@
 <template>
-  <div>{{ text }}</div>
+  <v-text-overflow class="display" :text="text" />
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import type { JSONContent } from "@tiptap/vue-3";
 import type { TypeType, ValueType } from "./types";
-import { generateText } from "@tiptap/core";
-import { extensions } from "./extensions";
+import { computed } from "vue";
 
 const props = withDefaults(
   defineProps<{
@@ -16,10 +15,17 @@ const props = withDefaults(
   { value: null }
 );
 
+function getText(json: JSONContent): string {
+  return json.text ?? json.content?.map(getText).join("").trim() + "\n";
+}
+
 const text = computed(() => {
-  if (props.type === "json") {
-    return generateText(props.value, extensions);
+  switch (props.type) {
+    case "json":
+      return getText(props.value);
+    case "text":
+      return props.value;
   }
-  return props.value;
+  return "";
 });
 </script>
