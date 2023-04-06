@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.2.0...v1.3.0) (2023-04-06)
+
+
+### Features
+
+* characters and words count in info bar ([13e4c57](https://github.com/gbicou/directus-extension-tiptap/commit/13e4c578f3241c6476c9b8e3e9437f5d8a86edb6))
+
 # [1.2.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.1.5...v1.2.0) (2023-04-06)
 
 
