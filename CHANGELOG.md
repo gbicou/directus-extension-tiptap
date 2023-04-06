@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.1.5...v1.2.0) (2023-04-06)
+
+
+### Features
+
+* placeholder ([a410b11](https://github.com/gbicou/directus-extension-tiptap/commit/a410b11060cfed815854b3806df95a3866712ec2))
+
 ## [1.1.5](https://github.com/gbicou/directus-extension-tiptap/compare/v1.1.4...v1.1.5) (2023-04-06)
 
 
