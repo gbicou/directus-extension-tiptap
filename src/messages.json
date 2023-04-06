@@ -3,14 +3,16 @@
     "tiptap": {
       "paragraph": "Paragraph",
       "br": "Hard break",
-      "clear_format": "Clear text formatting"
+      "clear_format": "Clear text formatting",
+      "highlight": "Highlight"
     }
   },
   "fr": {
     "tiptap": {
       "paragraph": "Paragraphe",
       "br": "Saut de ligne",
-      "clear_format": "Effacer la mise en forme"
+      "clear_format": "Effacer la mise en forme",
+      "highlight": "Surligner"
     }
   }
 }

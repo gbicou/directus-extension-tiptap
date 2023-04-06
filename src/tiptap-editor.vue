@@ -70,6 +70,18 @@
         <icon-code-line />
       </v-button>
 
+      <v-button
+        v-if="editorExtensions.includes('highlight')"
+        v-tooltip="t('tiptap.highlight') + ' - ' + translateShortcut(['meta', 'shift', 'm'])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('highlight')"
+        @click="editor.chain().focus().toggleHighlight().run()"
+      >
+        <icon-mark-pen-line />
+      </v-button>
+
       <div class="divider" />
 
       <!-- nodes -->
@@ -363,6 +375,7 @@ import IconCodeLine from "./icons/code-line.vue";
 import IconDoubleQuotesR from "./icons/double-quotes-r.vue";
 import IconTextWrap from "./icons/text-wrap.vue";
 import IconFormatClear from "./icons/format-clear.vue";
+import IconMarkPenLine from "./icons/mark-pen-line.vue";
 
 const { t } = useI18n({ messages });
 

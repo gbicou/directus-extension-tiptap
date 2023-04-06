@@ -19,6 +19,9 @@ devDependencies:
   '@tiptap/extension-character-count':
     specifier: ^2.0.2
     version: 2.0.2(@tiptap/core@2.0.2)(@tiptap/pm@2.0.2)
+  '@tiptap/extension-highlight':
+    specifier: ^2.0.2
+    version: 2.0.2(@tiptap/core@2.0.2)
   '@tiptap/extension-placeholder':
     specifier: ^2.0.2
     version: 2.0.2(@tiptap/core@2.0.2)(@tiptap/pm@2.0.2)
@@ -1115,6 +1118,15 @@ packages:
 
   /@tiptap/extension-heading@2.0.2(@tiptap/core@2.0.2):
     resolution: {integrity: sha512-99PL9Rx8mioo13SNuIkhZm1VW6UuUKKG0b7fAimsunaEbbLNtToXIasS68pX8BkgWnsBfDhR0HyhnpIBRg7W0w==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.0.2(@tiptap/pm@2.0.2)
+    dev: true
+
+  /@tiptap/extension-highlight@2.0.2(@tiptap/core@2.0.2):
+    resolution: {integrity: sha512-FLW7VvHr6UjiHCxzGMrnTBCslDfUqpLJjg0j6P4+0ksKKEcjfgRNkI8ln5NB1IyphXYUvWczeD83rMTtX8+feA==}
+    requiresBuild: true
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
