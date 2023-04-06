@@ -203,6 +203,10 @@
     </div>
 
     <editor-content class="tiptap-editor__content" :editor="editor" />
+
+    <div class="tiptap-editor__info">
+      {{ editor.storage.characterCount.characters() }} chars, {{ editor.storage.characterCount.words() }} words
+    </div>
   </div>
 </template>
 
@@ -237,6 +241,20 @@
     color: var(--foreground-subdued);
     background-color: var(--background-subdued);
     border-color: var(--border-normal);
+  }
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 30px;
+    padding: 0 8px;
+    background-color: var(--background-subdued);
+    color: var(--foreground-subdued);
+    border-top: 2px solid var(--border-normal);
+    font-family: var(--family-monospace);
+    font-size: 12px;
   }
 
   &__toolbar {
