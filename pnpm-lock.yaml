@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 optionalDependencies:
+  '@tiptap/extension-highlight':
+    specifier: ^2.0.2
+    version: 2.0.2(@tiptap/core@2.0.2)
   '@tiptap/extension-underline':
     specifier: ^2.0.2
     version: 2.0.2(@tiptap/core@2.0.2)
@@ -1100,6 +1103,16 @@ packages:
     dependencies:
       '@tiptap/core': 2.0.2(@tiptap/pm@2.0.2)
     dev: true
+
+  /@tiptap/extension-highlight@2.0.2(@tiptap/core@2.0.2):
+    resolution: {integrity: sha512-FLW7VvHr6UjiHCxzGMrnTBCslDfUqpLJjg0j6P4+0ksKKEcjfgRNkI8ln5NB1IyphXYUvWczeD83rMTtX8+feA==}
+    requiresBuild: true
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.0.2(@tiptap/pm@2.0.2)
+    dev: false
+    optional: true
 
   /@tiptap/extension-history@2.0.2(@tiptap/core@2.0.2)(@tiptap/pm@2.0.2):
     resolution: {integrity: sha512-K7u8HCEh9g35DSB4+c7z1wj9ais2cF3STDhyCRjBuLcCTgWVAim5cto4MkSdrXnLuWGgNK0jloWxVlMk3E1HPg==}
