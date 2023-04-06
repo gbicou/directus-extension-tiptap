@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/gbicou/directus-extension-tiptap/compare/v1.1.4...v1.1.5) (2023-04-06)
+
+
+### Bug Fixes
+
+* **display:** overflow tooltip placement ([11ebd6f](https://github.com/gbicou/directus-extension-tiptap/commit/11ebd6f15e84df81c82dbd4369d977a205d0da09))
+
 ## [1.1.4](https://github.com/gbicou/directus-extension-tiptap/compare/v1.1.3...v1.1.4) (2023-03-31)
 
 
