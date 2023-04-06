@@ -1,5 +1,5 @@
 <template>
-  <v-text-overflow class="display" :text="text" />
+  <v-text-overflow class="display" placement="bottom" :text="text" />
 </template>
 
 <script setup lang="ts">
