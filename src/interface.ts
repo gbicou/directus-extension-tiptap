@@ -9,6 +9,19 @@ export default defineInterface({
   component: TiptapEditor,
   types: ["json", "text"],
   group: "standard",
-  options: null,
   recommendedDisplays: ["tiptap"],
+  options: [
+    {
+      field: "placeholder",
+      name: "$t:placeholder",
+      type: "string",
+      meta: {
+        width: "full",
+        interface: "system-input-translated-string",
+        options: {
+          placeholder: "$t:enter_a_placeholder",
+        },
+      },
+    },
+  ],
 });

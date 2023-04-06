@@ -309,12 +309,21 @@
     strong {
       font-weight: 700;
     }
+
+    .ProseMirror p.is-editor-empty:first-child::before {
+      color: var(--foreground-subdued);
+      content: attr(data-placeholder);
+      float: left;
+      height: 0;
+      pointer-events: none;
+    }
   }
 }
 </style>
 
 <script setup lang="ts">
 import { Editor, EditorContent, BubbleMenu } from "@tiptap/vue-3";
+import { Placeholder } from "@tiptap/extension-placeholder";
 import { onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
@@ -344,13 +353,20 @@ const props = withDefaults(
     value: ValueType | null;
     type: TypeType;
     disabled: boolean;
+    placeholder: string | null;
   }>(),
-  { value: null, disabled: false }
+  { value: null, disabled: false, placeholder: null }
 );
 
 const emit = defineEmits<{
   (e: "input", value: ValueType): void;
 }>();
+
+extensions.push(
+  Placeholder.configure({
+    placeholder: props.placeholder,
+  })
+);
 
 const editor = new Editor({
   editable: !props.disabled,

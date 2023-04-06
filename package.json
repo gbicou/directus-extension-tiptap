@@ -53,6 +53,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@tiptap/core": "^2.0.2",
+    "@tiptap/extension-placeholder": "^2.0.2",
     "@tiptap/extension-underline": "^2.0.2",
     "@tiptap/pm": "^2.0.2",
     "@tiptap/starter-kit": "^2.0.2",
