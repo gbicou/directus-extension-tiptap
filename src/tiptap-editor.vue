@@ -1,13 +1,28 @@
 <template>
   <div class="tiptap-editor" :class="{ disabled: props.disabled }">
     <bubble-menu class="tiptap-editor__bubble" :editor="editor" :tippy-options="{ duration: 100 }">
-      <v-chip x-small @click="editor.chain().focus().toggleBold().run()" :outlined="!editor.isActive('bold')">
+      <v-chip
+        v-if="editorExtensions.includes('bold')"
+        x-small
+        @click="editor.chain().focus().toggleBold().run()"
+        :outlined="!editor.isActive('bold')"
+      >
         {{ t("wysiwyg_options.bold").toLowerCase() }}
       </v-chip>
-      <v-chip x-small @click="editor.chain().focus().toggleItalic().run()" :outlined="!editor.isActive('italic')">
+      <v-chip
+        v-if="editorExtensions.includes('italic')"
+        x-small
+        @click="editor.chain().focus().toggleItalic().run()"
+        :outlined="!editor.isActive('italic')"
+      >
         {{ t("wysiwyg_options.italic").toLowerCase() }}
       </v-chip>
-      <v-chip x-small @click="editor.chain().focus().toggleStrike().run()" :outlined="!editor.isActive('strike')">
+      <v-chip
+        v-if="editorExtensions.includes('strike')"
+        x-small
+        @click="editor.chain().focus().toggleStrike().run()"
+        :outlined="!editor.isActive('strike')"
+      >
         {{ t("wysiwyg_options.strikethrough").toLowerCase() }}
       </v-chip>
     </bubble-menu>
@@ -16,6 +31,7 @@
       <!-- marks -->
 
       <v-button
+        v-if="editorExtensions.includes('bold')"
         v-tooltip="t('wysiwyg_options.bold') + ' - ' + translateShortcut(['meta', 'b'])"
         small
         icon
@@ -27,6 +43,7 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('italic')"
         v-tooltip="t('wysiwyg_options.italic') + ' - ' + translateShortcut(['meta', 'i'])"
         small
         icon
@@ -38,6 +55,7 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('strike')"
         v-tooltip="t('wysiwyg_options.strikethrough') + ' - ' + translateShortcut(['meta', 'shift', 'x'])"
         small
         icon
@@ -49,6 +67,7 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('underline')"
         v-tooltip="t('wysiwyg_options.underline') + ' - ' + translateShortcut(['meta', 'u'])"
         small
         icon
@@ -60,6 +79,7 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('code')"
         v-tooltip="t('wysiwyg_options.codeblock') + ' - ' + translateShortcut(['meta', 'e'])"
         small
         icon
@@ -86,7 +106,7 @@
 
       <!-- nodes -->
 
-      <v-menu show-arrow placement="bottom-start">
+      <v-menu v-if="editorExtensions.includes('heading')" show-arrow placement="bottom-start">
         <template #activator="{ toggle }">
           <v-button
             v-tooltip="t('wysiwyg_options.heading')"
@@ -114,6 +134,7 @@
       </v-menu>
 
       <v-button
+        v-if="editorExtensions.includes('paragraph')"
         v-tooltip="t('tiptap.paragraph') + ' - ' + translateShortcut(['meta', 'shift', '0'])"
         small
         icon
@@ -125,6 +146,7 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('bulletList')"
         v-tooltip="t('wysiwyg_options.bullist') + ' - ' + translateShortcut(['meta', 'shift', '8'])"
         small
         icon
@@ -136,6 +158,7 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('orderedList')"
         v-tooltip="t('wysiwyg_options.numlist') + ' - ' + translateShortcut(['meta', 'shift', '7'])"
         small
         icon
@@ -147,6 +170,7 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('blockquote')"
         v-tooltip="t('wysiwyg_options.blockquote') + ' - ' + translateShortcut(['meta', 'shift', 'b'])"
         small
         icon
@@ -160,6 +184,7 @@
       <div class="divider" />
 
       <v-button
+        v-if="editorExtensions.includes('horizontalRule')"
         v-tooltip="t('wysiwyg_options.hr')"
         small
         icon
@@ -170,6 +195,7 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('hardBreak')"
         v-tooltip="t('tiptap.br') + ' - ' + translateShortcut(['shift', 'enter'])"
         small
         icon
@@ -194,6 +220,7 @@
       <!-- history -->
 
       <v-button
+        v-if="editorExtensions.includes('history')"
         v-tooltip="t('wysiwyg_options.undo') + ' - ' + translateShortcut(['meta', 'z'])"
         small
         icon
@@ -204,6 +231,7 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('history')"
         v-tooltip="t('wysiwyg_options.redo') + ' - ' + translateShortcut(['meta', 'shift', 'z'])"
         small
         icon
@@ -217,7 +245,9 @@
     <editor-content class="tiptap-editor__content" :editor="editor" />
 
     <div class="tiptap-editor__info">
-      {{ editor.storage.characterCount.characters() }} chars, {{ editor.storage.characterCount.words() }} words
+      <div v-if="editorExtensions.includes('characterCount')">
+        {{ editor.storage.characterCount.characters() }} chars, {{ editor.storage.characterCount.words() }} words
+      </div>
     </div>
   </div>
 </template>
@@ -414,6 +444,8 @@ const editor = new Editor({
     }
   },
 });
+
+const editorExtensions = editor.extensionManager.extensions.map((ext) => ext.name);
 
 watch(
   () => props.value,
