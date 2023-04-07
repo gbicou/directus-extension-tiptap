@@ -260,7 +260,6 @@
   border: var(--border-width) solid var(--border-normal);
   border-radius: var(--border-radius);
   transition: border-color var(--fast) var(--transition);
-  min-height: 300px;
 
   &:hover {
     --arrow-color: var(--border-normal-alt);
@@ -353,6 +352,7 @@
   }
 
   &__content {
+    min-height: 230px;
     font-family: var(--family-sans-serif);
     font-weight: 400;
     margin: var(--input-padding) 0;
