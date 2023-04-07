@@ -79,6 +79,30 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('superscript')"
+        v-tooltip="t('wysiwyg_options.superscript') + ' - ' + translateShortcut(['meta', '.'])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('superscript')"
+        @click="editor.chain().focus().toggleSuperscript().run()"
+      >
+        <icon-superscript />
+      </v-button>
+
+      <v-button
+        v-if="editorExtensions.includes('subscript')"
+        v-tooltip="t('wysiwyg_options.subscript') + ' - ' + translateShortcut(['meta', ','])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('subscript')"
+        @click="editor.chain().focus().toggleSubscript().run()"
+      >
+        <icon-subscript />
+      </v-button>
+
+      <v-button
         v-if="editorExtensions.includes('code')"
         v-tooltip="t('wysiwyg_options.codeblock') + ' - ' + translateShortcut(['meta', 'e'])"
         small
@@ -406,6 +430,8 @@ import IconDoubleQuotesR from "./icons/double-quotes-r.vue";
 import IconTextWrap from "./icons/text-wrap.vue";
 import IconFormatClear from "./icons/format-clear.vue";
 import IconMarkPenLine from "./icons/mark-pen-line.vue";
+import IconSubscript from "./icons/subscript.vue";
+import IconSuperscript from "./icons/superscript.vue";
 
 const { t } = useI18n({ messages });
 
