@@ -4,7 +4,9 @@
       "paragraph": "Paragraph",
       "br": "Hard break",
       "clear_format": "Clear text formatting",
-      "highlight": "Highlight"
+      "highlight": "Highlight",
+      "count_chars": "no characters | 1 character | {count} characters",
+      "count_words": "no words | 1 word | {count} words"
     }
   },
   "fr": {
@@ -12,7 +14,9 @@
       "paragraph": "Paragraphe",
       "br": "Saut de ligne",
       "clear_format": "Effacer la mise en forme",
-      "highlight": "Surligner"
+      "highlight": "Surligner",
+      "count_chars": "aucun caractère | 1 caractère | {count} caractères",
+      "count_words": "aucun mot | 1 mot | {count} mots"
     }
   }
 }
