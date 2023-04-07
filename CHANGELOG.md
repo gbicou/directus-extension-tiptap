@@ -1,3 +1,17 @@
+# [1.4.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.3.0...v1.4.0) (2023-04-07)
+
+
+### Bug Fixes
+
+* editor content height ([73d91ae](https://github.com/gbicou/directus-extension-tiptap/commit/73d91aea73e8e287444c83773f68d3719f61dbfa))
+* show buttons of loaded extensions ([9995e4a](https://github.com/gbicou/directus-extension-tiptap/commit/9995e4af45a8376ed1984431e611670be26a524d))
+
+
+### Features
+
+* highlight extension ([4e3fb32](https://github.com/gbicou/directus-extension-tiptap/commit/4e3fb3235d1c7a72c34a7bb4bd30f99214007027))
+* subscript and superscript extensions ([88f2db7](https://github.com/gbicou/directus-extension-tiptap/commit/88f2db7c1ece6a12a9d6b6ee0fdbbaed3b6637d2))
+
 # [1.3.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.2.0...v1.3.0) (2023-04-06)
 
 
