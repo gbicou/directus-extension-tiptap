@@ -1,3 +1,10 @@
+# [1.6.0-alpha.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.5.0...v1.6.0-alpha.1) (2023-04-12)
+
+
+### Features
+
+* code block ([d84d926](https://github.com/gbicou/directus-extension-tiptap/commit/d84d926595d55daaf4fd12cee9952876e18b1e2f))
+
 # [1.5.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.4.0...v1.5.0) (2023-04-12)
 
 
