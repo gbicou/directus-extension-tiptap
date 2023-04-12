@@ -389,11 +389,14 @@
   }
 
   &__content {
-    min-height: 230px;
     font-family: var(--family-sans-serif);
     font-weight: 400;
-    margin: var(--input-padding) 0;
-    padding: 0 var(--input-padding);
+
+    .ProseMirror {
+      min-height: 230px;
+      margin: var(--input-padding) 0;
+      padding: 0 var(--input-padding);
+    }
 
     * {
       margin: revert;
