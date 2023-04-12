@@ -31,6 +31,9 @@ devDependencies:
   '@tiptap/extension-superscript':
     specifier: ^2.0.2
     version: 2.0.2(@tiptap/core@2.0.2)
+  '@tiptap/extension-typography':
+    specifier: ^2.0.2
+    version: 2.0.2(@tiptap/core@2.0.2)
   '@tiptap/extension-underline':
     specifier: ^2.0.2
     version: 2.0.2(@tiptap/core@2.0.2)
@@ -1227,6 +1230,14 @@ packages:
 
   /@tiptap/extension-text@2.0.2(@tiptap/core@2.0.2):
     resolution: {integrity: sha512-kAO+WurWOyHIV/x8qHMF3bSlWrdlPtjEYmf+w8wHKy3FzE55eF6SsGt4FymClNkJmyXdgflXBB3Wv/Z53myy8g==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.0.2(@tiptap/pm@2.0.2)
+    dev: true
+
+  /@tiptap/extension-typography@2.0.2(@tiptap/core@2.0.2):
+    resolution: {integrity: sha512-EopmjSP9ZKM98vUa+W29L5SxfQgBOgJTZJ6oR3jvQ15Ctu0pssOAI+7u7U5OnzUaaiR3w4M6a9iDAwCjSmwNiA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
