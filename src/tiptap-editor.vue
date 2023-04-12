@@ -474,10 +474,16 @@ const props = withDefaults(
   defineProps<{
     value: ValueType | null;
     type: TypeType;
-    disabled: boolean;
     placeholder: string | null;
+    disabled: boolean;
+    autofocus: boolean;
   }>(),
-  { value: null, disabled: false, placeholder: null }
+  {
+    value: null,
+    placeholder: null,
+    disabled: false,
+    autofocus: false,
+  }
 );
 
 const emit = defineEmits<{
@@ -492,7 +498,12 @@ const editor = new Editor({
   editable: !props.disabled,
   content: props.value,
   extensions: [...extensions, placeholder],
-  onUpdate: () => {
+  onCreate: ({ editor }) => {
+    if (props.autofocus) {
+      editor.chain().focus().run();
+    }
+  },
+  onUpdate: ({ editor }) => {
     switch (props.type) {
       case "json":
         emit("input", editor.getJSON());
