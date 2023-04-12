@@ -1,3 +1,12 @@
+# [1.6.0-alpha.3](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.2...v1.6.0-alpha.3) (2023-04-12)
+
+
+### Bug Fixes
+
+* blank editor editable area ([0c2bcb1](https://github.com/gbicou/directus-extension-tiptap/commit/0c2bcb18684c20a4a73561814a9f8c255dcfd377))
+* handle autofocus ([35ac9f8](https://github.com/gbicou/directus-extension-tiptap/commit/35ac9f8f3abffa9ae32777081699f42a0d0e902a))
+* load extension only once ([51ede66](https://github.com/gbicou/directus-extension-tiptap/commit/51ede66004c1d719ab45a37286673fd070d3a129))
+
 # [1.6.0-alpha.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.1...v1.6.0-alpha.2) (2023-04-12)
 
 
