@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.4.0...v1.5.0) (2023-04-12)
+
+
+### Features
+
+* typography extension ([8c2a01c](https://github.com/gbicou/directus-extension-tiptap/commit/8c2a01c9decc8c8927e66f4b08e31676e3ca5aa7))
+
 # [1.4.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.3.0...v1.4.0) (2023-04-07)
 
 
