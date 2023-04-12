@@ -407,17 +407,18 @@
       font-weight: 700;
     }
 
-    pre, code {
-      border-radius: 0.5em;
-      background: var(--background-subdued);
-      // color: var(--foreground-inverted);
+    pre,
+    code {
+      background: var(--background-inverted);
+      color: var(--foreground-inverted);
+      border-radius: 0.3em;
     }
 
     pre {
-      padding: 0.75rem 1rem;
+      padding: 0.4em 0.6em;
     }
     code {
-      padding: 0 0.25em;
+      padding: 0 0.2em;
     }
 
     pre > code {
