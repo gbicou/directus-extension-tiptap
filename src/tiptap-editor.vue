@@ -500,7 +500,7 @@ const editor = new Editor({
   extensions: [...extensions, placeholder],
   onCreate: ({ editor }) => {
     if (props.autofocus) {
-      editor.chain().focus().run();
+      editor.commands.focus();
     }
   },
   onUpdate: ({ editor }) => {
