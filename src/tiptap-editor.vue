@@ -140,7 +140,13 @@
             :active="editor.isActive('heading')"
             @click="toggle"
           >
-            <icon-heading />
+            <icon-h1 v-if="editor.isActive('heading', { level: 1 })" />
+            <icon-h2 v-if="editor.isActive('heading', { level: 2 })" />
+            <icon-h3 v-if="editor.isActive('heading', { level: 3 })" />
+            <icon-h4 v-if="editor.isActive('heading', { level: 4 })" />
+            <icon-h5 v-if="editor.isActive('heading', { level: 5 })" />
+            <icon-h6 v-if="editor.isActive('heading', { level: 6 })" />
+            <icon-heading v-if="!editor.isActive('heading')" />
           </v-button>
         </template>
         <v-list>
@@ -457,6 +463,12 @@ import IconItalic from "./icons/italic.vue";
 import IconStrikethrough from "./icons/strikethrough.vue";
 import IconUnderline from "./icons/underline.vue";
 import IconHeading from "./icons/heading.vue";
+import IconH1 from "./icons/h1.vue";
+import IconH2 from "./icons/h2.vue";
+import IconH3 from "./icons/h3.vue";
+import IconH4 from "./icons/h4.vue";
+import IconH5 from "./icons/h5.vue";
+import IconH6 from "./icons/h6.vue";
 import IconSeparator from "./icons/separator.vue";
 import IconArrowGoForwardLine from "./icons/arrow-go-forward-line.vue";
 import IconCodeLine from "./icons/code-line.vue";
