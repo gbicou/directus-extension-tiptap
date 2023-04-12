@@ -1,3 +1,10 @@
+# [1.6.0-alpha.4](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.3...v1.6.0-alpha.4) (2023-04-12)
+
+
+### Bug Fixes
+
+* display empty doc as empty string ([39a6a79](https://github.com/gbicou/directus-extension-tiptap/commit/39a6a795e30b753c4a15f7babd73297d253a8956))
+
 # [1.6.0-alpha.3](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.2...v1.6.0-alpha.3) (2023-04-12)
 
 
