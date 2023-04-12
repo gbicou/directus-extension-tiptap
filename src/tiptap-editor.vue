@@ -104,7 +104,7 @@
 
       <v-button
         v-if="editorExtensions.includes('code')"
-        v-tooltip="t('wysiwyg_options.codeblock') + ' - ' + translateShortcut(['meta', 'e'])"
+        v-tooltip="t('code') + ' - ' + translateShortcut(['meta', 'e'])"
         small
         icon
         :disabled="props.disabled"
@@ -203,6 +203,18 @@
         @click="editor.chain().focus().toggleBlockquote().run()"
       >
         <icon-double-quotes-r />
+      </v-button>
+
+      <v-button
+        v-if="editorExtensions.includes('codeBlock')"
+        v-tooltip="t('wysiwyg_options.codeblock') + ' - ' + translateShortcut(['meta', 'alt', 'c'])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('codeBlock')"
+        @click="editor.chain().focus().toggleCodeBlock().run()"
+      >
+        <icon-code-box-line />
       </v-button>
 
       <div class="divider" />
@@ -395,6 +407,23 @@
       font-weight: 700;
     }
 
+    pre, code {
+      border-radius: 0.5em;
+      background: var(--background-subdued);
+      // color: var(--foreground-inverted);
+    }
+
+    pre {
+      padding: 0.75rem 1rem;
+    }
+    code {
+      padding: 0 0.25em;
+    }
+
+    pre > code {
+      padding: 0;
+    }
+
     .ProseMirror p.is-editor-empty:first-child::before {
       color: var(--foreground-subdued);
       content: attr(data-placeholder);
@@ -433,6 +462,7 @@ import IconFormatClear from "./icons/format-clear.vue";
 import IconMarkPenLine from "./icons/mark-pen-line.vue";
 import IconSubscript from "./icons/subscript.vue";
 import IconSuperscript from "./icons/superscript.vue";
+import IconCodeBoxLine from "./icons/code-box-line.vue";
 
 const { t } = useI18n({ messages });
 
