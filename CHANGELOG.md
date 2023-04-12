@@ -1,3 +1,10 @@
+# [1.6.0-alpha.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.1...v1.6.0-alpha.2) (2023-04-12)
+
+
+### Bug Fixes
+
+* code and codeblock inverted style ([d8528d4](https://github.com/gbicou/directus-extension-tiptap/commit/d8528d4a0e4c3861fa882e24cf8699c4111dbbff))
+
 # [1.6.0-alpha.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.5.0...v1.6.0-alpha.1) (2023-04-12)
 
 
