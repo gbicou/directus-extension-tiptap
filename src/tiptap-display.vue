@@ -16,7 +16,7 @@ const props = withDefaults(
 );
 
 function getText(json: JSONContent): string {
-  return json.text ?? json.content?.map(getText).join("").trim() + "\n";
+  return json.text ?? (json.content?.map(getText).join("").trim() ?? "") + "\n";
 }
 
 const text = computed(() => {
