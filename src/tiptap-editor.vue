@@ -481,16 +481,14 @@ const emit = defineEmits<{
   (e: "input", value: ValueType): void;
 }>();
 
-extensions.push(
-  Placeholder.configure({
-    placeholder: props.placeholder,
-  })
-);
+const placeholder = Placeholder.configure({
+  placeholder: props.placeholder,
+});
 
 const editor = new Editor({
   editable: !props.disabled,
   content: props.value,
-  extensions,
+  extensions: [...extensions, placeholder],
   onUpdate: () => {
     switch (props.type) {
       case "json":
