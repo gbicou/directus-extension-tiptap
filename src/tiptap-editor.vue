@@ -288,8 +288,13 @@
 
     <div class="tiptap-editor__info">
       <div v-if="editorExtensions.includes('characterCount')">
-        {{ t("tiptap.count_chars", editor.storage.characterCount.characters()) }},
-        {{ t("tiptap.count_words", editor.storage.characterCount.words()) }}
+        <template v-if="!editor.storage.characterCount.characters() && !editor.storage.characterCount.words()">
+          ∅
+        </template>
+        <template v-else>
+          {{ t("tiptap.count_chars", editor.storage.characterCount.characters()) }},
+          {{ t("tiptap.count_words", editor.storage.characterCount.words()) }}
+        </template>
       </div>
     </div>
   </div>
