@@ -1,3 +1,10 @@
+# [1.6.0-alpha.6](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.5...v1.6.0-alpha.6) (2023-04-13)
+
+
+### Features
+
+* link extension fix [#15](https://github.com/gbicou/directus-extension-tiptap/issues/15) ([524c6ed](https://github.com/gbicou/directus-extension-tiptap/commit/524c6eda1c6125e0ebd018855c1003436d43325a))
+
 # [1.6.0-alpha.5](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.4...v1.6.0-alpha.5) (2023-04-13)
 
 
