@@ -582,11 +582,7 @@ const editor = new Editor({
   editable: !props.disabled,
   content: props.value,
   extensions: [...extensions, placeholder],
-  onCreate: ({ editor }) => {
-    if (props.autofocus) {
-      editor.commands.focus();
-    }
-  },
+  autofocus: props.autofocus,
   onUpdate: ({ editor }) => {
     switch (props.type) {
       case "json":
