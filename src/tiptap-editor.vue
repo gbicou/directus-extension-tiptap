@@ -273,6 +273,29 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('link')"
+        v-tooltip="t('wysiwyg_options.link') + ' - ' + translateShortcut(['meta', 'k'])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('link')"
+        @click="linkOpen"
+      >
+        <icon-link />
+      </v-button>
+
+      <v-button
+        v-if="editorExtensions.includes('link')"
+        v-tooltip="t('wysiwyg_options.unlink')"
+        small
+        icon
+        :disabled="props.disabled || !editor.isActive('link')"
+        @click="editor.chain().focus().extendMarkRange('link').unsetLink().run()"
+      >
+        <icon-unlink />
+      </v-button>
+
+      <v-button
         v-if="editorExtensions.includes('hardBreak')"
         v-tooltip="t('tiptap.br') + ' - ' + translateShortcut(['shift', 'enter'])"
         small
@@ -321,6 +344,28 @@
     </div>
 
     <editor-content class="tiptap-editor__content" :editor="editor" />
+
+    <v-dialog v-model="linkDrawerOpen">
+      <v-card class="card">
+        <v-card-title class="card-title">{{ t("wysiwyg_options.link") }}</v-card-title>
+        <v-card-text>
+          <div class="grid">
+            <div class="field">
+              <div class="type-label">{{ t("url") }}</div>
+              <v-input v-model="linkHref" :placeholder="t('url_placeholder')"></v-input>
+            </div>
+            <div class="field">
+              <div class="type-label">{{ t("open_link_in") }}</div>
+              <v-input v-model="linkTarget"></v-input>
+            </div>
+          </div>
+        </v-card-text>
+        <v-card-actions>
+          <v-button secondary @click="linkClose">{{ t("cancel") }}</v-button>
+          <v-button :disabled="linkHref === null" @click="linkSave">{{ t("save") }}</v-button>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
 
     <div class="tiptap-editor__info">
       <div v-if="editorExtensions.includes('characterCount')">
@@ -452,6 +497,11 @@
       line-height: revert;
     }
 
+    a {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+
     b,
     strong {
       font-weight: 700;
@@ -489,7 +539,7 @@
 <script setup lang="ts">
 import { Editor, EditorContent, BubbleMenu } from "@tiptap/vue-3";
 import { Placeholder } from "@tiptap/extension-placeholder";
-import { onBeforeUnmount, watch } from "vue";
+import { onBeforeUnmount, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
 import type { TypeType, ValueType } from "./types";
@@ -524,6 +574,8 @@ import IconAlignLeft from "./icons/align-left.vue";
 import IconAlignCenter from "./icons/align-center.vue";
 import IconAlignRight from "./icons/align-right.vue";
 import IconAlignJustify from "./icons/align-justify.vue";
+import IconLink from "./icons/link.vue";
+import IconUnlink from "./icons/unlink.vue";
 
 const { t } = useI18n({ messages });
 
@@ -596,6 +648,33 @@ const editor = new Editor({
 });
 
 const editorExtensions = editor.extensionManager.extensions.map((ext) => ext.name);
+
+const linkDrawerOpen = ref(false);
+const linkHref = ref("");
+const linkTarget = ref("");
+
+function linkOpen() {
+  const attrs = editor.getAttributes("link");
+  linkHref.value = attrs.href;
+  linkTarget.value = attrs.target;
+  linkDrawerOpen.value = true;
+}
+
+function linkClose() {
+  linkDrawerOpen.value = false;
+  linkHref.value = "";
+  linkTarget.value = "";
+}
+
+function linkSave() {
+  editor
+    .chain()
+    .focus()
+    .extendMarkRange("link")
+    .setLink({ href: linkHref.value, target: linkTarget.value || null })
+    .run();
+  linkClose();
+}
 
 watch(
   () => props.value,

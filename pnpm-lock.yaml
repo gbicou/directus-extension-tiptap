@@ -22,6 +22,9 @@ devDependencies:
   '@tiptap/extension-highlight':
     specifier: ^2.0.2
     version: 2.0.2(@tiptap/core@2.0.2)
+  '@tiptap/extension-link':
+    specifier: ^2.0.2
+    version: 2.0.2(@tiptap/core@2.0.2)(@tiptap/pm@2.0.2)
   '@tiptap/extension-placeholder':
     specifier: ^2.0.2
     version: 2.0.2(@tiptap/core@2.0.2)(@tiptap/pm@2.0.2)
@@ -1171,6 +1174,17 @@ packages:
       '@tiptap/core': ^2.0.0
     dependencies:
       '@tiptap/core': 2.0.2(@tiptap/pm@2.0.2)
+    dev: true
+
+  /@tiptap/extension-link@2.0.2(@tiptap/core@2.0.2)(@tiptap/pm@2.0.2):
+    resolution: {integrity: sha512-PzBM09Mmsxj0V5fAa0kxdIZdkNjowQWj4O4nrjEWSbSmF90v0Fyj4R/VjSg4dBf3ExfFNYmsjC3wPiRulnCu5g==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+      '@tiptap/pm': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.0.2(@tiptap/pm@2.0.2)
+      '@tiptap/pm': 2.0.2(@tiptap/core@2.0.2)
+      linkifyjs: 4.1.1
     dev: true
 
   /@tiptap/extension-list-item@2.0.2(@tiptap/core@2.0.2):
@@ -3723,6 +3737,10 @@ packages:
     resolution: {integrity: sha512-C7bfi1UZmoj8+PQx22XyeXCuBlokoyWQL5pWSP+EI6nzRylyThouddufc2c1NDIcP9k5agmN9fLpA7VNJfIiqw==}
     dependencies:
       uc.micro: 1.0.6
+    dev: true
+
+  /linkifyjs@4.1.1:
+    resolution: {integrity: sha512-zFN/CTVmbcVef+WaDXT63dNzzkfRBKT1j464NJQkV7iSgJU0sLBus9W0HBwnXK13/hf168pbrx/V/bjEHOXNHA==}
     dev: true
 
   /load-json-file@4.0.0:

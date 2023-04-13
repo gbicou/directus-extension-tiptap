@@ -7,6 +7,7 @@ import { Superscript } from "@tiptap/extension-superscript";
 import { CharacterCount } from "@tiptap/extension-character-count";
 import { Typography } from "@tiptap/extension-typography";
 import { TextAlign } from "@tiptap/extension-text-align";
+import { Link } from "@tiptap/extension-link";
 
 export const extensions: Extensions = [
   StarterKit,
@@ -18,5 +19,11 @@ export const extensions: Extensions = [
   Typography,
   TextAlign.configure({
     types: ["heading", "paragraph"],
+  }),
+  Link.configure({
+    openOnClick: false,
+    HTMLAttributes: {
+      target: null,
+    },
   }),
 ];
