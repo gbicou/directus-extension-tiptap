@@ -1,3 +1,10 @@
+# [1.6.0-alpha.5](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.4...v1.6.0-alpha.5) (2023-04-13)
+
+
+### Features
+
+* text align extension [#14](https://github.com/gbicou/directus-extension-tiptap/issues/14) ([3bf7dc5](https://github.com/gbicou/directus-extension-tiptap/commit/3bf7dc51830f4621732d868521daee39fb24bd7f))
+
 # [1.6.0-alpha.4](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.3...v1.6.0-alpha.4) (2023-04-12)
 
 
