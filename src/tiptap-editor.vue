@@ -225,6 +225,42 @@
 
       <div class="divider" />
 
+      <v-menu v-if="editorExtensions.includes('textAlign')" show-arrow placement="bottom-start">
+        <template #activator="{ toggle }">
+          <v-button v-tooltip="t('tiptap.text_align')" :disabled="props.disabled" small icon active @click="toggle">
+            <template v-for="opt in alignOptions" :key="opt.align">
+              <component v-if="editor.isActive({ textAlign: opt.align })" :is="opt.icon" />
+            </template>
+          </v-button>
+        </template>
+        <v-list>
+          <v-list-item
+            v-for="opt in alignOptions"
+            :key="opt.align"
+            clickable
+            :active="editor.isActive({ textAlign: opt.align })"
+            @click="
+              editor.isActive({ textAlign: opt.align })
+                ? editor.chain().focus().unsetTextAlign().run()
+                : editor.chain().focus().setTextAlign(opt.align).run()
+            "
+          >
+            <v-list-item-icon>
+              <component :is="opt.icon" />
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-text-overflow :text="opt.text" />
+            </v-list-item-content>
+            <v-list-item-hint>{{ opt.shortcut }}</v-list-item-hint>
+          </v-list-item>
+          <v-list-item clickable @click="editor.chain().focus().unsetTextAlign().run()">
+            <v-list-item-content>
+              <v-text-overflow :text="t('wysiwyg_options.alignnone')" />
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+
       <v-button
         v-if="editorExtensions.includes('horizontalRule')"
         v-tooltip="t('wysiwyg_options.hr')"
@@ -484,6 +520,10 @@ import IconMarkPenLine from "./icons/mark-pen-line.vue";
 import IconSubscript from "./icons/subscript.vue";
 import IconSuperscript from "./icons/superscript.vue";
 import IconCodeBoxLine from "./icons/code-box-line.vue";
+import IconAlignLeft from "./icons/align-left.vue";
+import IconAlignCenter from "./icons/align-center.vue";
+import IconAlignRight from "./icons/align-right.vue";
+import IconAlignJustify from "./icons/align-justify.vue";
 
 const { t } = useI18n({ messages });
 
@@ -506,6 +546,33 @@ const props = withDefaults(
 const emit = defineEmits<{
   (e: "input", value: ValueType): void;
 }>();
+
+const alignOptions = [
+  {
+    align: "left",
+    icon: IconAlignLeft,
+    text: t("wysiwyg_options.alignleft"),
+    shortcut: translateShortcut(["meta", "shift", "l"]),
+  },
+  {
+    align: "center",
+    icon: IconAlignCenter,
+    text: t("wysiwyg_options.aligncenter"),
+    shortcut: translateShortcut(["meta", "shift", "e"]),
+  },
+  {
+    align: "right",
+    icon: IconAlignRight,
+    text: t("wysiwyg_options.alignright"),
+    shortcut: translateShortcut(["meta", "shift", "r"]),
+  },
+  {
+    align: "justify",
+    icon: IconAlignJustify,
+    text: t("wysiwyg_options.alignjustify"),
+    shortcut: translateShortcut(["meta", "shift", "j"]),
+  },
+];
 
 const placeholder = Placeholder.configure({
   placeholder: props.placeholder,

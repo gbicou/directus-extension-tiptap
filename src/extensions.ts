@@ -6,6 +6,7 @@ import { Subscript } from "@tiptap/extension-subscript";
 import { Superscript } from "@tiptap/extension-superscript";
 import { CharacterCount } from "@tiptap/extension-character-count";
 import { Typography } from "@tiptap/extension-typography";
+import { TextAlign } from "@tiptap/extension-text-align";
 
 export const extensions: Extensions = [
   StarterKit,
@@ -15,4 +16,7 @@ export const extensions: Extensions = [
   Superscript,
   CharacterCount,
   Typography,
+  TextAlign.configure({
+    types: ["heading", "paragraph"],
+  }),
 ];
