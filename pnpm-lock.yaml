@@ -2,7 +2,7 @@ lockfileVersion: '6.0'
 
 devDependencies:
   '@directus/extensions-sdk':
-    specifier: ^9.24.0
+    specifier: ~9.24.0
     version: 9.24.0
   '@rushstack/eslint-patch':
     specifier: ^1.2.0
@@ -4558,8 +4558,8 @@ packages:
       split2: 4.2.0
     dev: true
 
-  /pino-std-serializers@6.1.0:
-    resolution: {integrity: sha512-KO0m2f1HkrPe9S0ldjx7za9BJjeHqBku5Ch8JyxETxT8dEFGz1PwgrHaOQupVYitpzbFSYm7nnljxD8dik2c+g==}
+  /pino-std-serializers@6.2.0:
+    resolution: {integrity: sha512-IWgSzUL8X1w4BIWTwErRgtV8PyOGOOi60uqv0oKuS/fOA8Nco/OeI6lBuc4dyP8MMfdFwyHqTMcBIA7nDiqEqA==}
     dev: true
 
   /pino@8.11.0:
@@ -4570,7 +4570,7 @@ packages:
       fast-redact: 3.1.2
       on-exit-leak-free: 2.1.0
       pino-abstract-transport: 1.0.0
-      pino-std-serializers: 6.1.0
+      pino-std-serializers: 6.2.0
       process-warning: 2.2.0
       quick-format-unescaped: 4.0.4
       real-require: 0.2.0

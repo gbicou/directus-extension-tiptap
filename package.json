@@ -49,7 +49,7 @@
     "release": "semantic-release"
   },
   "devDependencies": {
-    "@directus/extensions-sdk": "^9.24.0",
+    "@directus/extensions-sdk": "~9.24.0",
     "@rushstack/eslint-patch": "^1.2.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
@@ -81,7 +81,7 @@
     "vue-i18n": "^9.2.2"
   },
   "peerDependencies": {
-    "@directus/extensions-sdk": "^9.24.0",
+    "@directus/extensions-sdk": "~9.24.0",
     "vue": "^3.2.47",
     "vue-i18n": "^9.2.2"
   },
