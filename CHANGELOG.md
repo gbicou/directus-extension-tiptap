@@ -1,3 +1,10 @@
+# [1.6.0-alpha.7](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.6...v1.6.0-alpha.7) (2023-04-19)
+
+
+### Features
+
+* options for character count extension ([eed17c3](https://github.com/gbicou/directus-extension-tiptap/commit/eed17c3681fc8c75bf41c1552f0d718c705280ec))
+
 # [1.6.0-alpha.6](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.5...v1.6.0-alpha.6) (2023-04-13)
 
 
