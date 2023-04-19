@@ -4,6 +4,9 @@ devDependencies:
   '@directus/extensions-sdk':
     specifier: ~9.24.0
     version: 9.24.0
+  '@directus/shared':
+    specifier: ~9.24.0
+    version: 9.24.0
   '@rushstack/eslint-patch':
     specifier: ^1.2.0
     version: 1.2.0

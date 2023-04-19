@@ -367,14 +367,15 @@
       </v-card>
     </v-dialog>
 
-    <div class="tiptap-editor__info">
+    <div class="tiptap-editor__info" v-if="editorExtensions.includes('characterCount')">
       <div v-if="editorExtensions.includes('characterCount')">
         <template v-if="!editor.storage.characterCount.characters() && !editor.storage.characterCount.words()">
           ∅
         </template>
         <template v-else>
-          {{ t("tiptap.count_chars", editor.storage.characterCount.characters()) }},
-          {{ t("tiptap.count_words", editor.storage.characterCount.words()) }}
+          {{ t("tiptap.count_words", editor.storage.characterCount.words()) }},
+          {{ t("tiptap.count_chars", editor.storage.characterCount.characters()) }}
+          <template v-if="props.characterCountLimit"> / {{ props.characterCountLimit }}</template>
         </template>
       </div>
     </div>
@@ -538,12 +539,11 @@
 
 <script setup lang="ts">
 import { Editor, EditorContent, BubbleMenu } from "@tiptap/vue-3";
-import { Placeholder } from "@tiptap/extension-placeholder";
 import { onBeforeUnmount, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
 import type { TypeType, ValueType } from "./types";
-import { extensions } from "./extensions";
+import { loadExtensions } from "./extensions";
 import messages from "./messages.json";
 import IconArrowGoBackLine from "./icons/arrow-go-back-line.vue";
 import IconParagraph from "./icons/paragraph.vue";
@@ -579,21 +579,26 @@ import IconUnlink from "./icons/unlink.vue";
 
 const { t } = useI18n({ messages });
 
-const props = withDefaults(
-  defineProps<{
-    value: ValueType | null;
-    type: TypeType;
-    placeholder: string | null;
-    disabled: boolean;
-    autofocus: boolean;
-  }>(),
-  {
-    value: null,
-    placeholder: null,
-    disabled: false,
-    autofocus: false,
-  }
-);
+interface Props {
+  value: ValueType | null;
+  type: TypeType;
+  placeholder: string | null;
+  disabled: boolean;
+  autofocus: boolean;
+  characterCountEnable: boolean;
+  characterCountLimit: number | null;
+  characterCountMode: "textSize" | "nodeSize";
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  value: null,
+  placeholder: null,
+  disabled: false,
+  autofocus: false,
+  characterCountEnable: false,
+  characterCountLimit: null,
+  characterCountMode: "textSize",
+});
 
 const emit = defineEmits<{
   (e: "input", value: ValueType): void;
@@ -626,14 +631,12 @@ const alignOptions = [
   },
 ];
 
-const placeholder = Placeholder.configure({
-  placeholder: props.placeholder,
-});
+const extensions = loadExtensions(props);
 
 const editor = new Editor({
   editable: !props.disabled,
   content: props.value,
-  extensions: [...extensions, placeholder],
+  extensions,
   autofocus: props.autofocus,
   onUpdate: ({ editor }) => {
     switch (props.type) {
