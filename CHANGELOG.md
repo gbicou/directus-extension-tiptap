@@ -1,3 +1,10 @@
+# [1.6.0-alpha.8](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.7...v1.6.0-alpha.8) (2023-04-19)
+
+
+### Features
+
+* text align options ([efbc32d](https://github.com/gbicou/directus-extension-tiptap/commit/efbc32d998dfae9ca8000fade5715bfc069826c5))
+
 # [1.6.0-alpha.7](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.6...v1.6.0-alpha.7) (2023-04-19)
 
 
