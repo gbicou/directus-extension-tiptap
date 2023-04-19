@@ -1,6 +1,7 @@
 import { defineInterface } from "@directus/extensions-sdk";
 import type { Field, DeepPartial } from "@directus/shared/types";
 import TiptapEditor from "./tiptap-editor.vue";
+import defaults from "./defaults";
 
 export default defineInterface({
   id: "tiptap",
@@ -40,8 +41,12 @@ export default defineInterface({
         options: {
           choices: [
             {
+              value: "textAlign",
+              text: "TextAlign [@tiptap/extension-text-align]",
+            },
+            {
               value: "characterCount",
-              text: "Character count [@tiptap/extension-character-count]",
+              text: "CharacterCount [@tiptap/extension-character-count]",
             },
           ],
         },
@@ -49,6 +54,36 @@ export default defineInterface({
     });
 
     if (field.meta?.options) {
+      if (field.meta.options.extensions?.includes("textAlign")) {
+        opts.push({
+          field: "textAlignTypes",
+          name: "Text align types",
+          type: "json",
+          schema: {
+            default_value: defaults.textAlignTypes,
+          },
+          meta: {
+            width: "full",
+            interface: "select-multiple-dropdown",
+            note: "Nodes where the text align attribute should be applied to",
+            options: {
+              choices: [
+                {
+                  value: "heading",
+                  text: "heading",
+                },
+                {
+                  value: "paragraph",
+                  text: "paragraph",
+                },
+              ],
+              allowOther: true,
+              previewThreshold: 5,
+            },
+          },
+        });
+      }
+
       if (field.meta.options.extensions?.includes("characterCount")) {
         opts.push(
           {
@@ -61,7 +96,7 @@ export default defineInterface({
               note: "The maximum number of characters that should be allowed",
             },
             schema: {
-              default_value: null,
+              default_value: defaults.characterCountLimit,
             },
           },
           {
@@ -80,7 +115,7 @@ export default defineInterface({
               },
             },
             schema: {
-              default_value: "textSize",
+              default_value: defaults.characterCountMode,
             },
           }
         );

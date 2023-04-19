@@ -576,6 +576,9 @@ import IconAlignRight from "./icons/align-right.vue";
 import IconAlignJustify from "./icons/align-justify.vue";
 import IconLink from "./icons/link.vue";
 import IconUnlink from "./icons/unlink.vue";
+import type { CharacterCountOptions } from "@tiptap/extension-character-count";
+import type { TextAlignOptions } from "@tiptap/extension-text-align";
+import defaults from "./defaults";
 
 const { t } = useI18n({ messages });
 
@@ -586,8 +589,10 @@ interface Props {
   disabled: boolean;
   autofocus: boolean;
   extensions: string[] | null;
-  characterCountLimit: number | null;
-  characterCountMode: "textSize" | "nodeSize";
+  // extensions options
+  textAlignTypes: TextAlignOptions["types"];
+  characterCountLimit: CharacterCountOptions["limit"];
+  characterCountMode: CharacterCountOptions["mode"];
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -596,8 +601,9 @@ const props = withDefaults(defineProps<Props>(), {
   disabled: false,
   autofocus: false,
   extensions: null,
-  characterCountLimit: null,
-  characterCountMode: "textSize",
+  textAlignTypes: defaults.textAlignTypes,
+  characterCountLimit: defaults.characterCountLimit,
+  characterCountMode: defaults.characterCountMode,
 });
 
 const emit = defineEmits<{
