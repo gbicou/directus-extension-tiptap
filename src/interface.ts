@@ -28,24 +28,32 @@ export default defineInterface({
     });
 
     opts.push({
-      field: "characterCountEnable",
-      name: "Enable character count",
-      type: "boolean",
+      field: "extensions",
+      name: "TipTap Extensions",
+      type: "json",
+      schema: {
+        default_value: null,
+      },
       meta: {
         width: "full",
-        interface: "boolean",
-      },
-      schema: {
-        default_value: false,
+        interface: "select-multiple-checkbox",
+        options: {
+          choices: [
+            {
+              value: "characterCount",
+              text: "Character count [@tiptap/extension-character-count]",
+            },
+          ],
+        },
       },
     });
 
     if (field.meta?.options) {
-      if (field.meta?.options.characterCountEnable) {
+      if (field.meta.options.extensions?.includes("characterCount")) {
         opts.push(
           {
             field: "characterCountLimit",
-            name: "Limit",
+            name: "Character count limit",
             type: "integer",
             meta: {
               interface: "input",
@@ -58,7 +66,7 @@ export default defineInterface({
           },
           {
             field: "characterCountMode",
-            name: "Mode",
+            name: "Character count mode",
             type: "string",
             meta: {
               interface: "select-dropdown",

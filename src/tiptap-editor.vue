@@ -585,7 +585,7 @@ interface Props {
   placeholder: string | null;
   disabled: boolean;
   autofocus: boolean;
-  characterCountEnable: boolean;
+  extensions: string[] | null;
   characterCountLimit: number | null;
   characterCountMode: "textSize" | "nodeSize";
 }
@@ -595,7 +595,7 @@ const props = withDefaults(defineProps<Props>(), {
   placeholder: null,
   disabled: false,
   autofocus: false,
-  characterCountEnable: false,
+  extensions: null,
   characterCountLimit: null,
   characterCountMode: "textSize",
 });

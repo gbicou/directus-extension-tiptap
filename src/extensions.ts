@@ -12,7 +12,7 @@ import { Placeholder } from "@tiptap/extension-placeholder";
 
 export interface ExtensionsOptions {
   placeholder: string | null;
-  characterCountEnable: boolean;
+  extensions: string[] | null;
   characterCountLimit: number | null;
   characterCountMode: "textSize" | "nodeSize";
 }
@@ -40,7 +40,7 @@ export function loadExtensions(props: ExtensionsOptions): Extensions {
     extensions.push(Placeholder.configure({ placeholder: props.placeholder }));
   }
 
-  if (props.characterCountEnable) {
+  if (props.extensions?.includes("characterCount")) {
     extensions.push(
       CharacterCount.configure({
         limit: props.characterCountLimit,
