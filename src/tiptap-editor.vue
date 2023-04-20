@@ -578,18 +578,21 @@ import IconLink from "./icons/link.vue";
 import IconUnlink from "./icons/unlink.vue";
 import type { CharacterCountOptions } from "@tiptap/extension-character-count";
 import type { TextAlignOptions } from "@tiptap/extension-text-align";
-import defaults from "./defaults";
+import textAlign from "./extensions/text-align";
+import characterCount from "./extensions/character-count";
+import type { PlaceholderOptions } from "@tiptap/extension-placeholder";
+import placeholder from "./extensions/placeholder";
 
 const { t } = useI18n({ messages });
 
 interface Props {
   value: ValueType | null;
   type: TypeType;
-  placeholder: string | null;
   disabled: boolean;
   autofocus: boolean;
   extensions: string[] | null;
   // extensions options
+  placeholder: PlaceholderOptions["placeholder"];
   textAlignTypes: TextAlignOptions["types"];
   characterCountLimit: CharacterCountOptions["limit"];
   characterCountMode: CharacterCountOptions["mode"];
@@ -597,13 +600,13 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   value: null,
-  placeholder: null,
   disabled: false,
   autofocus: false,
   extensions: null,
-  textAlignTypes: defaults.textAlignTypes,
-  characterCountLimit: defaults.characterCountLimit,
-  characterCountMode: defaults.characterCountMode,
+  placeholder: () => placeholder.defaults.placeholder,
+  textAlignTypes: () => textAlign.defaults.types,
+  characterCountLimit: () => characterCount.defaults.limit,
+  characterCountMode: () => characterCount.defaults.mode,
 });
 
 const emit = defineEmits<{

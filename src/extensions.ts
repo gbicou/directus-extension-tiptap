@@ -1,32 +1,51 @@
-import type { Extensions } from "@tiptap/core";
+import type { AnyExtension, Extensions } from "@tiptap/core";
 import StarterKit from "@tiptap/starter-kit";
-import { Underline } from "@tiptap/extension-underline";
-import { Highlight } from "@tiptap/extension-highlight";
-import { Subscript } from "@tiptap/extension-subscript";
-import { Superscript } from "@tiptap/extension-superscript";
-import { CharacterCount, type CharacterCountOptions } from "@tiptap/extension-character-count";
-import { Typography } from "@tiptap/extension-typography";
-import { TextAlign, type TextAlignOptions } from "@tiptap/extension-text-align";
+import type { CharacterCountOptions } from "@tiptap/extension-character-count";
+import type { TextAlignOptions } from "@tiptap/extension-text-align";
 import { Link } from "@tiptap/extension-link";
-import { Placeholder } from "@tiptap/extension-placeholder";
-import defaults from "./defaults";
+import type { PlaceholderOptions } from "@tiptap/extension-placeholder";
+import type { DeepPartial, Field } from "@directus/shared/types";
+import underline from "./extensions/underline";
+import textAlign from "./extensions/text-align";
+import characterCount from "./extensions/character-count";
+import subscript from "./extensions/subscript";
+import superscript from "./extensions/superscript";
+import highlight from "./extensions/highlight";
+import typography from "./extensions/typography";
+import placeholder from "./extensions/placeholder";
 
 export interface ExtensionsOptions {
-  placeholder: string | null;
   extensions: string[] | null;
+  placeholder: PlaceholderOptions["placeholder"];
   characterCountLimit: CharacterCountOptions["limit"];
   characterCountMode: CharacterCountOptions["mode"];
   textAlignTypes: TextAlignOptions["types"];
 }
 
+export interface IExtension<E extends AnyExtension> {
+  name: string;
+  title: string;
+  package: string;
+  options: DeepPartial<Field>[];
+  // makeOptions(options: ExtensionsOptions): E["options"];
+  load(opts: ExtensionsOptions): E;
+  defaults: Partial<E["options"]>;
+}
+
+export const localExtensions: IExtension<AnyExtension>[] = [
+  placeholder,
+  underline,
+  superscript,
+  subscript,
+  highlight,
+  textAlign,
+  typography,
+  characterCount,
+];
+
 export function loadExtensions(props: ExtensionsOptions): Extensions {
   const extensions: Extensions = [
     StarterKit,
-    Underline,
-    Highlight,
-    Subscript,
-    Superscript,
-    Typography,
     Link.configure({
       openOnClick: false,
       HTMLAttributes: {
@@ -35,25 +54,10 @@ export function loadExtensions(props: ExtensionsOptions): Extensions {
     }),
   ];
 
-  if (props.placeholder) {
-    extensions.push(Placeholder.configure({ placeholder: props.placeholder }));
-  }
-
-  if (props.extensions?.includes("textAlign")) {
-    extensions.push(
-      TextAlign.configure({
-        types: props.textAlignTypes ?? defaults.textAlignTypes,
-      })
-    );
-  }
-
-  if (props.extensions?.includes("characterCount")) {
-    extensions.push(
-      CharacterCount.configure({
-        limit: props.characterCountLimit ?? defaults.characterCountLimit,
-        mode: props.characterCountMode ?? defaults.characterCountMode,
-      })
-    );
+  for (const ext of localExtensions) {
+    if (props.extensions?.includes(ext.name)) {
+      extensions.push(ext.load(props));
+    }
   }
 
   return extensions;
