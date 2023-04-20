@@ -17,7 +17,10 @@
       "table_add_row_after": "Add row after",
       "table_delete_row": "Delete row",
       "table_merge_cells": "Merge cells",
-      "table_split_cell": "Split cell"
+      "table_split_cell": "Split cell",
+      "table_toggle_header_row": "Toggle header row",
+      "table_toggle_header_column": "Toggle header column",
+      "table_toggle_header_cell": "Toggle header cell"
     }
   },
   "fr": {
@@ -38,7 +41,10 @@
       "table_add_row_after": "Ajouter une ligne après",
       "table_delete_row": "Supprimer la ligne",
       "table_merge_cells": "Fusionner les cellules",
-      "table_split_cell": "Diviser la cellule"
+      "table_split_cell": "Diviser la cellule",
+      "table_toggle_header_row": "Basculer la ligne d'en-tête",
+      "table_toggle_header_column": "Basculer la colonne d'en-tête",
+      "table_toggle_header_cell": "Basculer la cellule d'en-tête"
     }
   }
 }

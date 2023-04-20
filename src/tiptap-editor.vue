@@ -329,6 +329,36 @@
           <v-list-item
             clickable
             :disabled="!editor.isActive('table')"
+            @click="editor.chain().focus().toggleHeaderRow().run()"
+          >
+            <v-list-item-icon>
+              <icon-layout-top />
+            </v-list-item-icon>
+            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_toggle_header_row`)" /></v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            clickable
+            :disabled="!editor.isActive('table')"
+            @click="editor.chain().focus().toggleHeaderColumn().run()"
+          >
+            <v-list-item-icon>
+              <icon-layout-left />
+            </v-list-item-icon>
+            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_toggle_header_column`)" /></v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            clickable
+            :disabled="!editor.isActive('table')"
+            @click="editor.chain().focus().toggleHeaderCell().run()"
+          >
+            <v-list-item-icon>
+              <icon-layout-grid />
+            </v-list-item-icon>
+            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_toggle_header_cell`)" /></v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            clickable
+            :disabled="!editor.isActive('table')"
             @click="editor.chain().focus().deleteTable().run()"
           >
             <v-list-item-icon>
@@ -835,6 +865,9 @@ import IconDeleteRow from "./icons/delete-row.vue";
 import IconDeleteBin from "./icons/delete-bin.vue";
 import IconMergeCells from "./icons/merge-cells.vue";
 import IconSplitCell from "./icons/split-cell.vue";
+import IconLayoutTop from "./icons/layout-top.vue";
+import IconLayoutLeft from "./icons/layout-left.vue";
+import IconLayoutGrid from "./icons/layout-grid.vue";
 
 const { t } = useI18n({ messages });
 
