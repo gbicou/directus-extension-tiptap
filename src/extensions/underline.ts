@@ -5,6 +5,7 @@ const extension: IExtension<typeof Underline> = {
   name: "underline",
   title: "Underline",
   package: "@tiptap/extension-underline",
+  group: "mark",
   defaults: {},
   options: [],
   load() {

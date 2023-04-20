@@ -10,6 +10,7 @@ const extension: IExtension<typeof CharacterCount> = {
   name: "characterCount",
   title: "CharacterCount",
   package: "@tiptap/extension-character-count",
+  group: "editor",
   defaults,
   options: [
     {

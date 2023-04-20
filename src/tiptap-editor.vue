@@ -539,7 +539,7 @@
 
 <script setup lang="ts">
 import { Editor, EditorContent, BubbleMenu } from "@tiptap/vue-3";
-import { onBeforeUnmount, ref, watch } from "vue";
+import { onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
 import type { TypeType, ValueType } from "./types";
@@ -582,6 +582,7 @@ import textAlign from "./extensions/text-align";
 import characterCount from "./extensions/character-count";
 import type { PlaceholderOptions } from "@tiptap/extension-placeholder";
 import placeholder from "./extensions/placeholder";
+import { useLink } from "./composables/link";
 
 const { t } = useI18n({ messages });
 
@@ -661,32 +662,7 @@ const editor = new Editor({
 
 const editorExtensions = editor.extensionManager.extensions.map((ext) => ext.name);
 
-const linkDrawerOpen = ref(false);
-const linkHref = ref("");
-const linkTarget = ref("");
-
-function linkOpen() {
-  const attrs = editor.getAttributes("link");
-  linkHref.value = attrs.href;
-  linkTarget.value = attrs.target;
-  linkDrawerOpen.value = true;
-}
-
-function linkClose() {
-  linkDrawerOpen.value = false;
-  linkHref.value = "";
-  linkTarget.value = "";
-}
-
-function linkSave() {
-  editor
-    .chain()
-    .focus()
-    .extendMarkRange("link")
-    .setLink({ href: linkHref.value, target: linkTarget.value || null })
-    .run();
-  linkClose();
-}
+const { linkDrawerOpen, linkHref, linkTarget, linkOpen, linkClose, linkSave } = useLink(editor);
 
 watch(
   () => props.value,

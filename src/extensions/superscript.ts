@@ -5,6 +5,7 @@ const extension: IExtension<typeof Superscript> = {
   name: "superscript",
   title: "Superscript",
   package: "@tiptap/extension-superscript",
+  group: "mark",
   defaults: {},
   options: [],
   load() {

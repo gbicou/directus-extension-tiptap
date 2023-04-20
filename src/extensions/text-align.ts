@@ -9,6 +9,7 @@ const extension: IExtension<typeof TextAlign> = {
   name: "textAlign",
   title: "TextAlign",
   package: "@tiptap/extension-text-align",
+  group: "node",
   defaults,
   options: [
     {

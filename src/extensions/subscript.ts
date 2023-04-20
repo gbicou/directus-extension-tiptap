@@ -5,6 +5,7 @@ const extension: IExtension<typeof Subscript> = {
   name: "subscript",
   title: "Subscript",
   package: "@tiptap/extension-subscript",
+  group: "mark",
   defaults: {},
   options: [],
   load() {

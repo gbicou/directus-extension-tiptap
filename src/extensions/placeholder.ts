@@ -5,6 +5,7 @@ const extension: IExtension<typeof Placeholder> = {
   name: "placeholder",
   title: "Placeholder",
   package: "@tiptap/extension-placeholder",
+  group: "editor",
   defaults: {
     placeholder: "",
   },

@@ -5,6 +5,7 @@ const extension: IExtension<typeof Highlight> = {
   name: "highlight",
   title: "Highlight",
   package: "@tiptap/extension-highlight",
+  group: "mark",
   defaults: {},
   options: [],
   load() {
