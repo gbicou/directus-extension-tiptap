@@ -490,6 +490,19 @@
   </div>
 </template>
 
+<style scoped lang="scss">
+.v-menu-content {
+  svg {
+    fill: var(--v-input-color);
+  }
+
+  [disabled] svg,
+  .disabled svg {
+    fill: var(--foreground-subdued);
+  }
+}
+</style>
+
 <style lang="scss">
 .tiptap-editor {
   color: var(--v-input-color);
@@ -549,7 +562,8 @@
       fill: var(--v-input-color);
     }
 
-    [disabled] svg {
+    [disabled] svg,
+    .disabled svg {
       fill: var(--foreground-subdued);
     }
 
