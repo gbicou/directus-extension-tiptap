@@ -225,17 +225,71 @@
         <icon-quote-text />
       </v-button>
 
-      <v-button
-        v-if="editorExtensions.includes('table')"
-        v-tooltip="t('wysiwyg_options.table')"
-        small
-        icon
-        :disabled="props.disabled"
-        :active="editor.isActive('table')"
-        @click="editor.chain().focus().insertTable().run()"
-      >
-        <icon-table />
-      </v-button>
+      <v-menu v-if="editorExtensions.includes('table')" show-arrow placement="bottom-start">
+        <template #activator="{ toggle }">
+          <v-button
+            v-tooltip="t('wysiwyg_options.table')"
+            :disabled="props.disabled"
+            small
+            icon
+            :active="editor.isActive('table')"
+            @click="toggle"
+          >
+            <icon-table />
+          </v-button>
+        </template>
+        <v-list>
+          <v-list-item clickable @click="editor.chain().focus().insertTable().run()">
+            <v-list-item-icon>
+              <icon-table />
+            </v-list-item-icon>
+            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_insert`)" /></v-list-item-content>
+          </v-list-item>
+          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().addColumnBefore().run()">
+            <v-list-item-icon>
+              <icon-insert-column-left />
+            </v-list-item-icon>
+            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_column_before`)" /></v-list-item-content>
+          </v-list-item>
+          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().addColumnAfter().run()">
+            <v-list-item-icon>
+              <icon-insert-column-right />
+            </v-list-item-icon>
+            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_column_after`)" /></v-list-item-content>
+          </v-list-item>
+          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().deleteColumn().run()">
+            <v-list-item-icon>
+              <icon-delete-column />
+            </v-list-item-icon>
+            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_delete_column`)" /></v-list-item-content>
+          </v-list-item>
+
+          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().addRowBefore().run()">
+            <v-list-item-icon>
+              <icon-insert-row-top />
+            </v-list-item-icon>
+            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_row_before`)" /></v-list-item-content>
+          </v-list-item>
+          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().addRowAfter().run()">
+            <v-list-item-icon>
+              <icon-insert-row-bottom />
+            </v-list-item-icon>
+            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_row_after`)" /></v-list-item-content>
+          </v-list-item>
+          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().deleteRow().run()">
+            <v-list-item-icon>
+              <icon-delete-row />
+            </v-list-item-icon>
+            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_delete_row`)" /></v-list-item-content>
+          </v-list-item>
+          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().deleteTable().run()">
+            <v-list-item-icon>
+              <icon-delete-bin />
+            </v-list-item-icon>
+            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_delete`)" /></v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-menu>
 
       <v-button
         v-if="editorExtensions.includes('codeBlock')"
@@ -710,6 +764,13 @@ import type { TaskItemOptions } from "@tiptap/extension-task-item";
 import task from "./extensions/task";
 import type { TableOptions } from "@tiptap/extension-table";
 import table from "./extensions/table";
+import IconInsertColumnLeft from "./icons/insert-column-left.vue";
+import IconInsertColumnRight from "./icons/insert-column-right.vue";
+import IconDeleteColumn from "./icons/delete-column.vue";
+import IconInsertRowTop from "./icons/insert-row-top.vue";
+import IconInsertRowBottom from "./icons/insert-row-bottom.vue";
+import IconDeleteRow from "./icons/delete-row.vue";
+import IconDeleteBin from "./icons/delete-bin.vue";
 
 const { t } = useI18n({ messages });
 

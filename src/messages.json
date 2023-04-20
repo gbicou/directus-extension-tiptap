@@ -7,7 +7,15 @@
       "highlight": "Highlight",
       "count_chars": "no characters | 1 character | {count} characters",
       "count_words": "no words | 1 word | {count} words",
-      "text_align": "Text align"
+      "text_align": "Text align",
+      "table_insert": "Insert table",
+      "table_delete": "Delete table",
+      "table_add_column_before": "Add column before",
+      "table_add_column_after": "Add column after",
+      "table_delete_column": "Delete column",
+      "table_add_row_before": "Add row before",
+      "table_add_row_after": "Add row after",
+      "table_delete_row": "Delete row"
     }
   },
   "fr": {
@@ -18,7 +26,15 @@
       "highlight": "Surligner",
       "count_chars": "aucun caractère | 1 caractère | {count} caractères",
       "count_words": "aucun mot | 1 mot | {count} mots",
-      "text_align": "Alignement du texte"
+      "text_align": "Alignement du texte",
+      "table_insert": "Insérer un tableau",
+      "table_delete": "Supprimer le tableau",
+      "table_add_column_before": "Ajouter une colonne avant",
+      "table_add_column_after": "Ajouter une colonne après",
+      "table_delete_column": "Supprimer la colonne",
+      "table_add_row_before": "Ajouter une ligne avant",
+      "table_add_row_after": "Ajouter une ligne après",
+      "table_delete_row": "Supprimer la ligne"
     }
   }
 }
