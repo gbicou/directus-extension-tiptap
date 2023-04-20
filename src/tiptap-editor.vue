@@ -200,6 +200,20 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('taskList')"
+        v-tooltip="
+          t('interfaces.select-multiple-checkbox.checkboxes') + ' - ' + translateShortcut(['meta', 'shift', '9'])
+        "
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('taskList')"
+        @click="editor.chain().focus().toggleTaskList().run()"
+      >
+        <icon-list-check />
+      </v-button>
+
+      <v-button
         v-if="editorExtensions.includes('blockquote')"
         v-tooltip="t('wysiwyg_options.blockquote') + ' - ' + translateShortcut(['meta', 'shift', 'b'])"
         small
@@ -539,6 +553,29 @@
       //box-shadow: 0 0 6px 2px var(--background-subdued);
       box-shadow: var(--card-shadow);
     }
+
+    ul[data-type="taskList"] {
+      list-style: none;
+      padding: 0;
+
+      p {
+        margin: 0;
+      }
+
+      li {
+        display: flex;
+
+        > label {
+          flex: 0 0 auto;
+          margin-right: 0.5rem;
+          user-select: none;
+        }
+
+        > div {
+          flex: 1 1 auto;
+        }
+      }
+    }
   }
 }
 </style>
@@ -582,6 +619,7 @@ import IconAlignRight from "./icons/align-right.vue";
 import IconAlignJustify from "./icons/align-justify.vue";
 import IconLink from "./icons/link.vue";
 import IconUnlink from "./icons/unlink.vue";
+import IconListCheck from "./icons/list-check.vue";
 import type { CharacterCountOptions } from "@tiptap/extension-character-count";
 import type { TextAlignOptions } from "@tiptap/extension-text-align";
 import textAlign from "./extensions/text-align";
@@ -591,6 +629,8 @@ import placeholder from "./extensions/placeholder";
 import { useLink } from "./composables/link";
 import type { FocusOptions } from "@tiptap/extension-focus";
 import focus from "./extensions/focus";
+import type { TaskItemOptions } from "@tiptap/extension-task-item";
+import task from "./extensions/task";
 
 const { t } = useI18n({ messages });
 
@@ -606,6 +646,7 @@ interface Props {
   characterCountLimit: CharacterCountOptions["limit"];
   characterCountMode: CharacterCountOptions["mode"];
   focusMode: FocusOptions["mode"];
+  taskItemNested: TaskItemOptions["nested"];
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -618,6 +659,7 @@ const props = withDefaults(defineProps<Props>(), {
   characterCountLimit: () => characterCount.defaults.limit,
   characterCountMode: () => characterCount.defaults.mode,
   focusMode: () => focus.defaults.mode,
+  taskItemNested: () => task.defaults.nested,
 });
 
 const emit = defineEmits<{

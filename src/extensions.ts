@@ -4,6 +4,7 @@ import type { CharacterCountOptions } from "@tiptap/extension-character-count";
 import type { TextAlignOptions } from "@tiptap/extension-text-align";
 import type { PlaceholderOptions } from "@tiptap/extension-placeholder";
 import type { FocusOptions } from "@tiptap/extension-focus";
+import type { TaskItemOptions } from "@tiptap/extension-task-item";
 import type { DeepPartial, Field } from "@directus/shared/types";
 import underline from "./extensions/underline";
 import textAlign from "./extensions/text-align";
@@ -15,6 +16,7 @@ import typography from "./extensions/typography";
 import placeholder from "./extensions/placeholder";
 import link from "./extensions/link";
 import focus from "./extensions/focus";
+import task from "./extensions/task";
 
 interface ExtensionsProps {
   extensions: string[] | null;
@@ -23,6 +25,7 @@ interface ExtensionsProps {
   characterCountMode: CharacterCountOptions["mode"];
   textAlignTypes: TextAlignOptions["types"];
   focusMode: FocusOptions["mode"];
+  taskItemNested: TaskItemOptions["nested"];
 }
 
 type ExtensionGroup = "mark" | "node" | "editor";
@@ -46,6 +49,7 @@ export const localExtensions: IExtension<AnyExtension>[] = [
   underline,
   // nodes
   textAlign,
+  task,
   // editor
   placeholder,
   focus,
