@@ -29,5 +29,9 @@ export function useLink(editor: Editor) {
     linkClose();
   }
 
-  return { linkDrawerOpen, linkHref, linkTarget, linkOpen, linkClose, linkSave };
+  function linkRemove() {
+    editor.chain().focus().extendMarkRange("link").unsetLink().run();
+  }
+
+  return { linkDrawerOpen, linkHref, linkTarget, linkOpen, linkClose, linkSave, linkRemove };
 }

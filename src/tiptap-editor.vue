@@ -288,7 +288,7 @@
 
       <v-button
         v-if="editorExtensions.includes('link')"
-        v-tooltip="t('wysiwyg_options.link') + ' - ' + translateShortcut(['meta', 'k'])"
+        v-tooltip="t('wysiwyg_options.link')"
         small
         icon
         :disabled="props.disabled"
@@ -304,7 +304,7 @@
         small
         icon
         :disabled="props.disabled || !editor.isActive('link')"
-        @click="editor.chain().focus().extendMarkRange('link').unsetLink().run()"
+        @click="linkRemove"
       >
         <icon-unlink />
       </v-button>
@@ -714,7 +714,7 @@ const editor = new Editor({
 
 const editorExtensions = editor.extensionManager.extensions.map((ext) => ext.name);
 
-const { linkDrawerOpen, linkHref, linkTarget, linkOpen, linkClose, linkSave } = useLink(editor);
+const { linkDrawerOpen, linkHref, linkTarget, linkOpen, linkClose, linkSave, linkRemove } = useLink(editor);
 
 watch(
   () => props.value,
