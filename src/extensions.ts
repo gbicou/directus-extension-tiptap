@@ -14,7 +14,7 @@ import highlight from "./extensions/highlight";
 import typography from "./extensions/typography";
 import placeholder from "./extensions/placeholder";
 
-export interface ExtensionsOptions {
+export interface ExtensionsProps {
   extensions: string[] | null;
   placeholder: PlaceholderOptions["placeholder"];
   characterCountLimit: CharacterCountOptions["limit"];
@@ -27,8 +27,7 @@ export interface IExtension<E extends AnyExtension> {
   title: string;
   package: string;
   options: DeepPartial<Field>[];
-  // makeOptions(options: ExtensionsOptions): E["options"];
-  load(opts: ExtensionsOptions): E;
+  load(props: ExtensionsProps): E;
   defaults: Partial<E["options"]>;
 }
 
@@ -43,7 +42,7 @@ export const localExtensions: IExtension<AnyExtension>[] = [
   characterCount,
 ];
 
-export function loadExtensions(props: ExtensionsOptions): Extensions {
+export function loadExtensions(props: ExtensionsProps): Extensions {
   const extensions: Extensions = [
     StarterKit,
     Link.configure({

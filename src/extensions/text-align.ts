@@ -39,9 +39,9 @@ const extension: IExtension<typeof TextAlign> = {
       },
     },
   ],
-  load(options) {
+  load(props) {
     return TextAlign.configure({
-      types: options.textAlignTypes ?? defaults.types,
+      types: props.textAlignTypes ?? defaults.types,
     });
   },
 };

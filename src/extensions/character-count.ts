@@ -45,10 +45,10 @@ const extension: IExtension<typeof CharacterCount> = {
       },
     },
   ],
-  load(options) {
+  load(props) {
     return CharacterCount.configure({
-      limit: options.characterCountLimit ?? defaults.limit,
-      mode: options.characterCountMode ?? defaults.mode,
+      limit: props.characterCountLimit ?? defaults.limit,
+      mode: props.characterCountMode ?? defaults.mode,
     });
   },
 };

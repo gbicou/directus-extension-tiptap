@@ -13,36 +13,36 @@ export default defineInterface({
   group: "standard",
   recommendedDisplays: ["tiptap"],
   options: ({ field }) => {
-    const opts: DeepPartial<Field>[] = [];
-
-    opts.push({
-      field: "extensions",
-      name: "TipTap Extensions",
-      type: "json",
-      schema: {
-        default_value: null,
-      },
-      meta: {
-        width: "full",
-        interface: "select-multiple-checkbox",
-        options: {
-          choices: localExtensions.map((ext) => ({
-            value: ext.name,
-            text: `${ext.title} [${ext.package}]`,
-          })),
+    const options: DeepPartial<Field>[] = [
+      {
+        field: "extensions",
+        name: "TipTap Extensions",
+        type: "json",
+        schema: {
+          default_value: null,
+        },
+        meta: {
+          width: "full",
+          interface: "select-multiple-dropdown",
+          options: {
+            choices: localExtensions.map((extension) => ({
+              value: extension.name,
+              text: `${extension.title} [${extension.package}]`,
+            })),
+          },
         },
       },
-    });
+    ];
 
     if (field.meta?.options) {
-      // append extensions options
-      for (const ext of localExtensions) {
-        if (field.meta.options.extensions?.includes(ext.name)) {
-          opts.push(...ext.options);
+      // append options of selected extensions
+      for (const extension of localExtensions) {
+        if (field.meta.options.extensions?.includes(extension.name)) {
+          options.push(...extension.options);
         }
       }
     }
 
-    return opts;
+    return options;
   },
 });
