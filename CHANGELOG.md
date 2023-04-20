@@ -1,3 +1,10 @@
+# [1.7.0-alpha.3](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0-alpha.2...v1.7.0-alpha.3) (2023-04-20)
+
+
+### Features
+
+* table extension [#17](https://github.com/gbicou/directus-extension-tiptap/issues/17) ([fa5db6f](https://github.com/gbicou/directus-extension-tiptap/commit/fa5db6f1a4efd0ef61dbbe5b34c596dde2177521))
+
 # [1.7.0-alpha.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0-alpha.1...v1.7.0-alpha.2) (2023-04-20)
 
 
