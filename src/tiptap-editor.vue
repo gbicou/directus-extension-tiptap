@@ -533,12 +533,18 @@
       height: 0;
       pointer-events: none;
     }
+
+    .has-focus {
+      border-radius: 3px;
+      //box-shadow: 0 0 6px 2px var(--background-subdued);
+      box-shadow: var(--card-shadow);
+    }
   }
 }
 </style>
 
 <script setup lang="ts">
-import { Editor, EditorContent, BubbleMenu } from "@tiptap/vue-3";
+import { BubbleMenu, Editor, EditorContent } from "@tiptap/vue-3";
 import { onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
@@ -583,6 +589,8 @@ import characterCount from "./extensions/character-count";
 import type { PlaceholderOptions } from "@tiptap/extension-placeholder";
 import placeholder from "./extensions/placeholder";
 import { useLink } from "./composables/link";
+import type { FocusOptions } from "@tiptap/extension-focus";
+import focus from "./extensions/focus";
 
 const { t } = useI18n({ messages });
 
@@ -597,6 +605,7 @@ interface Props {
   textAlignTypes: TextAlignOptions["types"];
   characterCountLimit: CharacterCountOptions["limit"];
   characterCountMode: CharacterCountOptions["mode"];
+  focusMode: FocusOptions["mode"];
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -608,6 +617,7 @@ const props = withDefaults(defineProps<Props>(), {
   textAlignTypes: () => textAlign.defaults.types,
   characterCountLimit: () => characterCount.defaults.limit,
   characterCountMode: () => characterCount.defaults.mode,
+  focusMode: () => focus.defaults.mode,
 });
 
 const emit = defineEmits<{
