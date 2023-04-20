@@ -5,7 +5,7 @@ import { Extension } from "@tiptap/core";
 import type { IExtension } from "../extensions";
 
 // Wrapper for TaskList + TaskItem
-const Task = Extension.create<TaskItemOptions>({
+const TaskKit = Extension.create<TaskItemOptions>({
   name: "task",
 
   addExtensions() {
@@ -17,7 +17,7 @@ const defaults: Partial<TaskItemOptions> = {
   nested: false,
 };
 
-const extension: IExtension<typeof Task> = {
+const extension: IExtension<typeof TaskKit> = {
   name: "task",
   title: "TaskList",
   package: "@tiptap/extension-task-(list|item)",
@@ -39,7 +39,7 @@ const extension: IExtension<typeof Task> = {
     },
   ],
   load(props) {
-    return Task.configure({
+    return TaskKit.configure({
       nested: props.taskItemNested ?? defaults.nested,
     });
   },
