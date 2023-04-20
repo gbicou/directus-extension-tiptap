@@ -14,7 +14,7 @@ import typography from "./extensions/typography";
 import placeholder from "./extensions/placeholder";
 import link from "./extensions/link";
 
-export interface ExtensionsProps {
+interface ExtensionsProps {
   extensions: string[] | null;
   placeholder: PlaceholderOptions["placeholder"];
   characterCountLimit: CharacterCountOptions["limit"];

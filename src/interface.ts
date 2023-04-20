@@ -27,14 +27,14 @@ export default defineInterface({
     const options: DeepPartial<Field>[] = [
       {
         field: "extensions",
-        name: "TipTap Extensions",
+        name: "Extensions",
         type: "json",
         schema: {
           default_value: null,
         },
         meta: {
           width: "full",
-          note: "Add new capabilities to Tiptap editor. StarterKit is already included.",
+          note: "Add new capabilities to the editor. StarterKit is already included.",
           interface: "select-multiple-checkbox-tree",
           options: {
             choices: extensionsChoices,
