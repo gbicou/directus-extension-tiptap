@@ -1,3 +1,10 @@
+# [1.7.0-alpha.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0...v1.7.0-alpha.1) (2023-04-20)
+
+
+### Features
+
+* focus extension ([3fdeb42](https://github.com/gbicou/directus-extension-tiptap/commit/3fdeb42441c354d5c7ec34dc007c054a2807cd0a))
+
 # [1.6.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.5.0...v1.6.0) (2023-04-20)
 
 
