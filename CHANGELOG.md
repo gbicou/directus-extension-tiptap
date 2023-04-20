@@ -1,3 +1,10 @@
+# [1.7.0-alpha.5](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0-alpha.4...v1.7.0-alpha.5) (2023-04-20)
+
+
+### Features
+
+* merge and split cells [#17](https://github.com/gbicou/directus-extension-tiptap/issues/17) ([5e55849](https://github.com/gbicou/directus-extension-tiptap/commit/5e55849716753f15523e8f02790f0486fe7e1491))
+
 # [1.7.0-alpha.4](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0-alpha.3...v1.7.0-alpha.4) (2023-04-20)
 
 
