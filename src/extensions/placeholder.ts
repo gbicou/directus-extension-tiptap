@@ -16,6 +16,7 @@ const extension: IExtension<typeof Placeholder> = {
       meta: {
         width: "full",
         interface: "system-input-translated-string",
+        note: "Displays the text hint on the first line in an empty editor",
         options: {
           placeholder: "$t:enter_a_placeholder",
         },
