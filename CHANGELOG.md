@@ -1,3 +1,21 @@
+# [1.7.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0...v1.7.0) (2023-04-20)
+
+
+### Bug Fixes
+
+* highlight shortcut ([1ea8b01](https://github.com/gbicou/directus-extension-tiptap/commit/1ea8b014844fda801e4a78adf4acd9d818541c08))
+* paragraph keyboard shortcut ([e4072e6](https://github.com/gbicou/directus-extension-tiptap/commit/e4072e6fe8575d6626fa864ac7a2e14966c2c76a))
+
+
+### Features
+
+* focus extension ([3fdeb42](https://github.com/gbicou/directus-extension-tiptap/commit/3fdeb42441c354d5c7ec34dc007c054a2807cd0a))
+* header row, column and cell [#17](https://github.com/gbicou/directus-extension-tiptap/issues/17) ([87a33e4](https://github.com/gbicou/directus-extension-tiptap/commit/87a33e44f24dac892e73e3e60ee112b7102c7f16))
+* merge and split cells [#17](https://github.com/gbicou/directus-extension-tiptap/issues/17) ([5e55849](https://github.com/gbicou/directus-extension-tiptap/commit/5e55849716753f15523e8f02790f0486fe7e1491))
+* table extension [#17](https://github.com/gbicou/directus-extension-tiptap/issues/17) ([fa5db6f](https://github.com/gbicou/directus-extension-tiptap/commit/fa5db6f1a4efd0ef61dbbe5b34c596dde2177521))
+* table operations [#17](https://github.com/gbicou/directus-extension-tiptap/issues/17) ([ba70f90](https://github.com/gbicou/directus-extension-tiptap/commit/ba70f908222f358064e87aa965a8ff6f283843ff))
+* task-list extension ([13ac07e](https://github.com/gbicou/directus-extension-tiptap/commit/13ac07ea0b86e94ada70f7949f4b7160442f9229))
+
 # [1.7.0-alpha.6](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0-alpha.5...v1.7.0-alpha.6) (2023-04-20)
 
 
