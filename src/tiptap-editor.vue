@@ -116,7 +116,7 @@
 
       <v-button
         v-if="editorExtensions.includes('highlight')"
-        v-tooltip="t('tiptap.highlight') + ' - ' + translateShortcut(['meta', 'shift', 'm'])"
+        v-tooltip="t('tiptap.highlight') + ' - ' + translateShortcut(['meta', 'shift', 'h'])"
         small
         icon
         :disabled="props.disabled"
