@@ -309,6 +309,26 @@
           <v-list-item
             clickable
             :disabled="!editor.isActive('table')"
+            @click="editor.chain().focus().mergeCells().run()"
+          >
+            <v-list-item-icon>
+              <icon-merge-cells />
+            </v-list-item-icon>
+            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_merge_cells`)" /></v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            clickable
+            :disabled="!editor.isActive('table')"
+            @click="editor.chain().focus().splitCell().run()"
+          >
+            <v-list-item-icon>
+              <icon-split-cell />
+            </v-list-item-icon>
+            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_split_cell`)" /></v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            clickable
+            :disabled="!editor.isActive('table')"
             @click="editor.chain().focus().deleteTable().run()"
           >
             <v-list-item-icon>
@@ -813,6 +833,8 @@ import IconInsertRowTop from "./icons/insert-row-top.vue";
 import IconInsertRowBottom from "./icons/insert-row-bottom.vue";
 import IconDeleteRow from "./icons/delete-row.vue";
 import IconDeleteBin from "./icons/delete-bin.vue";
+import IconMergeCells from "./icons/merge-cells.vue";
+import IconSplitCell from "./icons/split-cell.vue";
 
 const { t } = useI18n({ messages });
 

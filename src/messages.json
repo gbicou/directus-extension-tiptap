@@ -15,7 +15,9 @@
       "table_delete_column": "Delete column",
       "table_add_row_before": "Add row before",
       "table_add_row_after": "Add row after",
-      "table_delete_row": "Delete row"
+      "table_delete_row": "Delete row",
+      "table_merge_cells": "Merge cells",
+      "table_split_cell": "Split cell"
     }
   },
   "fr": {
@@ -34,7 +36,9 @@
       "table_delete_column": "Supprimer la colonne",
       "table_add_row_before": "Ajouter une ligne avant",
       "table_add_row_after": "Ajouter une ligne après",
-      "table_delete_row": "Supprimer la ligne"
+      "table_delete_row": "Supprimer la ligne",
+      "table_merge_cells": "Fusionner les cellules",
+      "table_split_cell": "Diviser la cellule"
     }
   }
 }
