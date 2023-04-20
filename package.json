@@ -49,7 +49,7 @@
     "release": "semantic-release"
   },
   "devDependencies": {
-    "@directus/extensions-sdk": "~9.24.0",
+    "@directus/extensions-sdk": "~9.25.0",
     "@directus/shared": "~9.24.0",
     "@rushstack/eslint-patch": "^1.2.0",
     "@semantic-release/changelog": "^6.0.3",

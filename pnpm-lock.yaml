@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 devDependencies:
   '@directus/extensions-sdk':
-    specifier: ~9.24.0
-    version: 9.24.0
+    specifier: ~9.25.0
+    version: 9.25.0
   '@directus/shared':
     specifier: ~9.24.0
     version: 9.24.0
@@ -175,12 +175,31 @@ packages:
     dev: true
     optional: true
 
-  /@directus/extensions-sdk@9.24.0:
-    resolution: {integrity: sha512-Z7d/PqIrDTnxLddW5C3AjoVIFleTf6GGfhTYkJBkkh9QUJlQQEi9TDON4XRJrcKBnnh4mWTeSH+ww9TjLbpWIA==}
+  /@directus/composables@9.25.0:
+    resolution: {integrity: sha512-nQbuHihIbN4j0tb5AWmFj/iv+b2eilTqBwTePfX62qEe+QsqBnwlUVqhwbzPZ+HWyuZTxrxSFLlTgjFLxpUEmg==}
+    dependencies:
+      '@directus/constants': 9.25.0
+      '@directus/utils': 9.25.0
+      lodash-es: 4.17.21
+      nanoid: 4.0.2
+      vue: 3.2.47
+    dev: true
+
+  /@directus/constants@9.25.0:
+    resolution: {integrity: sha512-n3nHMCyx20Dgm956nTpd1qGrGF9tMuakP9mH6vBI8nRwOnPG84X7qK2s5+GMUWw0aykVvEfQSUU63G3mwbYJcg==}
+    dependencies:
+      zod: 3.21.4
+    dev: true
+
+  /@directus/extensions-sdk@9.25.0:
+    resolution: {integrity: sha512-IQjcK9ClA18ts2Ss3GmyKHjcfMHxrSdbaw1Jbk1GHIszIWSvbwnXRK7L2/mhkNesqsSCivTN/A32R5CJz519Qw==}
     engines: {node: '>=12.20.0'}
     hasBin: true
     dependencies:
-      '@directus/shared': 9.24.0
+      '@directus/composables': 9.25.0
+      '@directus/constants': 9.25.0
+      '@directus/types': 9.25.0
+      '@directus/utils': 9.25.0
       '@rollup/plugin-commonjs': 23.0.4(rollup@3.19.1)
       '@rollup/plugin-json': 6.0.0(rollup@3.19.1)
       '@rollup/plugin-node-resolve': 15.0.1(rollup@3.19.1)
@@ -200,15 +219,7 @@ packages:
       rollup-plugin-styles: 4.0.0(rollup@3.19.1)
       rollup-plugin-vue: 6.0.0(@vue/compiler-sfc@3.2.47)
     transitivePeerDependencies:
-      - better-sqlite3
-      - debug
-      - mysql
-      - mysql2
-      - pg
-      - pg-native
-      - sqlite3
       - supports-color
-      - tedious
     dev: true
 
   /@directus/shared@9.24.0:
@@ -240,6 +251,28 @@ packages:
       - sqlite3
       - supports-color
       - tedious
+    dev: true
+
+  /@directus/storage@9.25.0:
+    resolution: {integrity: sha512-YWM+nudEvkMNqNKpFPYTHMRzyZR1lbOPj/yHoWbCHgbmkrMc2w1zQJUi/IpVwk/Z3nyvcEL9XZMr43FdV/rRgA==}
+    dev: true
+
+  /@directus/types@9.25.0:
+    resolution: {integrity: sha512-+072rVsNcdtzl8qO43gSH15Qdml6bRQNqm4WTk3O1kufPnyar00t6ijWXJ7Weczm1nrWjP4oFnGp7XSTNub3KQ==}
+    dev: true
+
+  /@directus/utils@9.25.0:
+    resolution: {integrity: sha512-APlSwETwPrQ2VNtxif75ib/ThvTgAFtFdUxC/Tj/v2T8GsXxHki33Q0LETzu9gK+PqLu+py6VDGA9ZQu/i11Iw==}
+    dependencies:
+      '@directus/constants': 9.25.0
+      '@directus/storage': 9.25.0
+      date-fns: 2.29.3
+      fs-extra: 11.1.0
+      joi: 17.8.4
+      lodash-es: 4.17.21
+      micromustache: 8.0.3
+      tmp: 0.2.1
+      vue: 3.2.47
     dev: true
 
   /@esbuild/android-arm64@0.17.11:
@@ -4179,6 +4212,12 @@ packages:
     hasBin: true
     dev: true
 
+  /nanoid@4.0.2:
+    resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
+    engines: {node: ^14 || ^16 || >=18}
+    hasBin: true
+    dev: true
+
   /natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
     dev: true
@@ -6075,6 +6114,13 @@ packages:
     engines: {node: '>=0.6.0'}
     dependencies:
       os-tmpdir: 1.0.2
+    dev: true
+
+  /tmp@0.2.1:
+    resolution: {integrity: sha512-76SUhtfqR2Ijn+xllcI5P1oyannHNHByD80W1q447gU3mp9G9PSpGdWmjUOHRDPiHYacIk66W7ubDTuPF3BEtQ==}
+    engines: {node: '>=8.17.0'}
+    dependencies:
+      rimraf: 3.0.2
     dev: true
 
   /to-fast-properties@2.0.0:
