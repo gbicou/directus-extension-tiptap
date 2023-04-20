@@ -222,7 +222,7 @@
         :active="editor.isActive('blockquote')"
         @click="editor.chain().focus().toggleBlockquote().run()"
       >
-        <icon-double-quotes-r />
+        <icon-quote-text />
       </v-button>
 
       <v-button
@@ -606,7 +606,7 @@ import IconH6 from "./icons/h6.vue";
 import IconSeparator from "./icons/separator.vue";
 import IconArrowGoForwardLine from "./icons/arrow-go-forward-line.vue";
 import IconCodeLine from "./icons/code-line.vue";
-import IconDoubleQuotesR from "./icons/double-quotes-r.vue";
+import IconQuoteText from "./icons/quote-text.vue";
 import IconTextWrap from "./icons/text-wrap.vue";
 import IconFormatClear from "./icons/format-clear.vue";
 import IconMarkPenLine from "./icons/mark-pen-line.vue";
