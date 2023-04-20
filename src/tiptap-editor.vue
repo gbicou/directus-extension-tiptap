@@ -165,7 +165,7 @@
 
       <v-button
         v-if="editorExtensions.includes('paragraph')"
-        v-tooltip="t('tiptap.paragraph') + ' - ' + translateShortcut(['meta', 'shift', '0'])"
+        v-tooltip="t('tiptap.paragraph') + ' - ' + translateShortcut(['meta', 'alt', '0'])"
         small
         icon
         :disabled="props.disabled"
