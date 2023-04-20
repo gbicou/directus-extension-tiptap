@@ -1,3 +1,10 @@
+# [1.7.0-alpha.6](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0-alpha.5...v1.7.0-alpha.6) (2023-04-20)
+
+
+### Features
+
+* header row, column and cell [#17](https://github.com/gbicou/directus-extension-tiptap/issues/17) ([87a33e4](https://github.com/gbicou/directus-extension-tiptap/commit/87a33e44f24dac892e73e3e60ee112b7102c7f16))
+
 # [1.7.0-alpha.5](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0-alpha.4...v1.7.0-alpha.5) (2023-04-20)
 
 
