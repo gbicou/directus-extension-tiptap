@@ -1,3 +1,15 @@
+# [1.7.0-alpha.4](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0-alpha.3...v1.7.0-alpha.4) (2023-04-20)
+
+
+### Bug Fixes
+
+* highlight shortcut ([1ea8b01](https://github.com/gbicou/directus-extension-tiptap/commit/1ea8b014844fda801e4a78adf4acd9d818541c08))
+
+
+### Features
+
+* table operations [#17](https://github.com/gbicou/directus-extension-tiptap/issues/17) ([ba70f90](https://github.com/gbicou/directus-extension-tiptap/commit/ba70f908222f358064e87aa965a8ff6f283843ff))
+
 # [1.7.0-alpha.3](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0-alpha.2...v1.7.0-alpha.3) (2023-04-20)
 
 
