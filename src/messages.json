@@ -6,7 +6,8 @@
       "clear_format": "Clear text formatting",
       "highlight": "Highlight",
       "count_chars": "no characters | 1 character | {count} characters",
-      "count_words": "no words | 1 word | {count} words"
+      "count_words": "no words | 1 word | {count} words",
+      "text_align": "Text align"
     }
   },
   "fr": {
@@ -16,7 +17,8 @@
       "clear_format": "Effacer la mise en forme",
       "highlight": "Surligner",
       "count_chars": "aucun caractère | 1 caractère | {count} caractères",
-      "count_words": "aucun mot | 1 mot | {count} mots"
+      "count_words": "aucun mot | 1 mot | {count} mots",
+      "text_align": "Alignement du texte"
     }
   }
 }

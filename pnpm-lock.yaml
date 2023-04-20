@@ -2,7 +2,10 @@ lockfileVersion: '6.0'
 
 devDependencies:
   '@directus/extensions-sdk':
-    specifier: ^9.24.0
+    specifier: ~9.24.0
+    version: 9.24.0
+  '@directus/shared':
+    specifier: ~9.24.0
     version: 9.24.0
   '@rushstack/eslint-patch':
     specifier: ^1.2.0
@@ -22,6 +25,9 @@ devDependencies:
   '@tiptap/extension-highlight':
     specifier: ^2.0.2
     version: 2.0.2(@tiptap/core@2.0.2)
+  '@tiptap/extension-link':
+    specifier: ^2.0.2
+    version: 2.0.2(@tiptap/core@2.0.2)(@tiptap/pm@2.0.2)
   '@tiptap/extension-placeholder':
     specifier: ^2.0.2
     version: 2.0.2(@tiptap/core@2.0.2)(@tiptap/pm@2.0.2)
@@ -29,6 +35,9 @@ devDependencies:
     specifier: ^2.0.2
     version: 2.0.2(@tiptap/core@2.0.2)
   '@tiptap/extension-superscript':
+    specifier: ^2.0.2
+    version: 2.0.2(@tiptap/core@2.0.2)
+  '@tiptap/extension-text-align':
     specifier: ^2.0.2
     version: 2.0.2(@tiptap/core@2.0.2)
   '@tiptap/extension-typography':
@@ -1170,6 +1179,17 @@ packages:
       '@tiptap/core': 2.0.2(@tiptap/pm@2.0.2)
     dev: true
 
+  /@tiptap/extension-link@2.0.2(@tiptap/core@2.0.2)(@tiptap/pm@2.0.2):
+    resolution: {integrity: sha512-PzBM09Mmsxj0V5fAa0kxdIZdkNjowQWj4O4nrjEWSbSmF90v0Fyj4R/VjSg4dBf3ExfFNYmsjC3wPiRulnCu5g==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+      '@tiptap/pm': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.0.2(@tiptap/pm@2.0.2)
+      '@tiptap/pm': 2.0.2(@tiptap/core@2.0.2)
+      linkifyjs: 4.1.1
+    dev: true
+
   /@tiptap/extension-list-item@2.0.2(@tiptap/core@2.0.2):
     resolution: {integrity: sha512-q8nz79iB6EvkBucm0OwUg7SX3vDGCRttmf0OrEBsoUCoFt/NhrejUCMDSbysHtYp+EtZcKu4VsPuNHU3C7F1vQ==}
     peerDependencies:
@@ -1222,6 +1242,14 @@ packages:
 
   /@tiptap/extension-superscript@2.0.2(@tiptap/core@2.0.2):
     resolution: {integrity: sha512-ucCbTuVjnrWfchU7fTicGsqDFzd46vEO+EYtAOEeDiJTg35/pwps8Krtfba5LIHuNc37cDpCHrSTDRZQXDxmOw==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.0.2(@tiptap/pm@2.0.2)
+    dev: true
+
+  /@tiptap/extension-text-align@2.0.2(@tiptap/core@2.0.2):
+    resolution: {integrity: sha512-cNYOQPpqAOquTjSm2lSzP9J1d5T9FueWArq2A3FsYzOSZfVAJmqp9gn/bfCKveKgE5m7nLN3g3o+RNryIWTr2w==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
@@ -3714,6 +3742,10 @@ packages:
       uc.micro: 1.0.6
     dev: true
 
+  /linkifyjs@4.1.1:
+    resolution: {integrity: sha512-zFN/CTVmbcVef+WaDXT63dNzzkfRBKT1j464NJQkV7iSgJU0sLBus9W0HBwnXK13/hf168pbrx/V/bjEHOXNHA==}
+    dev: true
+
   /load-json-file@4.0.0:
     resolution: {integrity: sha512-Kx8hMakjX03tiGTLAIdJ+lL0htKnXjEZN6hk/tozf/WOuYGdZBJrZ+rCJRbVCugsjB3jMLn9746NsQIf5VjBMw==}
     engines: {node: '>=4'}
@@ -4529,8 +4561,8 @@ packages:
       split2: 4.2.0
     dev: true
 
-  /pino-std-serializers@6.1.0:
-    resolution: {integrity: sha512-KO0m2f1HkrPe9S0ldjx7za9BJjeHqBku5Ch8JyxETxT8dEFGz1PwgrHaOQupVYitpzbFSYm7nnljxD8dik2c+g==}
+  /pino-std-serializers@6.2.0:
+    resolution: {integrity: sha512-IWgSzUL8X1w4BIWTwErRgtV8PyOGOOi60uqv0oKuS/fOA8Nco/OeI6lBuc4dyP8MMfdFwyHqTMcBIA7nDiqEqA==}
     dev: true
 
   /pino@8.11.0:
@@ -4541,7 +4573,7 @@ packages:
       fast-redact: 3.1.2
       on-exit-leak-free: 2.1.0
       pino-abstract-transport: 1.0.0
-      pino-std-serializers: 6.1.0
+      pino-std-serializers: 6.2.0
       process-warning: 2.2.0
       quick-format-unescaped: 4.0.4
       real-require: 0.2.0

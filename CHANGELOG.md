@@ -1,3 +1,61 @@
+# [1.6.0-alpha.8](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.7...v1.6.0-alpha.8) (2023-04-19)
+
+
+### Features
+
+* text align options ([efbc32d](https://github.com/gbicou/directus-extension-tiptap/commit/efbc32d998dfae9ca8000fade5715bfc069826c5))
+
+# [1.6.0-alpha.7](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.6...v1.6.0-alpha.7) (2023-04-19)
+
+
+### Features
+
+* options for character count extension ([eed17c3](https://github.com/gbicou/directus-extension-tiptap/commit/eed17c3681fc8c75bf41c1552f0d718c705280ec))
+
+# [1.6.0-alpha.6](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.5...v1.6.0-alpha.6) (2023-04-13)
+
+
+### Features
+
+* link extension fix [#15](https://github.com/gbicou/directus-extension-tiptap/issues/15) ([524c6ed](https://github.com/gbicou/directus-extension-tiptap/commit/524c6eda1c6125e0ebd018855c1003436d43325a))
+
+# [1.6.0-alpha.5](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.4...v1.6.0-alpha.5) (2023-04-13)
+
+
+### Features
+
+* text align extension [#14](https://github.com/gbicou/directus-extension-tiptap/issues/14) ([3bf7dc5](https://github.com/gbicou/directus-extension-tiptap/commit/3bf7dc51830f4621732d868521daee39fb24bd7f))
+
+# [1.6.0-alpha.4](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.3...v1.6.0-alpha.4) (2023-04-12)
+
+
+### Bug Fixes
+
+* display empty doc as empty string ([39a6a79](https://github.com/gbicou/directus-extension-tiptap/commit/39a6a795e30b753c4a15f7babd73297d253a8956))
+
+# [1.6.0-alpha.3](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.2...v1.6.0-alpha.3) (2023-04-12)
+
+
+### Bug Fixes
+
+* blank editor editable area ([0c2bcb1](https://github.com/gbicou/directus-extension-tiptap/commit/0c2bcb18684c20a4a73561814a9f8c255dcfd377))
+* handle autofocus ([35ac9f8](https://github.com/gbicou/directus-extension-tiptap/commit/35ac9f8f3abffa9ae32777081699f42a0d0e902a))
+* load extension only once ([51ede66](https://github.com/gbicou/directus-extension-tiptap/commit/51ede66004c1d719ab45a37286673fd070d3a129))
+
+# [1.6.0-alpha.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0-alpha.1...v1.6.0-alpha.2) (2023-04-12)
+
+
+### Bug Fixes
+
+* code and codeblock inverted style ([d8528d4](https://github.com/gbicou/directus-extension-tiptap/commit/d8528d4a0e4c3861fa882e24cf8699c4111dbbff))
+
+# [1.6.0-alpha.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.5.0...v1.6.0-alpha.1) (2023-04-12)
+
+
+### Features
+
+* code block ([d84d926](https://github.com/gbicou/directus-extension-tiptap/commit/d84d926595d55daaf4fd12cee9952876e18b1e2f))
+
 # [1.5.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.4.0...v1.5.0) (2023-04-12)
 
 
