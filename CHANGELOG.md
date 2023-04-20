@@ -1,3 +1,15 @@
+# [1.7.0-alpha.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0-alpha.1...v1.7.0-alpha.2) (2023-04-20)
+
+
+### Bug Fixes
+
+* paragraph keyboard shortcut ([e4072e6](https://github.com/gbicou/directus-extension-tiptap/commit/e4072e6fe8575d6626fa864ac7a2e14966c2c76a))
+
+
+### Features
+
+* task-list extension ([13ac07e](https://github.com/gbicou/directus-extension-tiptap/commit/13ac07ea0b86e94ada70f7949f4b7160442f9229))
+
 # [1.7.0-alpha.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0...v1.7.0-alpha.1) (2023-04-20)
 
 
