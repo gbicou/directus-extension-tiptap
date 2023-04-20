@@ -245,44 +245,72 @@
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_insert`)" /></v-list-item-content>
           </v-list-item>
-          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().addColumnBefore().run()">
+          <v-list-item
+            clickable
+            :disabled="!editor.isActive('table')"
+            @click="editor.chain().focus().addColumnBefore().run()"
+          >
             <v-list-item-icon>
               <icon-insert-column-left />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_column_before`)" /></v-list-item-content>
           </v-list-item>
-          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().addColumnAfter().run()">
+          <v-list-item
+            clickable
+            :disabled="!editor.isActive('table')"
+            @click="editor.chain().focus().addColumnAfter().run()"
+          >
             <v-list-item-icon>
               <icon-insert-column-right />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_column_after`)" /></v-list-item-content>
           </v-list-item>
-          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().deleteColumn().run()">
+          <v-list-item
+            clickable
+            :disabled="!editor.isActive('table')"
+            @click="editor.chain().focus().deleteColumn().run()"
+          >
             <v-list-item-icon>
               <icon-delete-column />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_delete_column`)" /></v-list-item-content>
           </v-list-item>
 
-          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().addRowBefore().run()">
+          <v-list-item
+            clickable
+            :disabled="!editor.isActive('table')"
+            @click="editor.chain().focus().addRowBefore().run()"
+          >
             <v-list-item-icon>
               <icon-insert-row-top />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_row_before`)" /></v-list-item-content>
           </v-list-item>
-          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().addRowAfter().run()">
+          <v-list-item
+            clickable
+            :disabled="!editor.isActive('table')"
+            @click="editor.chain().focus().addRowAfter().run()"
+          >
             <v-list-item-icon>
               <icon-insert-row-bottom />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_row_after`)" /></v-list-item-content>
           </v-list-item>
-          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().deleteRow().run()">
+          <v-list-item
+            clickable
+            :disabled="!editor.isActive('table')"
+            @click="editor.chain().focus().deleteRow().run()"
+          >
             <v-list-item-icon>
               <icon-delete-row />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_delete_row`)" /></v-list-item-content>
           </v-list-item>
-          <v-list-item clickable :disabled="!editor.isActive('table')" @click="editor.chain().focus().deleteTable().run()">
+          <v-list-item
+            clickable
+            :disabled="!editor.isActive('table')"
+            @click="editor.chain().focus().deleteTable().run()"
+          >
             <v-list-item-icon>
               <icon-delete-bin />
             </v-list-item-icon>
