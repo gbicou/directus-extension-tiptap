@@ -226,6 +226,18 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('table')"
+        v-tooltip="t('wysiwyg_options.table')"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('table')"
+        @click="editor.chain().focus().insertTable().run()"
+      >
+        <icon-table />
+      </v-button>
+
+      <v-button
         v-if="editorExtensions.includes('codeBlock')"
         v-tooltip="t('wysiwyg_options.codeblock') + ' - ' + translateShortcut(['meta', 'alt', 'c'])"
         small
@@ -576,6 +588,70 @@
         }
       }
     }
+
+    table {
+      border-collapse: collapse;
+      table-layout: fixed;
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+
+      td,
+      th {
+        min-width: 1em;
+        border: 1px solid var(--border-normal);
+        padding: 3px 6px;
+        vertical-align: top;
+        box-sizing: border-box;
+        position: relative;
+
+        > * {
+          margin-bottom: 0;
+        }
+      }
+
+      th {
+        font-weight: bold;
+        text-align: left;
+        background-color: var(--background-normal);
+      }
+
+      .selectedCell:after {
+        z-index: 2;
+        position: absolute;
+        content: "";
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(200, 200, 255, 0.4);
+        pointer-events: none;
+      }
+
+      .column-resize-handle {
+        position: absolute;
+        right: -2px;
+        top: 0;
+        bottom: -2px;
+        width: 4px;
+        background-color: #adf;
+        pointer-events: none;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .tableWrapper {
+      padding: 1rem 0;
+      overflow-x: auto;
+    }
+
+    .resize-cursor {
+      cursor: ew-resize;
+      cursor: col-resize;
+    }
   }
 }
 </style>
@@ -620,6 +696,7 @@ import IconAlignJustify from "./icons/align-justify.vue";
 import IconLink from "./icons/link.vue";
 import IconUnlink from "./icons/unlink.vue";
 import IconListCheck from "./icons/list-check.vue";
+import IconTable from "./icons/table.vue";
 import type { CharacterCountOptions } from "@tiptap/extension-character-count";
 import type { TextAlignOptions } from "@tiptap/extension-text-align";
 import textAlign from "./extensions/text-align";
@@ -631,6 +708,8 @@ import type { FocusOptions } from "@tiptap/extension-focus";
 import focus from "./extensions/focus";
 import type { TaskItemOptions } from "@tiptap/extension-task-item";
 import task from "./extensions/task";
+import type { TableOptions } from "@tiptap/extension-table";
+import table from "./extensions/table";
 
 const { t } = useI18n({ messages });
 
@@ -647,6 +726,7 @@ interface Props {
   characterCountMode: CharacterCountOptions["mode"];
   focusMode: FocusOptions["mode"];
   taskItemNested: TaskItemOptions["nested"];
+  tableResizable: TableOptions["resizable"];
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -660,6 +740,7 @@ const props = withDefaults(defineProps<Props>(), {
   characterCountMode: () => characterCount.defaults.mode,
   focusMode: () => focus.defaults.mode,
   taskItemNested: () => task.defaults.nested,
+  tableResizable: () => table.defaults.resizable,
 });
 
 const emit = defineEmits<{
