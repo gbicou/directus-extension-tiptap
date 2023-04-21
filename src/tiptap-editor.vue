@@ -2,7 +2,7 @@
   <div class="tiptap-editor" :class="{ disabled: props.disabled }">
     <bubble-menu class="tiptap-editor__bubble" :editor="editor" :tippy-options="{ duration: 100 }">
       <v-chip
-        v-if="editorExtensions.includes('bold')"
+        v-if="editorExtensions.includes('bold') && editor.can().toggleBold()"
         x-small
         @click="editor.chain().focus().toggleBold().run()"
         :outlined="!editor.isActive('bold')"
@@ -10,7 +10,7 @@
         {{ t("wysiwyg_options.bold").toLowerCase() }}
       </v-chip>
       <v-chip
-        v-if="editorExtensions.includes('italic')"
+        v-if="editorExtensions.includes('italic') && editor.can().toggleItalic()"
         x-small
         @click="editor.chain().focus().toggleItalic().run()"
         :outlined="!editor.isActive('italic')"
@@ -18,7 +18,7 @@
         {{ t("wysiwyg_options.italic").toLowerCase() }}
       </v-chip>
       <v-chip
-        v-if="editorExtensions.includes('strike')"
+        v-if="editorExtensions.includes('strike') && editor.can().toggleStrike()"
         x-small
         @click="editor.chain().focus().toggleStrike().run()"
         :outlined="!editor.isActive('strike')"
@@ -35,7 +35,7 @@
         v-tooltip="t('wysiwyg_options.bold') + ' - ' + translateShortcut(['meta', 'b'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleBold()"
         :active="editor.isActive('bold')"
         @click="editor.chain().focus().toggleBold().run()"
       >
@@ -47,7 +47,7 @@
         v-tooltip="t('wysiwyg_options.italic') + ' - ' + translateShortcut(['meta', 'i'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleItalic()"
         :active="editor.isActive('italic')"
         @click="editor.chain().focus().toggleItalic().run()"
       >
@@ -59,7 +59,7 @@
         v-tooltip="t('wysiwyg_options.strikethrough') + ' - ' + translateShortcut(['meta', 'shift', 'x'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleStrike()"
         :active="editor.isActive('strike')"
         @click="editor.chain().focus().toggleStrike().run()"
       >
@@ -71,7 +71,7 @@
         v-tooltip="t('wysiwyg_options.underline') + ' - ' + translateShortcut(['meta', 'u'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleUnderline()"
         :active="editor.isActive('underline')"
         @click="editor.chain().focus().toggleUnderline().run()"
       >
@@ -83,7 +83,7 @@
         v-tooltip="t('wysiwyg_options.superscript') + ' - ' + translateShortcut(['meta', '.'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleSuperscript()"
         :active="editor.isActive('superscript')"
         @click="editor.chain().focus().toggleSuperscript().run()"
       >
@@ -95,7 +95,7 @@
         v-tooltip="t('wysiwyg_options.subscript') + ' - ' + translateShortcut(['meta', ','])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleSubscript()"
         :active="editor.isActive('subscript')"
         @click="editor.chain().focus().toggleSubscript().run()"
       >
@@ -107,7 +107,7 @@
         v-tooltip="t('code') + ' - ' + translateShortcut(['meta', 'e'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleCode()"
         :active="editor.isActive('code')"
         @click="editor.chain().focus().toggleCode().run()"
       >
@@ -119,7 +119,7 @@
         v-tooltip="t('tiptap.highlight') + ' - ' + translateShortcut(['meta', 'shift', 'h'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleHighlight()"
         :active="editor.isActive('highlight')"
         @click="editor.chain().focus().toggleHighlight().run()"
       >
@@ -387,10 +387,18 @@
 
       <v-menu v-if="editorExtensions.includes('textAlign')" show-arrow placement="bottom-start">
         <template #activator="{ toggle }">
-          <v-button v-tooltip="t('tiptap.text_align')" :disabled="props.disabled" small icon active @click="toggle">
+          <v-button
+            v-tooltip="t('tiptap.text_align')"
+            :disabled="props.disabled || textAlignActive === undefined"
+            small
+            icon
+            :active="textAlignActive !== undefined"
+            @click="toggle"
+          >
             <template v-for="opt in alignOptions" :key="opt.align">
               <component v-if="editor.isActive({ textAlign: opt.align })" :is="opt.icon" />
             </template>
+            <icon-align-left v-if="textAlignActive === undefined" />
           </v-button>
         </template>
         <v-list>
@@ -413,7 +421,11 @@
             </v-list-item-content>
             <v-list-item-hint>{{ opt.shortcut }}</v-list-item-hint>
           </v-list-item>
-          <v-list-item clickable @click="editor.chain().focus().unsetTextAlign().run()">
+          <v-list-item
+            clickable
+            :active="textAlignActive === undefined"
+            @click="editor.chain().focus().unsetTextAlign().run()"
+          >
             <v-list-item-content>
               <v-text-overflow :text="t('wysiwyg_options.alignnone')" />
             </v-list-item-content>
@@ -437,7 +449,7 @@
         v-tooltip="t('wysiwyg_options.link')"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().setLink({ href: '' })"
         :active="editor.isActive('link')"
         @click="linkOpen"
       >
@@ -460,7 +472,7 @@
         v-tooltip="t('tiptap.br') + ' - ' + translateShortcut(['shift', 'enter'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().setHardBreak()"
         @click="editor.chain().focus().setHardBreak().run()"
       >
         <icon-text-wrap />
@@ -806,7 +818,7 @@
 
 <script setup lang="ts">
 import { BubbleMenu, Editor, EditorContent } from "@tiptap/vue-3";
-import { onBeforeUnmount, watch } from "vue";
+import { computed, onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
 import type { TypeType, ValueType } from "./types";
@@ -956,6 +968,10 @@ const editor = new Editor({
 const editorExtensions = editor.extensionManager.extensions.map((ext) => ext.name);
 
 const { linkDrawerOpen, linkHref, linkTarget, linkOpen, linkClose, linkSave, linkRemove } = useLink(editor);
+
+const textAlignActive = computed(() => {
+  return ["left", "center", "right", "justify"].find((align) => editor.isActive({ textAlign: align }));
+});
 
 watch(
   () => props.value,
