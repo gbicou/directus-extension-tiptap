@@ -441,7 +441,7 @@
               <icon-layout-left />
             </v-list-item-icon>
             <v-list-item-content
-            ><v-text-overflow :text="t(`tiptap.table_toggle_header_column`)"
+              ><v-text-overflow :text="t(`tiptap.table_toggle_header_column`)"
             /></v-list-item-content>
           </v-list-item>
           <v-list-item
@@ -517,27 +517,25 @@
 
     <editor-content class="tiptap-editor__content" :editor="editor" />
 
-    <v-dialog v-model="linkDrawerOpen">
-      <v-card class="card">
-        <v-card-title class="card-title">{{ t("wysiwyg_options.link") }}</v-card-title>
-        <v-card-text>
-          <div class="grid">
-            <div class="field">
-              <div class="type-label">{{ t("url") }}</div>
-              <v-input v-model="linkHref" :placeholder="t('url_placeholder')"></v-input>
-            </div>
-            <div class="field">
-              <div class="type-label">{{ t("open_link_in") }}</div>
-              <v-input v-model="linkTarget"></v-input>
-            </div>
+    <v-drawer v-model="linkDrawerOpen" :title="t('wysiwyg_options.link')" icon="link" @cancel="linkClose">
+      <div class="content">
+        <div class="grid">
+          <div class="field">
+            <div class="type-label">{{ t("url") }}</div>
+            <v-input v-model="linkHref" :placeholder="t('url_placeholder')"></v-input>
           </div>
-        </v-card-text>
-        <v-card-actions>
-          <v-button secondary @click="linkClose">{{ t("cancel") }}</v-button>
-          <v-button :disabled="linkHref === null" @click="linkSave">{{ t("save") }}</v-button>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+          <div class="field">
+            <div class="type-label">{{ t("open_link_in") }}</div>
+            <v-input v-model="linkTarget"></v-input>
+          </div>
+        </div>
+      </div>
+      <template #actions>
+        <v-button v-tooltip.bottom="t('save')" icon rounded :disabled="linkHref === null" @click="linkSave">
+          <v-icon name="check" />
+        </v-button>
+      </template>
+    </v-drawer>
 
     <div class="tiptap-editor__info" v-if="editorExtensions.includes('characterCount')">
       <div v-if="editorExtensions.includes('characterCount')">
@@ -555,6 +553,8 @@
 </template>
 
 <style scoped lang="scss">
+@import "./styles/mixins/form-grid";
+
 .v-menu-content {
   svg {
     fill: var(--v-input-color);
@@ -563,6 +563,17 @@
   [disabled] svg,
   .disabled svg {
     fill: var(--foreground-subdued);
+  }
+}
+
+.v-drawer {
+  .grid {
+    @include form-grid;
+  }
+
+  .content {
+    padding: var(--content-padding);
+    padding-top: 0;
   }
 }
 </style>
