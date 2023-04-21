@@ -6,7 +6,7 @@ import type { PlaceholderOptions } from "@tiptap/extension-placeholder";
 import type { FocusOptions } from "@tiptap/extension-focus";
 import type { TaskItemOptions } from "@tiptap/extension-task-item";
 import type { TableOptions } from "@tiptap/extension-table";
-import type { DeepPartial, Field } from "@directus/shared/types";
+import type { DeepPartial, Field } from "@directus/types";
 import underline from "./extensions/underline";
 import textAlign from "./extensions/text-align";
 import characterCount from "./extensions/character-count";
