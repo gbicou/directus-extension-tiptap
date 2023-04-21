@@ -1,3 +1,10 @@
+# [1.8.0-alpha.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.1-alpha.2...v1.8.0-alpha.1) (2023-04-21)
+
+
+### Features
+
+* image extension [#16](https://github.com/gbicou/directus-extension-tiptap/issues/16) ([fdf9aca](https://github.com/gbicou/directus-extension-tiptap/commit/fdf9aca6261a6b6dd34d6216e8ebd7d95445ddc0))
+
 ## [1.7.1-alpha.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.1-alpha.1...v1.7.1-alpha.2) (2023-04-21)
 
 
