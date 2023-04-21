@@ -483,7 +483,7 @@
         small
         icon
         :disabled="props.disabled"
-        @click="editor.chain().focus().unsetAllMarks().clearNodes().run()"
+        @click="editor.chain().focus().unsetAllMarks().run()"
       >
         <icon-format-clear />
       </v-button>
