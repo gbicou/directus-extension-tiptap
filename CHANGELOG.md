@@ -1,3 +1,10 @@
+## [1.7.1-alpha.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.1-alpha.1...v1.7.1-alpha.2) (2023-04-21)
+
+
+### Bug Fixes
+
+* clear format without clearing nodes ([9f20ae4](https://github.com/gbicou/directus-extension-tiptap/commit/9f20ae4230cc0084e100edf5979e975868185c06))
+
 ## [1.7.1-alpha.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0...v1.7.1-alpha.1) (2023-04-21)
 
 
