@@ -321,6 +321,17 @@
         <icon-unlink />
       </v-button>
 
+      <v-button
+        v-if="editorExtensions.includes('image')"
+        v-tooltip="t('wysiwyg_options.image')"
+        small
+        icon
+        :disabled="props.disabled || !editor.can().setImage({ src: '' })"
+        @click="imageOpen"
+      >
+        <icon-image />
+      </v-button>
+
       <v-menu v-if="editorExtensions.includes('table')" show-arrow placement="bottom-start">
         <template #activator="{ toggle }">
           <v-button
@@ -517,6 +528,19 @@
 
     <editor-content class="tiptap-editor__content" :editor="editor" />
 
+    <div class="tiptap-editor__info" v-if="editorExtensions.includes('characterCount')">
+      <div v-if="editorExtensions.includes('characterCount')">
+        <template v-if="!editor.storage.characterCount.characters() && !editor.storage.characterCount.words()">
+          ∅
+        </template>
+        <template v-else>
+          {{ t("tiptap.count_words", editor.storage.characterCount.words()) }},
+          {{ t("tiptap.count_chars", editor.storage.characterCount.characters()) }}
+          <template v-if="props.characterCountLimit"> / {{ props.characterCountLimit }}</template>
+        </template>
+      </div>
+    </div>
+
     <v-drawer v-model="linkDrawerOpen" :title="t('wysiwyg_options.link')" icon="link" @cancel="linkClose">
       <div class="content">
         <div class="grid">
@@ -537,18 +561,51 @@
       </template>
     </v-drawer>
 
-    <div class="tiptap-editor__info" v-if="editorExtensions.includes('characterCount')">
-      <div v-if="editorExtensions.includes('characterCount')">
-        <template v-if="!editor.storage.characterCount.characters() && !editor.storage.characterCount.words()">
-          ∅
+    <v-drawer v-model="imageDrawerOpen" :title="t('wysiwyg_options.image')" icon="image" @cancel="imageClose">
+      <div class="content">
+        <template v-if="imageSelection">
+          <img class="image-preview" :src="imageSelection.imageUrl" />
+          <div class="grid">
+            <!--
+            <div class="field half">
+              <div class="type-label">{{ t('image_url') }}</div>
+              <v-input v-model="imageSelection.imageUrl" />
+            </div>
+            <div class="field half-right">
+              <div class="type-label">{{ t('alt_text') }}</div>
+              <v-input v-model="imageSelection.alt" :nullable="false" />
+            </div>
+            <template v-if="storageAssetTransform === 'all'">
+              <div class="field half">
+                <div class="type-label">{{ t('width') }}</div>
+                <v-input v-model="imageSelection.width" :disabled="!!imageSelection.transformationKey" />
+              </div>
+              <div class="field half-right">
+                <div class="type-label">{{ t('height') }}</div>
+                <v-input v-model="imageSelection.height" :disabled="!!imageSelection.transformationKey" />
+              </div>
+            </template>
+            <div v-if="storageAssetTransform !== 'none' && storageAssetPresets.length > 0" class="field half">
+              <div class="type-label">{{ t('transformation_preset_key') }}</div>
+              <v-select
+                v-model="imageSelection.transformationKey"
+                :items="storageAssetPresets.map((preset) => ({ text: preset.key, value: preset.key }))"
+                :show-deselect="true"
+              />
+            </div>
+            -->
+          </div>
         </template>
-        <template v-else>
-          {{ t("tiptap.count_words", editor.storage.characterCount.words()) }},
-          {{ t("tiptap.count_chars", editor.storage.characterCount.characters()) }}
-          <template v-if="props.characterCountLimit"> / {{ props.characterCountLimit }}</template>
-        </template>
+        <v-upload v-else :multiple="false" from-library from-url @input="imageSelect" />
       </div>
-    </div>
+
+      <template #actions>
+        <v-button v-tooltip.bottom="t('save_image')" icon rounded @click="imageSave">
+          <v-icon name="check" />
+        </v-button>
+      </template>
+    </v-drawer>
+
   </div>
 </template>
 
@@ -574,6 +631,15 @@
   .content {
     padding: var(--content-padding);
     padding-top: 0;
+  }
+
+  .image-preview,
+  .media-preview {
+    width: 100%;
+    height: var(--input-height-tall);
+    margin-bottom: 24px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
   }
 }
 </style>
@@ -823,6 +889,15 @@
       cursor: ew-resize;
       cursor: col-resize;
     }
+
+    img {
+      max-width: 100%;
+      height: auto;
+
+      &.ProseMirror-selectednode {
+        outline: 3px solid #68CEF8;
+      }
+    }
   }
 }
 </style>
@@ -893,6 +968,8 @@ import IconSplitCell from "./icons/split-cell.vue";
 import IconLayoutTop from "./icons/layout-top.vue";
 import IconLayoutLeft from "./icons/layout-left.vue";
 import IconLayoutGrid from "./icons/layout-grid.vue";
+import IconImage from "./icons/image.vue";
+import {useImage} from "./composables/image";
 
 const { t } = useI18n({ messages });
 
@@ -979,6 +1056,8 @@ const editor = new Editor({
 const editorExtensions = editor.extensionManager.extensions.map((ext) => ext.name);
 
 const { linkDrawerOpen, linkHref, linkTarget, linkOpen, linkClose, linkSave, linkRemove } = useLink(editor);
+
+const { imageDrawerOpen, imageSelection, imageSelect, imageOpen, imageClose, imageSave } = useImage(editor);
 
 const textAlignActive = computed(() => {
   return ["left", "center", "right", "justify"].find((align) => editor.isActive({ textAlign: align }));

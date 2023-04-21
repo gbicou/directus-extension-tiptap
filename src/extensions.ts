@@ -19,6 +19,7 @@ import link from "./extensions/link";
 import focus from "./extensions/focus";
 import task from "./extensions/task";
 import table from "./extensions/table";
+import image from "./extensions/image";
 
 interface ExtensionsProps {
   extensions: string[] | null;
@@ -52,6 +53,7 @@ export const localExtensions: IExtension<AnyExtension>[] = [
   underline,
   // nodes
   table,
+  image,
   task,
   textAlign,
   // editor
