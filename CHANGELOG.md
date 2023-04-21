@@ -1,3 +1,10 @@
+## [1.7.1-alpha.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0...v1.7.1-alpha.1) (2023-04-21)
+
+
+### Bug Fixes
+
+* toolbar disabled buttons ([08aabb8](https://github.com/gbicou/directus-extension-tiptap/commit/08aabb85730af47751d43fb11ebb3b7247970241))
+
 # [1.7.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.6.0...v1.7.0) (2023-04-20)
 
 
