@@ -2,13 +2,13 @@ lockfileVersion: '6.0'
 
 devDependencies:
   '@directus/extensions-sdk':
-    specifier: ~9.25.2
+    specifier: 9.25.2
     version: 9.25.2
   '@directus/schema':
     specifier: ^9.25.2
     version: 9.25.2
   '@directus/types':
-    specifier: ~9.25.2
+    specifier: ^9.25.2
     version: 9.25.2
   '@rushstack/eslint-patch':
     specifier: ^1.2.0
