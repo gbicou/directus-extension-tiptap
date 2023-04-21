@@ -344,7 +344,9 @@
             <v-list-item-icon>
               <icon-layout-left />
             </v-list-item-icon>
-            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_toggle_header_column`)" /></v-list-item-content>
+            <v-list-item-content
+              ><v-text-overflow :text="t(`tiptap.table_toggle_header_column`)"
+            /></v-list-item-content>
           </v-list-item>
           <v-list-item
             clickable
