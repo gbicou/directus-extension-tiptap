@@ -83,8 +83,8 @@ devDependencies:
     specifier: ^11.0.2
     version: 11.0.2(eslint-plugin-vue@9.11.0)(eslint@8.38.0)(typescript@5.0.4)
   '@vue/tsconfig':
-    specifier: ^0.1.3
-    version: 0.1.3
+    specifier: ^0.3.0
+    version: 0.3.0
   eslint:
     specifier: ^8.38.0
     version: 8.38.0
@@ -1746,13 +1746,8 @@ packages:
     resolution: {integrity: sha512-BHGyyGN3Q97EZx0taMQ+OLNuZcW3d37ZEVmEAyeoA9ERdGvm9Irc/0Fua8SNyOtV1w6BS4q25wbMzJujO9HIfQ==}
     dev: true
 
-  /@vue/tsconfig@0.1.3:
-    resolution: {integrity: sha512-kQVsh8yyWPvHpb8gIc9l/HIDiiVUy1amynLNpCy8p+FoCiZXCo6fQos5/097MmnNZc9AtseDsCrfkhqCrJ8Olg==}
-    peerDependencies:
-      '@types/node': '*'
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
+  /@vue/tsconfig@0.3.0:
+    resolution: {integrity: sha512-q/6xf5nbmCcJ5jTzJapIPRiBfJGunfuKh0jvl3o/25Wn93ZHkiYTB+rR0pj+2lZ9cCrkK/f4JLuhe4jGLwtwMw==}
     dev: true
 
   /JSONStream@1.3.5:
