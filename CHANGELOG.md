@@ -1,3 +1,10 @@
+# [1.8.0-alpha.3](https://github.com/gbicou/directus-extension-tiptap/compare/v1.8.0-alpha.2...v1.8.0-alpha.3) (2023-04-24)
+
+
+### Bug Fixes
+
+* image selection ([6aad4f9](https://github.com/gbicou/directus-extension-tiptap/commit/6aad4f9166e2c9d495bcb6d4a6822ea115953626))
+
 # [1.8.0-alpha.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.8.0-alpha.1...v1.8.0-alpha.2) (2023-04-24)
 
 
