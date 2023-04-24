@@ -1,5 +1,6 @@
 import type { Editor } from "@tiptap/vue-3";
 import { ref } from "vue";
+import { getPublicURL } from "../utils/get-root-path";
 
 type ImageSelection = {
   imageUrl: string;
@@ -26,16 +27,12 @@ export function useImage(editor: Editor) {
   }
 
   function imageSave() {
-    editor
-      .chain()
-      .focus()
-      .setImage({ src: imageSelection.value.imageUrl })
-      .run();
+    editor.chain().focus().setImage({ src: imageSelection.value.imageUrl }).run();
     imageClose();
   }
 
   function imageSelect(image: Record<string, any>) {
-    const assetUrl = 'http://0.0.0.0:8055/assets/' + image.id;
+    const assetUrl = getPublicURL() + "assets/" + image.id;
 
     imageSelection.value = {
       imageUrl: assetUrl,
