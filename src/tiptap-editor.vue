@@ -566,34 +566,14 @@
         <template v-if="imageSelection">
           <img class="image-preview" :src="imageSelection.imageUrl" />
           <div class="grid">
-            <!--
-            <div class="field half">
-              <div class="type-label">{{ t('image_url') }}</div>
+            <div class="field">
+              <div class="type-label">{{ t("image_url") }}</div>
               <v-input v-model="imageSelection.imageUrl" />
             </div>
-            <div class="field half-right">
-              <div class="type-label">{{ t('alt_text') }}</div>
+            <div class="field">
+              <div class="type-label">{{ t("alt_text") }}</div>
               <v-input v-model="imageSelection.alt" :nullable="false" />
             </div>
-            <template v-if="storageAssetTransform === 'all'">
-              <div class="field half">
-                <div class="type-label">{{ t('width') }}</div>
-                <v-input v-model="imageSelection.width" :disabled="!!imageSelection.transformationKey" />
-              </div>
-              <div class="field half-right">
-                <div class="type-label">{{ t('height') }}</div>
-                <v-input v-model="imageSelection.height" :disabled="!!imageSelection.transformationKey" />
-              </div>
-            </template>
-            <div v-if="storageAssetTransform !== 'none' && storageAssetPresets.length > 0" class="field half">
-              <div class="type-label">{{ t('transformation_preset_key') }}</div>
-              <v-select
-                v-model="imageSelection.transformationKey"
-                :items="storageAssetPresets.map((preset) => ({ text: preset.key, value: preset.key }))"
-                :show-deselect="true"
-              />
-            </div>
-            -->
           </div>
         </template>
         <v-upload v-else :multiple="false" from-library from-url @input="imageSelect" />
@@ -605,7 +585,6 @@
         </v-button>
       </template>
     </v-drawer>
-
   </div>
 </template>
 
@@ -895,7 +874,7 @@
       height: auto;
 
       &.ProseMirror-selectednode {
-        outline: 3px solid #68CEF8;
+        outline: 2px solid var(--v-input-border-color-focus);
       }
     }
   }

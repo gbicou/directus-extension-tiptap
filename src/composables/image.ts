@@ -4,11 +4,7 @@ import { getPublicURL } from "../utils/get-root-path";
 
 type ImageSelection = {
   imageUrl: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-  transformationKey?: string | null;
-  previewUrl?: string;
+  alt: string;
 };
 
 export function useImage(editor: Editor) {
@@ -16,8 +12,15 @@ export function useImage(editor: Editor) {
   const imageSelection = ref<ImageSelection | null>(null);
 
   function imageOpen() {
-    const attrs = editor.getAttributes("image");
-    imageSelection.value = attrs.href;
+    if (editor.isActive("image")) {
+      const attrs = editor.getAttributes("image");
+      imageSelection.value = {
+        imageUrl: attrs.src,
+        alt: attrs.alt,
+      };
+    } else {
+      imageSelection.value = null;
+    }
     imageDrawerOpen.value = true;
   }
 
@@ -27,15 +30,23 @@ export function useImage(editor: Editor) {
   }
 
   function imageSave() {
-    editor.chain().focus().setImage({ src: imageSelection.value.imageUrl }).run();
+    editor
+      .chain()
+      .focus()
+      .setImage({
+        src: imageSelection.value.imageUrl,
+        alt: imageSelection.value.alt,
+      })
+      .run();
     imageClose();
   }
 
-  function imageSelect(image: Record<string, any>) {
+  function imageSelect(image: Record<string, never>) {
     const assetUrl = getPublicURL() + "assets/" + image.id;
 
     imageSelection.value = {
       imageUrl: assetUrl,
+      alt: image.title,
     };
   }
 
