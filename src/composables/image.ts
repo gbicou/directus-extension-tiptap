@@ -30,14 +30,16 @@ export function useImage(editor: Editor) {
   }
 
   function imageSave() {
-    editor
-      .chain()
-      .focus()
-      .setImage({
-        src: imageSelection.value.imageUrl,
-        alt: imageSelection.value.alt,
-      })
-      .run();
+    if (imageSelection.value) {
+      editor
+        .chain()
+        .focus()
+        .setImage({
+          src: imageSelection.value.imageUrl,
+          alt: imageSelection.value.alt,
+        })
+        .run();
+    }
     imageClose();
   }
 
