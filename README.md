@@ -6,7 +6,7 @@
 
 This is a [Directus](https://directus.io/) extension that provides the [Tiptap](https://tiptap.dev/) editor as a rich text field type.
 
-The [StarterKit](https://tiptap.dev/api/extensions/starter-kit) tiptap bundle is already included and thé other tiptap extensions are available in thé directus interface options.
+The [StarterKit](https://tiptap.dev/api/extensions/starter-kit) tiptap bundle is already included and the other tiptap extensions are available in the directus interface options.
 
 - npm package : `@bicou/directus-extension-tiptap`
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
