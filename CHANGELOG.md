@@ -1,3 +1,19 @@
+# [1.8.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0...v1.8.0) (2023-04-24)
+
+
+### Bug Fixes
+
+* clear format without clearing nodes ([9f20ae4](https://github.com/gbicou/directus-extension-tiptap/commit/9f20ae4230cc0084e100edf5979e975868185c06))
+* get root path util [#16](https://github.com/gbicou/directus-extension-tiptap/issues/16) ([090daa1](https://github.com/gbicou/directus-extension-tiptap/commit/090daa18a61596f728c5e7237f53a554bc6f35ce))
+* image edition [#16](https://github.com/gbicou/directus-extension-tiptap/issues/16) ([5c8d608](https://github.com/gbicou/directus-extension-tiptap/commit/5c8d608e71cf3eb2ed163f3629d1d2a559b5e3fd))
+* image selection ([6aad4f9](https://github.com/gbicou/directus-extension-tiptap/commit/6aad4f9166e2c9d495bcb6d4a6822ea115953626))
+* toolbar disabled buttons ([08aabb8](https://github.com/gbicou/directus-extension-tiptap/commit/08aabb85730af47751d43fb11ebb3b7247970241))
+
+
+### Features
+
+* image extension [#16](https://github.com/gbicou/directus-extension-tiptap/issues/16) ([fdf9aca](https://github.com/gbicou/directus-extension-tiptap/commit/fdf9aca6261a6b6dd34d6216e8ebd7d95445ddc0))
+
 # [1.8.0-alpha.3](https://github.com/gbicou/directus-extension-tiptap/compare/v1.8.0-alpha.2...v1.8.0-alpha.3) (2023-04-24)
 
 
