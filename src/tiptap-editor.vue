@@ -969,7 +969,7 @@ import IconLayoutTop from "./icons/layout-top.vue";
 import IconLayoutLeft from "./icons/layout-left.vue";
 import IconLayoutGrid from "./icons/layout-grid.vue";
 import IconImage from "./icons/image.vue";
-import {useImage} from "./composables/image";
+import { useImage } from "./composables/image";
 
 const { t } = useI18n({ messages });
 
