@@ -1,3 +1,11 @@
+# [1.8.0-alpha.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.8.0-alpha.1...v1.8.0-alpha.2) (2023-04-24)
+
+
+### Bug Fixes
+
+* get root path util [#16](https://github.com/gbicou/directus-extension-tiptap/issues/16) ([090daa1](https://github.com/gbicou/directus-extension-tiptap/commit/090daa18a61596f728c5e7237f53a554bc6f35ce))
+* image edition [#16](https://github.com/gbicou/directus-extension-tiptap/issues/16) ([5c8d608](https://github.com/gbicou/directus-extension-tiptap/commit/5c8d608e71cf3eb2ed163f3629d1d2a559b5e3fd))
+
 # [1.8.0-alpha.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.1-alpha.2...v1.8.0-alpha.1) (2023-04-21)
 
 
