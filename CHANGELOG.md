@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.8.0...v1.9.0) (2023-04-25)
+
+
+### Features
+
+* use a custom image tiptap extension for directus files [#16](https://github.com/gbicou/directus-extension-tiptap/issues/16) ([3c2ce9c](https://github.com/gbicou/directus-extension-tiptap/commit/3c2ce9c04b8b01d73b04ac04df6c46431b6357cf))
+
 # [1.8.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.7.0...v1.8.0) (2023-04-24)
 
 
