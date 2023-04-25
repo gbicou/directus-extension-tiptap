@@ -19,6 +19,9 @@ export interface ImageOptions {
 
 export const Image = Node.create<ImageOptions>({
   name: "image",
+  inline: false,
+  group: "block",
+  draggable: true,
 
   addOptions() {
     return {
@@ -26,16 +29,6 @@ export const Image = Node.create<ImageOptions>({
       HTMLAttributes: {},
     };
   },
-
-  inline() {
-    return false;
-  },
-
-  group() {
-    return "block";
-  },
-
-  draggable: true,
 
   addAttributes() {
     return {
