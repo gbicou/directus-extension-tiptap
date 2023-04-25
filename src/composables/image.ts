@@ -3,9 +3,16 @@ import { ref } from "vue";
 import { getPublicURL } from "../utils/get-root-path";
 
 type ImageSelection = {
-  imageUrl: string;
+  id: string;
   alt: string;
+  previewSrc: string;
 };
+
+const publicURL = getPublicURL();
+
+function getPreviewSrc(id: string): string {
+  return publicURL + "assets/" + id;
+}
 
 export function useImage(editor: Editor) {
   const imageDrawerOpen = ref(false);
@@ -15,8 +22,9 @@ export function useImage(editor: Editor) {
     if (editor.isActive("image")) {
       const attrs = editor.getAttributes("image");
       imageSelection.value = {
-        imageUrl: attrs.src,
+        id: attrs.id,
         alt: attrs.alt,
+        previewSrc: getPreviewSrc(attrs.id),
       };
     } else {
       imageSelection.value = null;
@@ -35,7 +43,7 @@ export function useImage(editor: Editor) {
         .chain()
         .focus()
         .setImage({
-          src: imageSelection.value.imageUrl,
+          id: imageSelection.value.id,
           alt: imageSelection.value.alt,
         })
         .run();
@@ -44,11 +52,10 @@ export function useImage(editor: Editor) {
   }
 
   function imageSelect(image: Record<string, never>) {
-    const assetUrl = getPublicURL() + "assets/" + image.id;
-
     imageSelection.value = {
-      imageUrl: assetUrl,
+      id: image.id,
       alt: image.title,
+      previewSrc: getPreviewSrc(image.id),
     };
   }
 

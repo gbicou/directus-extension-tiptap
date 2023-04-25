@@ -326,7 +326,7 @@
         v-tooltip="t('wysiwyg_options.image')"
         small
         icon
-        :disabled="props.disabled || !editor.can().setImage({ src: '' })"
+        :disabled="props.disabled || !editor.can().setImage({ id: '' })"
         @click="imageOpen"
       >
         <icon-image />
@@ -564,12 +564,14 @@
     <v-drawer v-model="imageDrawerOpen" :title="t('wysiwyg_options.image')" icon="image" @cancel="imageClose">
       <div class="content">
         <template v-if="imageSelection">
-          <img class="image-preview" :src="imageSelection.imageUrl" />
+          <img class="image-preview" :src="imageSelection.previewSrc" />
           <div class="grid">
+            <!--
             <div class="field">
               <div class="type-label">{{ t("image_url") }}</div>
               <v-input v-model="imageSelection.imageUrl" />
             </div>
+            -->
             <div class="field">
               <div class="type-label">{{ t("alt_text") }}</div>
               <v-input v-model="imageSelection.alt" :nullable="false" />

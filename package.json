@@ -59,7 +59,6 @@
     "@tiptap/extension-character-count": "^2.0.3",
     "@tiptap/extension-focus": "^2.0.3",
     "@tiptap/extension-highlight": "^2.0.3",
-    "@tiptap/extension-image": "^2.0.3",
     "@tiptap/extension-link": "^2.0.3",
     "@tiptap/extension-placeholder": "^2.0.3",
     "@tiptap/extension-subscript": "^2.0.3",
