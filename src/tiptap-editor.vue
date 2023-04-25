@@ -566,12 +566,10 @@
         <template v-if="imageSelection">
           <img class="image-preview" :src="imageSelection.previewSrc" />
           <div class="grid">
-            <!--
             <div class="field">
-              <div class="type-label">{{ t("image_url") }}</div>
-              <v-input v-model="imageSelection.imageUrl" />
+              <div class="type-label">{{ t("fields.directus_files.filename_download") }}</div>
+              <v-input v-model="imageSelection.filename" nullable />
             </div>
-            -->
             <div class="field">
               <div class="type-label">{{ t("alt_text") }}</div>
               <v-input v-model="imageSelection.alt" :nullable="false" />

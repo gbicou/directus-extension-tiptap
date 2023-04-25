@@ -5,6 +5,7 @@ import { getPublicURL } from "../utils/get-root-path";
 type ImageSelection = {
   id: string;
   alt: string;
+  filename?: string;
   previewSrc: string;
 };
 
@@ -24,6 +25,7 @@ export function useImage(editor: Editor) {
       imageSelection.value = {
         id: attrs.id,
         alt: attrs.alt,
+        filename: attrs.filename,
         previewSrc: getPreviewSrc(attrs.id),
       };
     } else {
@@ -45,6 +47,7 @@ export function useImage(editor: Editor) {
         .setImage({
           id: imageSelection.value.id,
           alt: imageSelection.value.alt,
+          filename: imageSelection.value.filename,
         })
         .run();
     }
@@ -55,6 +58,7 @@ export function useImage(editor: Editor) {
     imageSelection.value = {
       id: image.id,
       alt: image.title,
+      filename: image.filename_download,
       previewSrc: getPreviewSrc(image.id),
     };
   }

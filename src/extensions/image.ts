@@ -8,7 +8,7 @@ declare module "@tiptap/core" {
       /**
        * Add an image
        */
-      setImage: (options: { id: string; alt?: string; title?: string }) => ReturnType;
+      setImage: (options: { id: string; alt?: string; filename?: string; title?: string }) => ReturnType;
     };
   }
 }
@@ -44,6 +44,18 @@ export const Image = Node.create<ImageOptions>({
       alt: {
         default: null,
       },
+      filename: {
+        default: null,
+        parseHTML: (element) => element.getAttribute("data-directus-filename"),
+        renderHTML: (attributes) => {
+          if (!attributes.filename) {
+            return {};
+          }
+          return {
+            "data-directus-filename": attributes.filename,
+          };
+        },
+      },
       title: {
         default: null,
       },
@@ -59,7 +71,9 @@ export const Image = Node.create<ImageOptions>({
   },
 
   renderHTML({ HTMLAttributes }) {
-    const src = this.options.publicURL + "assets/" + HTMLAttributes["data-directus-id"];
+    const id = HTMLAttributes["data-directus-id"];
+    const filename = HTMLAttributes["data-directus-filename"];
+    const src = this.options.publicURL + "assets/" + id + (filename ? "/" + filename : "");
     return ["img", mergeAttributes(this.options.HTMLAttributes, HTMLAttributes, { src })];
   },
 
