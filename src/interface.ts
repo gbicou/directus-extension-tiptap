@@ -1,5 +1,5 @@
 import { defineInterface } from "@directus/extensions-sdk";
-import type { Field, DeepPartial } from "@directus/shared/types";
+import type { Field, DeepPartial } from "@directus/types";
 import TiptapEditor from "./tiptap-editor.vue";
 import { extensionsGroups, localExtensions } from "./extensions";
 

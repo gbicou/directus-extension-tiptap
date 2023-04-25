@@ -6,7 +6,7 @@ import type { PlaceholderOptions } from "@tiptap/extension-placeholder";
 import type { FocusOptions } from "@tiptap/extension-focus";
 import type { TaskItemOptions } from "@tiptap/extension-task-item";
 import type { TableOptions } from "@tiptap/extension-table";
-import type { DeepPartial, Field } from "@directus/shared/types";
+import type { DeepPartial, Field } from "@directus/types";
 import underline from "./extensions/underline";
 import textAlign from "./extensions/text-align";
 import characterCount from "./extensions/character-count";
@@ -19,6 +19,7 @@ import link from "./extensions/link";
 import focus from "./extensions/focus";
 import task from "./extensions/task";
 import table from "./extensions/table";
+import image from "./extensions/image";
 
 interface ExtensionsProps {
   extensions: string[] | null;
@@ -52,6 +53,7 @@ export const localExtensions: IExtension<AnyExtension>[] = [
   underline,
   // nodes
   table,
+  image,
   task,
   textAlign,
   // editor

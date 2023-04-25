@@ -2,7 +2,7 @@
   <div class="tiptap-editor" :class="{ disabled: props.disabled }">
     <bubble-menu class="tiptap-editor__bubble" :editor="editor" :tippy-options="{ duration: 100 }">
       <v-chip
-        v-if="editorExtensions.includes('bold')"
+        v-if="editorExtensions.includes('bold') && editor.can().toggleBold()"
         x-small
         @click="editor.chain().focus().toggleBold().run()"
         :outlined="!editor.isActive('bold')"
@@ -10,7 +10,7 @@
         {{ t("wysiwyg_options.bold").toLowerCase() }}
       </v-chip>
       <v-chip
-        v-if="editorExtensions.includes('italic')"
+        v-if="editorExtensions.includes('italic') && editor.can().toggleItalic()"
         x-small
         @click="editor.chain().focus().toggleItalic().run()"
         :outlined="!editor.isActive('italic')"
@@ -18,7 +18,7 @@
         {{ t("wysiwyg_options.italic").toLowerCase() }}
       </v-chip>
       <v-chip
-        v-if="editorExtensions.includes('strike')"
+        v-if="editorExtensions.includes('strike') && editor.can().toggleStrike()"
         x-small
         @click="editor.chain().focus().toggleStrike().run()"
         :outlined="!editor.isActive('strike')"
@@ -35,7 +35,7 @@
         v-tooltip="t('wysiwyg_options.bold') + ' - ' + translateShortcut(['meta', 'b'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleBold()"
         :active="editor.isActive('bold')"
         @click="editor.chain().focus().toggleBold().run()"
       >
@@ -47,7 +47,7 @@
         v-tooltip="t('wysiwyg_options.italic') + ' - ' + translateShortcut(['meta', 'i'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleItalic()"
         :active="editor.isActive('italic')"
         @click="editor.chain().focus().toggleItalic().run()"
       >
@@ -55,23 +55,11 @@
       </v-button>
 
       <v-button
-        v-if="editorExtensions.includes('strike')"
-        v-tooltip="t('wysiwyg_options.strikethrough') + ' - ' + translateShortcut(['meta', 'shift', 'x'])"
-        small
-        icon
-        :disabled="props.disabled"
-        :active="editor.isActive('strike')"
-        @click="editor.chain().focus().toggleStrike().run()"
-      >
-        <icon-strikethrough />
-      </v-button>
-
-      <v-button
         v-if="editorExtensions.includes('underline')"
         v-tooltip="t('wysiwyg_options.underline') + ' - ' + translateShortcut(['meta', 'u'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleUnderline()"
         :active="editor.isActive('underline')"
         @click="editor.chain().focus().toggleUnderline().run()"
       >
@@ -79,15 +67,15 @@
       </v-button>
 
       <v-button
-        v-if="editorExtensions.includes('superscript')"
-        v-tooltip="t('wysiwyg_options.superscript') + ' - ' + translateShortcut(['meta', '.'])"
+        v-if="editorExtensions.includes('strike')"
+        v-tooltip="t('wysiwyg_options.strikethrough') + ' - ' + translateShortcut(['meta', 'shift', 'x'])"
         small
         icon
-        :disabled="props.disabled"
-        :active="editor.isActive('superscript')"
-        @click="editor.chain().focus().toggleSuperscript().run()"
+        :disabled="props.disabled || !editor.can().toggleStrike()"
+        :active="editor.isActive('strike')"
+        @click="editor.chain().focus().toggleStrike().run()"
       >
-        <icon-superscript />
+        <icon-strikethrough />
       </v-button>
 
       <v-button
@@ -95,7 +83,7 @@
         v-tooltip="t('wysiwyg_options.subscript') + ' - ' + translateShortcut(['meta', ','])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleSubscript()"
         :active="editor.isActive('subscript')"
         @click="editor.chain().focus().toggleSubscript().run()"
       >
@@ -103,11 +91,23 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('superscript')"
+        v-tooltip="t('wysiwyg_options.superscript') + ' - ' + translateShortcut(['meta', '.'])"
+        small
+        icon
+        :disabled="props.disabled || !editor.can().toggleSuperscript()"
+        :active="editor.isActive('superscript')"
+        @click="editor.chain().focus().toggleSuperscript().run()"
+      >
+        <icon-superscript />
+      </v-button>
+
+      <v-button
         v-if="editorExtensions.includes('code')"
         v-tooltip="t('code') + ' - ' + translateShortcut(['meta', 'e'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleCode()"
         :active="editor.isActive('code')"
         @click="editor.chain().focus().toggleCode().run()"
       >
@@ -119,7 +119,7 @@
         v-tooltip="t('tiptap.highlight') + ' - ' + translateShortcut(['meta', 'shift', 'h'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().toggleHighlight()"
         :active="editor.isActive('highlight')"
         @click="editor.chain().focus().toggleHighlight().run()"
       >
@@ -223,6 +223,113 @@
         @click="editor.chain().focus().toggleBlockquote().run()"
       >
         <icon-quote-text />
+      </v-button>
+
+      <v-button
+        v-if="editorExtensions.includes('codeBlock')"
+        v-tooltip="t('wysiwyg_options.codeblock') + ' - ' + translateShortcut(['meta', 'alt', 'c'])"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.isActive('codeBlock')"
+        @click="editor.chain().focus().toggleCodeBlock().run()"
+      >
+        <icon-code-box-line />
+      </v-button>
+
+      <div class="divider" />
+
+      <v-menu v-if="editorExtensions.includes('textAlign')" show-arrow placement="bottom-start">
+        <template #activator="{ toggle }">
+          <v-button
+            v-tooltip="t('tiptap.text_align')"
+            :disabled="props.disabled || textAlignActive === undefined"
+            small
+            icon
+            :active="textAlignActive !== undefined"
+            @click="toggle"
+          >
+            <template v-for="opt in alignOptions" :key="opt.align">
+              <component v-if="editor.isActive({ textAlign: opt.align })" :is="opt.icon" />
+            </template>
+            <icon-align-left v-if="textAlignActive === undefined" />
+          </v-button>
+        </template>
+        <v-list>
+          <v-list-item
+            v-for="opt in alignOptions"
+            :key="opt.align"
+            clickable
+            :active="editor.isActive({ textAlign: opt.align })"
+            @click="
+              editor.isActive({ textAlign: opt.align })
+                ? editor.chain().focus().unsetTextAlign().run()
+                : editor.chain().focus().setTextAlign(opt.align).run()
+            "
+          >
+            <v-list-item-icon>
+              <component :is="opt.icon" />
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-text-overflow :text="opt.text" />
+            </v-list-item-content>
+            <v-list-item-hint>{{ opt.shortcut }}</v-list-item-hint>
+          </v-list-item>
+          <v-list-item
+            clickable
+            :active="textAlignActive === undefined"
+            @click="editor.chain().focus().unsetTextAlign().run()"
+          >
+            <v-list-item-content>
+              <v-text-overflow :text="t('wysiwyg_options.alignnone')" />
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+
+      <v-button
+        v-if="editorExtensions.includes('horizontalRule')"
+        v-tooltip="t('wysiwyg_options.hr')"
+        small
+        icon
+        :disabled="props.disabled"
+        @click="editor.chain().focus().setHorizontalRule().run()"
+      >
+        <icon-separator />
+      </v-button>
+
+      <v-button
+        v-if="editorExtensions.includes('link')"
+        v-tooltip="t('wysiwyg_options.link')"
+        small
+        icon
+        :disabled="props.disabled || !editor.can().setLink({ href: '' })"
+        :active="editor.isActive('link')"
+        @click="linkOpen"
+      >
+        <icon-link />
+      </v-button>
+
+      <v-button
+        v-if="editorExtensions.includes('link')"
+        v-tooltip="t('wysiwyg_options.unlink')"
+        small
+        icon
+        :disabled="props.disabled || !editor.isActive('link')"
+        @click="linkRemove"
+      >
+        <icon-unlink />
+      </v-button>
+
+      <v-button
+        v-if="editorExtensions.includes('image')"
+        v-tooltip="t('wysiwyg_options.image')"
+        small
+        icon
+        :disabled="props.disabled || !editor.can().setImage({ id: '' })"
+        @click="imageOpen"
+      >
+        <icon-image />
       </v-button>
 
       <v-menu v-if="editorExtensions.includes('table')" show-arrow placement="bottom-start">
@@ -344,7 +451,9 @@
             <v-list-item-icon>
               <icon-layout-left />
             </v-list-item-icon>
-            <v-list-item-content><v-text-overflow :text="t(`tiptap.table_toggle_header_column`)" /></v-list-item-content>
+            <v-list-item-content
+              ><v-text-overflow :text="t(`tiptap.table_toggle_header_column`)"
+            /></v-list-item-content>
           </v-list-item>
           <v-list-item
             clickable
@@ -370,95 +479,11 @@
       </v-menu>
 
       <v-button
-        v-if="editorExtensions.includes('codeBlock')"
-        v-tooltip="t('wysiwyg_options.codeblock') + ' - ' + translateShortcut(['meta', 'alt', 'c'])"
-        small
-        icon
-        :disabled="props.disabled"
-        :active="editor.isActive('codeBlock')"
-        @click="editor.chain().focus().toggleCodeBlock().run()"
-      >
-        <icon-code-box-line />
-      </v-button>
-
-      <div class="divider" />
-
-      <v-menu v-if="editorExtensions.includes('textAlign')" show-arrow placement="bottom-start">
-        <template #activator="{ toggle }">
-          <v-button v-tooltip="t('tiptap.text_align')" :disabled="props.disabled" small icon active @click="toggle">
-            <template v-for="opt in alignOptions" :key="opt.align">
-              <component v-if="editor.isActive({ textAlign: opt.align })" :is="opt.icon" />
-            </template>
-          </v-button>
-        </template>
-        <v-list>
-          <v-list-item
-            v-for="opt in alignOptions"
-            :key="opt.align"
-            clickable
-            :active="editor.isActive({ textAlign: opt.align })"
-            @click="
-              editor.isActive({ textAlign: opt.align })
-                ? editor.chain().focus().unsetTextAlign().run()
-                : editor.chain().focus().setTextAlign(opt.align).run()
-            "
-          >
-            <v-list-item-icon>
-              <component :is="opt.icon" />
-            </v-list-item-icon>
-            <v-list-item-content>
-              <v-text-overflow :text="opt.text" />
-            </v-list-item-content>
-            <v-list-item-hint>{{ opt.shortcut }}</v-list-item-hint>
-          </v-list-item>
-          <v-list-item clickable @click="editor.chain().focus().unsetTextAlign().run()">
-            <v-list-item-content>
-              <v-text-overflow :text="t('wysiwyg_options.alignnone')" />
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-
-      <v-button
-        v-if="editorExtensions.includes('horizontalRule')"
-        v-tooltip="t('wysiwyg_options.hr')"
-        small
-        icon
-        :disabled="props.disabled"
-        @click="editor.chain().focus().setHorizontalRule().run()"
-      >
-        <icon-separator />
-      </v-button>
-
-      <v-button
-        v-if="editorExtensions.includes('link')"
-        v-tooltip="t('wysiwyg_options.link')"
-        small
-        icon
-        :disabled="props.disabled"
-        :active="editor.isActive('link')"
-        @click="linkOpen"
-      >
-        <icon-link />
-      </v-button>
-
-      <v-button
-        v-if="editorExtensions.includes('link')"
-        v-tooltip="t('wysiwyg_options.unlink')"
-        small
-        icon
-        :disabled="props.disabled || !editor.isActive('link')"
-        @click="linkRemove"
-      >
-        <icon-unlink />
-      </v-button>
-
-      <v-button
         v-if="editorExtensions.includes('hardBreak')"
         v-tooltip="t('tiptap.br') + ' - ' + translateShortcut(['shift', 'enter'])"
         small
         icon
-        :disabled="props.disabled"
+        :disabled="props.disabled || !editor.can().setHardBreak()"
         @click="editor.chain().focus().setHardBreak().run()"
       >
         <icon-text-wrap />
@@ -469,7 +494,7 @@
         small
         icon
         :disabled="props.disabled"
-        @click="editor.chain().focus().unsetAllMarks().clearNodes().run()"
+        @click="editor.chain().focus().unsetAllMarks().run()"
       >
         <icon-format-clear />
       </v-button>
@@ -503,28 +528,6 @@
 
     <editor-content class="tiptap-editor__content" :editor="editor" />
 
-    <v-dialog v-model="linkDrawerOpen">
-      <v-card class="card">
-        <v-card-title class="card-title">{{ t("wysiwyg_options.link") }}</v-card-title>
-        <v-card-text>
-          <div class="grid">
-            <div class="field">
-              <div class="type-label">{{ t("url") }}</div>
-              <v-input v-model="linkHref" :placeholder="t('url_placeholder')"></v-input>
-            </div>
-            <div class="field">
-              <div class="type-label">{{ t("open_link_in") }}</div>
-              <v-input v-model="linkTarget"></v-input>
-            </div>
-          </div>
-        </v-card-text>
-        <v-card-actions>
-          <v-button secondary @click="linkClose">{{ t("cancel") }}</v-button>
-          <v-button :disabled="linkHref === null" @click="linkSave">{{ t("save") }}</v-button>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-
     <div class="tiptap-editor__info" v-if="editorExtensions.includes('characterCount')">
       <div v-if="editorExtensions.includes('characterCount')">
         <template v-if="!editor.storage.characterCount.characters() && !editor.storage.characterCount.words()">
@@ -537,10 +540,59 @@
         </template>
       </div>
     </div>
+
+    <v-drawer v-model="linkDrawerOpen" :title="t('wysiwyg_options.link')" icon="link" @cancel="linkClose">
+      <div class="content">
+        <div class="grid">
+          <div class="field">
+            <div class="type-label">{{ t("url") }}</div>
+            <v-input v-model="linkHref" :placeholder="t('url_placeholder')"></v-input>
+          </div>
+          <div class="field">
+            <div class="type-label">{{ t("open_link_in") }}</div>
+            <v-input v-model="linkTarget"></v-input>
+          </div>
+        </div>
+      </div>
+      <template #actions>
+        <v-button v-tooltip.bottom="t('save')" icon rounded :disabled="linkHref === null" @click="linkSave">
+          <v-icon name="check" />
+        </v-button>
+      </template>
+    </v-drawer>
+
+    <v-drawer v-model="imageDrawerOpen" :title="t('wysiwyg_options.image')" icon="image" @cancel="imageClose">
+      <div class="content">
+        <template v-if="imageSelection">
+          <img class="image-preview" :src="imageSelection.previewSrc" />
+          <div class="grid">
+            <!--
+            <div class="field">
+              <div class="type-label">{{ t("image_url") }}</div>
+              <v-input v-model="imageSelection.imageUrl" />
+            </div>
+            -->
+            <div class="field">
+              <div class="type-label">{{ t("alt_text") }}</div>
+              <v-input v-model="imageSelection.alt" :nullable="false" />
+            </div>
+          </div>
+        </template>
+        <v-upload v-else :multiple="false" from-library from-url @input="imageSelect" />
+      </div>
+
+      <template #actions>
+        <v-button v-tooltip.bottom="t('save_image')" icon rounded @click="imageSave">
+          <v-icon name="check" />
+        </v-button>
+      </template>
+    </v-drawer>
   </div>
 </template>
 
 <style scoped lang="scss">
+@import "./styles/mixins/form-grid";
+
 .v-menu-content {
   svg {
     fill: var(--v-input-color);
@@ -549,6 +601,26 @@
   [disabled] svg,
   .disabled svg {
     fill: var(--foreground-subdued);
+  }
+}
+
+.v-drawer {
+  .grid {
+    @include form-grid;
+  }
+
+  .content {
+    padding: var(--content-padding);
+    padding-top: 0;
+  }
+
+  .image-preview,
+  .media-preview {
+    width: 100%;
+    height: var(--input-height-tall);
+    margin-bottom: 24px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
   }
 }
 </style>
@@ -621,7 +693,7 @@
     flex-wrap: wrap;
     align-items: center;
     min-height: 40px;
-    padding: 0 2px;
+    padding: 2px;
     background-color: var(--background-subdued);
     border-bottom: 2px solid var(--border-normal);
 
@@ -798,13 +870,22 @@
       cursor: ew-resize;
       cursor: col-resize;
     }
+
+    img {
+      max-width: 100%;
+      height: auto;
+
+      &.ProseMirror-selectednode {
+        outline: 2px solid var(--v-input-border-color-focus);
+      }
+    }
   }
 }
 </style>
 
 <script setup lang="ts">
 import { BubbleMenu, Editor, EditorContent } from "@tiptap/vue-3";
-import { onBeforeUnmount, watch } from "vue";
+import { computed, onBeforeUnmount, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
 import type { TypeType, ValueType } from "./types";
@@ -868,6 +949,8 @@ import IconSplitCell from "./icons/split-cell.vue";
 import IconLayoutTop from "./icons/layout-top.vue";
 import IconLayoutLeft from "./icons/layout-left.vue";
 import IconLayoutGrid from "./icons/layout-grid.vue";
+import IconImage from "./icons/image.vue";
+import { useImage } from "./composables/image";
 
 const { t } = useI18n({ messages });
 
@@ -954,6 +1037,12 @@ const editor = new Editor({
 const editorExtensions = editor.extensionManager.extensions.map((ext) => ext.name);
 
 const { linkDrawerOpen, linkHref, linkTarget, linkOpen, linkClose, linkSave, linkRemove } = useLink(editor);
+
+const { imageDrawerOpen, imageSelection, imageSelect, imageOpen, imageClose, imageSave } = useImage(editor);
+
+const textAlignActive = computed(() => {
+  return ["left", "center", "right", "justify"].find((align) => editor.isActive({ textAlign: align }));
+});
 
 watch(
   () => props.value,
