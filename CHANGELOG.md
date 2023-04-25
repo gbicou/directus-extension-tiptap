@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.9.0...v1.9.1) (2023-04-25)
+
+
+### Bug Fixes
+
+* configurable image filename ([e751b72](https://github.com/gbicou/directus-extension-tiptap/commit/e751b72ec0755d0cee14f8238c9769583d116593))
+
 # [1.9.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.8.0...v1.9.0) (2023-04-25)
 
 
