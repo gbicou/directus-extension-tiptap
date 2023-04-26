@@ -1,3 +1,10 @@
+## [1.9.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.9.1...v1.9.2) (2023-04-26)
+
+
+### Bug Fixes
+
+* image width and height ([d5591ba](https://github.com/gbicou/directus-extension-tiptap/commit/d5591ba481cd4f2cf691ca5d1c96659e30afa3da))
+
 ## [1.9.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.9.0...v1.9.1) (2023-04-25)
 
 
