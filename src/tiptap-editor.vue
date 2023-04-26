@@ -564,7 +564,7 @@
     <v-drawer v-model="imageDrawerOpen" :title="t('wysiwyg_options.image')" icon="image" @cancel="imageClose">
       <div class="content">
         <template v-if="imageSelection">
-          <img class="image-preview" :src="imageSelection.previewSrc" />
+          <img class="image-preview" :src="`/assets/${imageSelection.id}`" />
           <div class="grid">
             <div class="field">
               <div class="type-label">{{ t("fields.directus_files.filename_download") }}</div>
@@ -573,6 +573,14 @@
             <div class="field">
               <div class="type-label">{{ t("alt_text") }}</div>
               <v-input v-model="imageSelection.alt" :nullable="false" />
+            </div>
+            <div class="field half">
+              <div class="type-label">{{ t("width") }}</div>
+              <v-input v-model="imageSelection.width" />
+            </div>
+            <div class="field half-right">
+              <div class="type-label">{{ t("height") }}</div>
+              <v-input v-model="imageSelection.height" />
             </div>
           </div>
         </template>

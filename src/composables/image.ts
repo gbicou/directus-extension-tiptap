@@ -1,33 +1,14 @@
 import type { Editor } from "@tiptap/vue-3";
 import { ref } from "vue";
-import { getPublicURL } from "../utils/get-root-path";
-
-type ImageSelection = {
-  id: string;
-  alt: string;
-  filename?: string;
-  previewSrc: string;
-};
-
-const publicURL = getPublicURL();
-
-function getPreviewSrc(id: string): string {
-  return publicURL + "assets/" + id;
-}
+import type { ImageAttributes } from "../extensions/image";
 
 export function useImage(editor: Editor) {
   const imageDrawerOpen = ref(false);
-  const imageSelection = ref<ImageSelection | null>(null);
+  const imageSelection = ref<ImageAttributes | null>(null);
 
   function imageOpen() {
     if (editor.isActive("image")) {
-      const attrs = editor.getAttributes("image");
-      imageSelection.value = {
-        id: attrs.id,
-        alt: attrs.alt,
-        filename: attrs.filename,
-        previewSrc: getPreviewSrc(attrs.id),
-      };
+      imageSelection.value = editor.getAttributes("image") as ImageAttributes;
     } else {
       imageSelection.value = null;
     }
@@ -41,15 +22,7 @@ export function useImage(editor: Editor) {
 
   function imageSave() {
     if (imageSelection.value) {
-      editor
-        .chain()
-        .focus()
-        .setImage({
-          id: imageSelection.value.id,
-          alt: imageSelection.value.alt,
-          filename: imageSelection.value.filename,
-        })
-        .run();
+      editor.chain().focus().setImage(imageSelection.value).run();
     }
     imageClose();
   }
@@ -59,7 +32,8 @@ export function useImage(editor: Editor) {
       id: image.id,
       alt: image.title,
       filename: image.filename_download,
-      previewSrc: getPreviewSrc(image.id),
+      width: image.width,
+      height: image.height,
     };
   }
 

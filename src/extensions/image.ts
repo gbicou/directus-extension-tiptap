@@ -2,13 +2,22 @@ import type { IExtension } from "../extensions";
 import { mergeAttributes, Node } from "@tiptap/core";
 import { getPublicURL } from "../utils/get-root-path";
 
+export interface ImageAttributes {
+  id: string;
+  alt?: string;
+  filename?: string;
+  width?: string;
+  height?: string;
+  title?: string;
+}
+
 declare module "@tiptap/core" {
   interface Commands<ReturnType> {
     image: {
       /**
        * Add an image
        */
-      setImage: (options: { id: string; alt?: string; filename?: string; title?: string }) => ReturnType;
+      setImage: (options: ImageAttributes) => ReturnType;
     };
   }
 }
@@ -55,6 +64,12 @@ export const Image = Node.create<ImageOptions>({
             "data-directus-filename": attributes.filename,
           };
         },
+      },
+      width: {
+        default: null,
+      },
+      height: {
+        default: null,
       },
       title: {
         default: null,
