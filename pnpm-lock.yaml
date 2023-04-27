@@ -5,8 +5,8 @@ devDependencies:
     specifier: ^1.0.1
     version: 1.0.1
   '@directus/extensions-sdk':
-    specifier: 9.26.0
-    version: 9.26.0
+    specifier: 10.0.0
+    version: 10.0.0
   '@directus/schema':
     specifier: 9.26.0
     version: 9.26.0
@@ -186,31 +186,31 @@ packages:
     dev: true
     optional: true
 
-  /@directus/composables@9.26.0:
-    resolution: {integrity: sha512-4MebZzwBPzc3MYr+6PHonDL3fNZuF3aZhhioTZWbWyqPInV3PJZKeEhqqsAen8a0dRyntJBjvjVj+ZyNZrByuQ==}
+  /@directus/composables@10.0.0:
+    resolution: {integrity: sha512-/Z8DNcWIKMHbAXPLpIjgcyCPenbvT9jO7MoN7h+rqoYqQYK80e2c7/4wFiTLHO5fKDtWtNpKiPWIlkAMGTRPLA==}
     dependencies:
-      '@directus/constants': 9.26.0
-      '@directus/utils': 9.26.0
+      '@directus/constants': 10.0.0
+      '@directus/utils': 10.0.0
       lodash-es: 4.17.21
       nanoid: 4.0.2
       vue: 3.2.47
     dev: true
 
-  /@directus/constants@9.26.0:
-    resolution: {integrity: sha512-1NNLPkf2Zgy2UyIuB7yFcMhDbu0pJDD4l7jdxC5dFVIDJUOUfzPlJ4Eu8c6cfTBG/waE8J86n1nI0eApbRET1w==}
+  /@directus/constants@10.0.0:
+    resolution: {integrity: sha512-8lTrIsxOt6rjCdQA1QWiDi7AYU6/RiOMgyISWcVW0v4uAaWUsm3sE1gV1L7ure13oulP8sKxTzSMXzWiSmabVw==}
     dependencies:
       zod: 3.21.4
     dev: true
 
-  /@directus/extensions-sdk@9.26.0:
-    resolution: {integrity: sha512-ZKQYWrEA4zL0EfNJyOgHN3nYYroWdfXjXLsGHjVrxkviZ9jIpoK6lZUG7aMQEaIvftN2uY8AY0GBFt4FT3LuAQ==}
+  /@directus/extensions-sdk@10.0.0:
+    resolution: {integrity: sha512-Va0dasAZNy4icE8mBMfpBlzYvk95YBSeDLmNNr8khpG+8kSyTtlB2KpLOT6Rl2huNNtzJbEjvh5/hYkqqCJPew==}
     engines: {node: '>=12.20.0'}
     hasBin: true
     dependencies:
-      '@directus/composables': 9.26.0
-      '@directus/constants': 9.26.0
-      '@directus/types': 9.26.0
-      '@directus/utils': 9.26.0
+      '@directus/composables': 10.0.0
+      '@directus/constants': 10.0.0
+      '@directus/types': 10.0.0
+      '@directus/utils': 10.0.0
       '@rollup/plugin-commonjs': 24.1.0(rollup@3.20.7)
       '@rollup/plugin-json': 6.0.0(rollup@3.20.7)
       '@rollup/plugin-node-resolve': 15.0.2(rollup@3.20.7)
@@ -248,19 +248,23 @@ packages:
       - tedious
     dev: true
 
-  /@directus/storage@9.26.0:
-    resolution: {integrity: sha512-BLjy9NEPd1DfqsAwpC/fKdwFbIfPbEulvU1nVMnRJZ8uipkExQwPMvwFw5gJjF4O9iRyQ1FVAkrZqmLM0m1yqA==}
+  /@directus/storage@10.0.0:
+    resolution: {integrity: sha512-OMXaIgScvEvGSCTk8VOB8mzZ9jDSYFJP5JXAkCTF0M4mMvPNRjQFj8hop7YHZLqRkcYuQRuZqlMrobk72A7kXA==}
+    dev: true
+
+  /@directus/types@10.0.0:
+    resolution: {integrity: sha512-q78E5wW16LEBZfTft4yxY3hiEjdDzRG7H9ytx8G3lbclQFhYjml3PeqrXI7HzrDgwXozZm1/loC7zuVIYfbFQw==}
     dev: true
 
   /@directus/types@9.26.0:
     resolution: {integrity: sha512-1+kGL0Sg/KfqEhBfPjlID1fb3i5Tq6KYj4xIfGq6tcdfha56vAmJy1r3bP9ireFqw0N+FiUT5ahFPa/aLH0yzg==}
     dev: true
 
-  /@directus/utils@9.26.0:
-    resolution: {integrity: sha512-VRQKt4wEm7Xk45r8DNFzXYjbpjbRoN0gEUpfrSeTytM5uPZtq65iIpsuyr8og6+6rx8xdR9n+scy/4Tbl7JhQQ==}
+  /@directus/utils@10.0.0:
+    resolution: {integrity: sha512-nMeys+7O3+rYpsYOtFYrdBPv02sFnaEh52j7kjDLo3a9nPgnjC5b9Wo13eaYAuTyL6TmQUn2t/ZKtHAIw8HqwQ==}
     dependencies:
-      '@directus/constants': 9.26.0
-      '@directus/storage': 9.26.0
+      '@directus/constants': 10.0.0
+      '@directus/storage': 10.0.0
       date-fns: 2.29.3
       fs-extra: 11.1.1
       joi: 17.9.1
