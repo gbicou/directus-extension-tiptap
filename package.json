@@ -49,12 +49,11 @@
     "release": "semantic-release"
   },
   "devDependencies": {
+    "@bicou/semantic-release": "^1.0.1",
     "@directus/extensions-sdk": "9.26.0",
     "@directus/schema": "9.26.0",
     "@directus/types": "9.26.0",
     "@rushstack/eslint-patch": "^1.2.0",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
     "@tiptap/core": "^2.0.3",
     "@tiptap/extension-character-count": "^2.0.3",
     "@tiptap/extension-focus": "^2.0.3",

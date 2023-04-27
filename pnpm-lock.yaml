@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 devDependencies:
+  '@bicou/semantic-release':
+    specifier: ^1.0.1
+    version: 1.0.1
   '@directus/extensions-sdk':
     specifier: 9.26.0
     version: 9.26.0
@@ -13,12 +16,6 @@ devDependencies:
   '@rushstack/eslint-patch':
     specifier: ^1.2.0
     version: 1.2.0
-  '@semantic-release/changelog':
-    specifier: ^6.0.3
-    version: 6.0.3(semantic-release@21.0.1)
-  '@semantic-release/git':
-    specifier: ^10.0.1
-    version: 10.0.1(semantic-release@21.0.1)
   '@tiptap/core':
     specifier: ^2.0.3
     version: 2.0.3(@tiptap/pm@2.0.3)
@@ -169,6 +166,17 @@ packages:
       '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+    dev: true
+
+  /@bicou/semantic-release@1.0.1:
+    resolution: {integrity: sha512-1Bo4Gamj/0NoDkh2iypdZf9zCW4ClgiJSjDbkajD9B9AcsDy66UzwL7vq564qQJI7UobjQH6ZmLyAbcKdDeVMQ==}
+    dependencies:
+      '@semantic-release/changelog': 6.0.3(semantic-release@21.0.1)
+      '@semantic-release/git': 10.0.1(semantic-release@21.0.1)
+      semantic-release: 21.0.1
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
     dev: true
 
   /@colors/colors@1.5.0:
