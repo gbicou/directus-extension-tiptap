@@ -11,8 +11,8 @@ devDependencies:
     specifier: 9.26.0
     version: 9.26.0
   '@directus/types':
-    specifier: 9.26.0
-    version: 9.26.0
+    specifier: 10.0.0
+    version: 10.0.0
   '@rushstack/eslint-patch':
     specifier: ^1.2.0
     version: 1.2.0
@@ -250,6 +250,10 @@ packages:
 
   /@directus/storage@9.26.0:
     resolution: {integrity: sha512-BLjy9NEPd1DfqsAwpC/fKdwFbIfPbEulvU1nVMnRJZ8uipkExQwPMvwFw5gJjF4O9iRyQ1FVAkrZqmLM0m1yqA==}
+    dev: true
+
+  /@directus/types@10.0.0:
+    resolution: {integrity: sha512-q78E5wW16LEBZfTft4yxY3hiEjdDzRG7H9ytx8G3lbclQFhYjml3PeqrXI7HzrDgwXozZm1/loC7zuVIYfbFQw==}
     dev: true
 
   /@directus/types@9.26.0:
