@@ -8,8 +8,8 @@ devDependencies:
     specifier: 9.26.0
     version: 9.26.0
   '@directus/schema':
-    specifier: 9.26.0
-    version: 9.26.0
+    specifier: 10.0.0
+    version: 10.0.0
   '@directus/types':
     specifier: 9.26.0
     version: 9.26.0
@@ -233,8 +233,8 @@ packages:
       - supports-color
     dev: true
 
-  /@directus/schema@9.26.0:
-    resolution: {integrity: sha512-QNndw9HzpJOg5qU2CeyEU7laEtUgJAu2l5Uvb/tPqGA9ZMMmNq5fum3Y1mVnLf4hZH8pOiaERx6OmenGEwnYjA==}
+  /@directus/schema@10.0.0:
+    resolution: {integrity: sha512-ykty+RLpMtEQuUoOOyeodB3VjDBJdoSzjAl7k4vi7T//brJGVogn8ps+cReXkRhXyBQ8njyoaAXSuOeiWoOy0w==}
     dependencies:
       knex: 2.4.2
     transitivePeerDependencies:
