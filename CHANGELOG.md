@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.9.2...v1.10.0) (2023-04-28)
+
+
+### Features
+
+* upgrade directus to version 10 ([f83be77](https://github.com/gbicou/directus-extension-tiptap/commit/f83be775436f76dd11f98823440483268f5f5f7d)), closes [#23](https://github.com/gbicou/directus-extension-tiptap/issues/23) [#24](https://github.com/gbicou/directus-extension-tiptap/issues/24) [#25](https://github.com/gbicou/directus-extension-tiptap/issues/25)
+
 ## [1.9.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.9.1...v1.9.2) (2023-04-26)
 
 
