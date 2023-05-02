@@ -922,6 +922,7 @@ interface Props {
   autofocus: boolean;
   extensions: string[] | null;
   // extensions options
+  cdnURL: string | null;
   placeholder: PlaceholderOptions["placeholder"];
   textAlignTypes: TextAlignOptions["types"];
   characterCountLimit: CharacterCountOptions["limit"];
@@ -936,6 +937,7 @@ const props = withDefaults(defineProps<Props>(), {
   disabled: false,
   autofocus: false,
   extensions: null,
+  cdnURL: null,
   placeholder: () => placeholder.defaults.placeholder,
   textAlignTypes: () => textAlign.defaults.types,
   characterCountLimit: () => characterCount.defaults.limit,

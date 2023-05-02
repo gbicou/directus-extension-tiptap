@@ -88,7 +88,7 @@ export const Image = Node.create<ImageOptions>({
   renderHTML({ HTMLAttributes }) {
     const id = HTMLAttributes["data-directus-id"];
     const filename = HTMLAttributes["data-directus-filename"];
-    const src = this.options.publicURL + "assets/" + id + (filename ? "/" + filename : "");
+    const src = this.options.publicURL + id + (filename ? "/" + filename : "");
     return ["img", mergeAttributes(this.options.HTMLAttributes, HTMLAttributes, { src })];
   },
 
@@ -112,9 +112,26 @@ const extension: ExtensionMeta<typeof Image> = {
   package: "File Library",
   group: "node",
   defaults: {},
-  options: [],
-  load() {
-    return Image;
+  options: [
+    {
+      field: "cdnURL",
+      name: "CDN URL",
+      type: "string",
+      meta: {
+        interface: "string",
+        width: "half",
+        note: "CDN address for HTML output (optional)",
+      },
+    },
+  ],
+  load(props) {
+    return Image.configure({
+      publicURL: props.cdnURL
+        ? props.cdnURL?.endsWith("/")
+          ? props.cdnURL
+          : props.cdnURL + "/"
+        : getPublicURL() + "assets/",
+    });
   },
 };
 
