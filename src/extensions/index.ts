@@ -31,6 +31,7 @@ export const extensionsGroups: { group: ExtensionGroup; label: string }[] = [
 
 interface ExtensionsProps {
   extensions: string[] | null;
+  cdnURL: string | null;
   placeholder: PlaceholderOptions["placeholder"];
   characterCountLimit: CharacterCountOptions["limit"];
   characterCountMode: CharacterCountOptions["mode"];
