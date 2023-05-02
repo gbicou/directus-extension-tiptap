@@ -120,7 +120,7 @@ const extension: ExtensionMeta<typeof Image> = {
       meta: {
         interface: "string",
         width: "half",
-        note: "CDN URL for image consumption",
+        note: "CDN address for HTML output (optional)",
       },
     },
   ],
