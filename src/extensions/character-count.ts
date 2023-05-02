@@ -1,4 +1,4 @@
-import type { IExtension } from "../extensions";
+import type { ExtensionMeta } from "./index";
 import { CharacterCount, type CharacterCountOptions } from "@tiptap/extension-character-count";
 
 const defaults: Partial<CharacterCountOptions> = {
@@ -6,7 +6,7 @@ const defaults: Partial<CharacterCountOptions> = {
   mode: "textSize",
 };
 
-const extension: IExtension<typeof CharacterCount> = {
+const extension: ExtensionMeta<typeof CharacterCount> = {
   name: "characterCount",
   title: "CharacterCount",
   package: "@tiptap/extension-character-count",

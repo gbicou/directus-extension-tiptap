@@ -1,7 +1,7 @@
-import type { IExtension } from "../extensions";
+import type { ExtensionMeta } from "./index";
 import { Underline } from "@tiptap/extension-underline";
 
-const extension: IExtension<typeof Underline> = {
+const extension: ExtensionMeta<typeof Underline> = {
   name: "underline",
   title: "Underline",
   package: "@tiptap/extension-underline",

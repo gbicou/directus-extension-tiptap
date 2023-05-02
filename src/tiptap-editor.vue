@@ -39,7 +39,7 @@
         :active="editor.isActive('bold')"
         @click="editor.chain().focus().toggleBold().run()"
       >
-        <icon-bold />
+        <icons.Bold />
       </v-button>
 
       <v-button
@@ -51,7 +51,7 @@
         :active="editor.isActive('italic')"
         @click="editor.chain().focus().toggleItalic().run()"
       >
-        <icon-italic />
+        <icons.Italic />
       </v-button>
 
       <v-button
@@ -63,7 +63,7 @@
         :active="editor.isActive('underline')"
         @click="editor.chain().focus().toggleUnderline().run()"
       >
-        <icon-underline />
+        <icons.Underline />
       </v-button>
 
       <v-button
@@ -75,7 +75,7 @@
         :active="editor.isActive('strike')"
         @click="editor.chain().focus().toggleStrike().run()"
       >
-        <icon-strikethrough />
+        <icons.Strikethrough />
       </v-button>
 
       <v-button
@@ -87,7 +87,7 @@
         :active="editor.isActive('subscript')"
         @click="editor.chain().focus().toggleSubscript().run()"
       >
-        <icon-subscript />
+        <icons.Subscript />
       </v-button>
 
       <v-button
@@ -99,7 +99,7 @@
         :active="editor.isActive('superscript')"
         @click="editor.chain().focus().toggleSuperscript().run()"
       >
-        <icon-superscript />
+        <icons.Superscript />
       </v-button>
 
       <v-button
@@ -111,7 +111,7 @@
         :active="editor.isActive('code')"
         @click="editor.chain().focus().toggleCode().run()"
       >
-        <icon-code-line />
+        <icons.CodeLine />
       </v-button>
 
       <v-button
@@ -123,7 +123,7 @@
         :active="editor.isActive('highlight')"
         @click="editor.chain().focus().toggleHighlight().run()"
       >
-        <icon-mark-pen-line />
+        <icons.MarkPenLine />
       </v-button>
 
       <div class="divider" />
@@ -140,13 +140,13 @@
             :active="editor.isActive('heading')"
             @click="toggle"
           >
-            <icon-h1 v-if="editor.isActive('heading', { level: 1 })" />
-            <icon-h2 v-if="editor.isActive('heading', { level: 2 })" />
-            <icon-h3 v-if="editor.isActive('heading', { level: 3 })" />
-            <icon-h4 v-if="editor.isActive('heading', { level: 4 })" />
-            <icon-h5 v-if="editor.isActive('heading', { level: 5 })" />
-            <icon-h6 v-if="editor.isActive('heading', { level: 6 })" />
-            <icon-heading v-if="!editor.isActive('heading')" />
+            <icons.H1 v-if="editor.isActive('heading', { level: 1 })" />
+            <icons.H2 v-if="editor.isActive('heading', { level: 2 })" />
+            <icons.H3 v-if="editor.isActive('heading', { level: 3 })" />
+            <icons.H4 v-if="editor.isActive('heading', { level: 4 })" />
+            <icons.H5 v-if="editor.isActive('heading', { level: 5 })" />
+            <icons.H6 v-if="editor.isActive('heading', { level: 6 })" />
+            <icons.Heading v-if="!editor.isActive('heading')" />
           </v-button>
         </template>
         <v-list>
@@ -172,7 +172,7 @@
         :active="editor.isActive('paragraph')"
         @click="editor.chain().focus().setParagraph().run()"
       >
-        <icon-paragraph />
+        <icons.Paragraph />
       </v-button>
 
       <v-button
@@ -184,7 +184,7 @@
         :active="editor.isActive('bulletList')"
         @click="editor.chain().focus().toggleBulletList().run()"
       >
-        <icon-list-unordered />
+        <icons.ListUnordered />
       </v-button>
 
       <v-button
@@ -196,7 +196,7 @@
         :active="editor.isActive('orderedList')"
         @click="editor.chain().focus().toggleOrderedList().run()"
       >
-        <icon-list-ordered />
+        <icons.ListOrdered />
       </v-button>
 
       <v-button
@@ -210,7 +210,7 @@
         :active="editor.isActive('taskList')"
         @click="editor.chain().focus().toggleTaskList().run()"
       >
-        <icon-list-check />
+        <icons.ListCheck />
       </v-button>
 
       <v-button
@@ -222,7 +222,7 @@
         :active="editor.isActive('blockquote')"
         @click="editor.chain().focus().toggleBlockquote().run()"
       >
-        <icon-quote-text />
+        <icons.QuoteText />
       </v-button>
 
       <v-button
@@ -234,7 +234,7 @@
         :active="editor.isActive('codeBlock')"
         @click="editor.chain().focus().toggleCodeBlock().run()"
       >
-        <icon-code-box-line />
+        <icons.CodeBoxLine />
       </v-button>
 
       <div class="divider" />
@@ -252,7 +252,7 @@
             <template v-for="opt in alignOptions" :key="opt.align">
               <component v-if="editor.isActive({ textAlign: opt.align })" :is="opt.icon" />
             </template>
-            <icon-align-left v-if="textAlignActive === undefined" />
+            <icons.AlignLeft v-if="textAlignActive === undefined" />
           </v-button>
         </template>
         <v-list>
@@ -295,7 +295,7 @@
         :disabled="props.disabled"
         @click="editor.chain().focus().setHorizontalRule().run()"
       >
-        <icon-separator />
+        <icons.Separator />
       </v-button>
 
       <v-button
@@ -307,7 +307,7 @@
         :active="editor.isActive('link')"
         @click="linkOpen"
       >
-        <icon-link />
+        <icons.Link />
       </v-button>
 
       <v-button
@@ -318,7 +318,7 @@
         :disabled="props.disabled || !editor.isActive('link')"
         @click="linkRemove"
       >
-        <icon-unlink />
+        <icons.Unlink />
       </v-button>
 
       <v-button
@@ -329,7 +329,7 @@
         :disabled="props.disabled || !editor.can().setImage({ id: '' })"
         @click="imageOpen"
       >
-        <icon-image />
+        <icons.Image />
       </v-button>
 
       <v-menu v-if="editorExtensions.includes('table')" show-arrow placement="bottom-start">
@@ -342,13 +342,13 @@
             :active="editor.isActive('table')"
             @click="toggle"
           >
-            <icon-table />
+            <icons.Table />
           </v-button>
         </template>
         <v-list>
           <v-list-item clickable @click="editor.chain().focus().insertTable().run()">
             <v-list-item-icon>
-              <icon-table />
+              <icons.table />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_insert`)" /></v-list-item-content>
           </v-list-item>
@@ -358,7 +358,7 @@
             @click="editor.chain().focus().addColumnBefore().run()"
           >
             <v-list-item-icon>
-              <icon-insert-column-left />
+              <icons.insert-column-left />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_column_before`)" /></v-list-item-content>
           </v-list-item>
@@ -368,7 +368,7 @@
             @click="editor.chain().focus().addColumnAfter().run()"
           >
             <v-list-item-icon>
-              <icon-insert-column-right />
+              <icons.insert-column-right />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_column_after`)" /></v-list-item-content>
           </v-list-item>
@@ -378,7 +378,7 @@
             @click="editor.chain().focus().deleteColumn().run()"
           >
             <v-list-item-icon>
-              <icon-delete-column />
+              <icons.delete-column />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_delete_column`)" /></v-list-item-content>
           </v-list-item>
@@ -389,7 +389,7 @@
             @click="editor.chain().focus().addRowBefore().run()"
           >
             <v-list-item-icon>
-              <icon-insert-row-top />
+              <icons.insert-row-top />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_row_before`)" /></v-list-item-content>
           </v-list-item>
@@ -399,7 +399,7 @@
             @click="editor.chain().focus().addRowAfter().run()"
           >
             <v-list-item-icon>
-              <icon-insert-row-bottom />
+              <icons.insert-row-bottom />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_row_after`)" /></v-list-item-content>
           </v-list-item>
@@ -409,7 +409,7 @@
             @click="editor.chain().focus().deleteRow().run()"
           >
             <v-list-item-icon>
-              <icon-delete-row />
+              <icons.delete-row />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_delete_row`)" /></v-list-item-content>
           </v-list-item>
@@ -419,7 +419,7 @@
             @click="editor.chain().focus().mergeCells().run()"
           >
             <v-list-item-icon>
-              <icon-merge-cells />
+              <icons.merge-cells />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_merge_cells`)" /></v-list-item-content>
           </v-list-item>
@@ -429,7 +429,7 @@
             @click="editor.chain().focus().splitCell().run()"
           >
             <v-list-item-icon>
-              <icon-split-cell />
+              <icons.split-cell />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_split_cell`)" /></v-list-item-content>
           </v-list-item>
@@ -439,7 +439,7 @@
             @click="editor.chain().focus().toggleHeaderRow().run()"
           >
             <v-list-item-icon>
-              <icon-layout-top />
+              <icons.layout-top />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_toggle_header_row`)" /></v-list-item-content>
           </v-list-item>
@@ -449,7 +449,7 @@
             @click="editor.chain().focus().toggleHeaderColumn().run()"
           >
             <v-list-item-icon>
-              <icon-layout-left />
+              <icons.layout-left />
             </v-list-item-icon>
             <v-list-item-content
               ><v-text-overflow :text="t(`tiptap.table_toggle_header_column`)"
@@ -461,7 +461,7 @@
             @click="editor.chain().focus().toggleHeaderCell().run()"
           >
             <v-list-item-icon>
-              <icon-layout-grid />
+              <icons.layout-grid />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_toggle_header_cell`)" /></v-list-item-content>
           </v-list-item>
@@ -471,7 +471,7 @@
             @click="editor.chain().focus().deleteTable().run()"
           >
             <v-list-item-icon>
-              <icon-delete-bin />
+              <icons.delete-bin />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_delete`)" /></v-list-item-content>
           </v-list-item>
@@ -486,7 +486,7 @@
         :disabled="props.disabled || !editor.can().setHardBreak()"
         @click="editor.chain().focus().setHardBreak().run()"
       >
-        <icon-text-wrap />
+        <icons.TextWrap />
       </v-button>
 
       <v-button
@@ -496,7 +496,7 @@
         :disabled="props.disabled"
         @click="editor.chain().focus().unsetAllMarks().run()"
       >
-        <icon-format-clear />
+        <icons.FormatClear />
       </v-button>
 
       <div class="spacer" />
@@ -511,7 +511,7 @@
         :disabled="props.disabled || !editor.can().undo()"
         @click="editor.chain().focus().undo().run()"
       >
-        <icon-arrow-go-back-line />
+        <icons.ArrowGoBackLine />
       </v-button>
 
       <v-button
@@ -522,7 +522,7 @@
         :disabled="props.disabled || !editor.can().redo()"
         @click="editor.chain().focus().redo().run()"
       >
-        <icon-arrow-go-forward-line />
+        <icons.ArrowGoForwardLine />
       </v-button>
     </div>
 
@@ -897,39 +897,6 @@ import { translateShortcut } from "./utils/translate-shortcut";
 import type { TypeType, ValueType } from "./types";
 import { loadExtensions } from "./extensions";
 import messages from "./messages.json";
-import IconArrowGoBackLine from "./icons/arrow-go-back-line.vue";
-import IconParagraph from "./icons/paragraph.vue";
-import IconListUnordered from "./icons/list-unordered.vue";
-import IconListOrdered from "./icons/list-ordered.vue";
-import IconBold from "./icons/bold.vue";
-import IconItalic from "./icons/italic.vue";
-import IconStrikethrough from "./icons/strikethrough.vue";
-import IconUnderline from "./icons/underline.vue";
-import IconHeading from "./icons/heading.vue";
-import IconH1 from "./icons/h1.vue";
-import IconH2 from "./icons/h2.vue";
-import IconH3 from "./icons/h3.vue";
-import IconH4 from "./icons/h4.vue";
-import IconH5 from "./icons/h5.vue";
-import IconH6 from "./icons/h6.vue";
-import IconSeparator from "./icons/separator.vue";
-import IconArrowGoForwardLine from "./icons/arrow-go-forward-line.vue";
-import IconCodeLine from "./icons/code-line.vue";
-import IconQuoteText from "./icons/quote-text.vue";
-import IconTextWrap from "./icons/text-wrap.vue";
-import IconFormatClear from "./icons/format-clear.vue";
-import IconMarkPenLine from "./icons/mark-pen-line.vue";
-import IconSubscript from "./icons/subscript.vue";
-import IconSuperscript from "./icons/superscript.vue";
-import IconCodeBoxLine from "./icons/code-box-line.vue";
-import IconAlignLeft from "./icons/align-left.vue";
-import IconAlignCenter from "./icons/align-center.vue";
-import IconAlignRight from "./icons/align-right.vue";
-import IconAlignJustify from "./icons/align-justify.vue";
-import IconLink from "./icons/link.vue";
-import IconUnlink from "./icons/unlink.vue";
-import IconListCheck from "./icons/list-check.vue";
-import IconTable from "./icons/table.vue";
 import type { CharacterCountOptions } from "@tiptap/extension-character-count";
 import type { TextAlignOptions } from "@tiptap/extension-text-align";
 import textAlign from "./extensions/text-align";
@@ -943,19 +910,7 @@ import type { TaskItemOptions } from "@tiptap/extension-task-item";
 import task from "./extensions/task";
 import type { TableOptions } from "@tiptap/extension-table";
 import table from "./extensions/table";
-import IconInsertColumnLeft from "./icons/insert-column-left.vue";
-import IconInsertColumnRight from "./icons/insert-column-right.vue";
-import IconDeleteColumn from "./icons/delete-column.vue";
-import IconInsertRowTop from "./icons/insert-row-top.vue";
-import IconInsertRowBottom from "./icons/insert-row-bottom.vue";
-import IconDeleteRow from "./icons/delete-row.vue";
-import IconDeleteBin from "./icons/delete-bin.vue";
-import IconMergeCells from "./icons/merge-cells.vue";
-import IconSplitCell from "./icons/split-cell.vue";
-import IconLayoutTop from "./icons/layout-top.vue";
-import IconLayoutLeft from "./icons/layout-left.vue";
-import IconLayoutGrid from "./icons/layout-grid.vue";
-import IconImage from "./icons/image.vue";
+import icons from "./icons";
 import { useImage } from "./composables/image";
 
 const { t } = useI18n({ messages });
@@ -997,25 +952,25 @@ const emit = defineEmits<{
 const alignOptions = [
   {
     align: "left",
-    icon: IconAlignLeft,
+    icon: icons.AlignLeft,
     text: t("wysiwyg_options.alignleft"),
     shortcut: translateShortcut(["meta", "shift", "l"]),
   },
   {
     align: "center",
-    icon: IconAlignCenter,
+    icon: icons.AlignCenter,
     text: t("wysiwyg_options.aligncenter"),
     shortcut: translateShortcut(["meta", "shift", "e"]),
   },
   {
     align: "right",
-    icon: IconAlignRight,
+    icon: icons.AlignRight,
     text: t("wysiwyg_options.alignright"),
     shortcut: translateShortcut(["meta", "shift", "r"]),
   },
   {
     align: "justify",
-    icon: IconAlignJustify,
+    icon: icons.AlignJustify,
     text: t("wysiwyg_options.alignjustify"),
     shortcut: translateShortcut(["meta", "shift", "j"]),
   },

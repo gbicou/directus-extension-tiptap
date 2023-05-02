@@ -1,12 +1,12 @@
 import { defineInterface } from "@directus/extensions-sdk";
 import type { Field, DeepPartial } from "@directus/types";
 import TiptapEditor from "./tiptap-editor.vue";
-import { extensionsGroups, localExtensions } from "./extensions";
+import { extensionsMeta, extensionsGroups } from "./extensions";
 
 const extensionsChoices = extensionsGroups.map((group) => ({
   text: group.label,
   value: group.group,
-  children: localExtensions
+  children: extensionsMeta
     .filter((extension) => extension.group === group.group)
     .map((extension) => ({
       value: extension.name,
@@ -45,7 +45,7 @@ export default defineInterface({
 
     if (field.meta?.options) {
       // append options of selected extensions
-      for (const extension of localExtensions) {
+      for (const extension of extensionsMeta) {
         if (field.meta.options.extensions?.includes(extension.name)) {
           options.push(...extension.options);
         }

@@ -1,7 +1,7 @@
-import type { IExtension } from "../extensions";
+import type { ExtensionMeta } from "./index";
 import { Placeholder } from "@tiptap/extension-placeholder";
 
-const extension: IExtension<typeof Placeholder> = {
+const extension: ExtensionMeta<typeof Placeholder> = {
   name: "placeholder",
   title: "Placeholder",
   package: "@tiptap/extension-placeholder",

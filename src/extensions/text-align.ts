@@ -1,11 +1,11 @@
-import type { IExtension } from "../extensions";
+import type { ExtensionMeta } from "./index";
 import { TextAlign, type TextAlignOptions } from "@tiptap/extension-text-align";
 
 const defaults: Partial<TextAlignOptions> = {
   types: ["heading", "paragraph"],
 };
 
-const extension: IExtension<typeof TextAlign> = {
+const extension: ExtensionMeta<typeof TextAlign> = {
   name: "textAlign",
   title: "TextAlign",
   package: "@tiptap/extension-text-align",

@@ -1,7 +1,7 @@
-import type { IExtension } from "../extensions";
+import type { ExtensionMeta } from "./index";
 import { Subscript } from "@tiptap/extension-subscript";
 
-const extension: IExtension<typeof Subscript> = {
+const extension: ExtensionMeta<typeof Subscript> = {
   name: "subscript",
   title: "Subscript",
   package: "@tiptap/extension-subscript",

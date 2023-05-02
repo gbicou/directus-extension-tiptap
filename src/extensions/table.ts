@@ -4,7 +4,7 @@ import { TableRow } from "@tiptap/extension-table-row";
 import { TableCell } from "@tiptap/extension-table-cell";
 import { TableHeader } from "@tiptap/extension-table-header";
 import { Extension } from "@tiptap/core";
-import type { IExtension } from "../extensions";
+import type { ExtensionMeta } from "./index";
 
 // Wrapper for all Table extensions
 const TableKit = Extension.create<TableOptions>({
@@ -19,7 +19,7 @@ const defaults: Partial<TableOptions> = {
   resizable: false,
 };
 
-const extension: IExtension<typeof TableKit> = {
+const extension: ExtensionMeta<typeof TableKit> = {
   name: "table",
   title: "Table",
   package: "@tiptap/extension-table",

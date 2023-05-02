@@ -1,11 +1,11 @@
-import type { IExtension } from "../extensions";
+import type { ExtensionMeta } from "./index";
 import Focus, { type FocusOptions } from "@tiptap/extension-focus";
 
 const defaults: Partial<FocusOptions> = {
   mode: "all",
 };
 
-const extension: IExtension<typeof Focus> = {
+const extension: ExtensionMeta<typeof Focus> = {
   name: "focus",
   title: "Focus",
   package: "@tiptap/extension-focus",

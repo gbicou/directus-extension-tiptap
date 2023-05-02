@@ -1,4 +1,4 @@
-import type { IExtension } from "../extensions";
+import type { ExtensionMeta } from "./index";
 import { mergeAttributes, Node } from "@tiptap/core";
 import { getPublicURL } from "../utils/get-root-path";
 
@@ -106,7 +106,7 @@ export const Image = Node.create<ImageOptions>({
   },
 });
 
-const extension: IExtension<typeof Image> = {
+const extension: ExtensionMeta<typeof Image> = {
   name: "image",
   title: "Image",
   package: "File Library",

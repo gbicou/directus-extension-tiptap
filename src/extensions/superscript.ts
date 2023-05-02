@@ -1,7 +1,7 @@
-import type { IExtension } from "../extensions";
+import type { ExtensionMeta } from "../extensions";
 import { Superscript } from "@tiptap/extension-superscript";
 
-const extension: IExtension<typeof Superscript> = {
+const extension: ExtensionMeta<typeof Superscript> = {
   name: "superscript",
   title: "Superscript",
   package: "@tiptap/extension-superscript",
