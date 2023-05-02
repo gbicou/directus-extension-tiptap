@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.0...v1.10.1) (2023-05-02)
+
+
+### Bug Fixes
+
+* icon names ([42cddae](https://github.com/gbicou/directus-extension-tiptap/commit/42cddae8899fad7503b6dd8ec92e261fe5883416))
+
 # [1.10.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.9.2...v1.10.0) (2023-04-28)
 
 
