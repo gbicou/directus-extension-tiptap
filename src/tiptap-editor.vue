@@ -348,7 +348,7 @@
         <v-list>
           <v-list-item clickable @click="editor.chain().focus().insertTable().run()">
             <v-list-item-icon>
-              <icons.table />
+              <icons.Table />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_insert`)" /></v-list-item-content>
           </v-list-item>
@@ -358,7 +358,7 @@
             @click="editor.chain().focus().addColumnBefore().run()"
           >
             <v-list-item-icon>
-              <icons.insert-column-left />
+              <icons.InsertColumnLeft />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_column_before`)" /></v-list-item-content>
           </v-list-item>
@@ -368,7 +368,7 @@
             @click="editor.chain().focus().addColumnAfter().run()"
           >
             <v-list-item-icon>
-              <icons.insert-column-right />
+              <icons.InsertColumnRight />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_column_after`)" /></v-list-item-content>
           </v-list-item>
@@ -378,7 +378,7 @@
             @click="editor.chain().focus().deleteColumn().run()"
           >
             <v-list-item-icon>
-              <icons.delete-column />
+              <icons.DeleteColumn />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_delete_column`)" /></v-list-item-content>
           </v-list-item>
@@ -389,7 +389,7 @@
             @click="editor.chain().focus().addRowBefore().run()"
           >
             <v-list-item-icon>
-              <icons.insert-row-top />
+              <icons.InsertRowTop />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_row_before`)" /></v-list-item-content>
           </v-list-item>
@@ -399,7 +399,7 @@
             @click="editor.chain().focus().addRowAfter().run()"
           >
             <v-list-item-icon>
-              <icons.insert-row-bottom />
+              <icons.InsertRowBottom />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_add_row_after`)" /></v-list-item-content>
           </v-list-item>
@@ -409,7 +409,7 @@
             @click="editor.chain().focus().deleteRow().run()"
           >
             <v-list-item-icon>
-              <icons.delete-row />
+              <icons.DeleteRow />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_delete_row`)" /></v-list-item-content>
           </v-list-item>
@@ -419,7 +419,7 @@
             @click="editor.chain().focus().mergeCells().run()"
           >
             <v-list-item-icon>
-              <icons.merge-cells />
+              <icons.MergeCells />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_merge_cells`)" /></v-list-item-content>
           </v-list-item>
@@ -429,7 +429,7 @@
             @click="editor.chain().focus().splitCell().run()"
           >
             <v-list-item-icon>
-              <icons.split-cell />
+              <icons.SplitCell />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_split_cell`)" /></v-list-item-content>
           </v-list-item>
@@ -439,7 +439,7 @@
             @click="editor.chain().focus().toggleHeaderRow().run()"
           >
             <v-list-item-icon>
-              <icons.layout-top />
+              <icons.LayoutTop />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_toggle_header_row`)" /></v-list-item-content>
           </v-list-item>
@@ -449,7 +449,7 @@
             @click="editor.chain().focus().toggleHeaderColumn().run()"
           >
             <v-list-item-icon>
-              <icons.layout-left />
+              <icons.LayoutLeft />
             </v-list-item-icon>
             <v-list-item-content
               ><v-text-overflow :text="t(`tiptap.table_toggle_header_column`)"
@@ -461,7 +461,7 @@
             @click="editor.chain().focus().toggleHeaderCell().run()"
           >
             <v-list-item-icon>
-              <icons.layout-grid />
+              <icons.LayoutGrid />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_toggle_header_cell`)" /></v-list-item-content>
           </v-list-item>
@@ -471,7 +471,7 @@
             @click="editor.chain().focus().deleteTable().run()"
           >
             <v-list-item-icon>
-              <icons.delete-bin />
+              <icons.DeleteBin />
             </v-list-item-icon>
             <v-list-item-content><v-text-overflow :text="t(`tiptap.table_delete`)" /></v-list-item-content>
           </v-list-item>
