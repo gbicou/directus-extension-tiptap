@@ -98,8 +98,8 @@ devDependencies:
     specifier: ^3.21.3
     version: 3.21.3
   rollup-plugin-node-externals:
-    specifier: ^5.1.2
-    version: 5.1.2(rollup@3.21.3)
+    specifier: ^6.0.0
+    version: 6.0.0(rollup@3.21.3)
   sass:
     specifier: ^1.62.1
     version: 1.62.1
@@ -5385,11 +5385,11 @@ packages:
       - supports-color
     dev: true
 
-  /rollup-plugin-node-externals@5.1.2(rollup@3.21.3):
-    resolution: {integrity: sha512-M32v8yPeVT0dYOYHfd6SNyl0X1xskB15jYFlwUPzIIVpLQ200KVlilbFsoNMUho4SnQuT7Di3s/aLm79bnP48w==}
-    engines: {node: '>=14.0.0'}
+  /rollup-plugin-node-externals@6.0.0(rollup@3.21.3):
+    resolution: {integrity: sha512-T3JivXptrPQfz3hWOCLK6cFsHFMKRCipPPHXhqmY2CUuiHcT5EKfuS1uVm8WwBF7L2XYtkantmLyunuLbrY71A==}
+    engines: {node: '>=16.0.0'}
     peerDependencies:
-      rollup: ^2.60.0 || ^3.0.0
+      rollup: ^3.0.0
     dependencies:
       rollup: 3.21.3
     dev: true
