@@ -81,7 +81,7 @@
     "eslint-plugin-vue": "^9.11.0",
     "prettier": "^2.8.8",
     "rollup": "^3.21.3",
-    "rollup-plugin-node-externals": "^5.1.2",
+    "rollup-plugin-node-externals": "^6.0.0",
     "sass": "^1.62.1",
     "semantic-release": "^21.0.2",
     "typescript": "^5.0.4",
