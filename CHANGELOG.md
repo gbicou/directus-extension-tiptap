@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.1...v1.10.2) (2023-05-12)
+
+
+### Bug Fixes
+
+* use ESM build format thanks to directus/directus[#18351](https://github.com/gbicou/directus-extension-tiptap/issues/18351) ([40dc069](https://github.com/gbicou/directus-extension-tiptap/commit/40dc0694a7edd482aec36aa921923dc6ee90a9f0))
+
 ## [1.10.1](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.0...v1.10.1) (2023-05-02)
 
 
