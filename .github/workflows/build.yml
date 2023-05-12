@@ -1,18 +1,8 @@
-name: Release
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - 'main'
-      - 'next'
-      - 'next-major'
-      - 'alpha'
-      - 'beta'
-      - '*.x'
-      - '*.*.x'
+name: Build
+on: [push, pull_request]
 jobs:
-  release:
-    name: Release
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,9 +24,3 @@ jobs:
 
       - name: Build
         run: pnpm build
-
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm release
