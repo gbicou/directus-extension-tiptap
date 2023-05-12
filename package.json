@@ -18,12 +18,13 @@
   "author": "Benjamin VIELLARD <bicou@bicou.com>",
   "license": "MIT",
   "repository": "github:gbicou/directus-extension-tiptap",
+  "type": "module",
   "directus:extension": {
-    "host": "^9.25.2",
+    "host": "^10.1.0",
     "type": "bundle",
     "path": {
-      "app": "dist/app.js",
-      "api": "dist/api.js"
+      "app": "dist/app.mjs",
+      "api": "dist/api.mjs"
     },
     "entries": [
       {
@@ -50,7 +51,7 @@
   },
   "devDependencies": {
     "@bicou/semantic-release": "^1.0.1",
-    "@directus/extensions-sdk": "10.0.0",
+    "@directus/extensions-sdk": "10.1.0",
     "@directus/schema": "10.0.0",
     "@directus/types": "10.0.0",
     "@rushstack/eslint-patch": "^1.2.0",
@@ -76,20 +77,20 @@
     "@tiptap/vue-3": "^2.0.3",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/eslint-config-typescript": "^11.0.3",
-    "@vue/tsconfig": "^0.3.2",
-    "eslint": "^8.39.0",
-    "eslint-plugin-vue": "^9.11.0",
+    "@vue/tsconfig": "^0.4.0",
+    "eslint": "^8.40.0",
+    "eslint-plugin-vue": "^9.12.0",
     "prettier": "^2.8.8",
-    "rollup": "^3.21.3",
+    "rollup": "^3.21.6",
     "rollup-plugin-node-externals": "^6.0.0",
     "sass": "^1.62.1",
     "semantic-release": "^21.0.2",
     "typescript": "^5.0.4",
-    "vue": "^3.2.47",
+    "vue": "^3.3.1",
     "vue-i18n": "^9.2.2"
   },
   "peerDependencies": {
-    "@directus/extensions-sdk": "10.0.0",
+    "@directus/extensions-sdk": "10.1.0",
     "vue": "^3.2.47",
     "vue-i18n": "^9.2.2"
   },
