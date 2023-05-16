@@ -52,7 +52,7 @@
   "devDependencies": {
     "@bicou/semantic-release": "^1.0.1",
     "@directus/extensions-sdk": "10.1.0",
-    "@directus/schema": "10.0.0",
+    "@directus/schema": "10.0.1",
     "@directus/types": "10.0.0",
     "@rushstack/eslint-patch": "^1.2.0",
     "@tiptap/core": "^2.0.3",

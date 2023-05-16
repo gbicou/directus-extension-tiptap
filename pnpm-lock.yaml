@@ -8,8 +8,8 @@ devDependencies:
     specifier: 10.1.0
     version: 10.1.0(typescript@5.0.4)
   '@directus/schema':
-    specifier: 10.0.0
-    version: 10.0.0
+    specifier: 10.0.1
+    version: 10.0.1
   '@directus/types':
     specifier: 10.0.0
     version: 10.0.0
@@ -443,8 +443,8 @@ packages:
       - typescript
     dev: true
 
-  /@directus/schema@10.0.0:
-    resolution: {integrity: sha512-ykty+RLpMtEQuUoOOyeodB3VjDBJdoSzjAl7k4vi7T//brJGVogn8ps+cReXkRhXyBQ8njyoaAXSuOeiWoOy0w==}
+  /@directus/schema@10.0.1:
+    resolution: {integrity: sha512-bhb99vD1Q+ARAc73BVk+rwgIx/uXMglmdNM6N+d4YfwxAXPhla11VlQ7TDL+NASf6aL8S3iYWeOZUIhhJsh03g==}
     dependencies:
       knex: 2.4.2
     transitivePeerDependencies:
