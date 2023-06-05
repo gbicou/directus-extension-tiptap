@@ -902,6 +902,7 @@ import type { TextAlignOptions } from "@tiptap/extension-text-align";
 import textAlign from "./extensions/text-align";
 import characterCount from "./extensions/character-count";
 import type { PlaceholderOptions } from "@tiptap/extension-placeholder";
+// eslint-disable-next-line vue/no-dupe-keys
 import placeholder from "./extensions/placeholder";
 import { useLink } from "./composables/link";
 import type { FocusOptions } from "@tiptap/extension-focus";
