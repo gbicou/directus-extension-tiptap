@@ -85,7 +85,7 @@
     "rollup-plugin-node-externals": "^6.1.1",
     "sass": "^1.63.4",
     "semantic-release": "^21.0.5",
-    "typescript": "~5.0.4",
+    "typescript": "~5.1.0",
     "vue": "^3.3.4",
     "vue-i18n": "^9.2.2"
   },
