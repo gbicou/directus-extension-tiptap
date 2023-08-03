@@ -891,7 +891,7 @@
 
 <script setup lang="ts">
 import { BubbleMenu, Editor, EditorContent } from "@tiptap/vue-3";
-import { computed, onBeforeUnmount, watch } from "vue";
+import { computed, onBeforeUnmount, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
 import type { TypeType, ValueType } from "./types";
@@ -979,6 +979,8 @@ const alignOptions = [
   },
 ];
 
+const editorInitiated = ref<boolean>(false);
+
 const extensions = loadExtensions(props);
 
 const editor = new Editor({
@@ -987,6 +989,9 @@ const editor = new Editor({
   extensions,
   autofocus: props.autofocus,
   onUpdate: ({ editor }) => {
+    if (editor.isEmpty && !editorInitiated.value) {
+      return;
+    }
     switch (props.type) {
       case "json":
         emit("input", editor.getJSON());
@@ -1011,6 +1016,10 @@ const textAlignActive = computed(() => {
 watch(
   () => props.value,
   (value) => {
+    if (!value) {
+      return;
+    }
+
     const isSame =
       props.type === "json" ? JSON.stringify(editor.getJSON()) === JSON.stringify(value) : editor.getHTML() === value;
 
@@ -1019,12 +1028,16 @@ watch(
     }
 
     editor.commands.setContent(value, false);
-  }
+    editorInitiated.value = true;
+  },
+  {
+    immediate: true,
+  },
 );
 
 watch(
   () => props.disabled,
-  (disabled) => editor.setEditable(!disabled)
+  (disabled) => editor.setEditable(!disabled),
 );
 
 onBeforeUnmount(() => {
