@@ -1,3 +1,10 @@
+## [1.10.3](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.2...v1.10.3) (2023-08-03)
+
+
+### Bug Fixes
+
+* avoid content reset before model update ([2d3a723](https://github.com/gbicou/directus-extension-tiptap/commit/2d3a72399a4730d8586c9c102d032ef8f717b692))
+
 ## [1.10.2](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.1...v1.10.2) (2023-05-12)
 
 
