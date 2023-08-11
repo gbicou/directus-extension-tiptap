@@ -1,5 +1,6 @@
 <template>
-  <v-text-overflow class="display" placement="bottom" :text="text" />
+  <value-null v-if="!text" />
+  <v-text-overflow v-else class="tiptap-display" placement="bottom" :text="text" />
 </template>
 
 <script setup lang="ts">
@@ -29,3 +30,11 @@ const text = computed(() => {
   return "";
 });
 </script>
+
+<style lang="scss" scoped>
+.tiptap-display {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+</style>
