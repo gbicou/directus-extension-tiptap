@@ -1,3 +1,10 @@
+## [1.10.4](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.3...v1.10.4) (2023-08-11)
+
+
+### Bug Fixes
+
+* inline rendering of display ([d1e5315](https://github.com/gbicou/directus-extension-tiptap/commit/d1e5315cf082c59a314d5233633849196181a1c0))
+
 ## [1.10.3](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.2...v1.10.3) (2023-08-03)
 
 
