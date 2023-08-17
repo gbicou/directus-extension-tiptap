@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.4...v1.11.0) (2023-08-17)
+
+
+### Features
+
+* upgrade tiptap to v2.1 ([50328c8](https://github.com/gbicou/directus-extension-tiptap/commit/50328c8d23b8b2933999d0e90fa97c79a629cc81))
+
 ## [1.10.4](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.3...v1.10.4) (2023-08-11)
 
 
