@@ -13,7 +13,7 @@ const props = withDefaults(
     value: ValueType | null;
     type: TypeType;
   }>(),
-  { value: null }
+  { value: null },
 );
 
 function getText(json: JSONContent): string {
