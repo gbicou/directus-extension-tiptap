@@ -76,7 +76,7 @@
     "@tiptap/starter-kit": "^2.1.1",
     "@tiptap/vue-3": "^2.1.1",
     "@vue/eslint-config-prettier": "^8.0.0",
-    "@vue/eslint-config-typescript": "^11.0.3",
+    "@vue/eslint-config-typescript": "^12.0.0",
     "@vue/tsconfig": "^0.4.0",
     "eslint": "^8.47.0",
     "eslint-plugin-vue": "^9.17.0",
