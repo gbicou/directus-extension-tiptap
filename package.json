@@ -50,7 +50,8 @@
     "release": "semantic-release"
   },
   "devDependencies": {
-    "@bicou/semantic-release": "^1.0.1",
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.2",
     "@directus/extensions-sdk": "^10.1.9",
     "@directus/schema": "^10.0.2",
     "@directus/types": "^10.1.5",
@@ -84,7 +85,6 @@
     "rollup": "^3.29.2",
     "rollup-plugin-node-externals": "^6.1.1",
     "sass": "^1.67.0",
-    "semantic-release": "^22.0.0",
     "typescript": "~5.2.2",
     "vue": "^3.3.4",
     "vue-i18n": "^9.4.1"
