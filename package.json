@@ -2,7 +2,7 @@
   "name": "@bicou/directus-extension-tiptap",
   "description": "Tiptap rich text editor interface and display for directus",
   "icon": "extension",
-  "version": "1.11.0",
+  "version": "1.11.1",
   "keywords": [
     "directus",
     "directus-extension",
