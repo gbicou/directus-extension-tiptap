@@ -47,7 +47,7 @@
     "dev": "directus-extension build -w --no-minify",
     "link": "directus-extension link",
     "lint": "eslint .",
-    "release": "semantic-release"
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
