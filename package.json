@@ -54,7 +54,7 @@
     "@changesets/cli": "^2.26.2",
     "@directus/extensions-sdk": "^10.1.11",
     "@directus/schema": "^10.0.2",
-    "@directus/types": "^10.1.6",
+    "@directus/types": "^11.0.0",
     "@rushstack/eslint-patch": "^1.5.1",
     "@tiptap/core": "^2.1.11",
     "@tiptap/extension-character-count": "^2.1.11",

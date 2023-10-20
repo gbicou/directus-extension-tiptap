@@ -18,8 +18,8 @@ devDependencies:
     specifier: ^10.0.2
     version: 10.0.2
   '@directus/types':
-    specifier: ^10.1.6
-    version: 10.1.6
+    specifier: ^11.0.0
+    version: 11.0.0
   '@rushstack/eslint-patch':
     specifier: ^1.5.1
     version: 1.5.1
@@ -400,6 +400,12 @@ packages:
       zod: 3.21.4
     dev: true
 
+  /@directus/constants@11.0.0:
+    resolution: {integrity: sha512-Kam1C2NSJX3wIsgkbKN253u3O0PdPZSpEPT7wvLOO1n//Z7YfiBHFmFi2LsJHH1cvvW5GjVXtlXQBgDQuiMsyQ==}
+    dependencies:
+      zod: 3.21.4
+    dev: true
+
   /@directus/extensions-sdk@10.1.11(sass@1.69.0):
     resolution: {integrity: sha512-94/8m7GC6qi6si7kTWP0v6A/sEquE/cXBMwT/hb28/X05dAKz3EZF8O6TcDCuQvi6rK7VsoxKYdbPSBFrmWfXw==}
     engines: {node: '>=12.20.0'}
@@ -461,11 +467,51 @@ packages:
       - tedious
     dev: true
 
+  /@directus/schema@11.0.0:
+    resolution: {integrity: sha512-4YkutVuMr62nRZeoWylExOlC6l0TxmB1hQ4ZaNgKe5j4CWHX/lO2xrTc2BuA4QBdSgTp/qOdCdIbMXTkedou7Q==}
+    dependencies:
+      knex: 2.4.2
+    transitivePeerDependencies:
+      - better-sqlite3
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+    dev: true
+
   /@directus/types@10.1.6:
     resolution: {integrity: sha512-exQVNLETkydVOnoSbDZe+awo+9uk+Za+r7EvkQOlv3VHXv5F2gHQdR265FrG3y6kDNvTNDG2kttOrseZI2DAtg==}
     dependencies:
       '@directus/constants': 10.2.3
       '@directus/schema': 10.0.2
+      '@types/express': 4.17.17
+      '@types/geojson': 7946.0.10
+      express: 4.18.2
+      geojson: 0.5.0
+      knex: 2.4.2
+      pino: 8.14.1
+      vue: 3.3.4
+      vue-router: 4.2.0(vue@3.3.4)
+      zod: 3.21.4
+    transitivePeerDependencies:
+      - better-sqlite3
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+    dev: true
+
+  /@directus/types@11.0.0:
+    resolution: {integrity: sha512-aqeYml8xsx+1rYtYiSfFvkozazeWi77swnnS5KBi27WnYnlVDtO7MaqMj+sXgbbEaUlO8xIgmuVv7Nnp2FzoXw==}
+    dependencies:
+      '@directus/constants': 11.0.0
+      '@directus/schema': 11.0.0
       '@types/express': 4.17.17
       '@types/geojson': 7946.0.10
       express: 4.18.2
