@@ -20,6 +20,7 @@ import focus from "./focus";
 import task from "./task";
 import table from "./table";
 import image from "./image";
+import invisibleCharacters from "./invisible-characters";
 
 type ExtensionGroup = "mark" | "node" | "editor";
 
@@ -47,7 +48,7 @@ export interface ExtensionMeta<E extends AnyExtension = AnyExtension> {
   package: string;
   group: ExtensionGroup;
   options: DeepPartial<Field>[];
-  load(props: ExtensionsProps): E;
+  load(props: ExtensionsProps): PromiseLike<E> | E;
   defaults: Partial<E["options"]>;
 }
 
@@ -68,16 +69,18 @@ export const extensionsMeta: ExtensionMeta[] = [
   focus,
   typography,
   characterCount,
+  // pro
+  invisibleCharacters,
 ];
 
-export function loadExtensions(props: ExtensionsProps): Extensions {
+export async function loadExtensions(props: ExtensionsProps): Promise<Extensions> {
   const extensions: Extensions = [StarterKit];
 
-  for (const ext of extensionsMeta) {
-    if (props.extensions?.includes(ext.name)) {
-      extensions.push(ext.load(props));
-    }
-  }
+  const exts = await Promise.all(
+    extensionsMeta.filter((ext) => props.extensions?.includes(ext.name)).map((ext) => ext.load(props)),
+  );
+
+  extensions.push(...exts);
 
   return extensions;
 }

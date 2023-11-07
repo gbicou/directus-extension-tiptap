@@ -490,6 +490,18 @@
       </v-button>
 
       <v-button
+        v-if="editorExtensions.includes('invisibleCharacters')"
+        v-tooltip="t('tiptap.invisible_characters')"
+        small
+        icon
+        :disabled="props.disabled"
+        :active="editor.storage.invisibleCharacters?.visibility"
+        @click="editor.commands.toggleInvisibleCharacters()"
+      >
+        <icons.InvisibleCharacters />
+      </v-button>
+
+      <v-button
         v-tooltip="t('tiptap.clear_format')"
         small
         icon
@@ -633,34 +645,31 @@
 
 <style lang="scss">
 .tiptap-editor {
-  color: var(--v-input-color);
-  font-family: var(--v-input-font-family);
-  background-color: var(--v-input-background-color);
-  border: var(--border-width) solid var(--border-normal);
-  border-radius: var(--border-radius);
-  transition: border-color var(--fast) var(--transition);
+  font-family: var(--theme--font-family-sans-serif);
+  border: var(--theme--border-width) solid var(--theme--form--field--input--border-color);
+  border-radius: var(--theme--border-radius);
+  box-shadow: var(--theme--form--field--input--box-shadow);
+  transition-duration: var(--fast);
+  transition-timing-function: var(--transition);
+  transition-property: box-shadow, border-color;
+
+  --v-button-color: var(--theme--form--field--input--foreground);
+  --v-button-background-color-hover: var(--theme--form--field--input--border-color);
+  --v-button-color-hover: var(--theme--form--field--input--foreground);
 
   &:hover {
-    --arrow-color: var(--border-normal-alt);
-    color: var(--v-input-color);
-    background-color: var(--background-input);
-    border-color: var(--border-normal-alt);
+    border-color: var(--theme--form--field--input--border-color-hover);
+    box-shadow: var(--theme--form--field--input--box-shadow-hover);
   }
 
   &:focus-within,
   &.active {
-    --arrow-color: var(--border-normal-alt);
-    color: var(--v-input-color);
-    background-color: var(--background-input);
-    border-color: var(--v-input-border-color-focus);
-    box-shadow: 0 0 16px -8px var(--v-input-box-shadow-color-focus);
+    border-color: var(--theme--form--field--input--border-color-focus);
+    box-shadow: var(--theme--form--field--input--box-shadow-focus);
   }
 
   &.disabled {
-    --arrow-color: var(--border-normal);
-    color: var(--foreground-subdued);
     background-color: var(--background-subdued);
-    border-color: var(--border-normal);
   }
 
   &__info {
@@ -672,27 +681,28 @@
     padding: 0 8px;
     background-color: var(--background-subdued);
     color: var(--foreground-subdued);
-    border-top: 2px solid var(--border-normal);
-    font-family: var(--family-monospace);
+    border-top: var(--theme--border-width) solid var(--theme--form--field--input--border-color);
+    font-family: var(--theme--font-family-monospace);
     font-size: 12px;
   }
 
   &__toolbar {
-    --v-button-background-color: transparent;
-    --v-button-color: var(--foreground-normal);
-    --v-button-background-color-hover: var(--border-normal);
-    --v-button-color-hover: var(--foreground-normal);
-    --v-button-background-color-active: var(--border-normal);
-    --v-button-color-active: var(--foreground-normal);
     --v-button-background-color-disabled: transparent;
 
+    --v-button-background-color: var(--border-subdued);
+    --v-button-color: var(--theme--form--field--input--foreground-subdued);
+    --v-button-background-color-hover: var(--theme--form--field--input--border-color);
+    --v-button-color-hover: var(--theme--form--field--input--foreground);
+    --v-button-background-color-active: var(--theme--form--field--input--border-color);
+    --v-button-color-active: var(--theme--form--field--input--foreground);
+
     svg {
-      fill: var(--v-input-color);
+      fill: var(--theme--form--field--input--foreground);
     }
 
     [disabled] svg,
     .disabled svg {
-      fill: var(--foreground-subdued);
+      fill: var(--theme--form--field--input--foreground-subdued);
     }
 
     display: flex;
@@ -701,7 +711,7 @@
     min-height: 40px;
     padding: 2px;
     background-color: var(--background-subdued);
-    border-bottom: 2px solid var(--border-normal);
+    border-bottom: var(--theme--border-width) solid var(--theme--form--field--input--border-color);
 
     .v-button + .v-button {
       margin-left: 2px;
@@ -710,7 +720,7 @@
     .divider {
       width: 2px;
       height: 24px;
-      background: var(--border-normal);
+      background: var(--theme--form--field--input--border-color);
       margin: 0 4px;
       opacity: 0.5;
     }
@@ -732,7 +742,7 @@
   }
 
   &__content {
-    font-family: var(--family-sans-serif);
+    font-family: var(--theme--font-family-sans-serif);
     font-weight: 400;
 
     .ProseMirror {
@@ -981,7 +991,7 @@ const alignOptions = [
 
 const editorInitiated = ref<boolean>(false);
 
-const extensions = loadExtensions(props);
+const extensions = await loadExtensions(props);
 
 const editor = new Editor({
   editable: !props.disabled,

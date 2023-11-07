@@ -23,6 +23,7 @@ import InsertColumnLeft from "./insert-column-left.vue";
 import InsertColumnRight from "./insert-column-right.vue";
 import InsertRowBottom from "./insert-row-bottom.vue";
 import InsertRowTop from "./insert-row-top.vue";
+import InvisibleCharacters from "./invisible-characters.vue";
 import Italic from "./italic.vue";
 import LayoutGrid from "./layout-grid.vue";
 import LayoutLeft from "./layout-left.vue";
@@ -71,6 +72,7 @@ const icons = {
   InsertColumnRight,
   InsertRowBottom,
   InsertRowTop,
+  InvisibleCharacters,
   Italic,
   LayoutGrid,
   LayoutLeft,

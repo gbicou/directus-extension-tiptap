@@ -1,6 +1,6 @@
 import { defineInterface } from "@directus/extensions-sdk";
 import type { Field, DeepPartial } from "@directus/types";
-import TiptapEditor from "./tiptap-editor.vue";
+import TiptapInterface from "./tiptap-interface.vue";
 import { extensionsMeta, extensionsGroups } from "./extensions";
 
 const extensionsChoices = extensionsGroups.map((group) => ({
@@ -19,7 +19,7 @@ export default defineInterface({
   name: "TipTap",
   icon: "text_fields",
   description: "Tip Tap editor",
-  component: TiptapEditor,
+  component: TiptapInterface,
   types: ["json", "text"],
   group: "standard",
   recommendedDisplays: ["tiptap"],
