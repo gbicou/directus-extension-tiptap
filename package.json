@@ -51,8 +51,6 @@
   },
   "dependencies": {
     "@tiptap/core": "^2.1.12",
-    "@tiptap/pm": "^2.1.12",
-    "@tiptap/starter-kit": "^2.1.12",
     "@tiptap/extension-character-count": "^2.1.12",
     "@tiptap/extension-focus": "^2.1.12",
     "@tiptap/extension-highlight": "^2.1.12",
@@ -68,7 +66,9 @@
     "@tiptap/extension-task-list": "^2.1.12",
     "@tiptap/extension-text-align": "^2.1.12",
     "@tiptap/extension-typography": "^2.1.12",
-    "@tiptap/extension-underline": "^2.1.12"
+    "@tiptap/extension-underline": "^2.1.12",
+    "@tiptap/pm": "^2.1.12",
+    "@tiptap/starter-kit": "^2.1.12"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
@@ -83,8 +83,8 @@
     "@vue/tsconfig": "^0.4.0",
     "eslint": "^8.53.0",
     "eslint-plugin-vue": "^9.18.1",
-    "prettier": "^3.0.3",
-    "rollup": "^4.3.0",
+    "prettier": "^3.1.0",
+    "rollup": "^4.4.1",
     "rollup-plugin-node-externals": "^6.1.2",
     "sass": "^1.69.5",
     "typescript": "~5.2.2",
