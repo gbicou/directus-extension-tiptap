@@ -1,5 +1,11 @@
 # [1.11.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.4...v1.11.0) (2023-08-17)
 
+## 1.11.3
+
+### Patch Changes
+
+- [`f39b975`](https://github.com/gbicou/directus-extension-tiptap/commit/f39b9751f2a3ebe99f1a3d1f9f2597bafb326823) Thanks [@gbicou](https://github.com/gbicou)! - Externalize tiptap dependencies
+
 ## 1.11.2
 
 ### Patch Changes
