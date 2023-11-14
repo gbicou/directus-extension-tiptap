@@ -99,7 +99,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@8.10.2",
+  "packageManager": "pnpm@8.10.4",
   "optionalDependencies": {
     "@tiptap-pro/extension-invisible-characters": "^2.3.3"
   }
