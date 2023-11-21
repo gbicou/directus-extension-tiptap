@@ -76,14 +76,14 @@ devDependencies:
     specifier: ^2.26.2
     version: 2.26.2
   '@directus/extensions-sdk':
-    specifier: ^10.1.14
-    version: 10.1.14(sass@1.69.5)
+    specifier: ^10.2.0
+    version: 10.2.0(sass@1.69.5)
   '@directus/schema':
     specifier: ^11.0.0
     version: 11.0.0
   '@directus/types':
-    specifier: ^11.0.1
-    version: 11.0.1
+    specifier: ^11.0.2
+    version: 11.0.2
   '@rushstack/eslint-patch':
     specifier: ^1.5.1
     version: 1.5.1
@@ -388,13 +388,13 @@ packages:
       prettier: 2.8.8
     dev: true
 
-  /@directus/composables@10.1.5(vue@3.3.4):
-    resolution: {integrity: sha512-CZS11wBKXUQgYdbkvg9liy9kNdXU8/dUXyMu955NfdmxjqtSEiuzUGw57h85FfXckRenQWNtGyO0TqAlJJbvVw==}
+  /@directus/composables@10.1.6(vue@3.3.4):
+    resolution: {integrity: sha512-RuhiLSidCD/SoTCxVU7td4geQEojajBUemCbHi0zxmWU23pNG9R1Vxiv8ksVK+PMLmnyx0GRLtBlTVkNStr0eA==}
     peerDependencies:
       vue: 3.3.4
     dependencies:
       '@directus/constants': 11.0.1
-      '@directus/utils': 11.0.1(vue@3.3.4)
+      '@directus/utils': 11.0.2(vue@3.3.4)
       axios: 1.4.0
       lodash-es: 4.17.21
       nanoid: 4.0.2
@@ -409,16 +409,16 @@ packages:
       zod: 3.22.4
     dev: true
 
-  /@directus/extensions-sdk@10.1.14(sass@1.69.5):
-    resolution: {integrity: sha512-Ls/fOP5AwmWkNhAlA7gFiBUn5iAVIzrithDXS/beHRJ/B2wv3cjEyY7NJic8M1xYZSCVGDWTakjUE7GUhmXHtw==}
+  /@directus/extensions-sdk@10.2.0(sass@1.69.5):
+    resolution: {integrity: sha512-4barSzaQskAOig/D3J7N4XmT8heZVa6exBRUeWS2fPClIVWcTERz9Ih6gzrg9g4JBms8H0Pj7tcE+0fbynLwlA==}
     engines: {node: '>=12.20.0'}
     hasBin: true
     dependencies:
-      '@directus/composables': 10.1.5(vue@3.3.4)
+      '@directus/composables': 10.1.6(vue@3.3.4)
       '@directus/constants': 11.0.1
-      '@directus/extensions': 0.1.1(vue@3.3.4)
-      '@directus/types': 11.0.1
-      '@directus/utils': 11.0.1(vue@3.3.4)
+      '@directus/extensions': 0.2.0(vue@3.3.4)
+      '@directus/types': 11.0.2
+      '@directus/utils': 11.0.2(vue@3.3.4)
       '@rollup/plugin-commonjs': 25.0.0(rollup@3.22.0)
       '@rollup/plugin-json': 6.0.0(rollup@3.22.0)
       '@rollup/plugin-node-resolve': 15.0.2(rollup@3.22.0)
@@ -456,10 +456,10 @@ packages:
       - terser
     dev: true
 
-  /@directus/extensions@0.1.1(vue@3.3.4):
-    resolution: {integrity: sha512-KgK339hToOg2tVhATejA5+Yymx8WDRLROda/05JowbT91OOFo81F8tRsK6b1OIfHoEyXO4UZpecE24r+3piPoA==}
+  /@directus/extensions@0.2.0(vue@3.3.4):
+    resolution: {integrity: sha512-F5YCqF1i+FJMLdC6Do6gBndMnx4pvQFTFSDxO20kmkTBsL0mKt5CsaIN68l3mu0odOPJK23k7uQMPTVa68hbJQ==}
     dependencies:
-      '@directus/utils': 11.0.1(vue@3.3.4)
+      '@directus/utils': 11.0.2(vue@3.3.4)
       fs-extra: 11.1.1
       lodash-es: 4.17.21
       tmp: 0.2.1
@@ -483,8 +483,8 @@ packages:
       - tedious
     dev: true
 
-  /@directus/types@11.0.1:
-    resolution: {integrity: sha512-cs0DsVH3hsFQ5SVbO7acFSNMHzRSWUpVsLQr3gQAMDievRHKqeRwA/6CCnHBPLxfrQ2gS1befPr+jRDyXqKkWw==}
+  /@directus/types@11.0.2:
+    resolution: {integrity: sha512-vr42KGJtWxQbPxeEmXXYhQNc9W/5WHV9nKY1A3bSuOZoLS3l3HLBcQPmXa9JDqvfm8gLB6dvWT8zU9mPgqt5JA==}
     dependencies:
       '@directus/constants': 11.0.1
       '@directus/schema': 11.0.0
@@ -508,8 +508,8 @@ packages:
       - tedious
     dev: true
 
-  /@directus/utils@11.0.1(vue@3.3.4):
-    resolution: {integrity: sha512-I1cpMf2fxh8Cv8XeyYUOXH//teeNyEZ3loqHBTIV0m8TlBxdIeWqND8Bqm1AFcep3r6Adolx3vCp/9OvUH0aBg==}
+  /@directus/utils@11.0.2(vue@3.3.4):
+    resolution: {integrity: sha512-GXcMgZI61bQYeJlXyDC8gkZhXwFSZg7b5nbXfKR8MvhwK2w4jGkV7ybQUxKUsWsKxait0ixuxxgAoZrfqbHfYg==}
     peerDependencies:
       vue: 3.3.4
     peerDependenciesMeta:
