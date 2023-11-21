@@ -645,7 +645,7 @@
 
 <style lang="scss">
 .tiptap-editor {
-  font-family: var(--theme--font-family-sans-serif);
+  font-family: var(--theme--fonts--sans--font-family);
   border: var(--theme--border-width) solid var(--theme--form--field--input--border-color);
   border-radius: var(--theme--border-radius);
   box-shadow: var(--theme--form--field--input--box-shadow);
@@ -669,7 +669,7 @@
   }
 
   &.disabled {
-    background-color: var(--background-subdued);
+    background-color: var(--theme--form--field--input--background-subdued);
   }
 
   &__info {
@@ -679,17 +679,15 @@
     justify-content: flex-end;
     min-height: 30px;
     padding: 0 8px;
-    background-color: var(--background-subdued);
-    color: var(--foreground-subdued);
+    background-color: var(--theme--form--field--input--background-subdued);
     border-top: var(--theme--border-width) solid var(--theme--form--field--input--border-color);
-    font-family: var(--theme--font-family-monospace);
+    color: var(--theme--form--field--input--border-color);
+    font-family: var(--theme--fonts--monospace--font-family);
     font-size: 12px;
   }
 
   &__toolbar {
-    --v-button-background-color-disabled: transparent;
-
-    --v-button-background-color: var(--border-subdued);
+    --v-button-background-color: transparent;
     --v-button-color: var(--theme--form--field--input--foreground-subdued);
     --v-button-background-color-hover: var(--theme--form--field--input--border-color);
     --v-button-color-hover: var(--theme--form--field--input--foreground);
@@ -710,7 +708,7 @@
     align-items: center;
     min-height: 40px;
     padding: 2px;
-    background-color: var(--background-subdued);
+    background-color: var(--theme--form--field--input--background-subdued);
     border-bottom: var(--theme--border-width) solid var(--theme--form--field--input--border-color);
 
     .v-button + .v-button {
@@ -736,7 +734,7 @@
       cursor: pointer;
 
       &.outlined {
-        background-color: var(--background-page);
+        background-color: var(--theme--background);
       }
     }
   }
@@ -747,8 +745,8 @@
 
     .ProseMirror {
       min-height: 230px;
-      margin: var(--input-padding) 0;
-      padding: 0 var(--input-padding);
+      margin: 20px 0;
+      padding: 0 20px;
     }
 
     * {
