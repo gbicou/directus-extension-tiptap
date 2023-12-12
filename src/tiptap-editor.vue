@@ -939,6 +939,7 @@ interface Props {
   focusMode: FocusOptions["mode"];
   taskItemNested: TaskItemOptions["nested"];
   tableResizable: TableOptions["resizable"];
+  emojiEnableEmoticons: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -954,6 +955,7 @@ const props = withDefaults(defineProps<Props>(), {
   focusMode: () => focus.defaults.mode,
   taskItemNested: () => task.defaults.nested,
   tableResizable: () => table.defaults.resizable,
+  emojiEnableEmoticons: false,
 });
 
 const emit = defineEmits<{

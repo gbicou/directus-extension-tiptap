@@ -64,6 +64,9 @@ dependencies:
     version: 2.1.13(@tiptap/pm@2.1.13)
 
 optionalDependencies:
+  '@tiptap-pro/extension-emoji':
+    specifier: ^2.5.1
+    version: 2.5.1(@tiptap/core@2.1.13)(@tiptap/pm@2.1.13)(@tiptap/suggestion@2.1.13)(emojibase@15.3.0)
   '@tiptap-pro/extension-invisible-characters':
     specifier: ^2.5.1
     version: 2.5.1(@tiptap/core@2.1.13)(@tiptap/pm@2.1.13)
@@ -1165,6 +1168,25 @@ packages:
     resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
     dev: true
 
+  /@tiptap-pro/extension-emoji@2.5.1(@tiptap/core@2.1.13)(@tiptap/pm@2.1.13)(@tiptap/suggestion@2.1.13)(emojibase@15.3.0):
+    resolution: {integrity: sha512-D60DzjT/cKuiQ62LUEriHdfCgGtVJqsJx2opKuXQUlYo5cfPM09kEorExOiNb/06drtzSKZegApMU+W3pXyb4Q==}
+    requiresBuild: true
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+      '@tiptap/pm': ^2.0.0
+      '@tiptap/suggestion': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.1.13(@tiptap/pm@2.1.13)
+      '@tiptap/pm': 2.1.13
+      '@tiptap/suggestion': 2.1.13(@tiptap/core@2.1.13)(@tiptap/pm@2.1.13)
+      emoji-regex: 10.3.0
+      emojibase-data: 7.0.1(emojibase@15.3.0)
+      is-emoji-supported: 0.0.5
+    transitivePeerDependencies:
+      - emojibase
+    dev: false
+    optional: true
+
   /@tiptap-pro/extension-invisible-characters@2.5.1(@tiptap/core@2.1.13)(@tiptap/pm@2.1.13):
     resolution: {integrity: sha512-m8P9ahg8txudlLHG8/nEn9UONo1TiOqRMWNYppaJqqjnrPdsScY6NT2JckJWUB9hbh1KO4nkIZZIpGfxjm/SyQ==}
     requiresBuild: true
@@ -1549,6 +1571,17 @@ packages:
     transitivePeerDependencies:
       - '@tiptap/pm'
     dev: false
+
+  /@tiptap/suggestion@2.1.13(@tiptap/core@2.1.13)(@tiptap/pm@2.1.13):
+    resolution: {integrity: sha512-Y05TsiXTFAJ5SrfoV+21MAxig5UNbY0AVa03lQlh/yicTRPpIc6hgZzblB0uxDSYoj6+kaHE4MIZvPvhUD8BJQ==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+      '@tiptap/pm': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.1.13(@tiptap/pm@2.1.13)
+      '@tiptap/pm': 2.1.13
+    dev: false
+    optional: true
 
   /@tiptap/vue-3@2.1.13(@tiptap/core@2.1.13)(@tiptap/pm@2.1.13)(vue@3.3.11):
     resolution: {integrity: sha512-sPMT+uXtPfYLQioXtxxMLij234++PEf5Z43/auOLu737pKdgBr7w0sC8oYiZMgFt9dNCZWBrvT0fupF8yQN8AQ==}
@@ -2918,9 +2951,30 @@ packages:
     resolution: {integrity: sha512-mqi2oL1mfeHYtOdCxbPQYV/PL7YrQlxbvFEZ0Ee8GbDdShimqt2/S6z2RWqysuvlwdOrQdqvE0KZrBTipAeJzg==}
     dev: true
 
+  /emoji-regex@10.3.0:
+    resolution: {integrity: sha512-QpLs9D9v9kArv4lfDEgg1X/gN5XLnf/A6l9cs8SPZLRZR3ZkY9+kwIQTxm+fsSej5UMYGE8fdoaZVIBlqG0XTw==}
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
     dev: true
+
+  /emojibase-data@7.0.1(emojibase@15.3.0):
+    resolution: {integrity: sha512-BLZpOdwyFpZ7lzBWyDtnxmKVm/SJMYgAfp1if3o6n1TVUMSXAf0nikONXl90LZuJ/m3XWPBkkubgCet2BsCGGQ==}
+    requiresBuild: true
+    peerDependencies:
+      emojibase: '*'
+    dependencies:
+      emojibase: 15.3.0
+    dev: false
+    optional: true
+
+  /emojibase@15.3.0:
+    resolution: {integrity: sha512-lFdQb14hoznwDh1xDoOFzkPdeeexmbuJdhUUjDaJZf/+jK+6Z3HkI5hWOemWfEdaMxtTujc1vNRx9DKtdtiOXA==}
+    dev: false
+    optional: true
 
   /encodeurl@1.0.2:
     resolution: {integrity: sha512-TPJXq8JqFaVYm2CWmPvnP2Iyo4ZSM7/QKcSmuMLDObfpH5fi7RUGmd/rTDf+rut/saiDiQEeVTNgAmJEdAOx0w==}
@@ -3929,6 +3983,12 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dev: true
+
+  /is-emoji-supported@0.0.5:
+    resolution: {integrity: sha512-WOlXUhDDHxYqcSmFZis+xWhhqXiK2SU0iYiqmth5Ip0FHLZQAt9rKL5ahnilE8/86WH8tZ3bmNNNC+bTzamqlw==}
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /is-extendable@1.0.1:
     resolution: {integrity: sha512-arnXMxT1hhoKo9k1LZdmlNyJdDDfy2v0fXjFlmok4+i8ul/6WlbVge9bhM74OpNPQPMGUToDtz+KXa1PneJxOA==}
