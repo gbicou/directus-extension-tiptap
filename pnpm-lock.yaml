@@ -43,7 +43,7 @@ dependencies:
     version: 2.1.12(@tiptap/core@2.1.12)
   '@tiptap/extension-task-item':
     specifier: ^2.1.12
-    version: 2.1.12(@tiptap/core@2.1.12)(@tiptap/pm@2.1.12)
+    version: 2.1.13(@tiptap/core@2.1.12)(@tiptap/pm@2.1.12)
   '@tiptap/extension-task-list':
     specifier: ^2.1.12
     version: 2.1.12(@tiptap/core@2.1.12)
@@ -1449,8 +1449,8 @@ packages:
       '@tiptap/pm': 2.1.12
     dev: false
 
-  /@tiptap/extension-task-item@2.1.12(@tiptap/core@2.1.12)(@tiptap/pm@2.1.12):
-    resolution: {integrity: sha512-uqrDTO4JwukZUt40GQdvB6S+oDhdp4cKNPMi0sbteWziQugkSMLlkYvxU0Hfb/YeziaWWwFI7ssPu/hahyk6dQ==}
+  /@tiptap/extension-task-item@2.1.13(@tiptap/core@2.1.12)(@tiptap/pm@2.1.12):
+    resolution: {integrity: sha512-0E1woY0BXpv0SBOGPl5Cmo2RuH+Zchn7dYcTILtOsqHu6onJ4eP0N76+jGFLGV3T0PnPf7JDuwsO/B6pC7yMSg==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
