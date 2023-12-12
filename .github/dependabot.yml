@@ -9,6 +9,13 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    groups:
+      tiptap:
+        patterns:
+          - "@tiptap/*"
+        update-types:
+          - "minor"
+          - "patch"
 registries:
   "@tiptap-pro":
     type: "npm-registry"
