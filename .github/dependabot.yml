@@ -8,7 +8,8 @@ updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
     registries:
-      - "@tiptap-pro"
+      - npmjs-org
+      - tiptap-pro
     schedule:
       interval: "weekly"
     groups:
@@ -19,7 +20,10 @@ updates:
           - "minor"
           - "patch"
 registries:
-  "@tiptap-pro":
-    type: "npm-registry"
-    url: "https://registry.tiptap.dev/"
+  npmjs-org:
+    type: npm-registry
+    url: https://registry.npmjs.org/
+  tiptap-pro:
+    type: npm-registry
+    url: https://registry.tiptap.dev/
     token: ${{ secrets.TIPTAP_PRO_TOKEN }}
