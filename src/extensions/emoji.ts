@@ -4,7 +4,7 @@ const extension: ExtensionMeta = {
   name: "emoji",
   title: "Emoji",
   package: "@tiptap-pro/extension-emoji",
-  group: "mark",
+  group: "node",
   defaults: {
     enableEmoticons: false,
   },
