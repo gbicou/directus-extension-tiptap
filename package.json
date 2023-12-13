@@ -68,6 +68,7 @@
     "@tiptap/extension-typography": "^2.1.13",
     "@tiptap/extension-underline": "^2.1.13",
     "@tiptap/pm": "^2.1.13",
+    "@tiptap/suggestion": "^2.1.13",
     "@tiptap/starter-kit": "^2.1.13"
   },
   "devDependencies": {
@@ -87,6 +88,7 @@
     "rollup": "^4.8.0",
     "rollup-plugin-node-externals": "^6.1.2",
     "sass": "^1.69.5",
+    "tippy.js": "^6.3.7",
     "typescript": "~5.2.2",
     "vue": "^3.3.11",
     "vue-i18n": "^9.8.0"
@@ -101,6 +103,7 @@
   },
   "packageManager": "pnpm@8.12.0",
   "optionalDependencies": {
-    "@tiptap-pro/extension-invisible-characters": "^2.5.1"
+    "@tiptap-pro/extension-invisible-characters": "^2.5.1",
+    "@tiptap-pro/extension-emoji": "^2.5.1"
   }
 }

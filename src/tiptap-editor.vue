@@ -332,6 +332,22 @@
         <icons.Image />
       </v-button>
 
+      <v-emoji-picker
+        v-if="editorExtensions.includes('emoji')"
+        v-tooltip="t('tiptap.emoji')"
+        :disabled="props.disabled"
+        :x-small="false"
+        :secondary="false"
+        small
+        icon
+        @emoji-selected="
+          async (emoji) => {
+            const shortcode = await resolveEmoji(emoji);
+            editor.chain().focus().setEmoji(shortcode).run();
+          }
+        "
+      />
+
       <v-menu v-if="editorExtensions.includes('table')" show-arrow placement="bottom-start">
         <template #activator="{ toggle }">
           <v-button
@@ -698,6 +714,10 @@
       fill: var(--theme--form--field--input--foreground);
     }
 
+    .v-icon {
+      color: var(--theme--form--field--input--foreground);
+    }
+
     [disabled] svg,
     .disabled svg {
       fill: var(--theme--form--field--input--foreground-subdued);
@@ -939,6 +959,7 @@ interface Props {
   focusMode: FocusOptions["mode"];
   taskItemNested: TaskItemOptions["nested"];
   tableResizable: TableOptions["resizable"];
+  emojiEnableEmoticons: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -954,6 +975,7 @@ const props = withDefaults(defineProps<Props>(), {
   focusMode: () => focus.defaults.mode,
   taskItemNested: () => task.defaults.nested,
   tableResizable: () => table.defaults.resizable,
+  emojiEnableEmoticons: false,
 });
 
 const emit = defineEmits<{
@@ -1047,6 +1069,11 @@ watch(
   () => props.disabled,
   (disabled) => editor.setEditable(!disabled),
 );
+
+const resolveEmoji = async (emoji) => {
+  const { emojiToShortcode } = await import("@tiptap-pro/extension-emoji");
+  return emojiToShortcode(emoji, editor.storage.emoji.emojis);
+};
 
 onBeforeUnmount(() => {
   editor.destroy();

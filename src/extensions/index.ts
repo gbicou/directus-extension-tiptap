@@ -21,6 +21,7 @@ import task from "./task";
 import table from "./table";
 import image from "./image";
 import invisibleCharacters from "./invisible-characters";
+import emoji from "./emoji";
 
 type ExtensionGroup = "mark" | "node" | "editor";
 
@@ -40,6 +41,7 @@ interface ExtensionsProps {
   focusMode: FocusOptions["mode"];
   taskItemNested: TaskItemOptions["nested"];
   tableResizable: TableOptions["resizable"];
+  emojiEnableEmoticons: boolean;
 }
 
 export interface ExtensionMeta<E extends AnyExtension = AnyExtension> {
@@ -71,6 +73,7 @@ export const extensionsMeta: ExtensionMeta[] = [
   characterCount,
   // pro
   invisibleCharacters,
+  emoji,
 ];
 
 export async function loadExtensions(props: ExtensionsProps): Promise<Extensions> {
