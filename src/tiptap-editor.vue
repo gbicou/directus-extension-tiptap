@@ -3,27 +3,43 @@
     <bubble-menu class="tiptap-editor__bubble" :editor="editor" :tippy-options="{ duration: 100 }">
       <v-chip
         v-if="editorExtensions.includes('bold') && editor.can().toggleBold()"
-        x-small
         @click="editor.chain().focus().toggleBold().run()"
         :outlined="!editor.isActive('bold')"
+        v-tooltip="t('wysiwyg_options.bold')"
+        clickable
+        small
       >
-        {{ t("wysiwyg_options.bold").toLowerCase() }}
+        <icons.Bold class="icon" />
       </v-chip>
       <v-chip
         v-if="editorExtensions.includes('italic') && editor.can().toggleItalic()"
-        x-small
         @click="editor.chain().focus().toggleItalic().run()"
         :outlined="!editor.isActive('italic')"
+        v-tooltip="t('wysiwyg_options.italic')"
+        clickable
+        small
       >
-        {{ t("wysiwyg_options.italic").toLowerCase() }}
+        <icons.Italic class="icon" />
+      </v-chip>
+      <v-chip
+        v-if="editorExtensions.includes('underline') && editor.can().toggleUnderline()"
+        @click="editor.chain().focus().toggleUnderline().run()"
+        :outlined="!editor.isActive('underline')"
+        v-tooltip="t('wysiwyg_options.underline')"
+        clickable
+        small
+      >
+        <icons.Underline class="icon" />
       </v-chip>
       <v-chip
         v-if="editorExtensions.includes('strike') && editor.can().toggleStrike()"
-        x-small
         @click="editor.chain().focus().toggleStrike().run()"
         :outlined="!editor.isActive('strike')"
+        v-tooltip="t('wysiwyg_options.strikethrough')"
+        clickable
+        small
       >
-        {{ t("wysiwyg_options.strikethrough").toLowerCase() }}
+        <icons.Strikethrough class="icon" />
       </v-chip>
     </bubble-menu>
 
@@ -749,13 +765,28 @@
   }
 
   &__bubble {
+    --v-icon-size: 18px;
+    --v-chip-color: var(--theme--border-color-accent);
+    --v-chip-background-color: var(--theme--border-color-accent);
+    --v-chip-color-hover: var(--theme--border-color-accent);
+    --v-chip-background-color-hover: var(--theme--border-color-accent);
+
     .v-chip {
-      margin-left: 2px;
+      margin-left: 1px;
       cursor: pointer;
 
       &.outlined {
-        background-color: var(--theme--background);
+        background-color: var(--theme--form--field--input--background-subdued);
       }
+    }
+
+    .icon {
+      display: inline-block;
+      width: var(--v-icon-size, 24px);
+      min-width: var(--v-icon-size, 24px);
+      height: var(--v-icon-size, 24px);
+      color: var(--theme--foreground, currentColor);
+      fill: var(--theme--foreground, currentColor);
     }
   }
 
