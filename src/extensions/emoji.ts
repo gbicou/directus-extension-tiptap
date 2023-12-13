@@ -1,4 +1,5 @@
 import type { ExtensionMeta } from "./index";
+import { suggestion } from "./emoji-suggestion";
 
 const extension: ExtensionMeta = {
   name: "emoji",
@@ -27,6 +28,7 @@ const extension: ExtensionMeta = {
     const { Emoji } = await import("@tiptap-pro/extension-emoji");
     return Emoji.configure({
       enableEmoticons: props.emojiEnableEmoticons,
+      suggestion,
     });
   },
 };

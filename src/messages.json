@@ -21,7 +21,8 @@
       "table_toggle_header_row": "Toggle header row",
       "table_toggle_header_column": "Toggle header column",
       "table_toggle_header_cell": "Toggle header cell",
-      "invisible_characters": "Invisible characters"
+      "invisible_characters": "Invisible characters",
+      "emoji": "Insert emoji"
     }
   },
   "fr": {
@@ -46,7 +47,8 @@
       "table_toggle_header_row": "Basculer la ligne d'en-tête",
       "table_toggle_header_column": "Basculer la colonne d'en-tête",
       "table_toggle_header_cell": "Basculer la cellule d'en-tête",
-      "invisible_characters": "Caractères invisibles"
+      "invisible_characters": "Caractères invisibles",
+      "emoji": "Insérer un émoji"
     }
   }
 }

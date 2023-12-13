@@ -62,6 +62,9 @@ dependencies:
   '@tiptap/starter-kit':
     specifier: ^2.1.13
     version: 2.1.13(@tiptap/pm@2.1.13)
+  '@tiptap/suggestion':
+    specifier: ^2.1.13
+    version: 2.1.13(@tiptap/core@2.1.13)(@tiptap/pm@2.1.13)
 
 optionalDependencies:
   '@tiptap-pro/extension-emoji':
@@ -120,6 +123,9 @@ devDependencies:
   sass:
     specifier: ^1.69.5
     version: 1.69.5
+  tippy.js:
+    specifier: ^6.3.7
+    version: 6.3.7
   typescript:
     specifier: ~5.2.2
     version: 5.2.2
@@ -1581,7 +1587,6 @@ packages:
       '@tiptap/core': 2.1.13(@tiptap/pm@2.1.13)
       '@tiptap/pm': 2.1.13
     dev: false
-    optional: true
 
   /@tiptap/vue-3@2.1.13(@tiptap/core@2.1.13)(@tiptap/pm@2.1.13)(vue@3.3.11):
     resolution: {integrity: sha512-sPMT+uXtPfYLQioXtxxMLij234++PEf5Z43/auOLu737pKdgBr7w0sC8oYiZMgFt9dNCZWBrvT0fupF8yQN8AQ==}
