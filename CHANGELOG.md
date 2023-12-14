@@ -1,5 +1,15 @@
 # [1.11.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.4...v1.11.0) (2023-08-17)
 
+## 1.12.0
+
+### Minor Changes
+
+- [#73](https://github.com/gbicou/directus-extension-tiptap/pull/73) [`cd57792`](https://github.com/gbicou/directus-extension-tiptap/commit/cd57792b811749019aa46717d2f1bda579652db1) Thanks [@gbicou](https://github.com/gbicou)! - Tiptap Emoji extension
+
+- [#75](https://github.com/gbicou/directus-extension-tiptap/pull/75) [`963b991`](https://github.com/gbicou/directus-extension-tiptap/commit/963b99183e6b75680baacde4ae3f4f3df2dcf86b) Thanks [@gbicou](https://github.com/gbicou)! - icons in bubble menu #26
+
+- [#73](https://github.com/gbicou/directus-extension-tiptap/pull/73) [`bbb84a6`](https://github.com/gbicou/directus-extension-tiptap/commit/bbb84a659c29c3075e2b1f232918f72cf1cfce8a) Thanks [@gbicou](https://github.com/gbicou)! - emoji button and suggestions
+
 ## 1.11.4
 
 ### Patch Changes
