@@ -981,7 +981,6 @@ const props = withDefaults(defineProps<Props>(), {
   cdnURL: null,
   placeholder: () => placeholder.defaults.placeholder,
   textAlignTypes: () => textAlign.defaults.types,
-  characterCountLimit: () => characterCount.defaults.limit,
   characterCountMode: () => characterCount.defaults.mode,
   focusMode: () => focus.defaults.mode,
   taskItemNested: () => task.defaults.nested,
