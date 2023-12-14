@@ -1,5 +1,11 @@
 # [1.11.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.4...v1.11.0) (2023-08-17)
 
+## 1.13.0
+
+### Minor Changes
+
+- [#77](https://github.com/gbicou/directus-extension-tiptap/pull/77) [`3eff63e`](https://github.com/gbicou/directus-extension-tiptap/commit/3eff63ed2a378ee4e0165da6ba675960529785fb) Thanks [@gbicou](https://github.com/gbicou)! - unique id extension
+
 ## 1.12.0
 
 ### Minor Changes
