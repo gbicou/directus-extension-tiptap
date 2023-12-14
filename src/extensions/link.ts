@@ -1,7 +1,7 @@
 import type { ExtensionMeta } from "./index";
 import { Link } from "@tiptap/extension-link";
 
-const extension: ExtensionMeta<typeof Link> = {
+const extension: ExtensionMeta = {
   name: "link",
   title: "Link",
   package: "@tiptap/extension-link",

@@ -1,12 +1,19 @@
 import type { ExtensionMeta } from "./index";
 import { CharacterCount, type CharacterCountOptions } from "@tiptap/extension-character-count";
 
-const defaults: Partial<CharacterCountOptions> = {
+type Options = Pick<CharacterCountOptions, "limit" | "mode">;
+
+const defaults: Options = {
   limit: null,
   mode: "textSize",
 };
 
-const extension: ExtensionMeta<typeof CharacterCount> = {
+export type CharacterCountProps = {
+  characterCountLimit: Options["limit"];
+  characterCountMode: Options["mode"];
+};
+
+const extension: ExtensionMeta<Options, CharacterCountProps> = {
   name: "characterCount",
   title: "CharacterCount",
   package: "@tiptap/extension-character-count",

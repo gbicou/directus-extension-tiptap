@@ -1,27 +1,21 @@
 import type { AnyExtension, Extensions } from "@tiptap/core";
 import StarterKit from "@tiptap/starter-kit";
-import type { CharacterCountOptions } from "@tiptap/extension-character-count";
-import type { TextAlignOptions } from "@tiptap/extension-text-align";
-import type { PlaceholderOptions } from "@tiptap/extension-placeholder";
-import type { FocusOptions } from "@tiptap/extension-focus";
-import type { TaskItemOptions } from "@tiptap/extension-task-item";
-import type { TableOptions } from "@tiptap/extension-table";
 import type { DeepPartial, Field } from "@directus/types";
 import underline from "./underline";
-import textAlign from "./text-align";
-import characterCount from "./character-count";
+import textAlign, { type TextAlignProps } from "./text-align";
+import characterCount, { type CharacterCountProps } from "./character-count";
 import subscript from "./subscript";
 import superscript from "./superscript";
 import highlight from "./highlight";
 import typography from "./typography";
-import placeholder from "./placeholder";
+import placeholder, { type PlaceholderProps } from "./placeholder";
 import link from "./link";
-import focus from "./focus";
-import task from "./task";
-import table from "./table";
-import image from "./image";
+import focus, { type FocusProps } from "./focus";
+import task, { type TaskProps } from "./task";
+import table, { type TableProps } from "./table";
+import image, { type ImageProps } from "./image";
 import invisibleCharacters from "./invisible-characters";
-import emoji from "./emoji";
+import emoji, { type EmojiProps } from "./emoji";
 import uniqueId, { type UniqueIDProps } from "./unique-id";
 
 type ExtensionGroup = "mark" | "node" | "editor";
@@ -34,29 +28,24 @@ export const extensionsGroups: { group: ExtensionGroup; label: string }[] = [
 
 export type ExtensionsProps = {
   extensions: string[] | null;
-  cdnURL: string | null;
-  placeholder: PlaceholderOptions["placeholder"];
-  characterCountLimit: CharacterCountOptions["limit"];
-  characterCountMode: CharacterCountOptions["mode"];
-  textAlignTypes: TextAlignOptions["types"];
-  focusMode: FocusOptions["mode"];
-  taskItemNested: TaskItemOptions["nested"];
-  tableResizable: TableOptions["resizable"];
-  emojiEnableEmoticons: boolean;
-} & UniqueIDProps;
+} & TableProps &
+  ImageProps &
+  TaskProps &
+  TextAlignProps &
+  PlaceholderProps &
+  FocusProps &
+  CharacterCountProps &
+  EmojiProps &
+  UniqueIDProps;
 
-export interface ExtensionMeta<
-  E extends AnyExtension = AnyExtension,
-  O extends object = E["options"],
-  P extends object = ExtensionsProps,
-> {
+export interface ExtensionMeta<Options extends object = object, Props extends object = object> {
   name: string;
   title: string;
   package: string;
   group: ExtensionGroup;
   options: DeepPartial<Field>[];
-  load(props: P): PromiseLike<E> | E;
-  defaults: Partial<O>;
+  defaults: Options;
+  load(props: Props): PromiseLike<AnyExtension> | AnyExtension;
 }
 
 export const extensionsMeta: ExtensionMeta[] = [

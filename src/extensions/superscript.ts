@@ -1,7 +1,7 @@
-import type { ExtensionMeta } from "../extensions";
+import type { ExtensionMeta } from "./index";
 import { Superscript } from "@tiptap/extension-superscript";
 
-const extension: ExtensionMeta<typeof Superscript> = {
+const extension: ExtensionMeta = {
   name: "superscript",
   title: "Superscript",
   package: "@tiptap/extension-superscript",

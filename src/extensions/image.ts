@@ -2,7 +2,7 @@ import type { ExtensionMeta } from "./index";
 import { mergeAttributes, Node } from "@tiptap/core";
 import { getPublicURL } from "../utils/get-root-path";
 
-export interface ImageAttributes {
+interface ImageAttributes {
   id: string;
   alt?: string;
   filename?: string;
@@ -21,7 +21,7 @@ declare module "@tiptap/core" {
     };
   }
 }
-export interface ImageOptions {
+interface ImageOptions {
   publicURL: string;
   HTMLAttributes: Record<string, never>;
 }
@@ -106,7 +106,11 @@ export const Image = Node.create<ImageOptions>({
   },
 });
 
-const extension: ExtensionMeta<typeof Image> = {
+export type ImageProps = {
+  cdnURL?: string | null;
+};
+
+const extension: ExtensionMeta<Record<string, never>, ImageProps> = {
   name: "image",
   title: "Image",
   package: "File Library",

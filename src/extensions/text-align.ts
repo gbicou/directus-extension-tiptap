@@ -1,11 +1,17 @@
 import type { ExtensionMeta } from "./index";
 import { TextAlign, type TextAlignOptions } from "@tiptap/extension-text-align";
 
-const defaults: Partial<TextAlignOptions> = {
+type Options = Pick<TextAlignOptions, "types">;
+
+const defaults: Options = {
   types: ["heading", "paragraph"],
 };
 
-const extension: ExtensionMeta<typeof TextAlign> = {
+export type TextAlignProps = {
+  textAlignTypes: Options["types"];
+};
+
+const extension: ExtensionMeta<Options, TextAlignProps> = {
   name: "textAlign",
   title: "TextAlign",
   package: "@tiptap/extension-text-align",

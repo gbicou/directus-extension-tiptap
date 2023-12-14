@@ -1,14 +1,22 @@
 import type { ExtensionMeta } from "./index";
-import { Placeholder } from "@tiptap/extension-placeholder";
+import { Placeholder, type PlaceholderOptions } from "@tiptap/extension-placeholder";
 
-const extension: ExtensionMeta<typeof Placeholder> = {
+type Options = Pick<PlaceholderOptions, "placeholder">;
+
+const defaults: Options = {
+  placeholder: "",
+};
+
+export type PlaceholderProps = {
+  placeholder: Options["placeholder"];
+};
+
+const extension: ExtensionMeta<Options, PlaceholderProps> = {
   name: "placeholder",
   title: "Placeholder",
   package: "@tiptap/extension-placeholder",
   group: "editor",
-  defaults: {
-    placeholder: "",
-  },
+  defaults,
   options: [
     {
       field: "placeholder",

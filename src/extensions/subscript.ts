@@ -1,7 +1,7 @@
 import type { ExtensionMeta } from "./index";
 import { Subscript } from "@tiptap/extension-subscript";
 
-const extension: ExtensionMeta<typeof Subscript> = {
+const extension: ExtensionMeta = {
   name: "subscript",
   title: "Subscript",
   package: "@tiptap/extension-subscript",

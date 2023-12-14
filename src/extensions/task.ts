@@ -1,6 +1,5 @@
 import { TaskList } from "@tiptap/extension-task-list";
-import type { TaskItemOptions } from "@tiptap/extension-task-item";
-import { TaskItem } from "@tiptap/extension-task-item";
+import { TaskItem, type TaskItemOptions } from "@tiptap/extension-task-item";
 import { Extension } from "@tiptap/core";
 import type { ExtensionMeta } from "./index";
 
@@ -13,11 +12,17 @@ const TaskKit = Extension.create<TaskItemOptions>({
   },
 });
 
-const defaults: Partial<TaskItemOptions> = {
+type Options = Pick<TaskItemOptions, "nested">;
+
+const defaults: Options = {
   nested: false,
 };
 
-const extension: ExtensionMeta<typeof TaskKit> = {
+export type TaskProps = {
+  taskItemNested: Options["nested"];
+};
+
+const extension: ExtensionMeta<Options, TaskProps> = {
   name: "task",
   title: "TaskList",
   package: "@tiptap/extension-task-(list|item)",

@@ -1,18 +1,19 @@
 import type { ExtensionMeta } from "./index";
 import type { UniqueIDOptions } from "@tiptap-pro/extension-unique-id";
-import type { AnyExtension } from "@tiptap/core";
+
+type Options = Pick<UniqueIDOptions, "attributeName" | "types">;
+
+const defaults: Options = {
+  attributeName: "id",
+  types: ["heading", "paragraph"],
+};
 
 export type UniqueIDProps = {
   uniqueIdAttributeName: UniqueIDOptions["attributeName"];
   uniqueIdTypes: UniqueIDOptions["types"];
 };
 
-const defaults: Partial<UniqueIDOptions> = {
-  attributeName: "id",
-  types: ["heading", "paragraph"],
-};
-
-const extension: ExtensionMeta<AnyExtension, UniqueIDOptions, UniqueIDProps> = {
+const extension: ExtensionMeta<Options, UniqueIDProps> = {
   name: "uniqueId",
   title: "Unique ID",
   package: "@tiptap-pro/extension-unique-id",

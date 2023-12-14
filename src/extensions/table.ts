@@ -1,5 +1,4 @@
-import { Table } from "@tiptap/extension-table";
-import type { TableOptions } from "@tiptap/extension-table";
+import { Table, type TableOptions } from "@tiptap/extension-table";
 import { TableRow } from "@tiptap/extension-table-row";
 import { TableCell } from "@tiptap/extension-table-cell";
 import { TableHeader } from "@tiptap/extension-table-header";
@@ -15,11 +14,17 @@ const TableKit = Extension.create<TableOptions>({
   },
 });
 
-const defaults: Partial<TableOptions> = {
+type Options = Pick<TableOptions, "resizable">;
+
+const defaults: Options = {
   resizable: false,
 };
 
-const extension: ExtensionMeta<typeof TableKit> = {
+export type TableProps = {
+  tableResizable?: Options["resizable"];
+};
+
+const extension: ExtensionMeta<Options, TableProps> = {
   name: "table",
   title: "Table",
   package: "@tiptap/extension-table",
