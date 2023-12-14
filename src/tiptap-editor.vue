@@ -356,12 +356,7 @@
         :secondary="false"
         small
         icon
-        @emoji-selected="
-          async (emoji) => {
-            const shortcode = await resolveEmoji(emoji);
-            editor.chain().focus().setEmoji(shortcode).run();
-          }
-        "
+        @emoji-selected="emojiSelected"
       />
 
       <v-menu v-if="editorExtensions.includes('table')" show-arrow placement="bottom-start">
@@ -967,6 +962,7 @@ import table from "./extensions/table";
 import icons from "./icons";
 import { useImage } from "./composables/image";
 import uniqueId from "./extensions/unique-id";
+import emoji from "./extensions/emoji";
 
 const { t } = useI18n({ messages });
 
@@ -990,7 +986,7 @@ const props = withDefaults(defineProps<Props>(), {
   focusMode: () => focus.defaults.mode,
   taskItemNested: () => task.defaults.nested,
   tableResizable: () => table.defaults.resizable,
-  emojiEnableEmoticons: false,
+  emojiEnableEmoticons: () => emoji.defaults.enableEmoticons,
   uniqueIdAttributeName: () => uniqueId.defaults.attributeName,
   uniqueIdTypes: () => uniqueId.defaults.types,
 });
@@ -1087,9 +1083,12 @@ watch(
   (disabled) => editor.setEditable(!disabled),
 );
 
-const resolveEmoji = async (emoji) => {
+const emojiSelected = async (emoji: string) => {
   const { emojiToShortcode } = await import("@tiptap-pro/extension-emoji");
-  return emojiToShortcode(emoji, editor.storage.emoji.emojis);
+  const shortcode = emojiToShortcode(emoji, editor.storage.emoji.emojis);
+  if (shortcode) {
+    editor.chain().focus().setEmoji(shortcode).run();
+  }
 };
 
 onBeforeUnmount(() => {
