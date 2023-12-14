@@ -22,6 +22,7 @@ import table from "./table";
 import image from "./image";
 import invisibleCharacters from "./invisible-characters";
 import emoji from "./emoji";
+import uniqueId, { type UniqueIDProps } from "./unique-id";
 
 type ExtensionGroup = "mark" | "node" | "editor";
 
@@ -31,7 +32,7 @@ export const extensionsGroups: { group: ExtensionGroup; label: string }[] = [
   { group: "editor", label: "Editor" },
 ];
 
-interface ExtensionsProps {
+export type ExtensionsProps = {
   extensions: string[] | null;
   cdnURL: string | null;
   placeholder: PlaceholderOptions["placeholder"];
@@ -42,16 +43,20 @@ interface ExtensionsProps {
   taskItemNested: TaskItemOptions["nested"];
   tableResizable: TableOptions["resizable"];
   emojiEnableEmoticons: boolean;
-}
+} & UniqueIDProps;
 
-export interface ExtensionMeta<E extends AnyExtension = AnyExtension> {
+export interface ExtensionMeta<
+  E extends AnyExtension = AnyExtension,
+  O extends object = E["options"],
+  P extends object = ExtensionsProps,
+> {
   name: string;
   title: string;
   package: string;
   group: ExtensionGroup;
   options: DeepPartial<Field>[];
-  load(props: ExtensionsProps): PromiseLike<E> | E;
-  defaults: Partial<E["options"]>;
+  load(props: P): PromiseLike<E> | E;
+  defaults: Partial<O>;
 }
 
 export const extensionsMeta: ExtensionMeta[] = [
@@ -74,6 +79,7 @@ export const extensionsMeta: ExtensionMeta[] = [
   // pro
   invisibleCharacters,
   emoji,
+  uniqueId,
 ];
 
 export async function loadExtensions(props: ExtensionsProps): Promise<Extensions> {

@@ -954,44 +954,28 @@ import { computed, onBeforeUnmount, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 import { translateShortcut } from "./utils/translate-shortcut";
 import type { TypeType, ValueType } from "./types";
-import { loadExtensions } from "./extensions";
+import { type ExtensionsProps, loadExtensions } from "./extensions";
 import messages from "./messages.json";
-import type { CharacterCountOptions } from "@tiptap/extension-character-count";
-import type { TextAlignOptions } from "@tiptap/extension-text-align";
 import textAlign from "./extensions/text-align";
 import characterCount from "./extensions/character-count";
-import type { PlaceholderOptions } from "@tiptap/extension-placeholder";
 // eslint-disable-next-line vue/no-dupe-keys
 import placeholder from "./extensions/placeholder";
 import { useLink } from "./composables/link";
-import type { FocusOptions } from "@tiptap/extension-focus";
 import focus from "./extensions/focus";
-import type { TaskItemOptions } from "@tiptap/extension-task-item";
 import task from "./extensions/task";
-import type { TableOptions } from "@tiptap/extension-table";
 import table from "./extensions/table";
 import icons from "./icons";
 import { useImage } from "./composables/image";
+import uniqueId from "./extensions/unique-id";
 
 const { t } = useI18n({ messages });
 
-interface Props {
+type Props = {
   value: ValueType | null;
   type: TypeType;
   disabled: boolean;
   autofocus: boolean;
-  extensions: string[] | null;
-  // extensions options
-  cdnURL: string | null;
-  placeholder: PlaceholderOptions["placeholder"];
-  textAlignTypes: TextAlignOptions["types"];
-  characterCountLimit: CharacterCountOptions["limit"];
-  characterCountMode: CharacterCountOptions["mode"];
-  focusMode: FocusOptions["mode"];
-  taskItemNested: TaskItemOptions["nested"];
-  tableResizable: TableOptions["resizable"];
-  emojiEnableEmoticons: boolean;
-}
+} & ExtensionsProps;
 
 const props = withDefaults(defineProps<Props>(), {
   value: null,
@@ -1007,6 +991,8 @@ const props = withDefaults(defineProps<Props>(), {
   taskItemNested: () => task.defaults.nested,
   tableResizable: () => table.defaults.resizable,
   emojiEnableEmoticons: false,
+  uniqueIdAttributeName: () => uniqueId.defaults.attributeName,
+  uniqueIdTypes: () => uniqueId.defaults.types,
 });
 
 const emit = defineEmits<{
