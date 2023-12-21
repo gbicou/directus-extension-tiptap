@@ -68,8 +68,8 @@
     "@tiptap/extension-typography": "^2.1.13",
     "@tiptap/extension-underline": "^2.1.13",
     "@tiptap/pm": "^2.1.13",
-    "@tiptap/suggestion": "^2.1.13",
-    "@tiptap/starter-kit": "^2.1.13"
+    "@tiptap/starter-kit": "^2.1.13",
+    "@tiptap/suggestion": "^2.1.13"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
@@ -77,20 +77,20 @@
     "@directus/extensions-sdk": "^10.2.0",
     "@directus/schema": "^11.0.0",
     "@directus/types": "^11.0.2",
-    "@rushstack/eslint-patch": "^1.6.0",
+    "@rushstack/eslint-patch": "^1.6.1",
     "@tiptap/vue-3": "^2.1.13",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
-    "@vue/tsconfig": "^0.4.0",
-    "eslint": "^8.55.0",
+    "@vue/tsconfig": "^0.5.1",
+    "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.19.2",
     "prettier": "^3.1.1",
-    "rollup": "^4.8.0",
+    "rollup": "^4.9.1",
     "rollup-plugin-node-externals": "^6.1.2",
     "sass": "^1.69.5",
     "tippy.js": "^6.3.7",
     "typescript": "~5.3.3",
-    "vue": "^3.3.11",
+    "vue": "^3.3.13",
     "vue-i18n": "^9.8.0"
   },
   "peerDependencies": {
@@ -103,8 +103,8 @@
   },
   "packageManager": "pnpm@8.12.0",
   "optionalDependencies": {
-    "@tiptap-pro/extension-invisible-characters": "^2.5.1",
     "@tiptap-pro/extension-emoji": "^2.5.1",
+    "@tiptap-pro/extension-invisible-characters": "^2.5.1",
     "@tiptap-pro/extension-unique-id": "^2.5.1"
   }
 }
