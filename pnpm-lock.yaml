@@ -92,7 +92,7 @@ devDependencies:
     version: 11.0.0
   '@directus/types':
     specifier: ^11.0.2
-    version: 11.0.2
+    version: 11.0.3(vue@3.3.13)
   '@rushstack/eslint-patch':
     specifier: ^1.6.1
     version: 1.6.1
@@ -420,6 +420,10 @@ packages:
       zod: 3.22.4
     dev: true
 
+  /@directus/constants@11.0.2:
+    resolution: {integrity: sha512-prHLzUL9WuYk/soM0SvbXFm2dT0PMwP+aTgUUG4Fk232vl2Avy/7mQ/oBGbG92qbKZDhR8RIQ3v/DAr7jsZPIQ==}
+    dev: true
+
   /@directus/extensions-sdk@10.2.0(sass@1.69.5):
     resolution: {integrity: sha512-4barSzaQskAOig/D3J7N4XmT8heZVa6exBRUeWS2fPClIVWcTERz9Ih6gzrg9g4JBms8H0Pj7tcE+0fbynLwlA==}
     engines: {node: '>=12.20.0'}
@@ -494,6 +498,21 @@ packages:
       - tedious
     dev: true
 
+  /@directus/schema@11.0.1:
+    resolution: {integrity: sha512-I8YaZcFdzY1Livv3fW2L0GTBan+MGIYancj9GM/AoZpfeI5PjCecqASna/ijD/WVwDlUUvx6b7aJcQ1OLXBDug==}
+    dependencies:
+      knex: 3.1.0
+    transitivePeerDependencies:
+      - better-sqlite3
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+    dev: true
+
   /@directus/types@11.0.2:
     resolution: {integrity: sha512-vr42KGJtWxQbPxeEmXXYhQNc9W/5WHV9nKY1A3bSuOZoLS3l3HLBcQPmXa9JDqvfm8gLB6dvWT8zU9mPgqt5JA==}
     dependencies:
@@ -508,6 +527,32 @@ packages:
       vue: 3.3.4
       vue-router: 4.2.0(vue@3.3.4)
       zod: 3.22.4
+    transitivePeerDependencies:
+      - better-sqlite3
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+    dev: true
+
+  /@directus/types@11.0.3(vue@3.3.13):
+    resolution: {integrity: sha512-iXurOdLdl6u7Y0429t+EPRUtGJeucrRis5n2GMYhozIdn/rWoJhIuouVhnv8pTneCG02AakXBeCtdjAPtH7fNw==}
+    peerDependencies:
+      knex: 3.1.0
+      vue: 3.3.13
+    peerDependenciesMeta:
+      knex:
+        optional: true
+      vue:
+        optional: true
+    dependencies:
+      '@directus/constants': 11.0.2
+      '@directus/schema': 11.0.1
+      '@types/geojson': 7946.0.13
+      vue: 3.3.13(typescript@5.3.3)
     transitivePeerDependencies:
       - better-sqlite3
       - mysql
@@ -1669,6 +1714,10 @@ packages:
 
   /@types/geojson@7946.0.10:
     resolution: {integrity: sha512-Nmh0K3iWQJzniTuPRcJn5hxXkfB1T1pgB89SBig5PlJQU5yocazeu4jATJlaA0GYFKWMqDdvYemoSnF2pXgLVA==}
+    dev: true
+
+  /@types/geojson@7946.0.13:
+    resolution: {integrity: sha512-bmrNrgKMOhM3WsafmbGmC+6dsF2Z308vLFsQ3a/bT8X8Sv5clVYpPars/UPq+sAaJP+5OoLAYgwbkS5QEJdLUQ==}
     dev: true
 
   /@types/http-errors@2.0.4:
@@ -4317,6 +4366,52 @@ packages:
       - supports-color
     dev: true
 
+  /knex@3.1.0:
+    resolution: {integrity: sha512-GLoII6hR0c4ti243gMs5/1Rb3B+AjwMOfjYm97pu0FOQa7JH56hgBxYf5WK2525ceSbBY1cjeZ9yk99GPMB6Kw==}
+    engines: {node: '>=16'}
+    hasBin: true
+    peerDependencies:
+      better-sqlite3: '*'
+      mysql: '*'
+      mysql2: '*'
+      pg: '*'
+      pg-native: '*'
+      sqlite3: '*'
+      tedious: '*'
+    peerDependenciesMeta:
+      better-sqlite3:
+        optional: true
+      mysql:
+        optional: true
+      mysql2:
+        optional: true
+      pg:
+        optional: true
+      pg-native:
+        optional: true
+      sqlite3:
+        optional: true
+      tedious:
+        optional: true
+    dependencies:
+      colorette: 2.0.19
+      commander: 10.0.1
+      debug: 4.3.4
+      escalade: 3.1.1
+      esm: 3.2.25
+      get-package-type: 0.1.0
+      getopts: 2.3.0
+      interpret: 2.2.0
+      lodash: 4.17.21
+      pg-connection-string: 2.6.2
+      rechoir: 0.8.0
+      resolve-from: 5.0.0
+      tarn: 3.0.2
+      tildify: 2.0.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
     engines: {node: '>= 0.8.0'}
@@ -4921,6 +5016,10 @@ packages:
 
   /pg-connection-string@2.5.0:
     resolution: {integrity: sha512-r5o/V/ORTA6TmUnyWZR9nCj1klXCO2CEKNRlVuJptZe85QuhFayC7WeMic7ndayT5IRIR0S0xFxFi2ousartlQ==}
+    dev: true
+
+  /pg-connection-string@2.6.2:
+    resolution: {integrity: sha512-ch6OwaeaPYcova4kKZ15sbJ2hKb/VP48ZD2gE7i1J+L4MspCtBMAx8nMgz7bksc7IojCIIWuEhHibSMFH8m8oA==}
     dev: true
 
   /picocolors@1.0.0:
