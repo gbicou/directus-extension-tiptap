@@ -86,7 +86,7 @@ devDependencies:
     version: 2.27.1
   '@directus/extensions-sdk':
     specifier: ^10.3.0
-    version: 10.3.0(@unhead/vue@1.8.9)(pinia@2.1.7)(sass@1.69.6)(typescript@5.3.3)
+    version: 10.3.0(@unhead/vue@1.8.9)(pinia@2.1.7)(sass@1.69.7)(typescript@5.3.3)
   '@directus/schema':
     specifier: ^11.0.1
     version: 11.0.1
@@ -125,7 +125,7 @@ devDependencies:
     version: 6.1.2(rollup@4.9.1)
   sass:
     specifier: ^1.69.6
-    version: 1.69.6
+    version: 1.69.7
   tippy.js:
     specifier: ^6.3.7
     version: 6.3.7
@@ -418,7 +418,7 @@ packages:
     resolution: {integrity: sha512-prHLzUL9WuYk/soM0SvbXFm2dT0PMwP+aTgUUG4Fk232vl2Avy/7mQ/oBGbG92qbKZDhR8RIQ3v/DAr7jsZPIQ==}
     dev: true
 
-  /@directus/extensions-sdk@10.3.0(@unhead/vue@1.8.9)(pinia@2.1.7)(sass@1.69.6)(typescript@5.3.3):
+  /@directus/extensions-sdk@10.3.0(@unhead/vue@1.8.9)(pinia@2.1.7)(sass@1.69.7)(typescript@5.3.3):
     resolution: {integrity: sha512-JUk+5gmJrFDGeorZL7jKw1l2WpIcWVMi0AsONpzPdwD09qCdMo+9/sihLCI+1h8Dy4Wg3TySuF1GA7WUThnT1Q==}
     engines: {node: '>=12.20.0'}
     hasBin: true
@@ -446,7 +446,7 @@ packages:
       rollup: 3.29.4
       rollup-plugin-esbuild: 5.0.0(esbuild@0.17.19)(rollup@3.29.4)
       rollup-plugin-styles: 4.0.0(rollup@3.29.4)
-      vite: 4.5.1(sass@1.69.6)
+      vite: 4.5.1(sass@1.69.7)
       vue: 3.3.13(typescript@5.3.3)
     transitivePeerDependencies:
       - '@types/node'
@@ -2176,7 +2176,7 @@ packages:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.5.1(sass@1.69.6)
+      vite: 4.5.1(sass@1.69.7)
       vue: 3.3.13(typescript@5.3.3)
     dev: true
 
@@ -5653,8 +5653,8 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
-  /sass@1.69.6:
-    resolution: {integrity: sha512-qbRr3k9JGHWXCvZU77SD2OTwUlC+gNT+61JOLcmLm+XqH4h/5D+p4IIsxvpkB89S9AwJOyb5+rWNpIucaFxSFQ==}
+  /sass@1.69.7:
+    resolution: {integrity: sha512-rzj2soDeZ8wtE2egyLXgOOHQvaC2iosZrkF6v3EUG+tBwEvhqUCzm0VP3k9gHF9LXbSrRhT5SksoI56Iw8NPnQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -6223,7 +6223,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite@4.5.1(sass@1.69.6):
+  /vite@4.5.1(sass@1.69.7):
     resolution: {integrity: sha512-AXXFaAJ8yebyqzoNB9fu2pHoo/nWX+xZlaRwoeYUxEqBO+Zj4msE5G+BhGBll9lYEKv9Hfks52PAF2X7qDYXQA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -6254,7 +6254,7 @@ packages:
       esbuild: 0.18.20
       postcss: 8.4.32
       rollup: 3.29.4
-      sass: 1.69.6
+      sass: 1.69.7
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
