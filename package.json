@@ -20,7 +20,7 @@
   "repository": "github:gbicou/directus-extension-tiptap",
   "type": "module",
   "directus:extension": {
-    "host": "^10.1.0",
+    "host": "^10.9.0",
     "type": "bundle",
     "path": {
       "app": "dist/app.mjs",
@@ -50,61 +50,61 @@
     "release": "changeset publish"
   },
   "dependencies": {
-    "@tiptap/core": "^2.1.13",
-    "@tiptap/extension-character-count": "^2.1.13",
-    "@tiptap/extension-focus": "^2.1.13",
-    "@tiptap/extension-highlight": "^2.1.13",
-    "@tiptap/extension-link": "^2.1.13",
-    "@tiptap/extension-placeholder": "^2.1.13",
-    "@tiptap/extension-subscript": "^2.1.13",
-    "@tiptap/extension-superscript": "^2.1.13",
-    "@tiptap/extension-table": "^2.1.13",
-    "@tiptap/extension-table-cell": "^2.1.13",
-    "@tiptap/extension-table-header": "^2.1.13",
-    "@tiptap/extension-table-row": "^2.1.13",
-    "@tiptap/extension-task-item": "^2.1.13",
-    "@tiptap/extension-task-list": "^2.1.13",
-    "@tiptap/extension-text-align": "^2.1.13",
-    "@tiptap/extension-typography": "^2.1.13",
-    "@tiptap/extension-underline": "^2.1.13",
-    "@tiptap/pm": "^2.1.13",
-    "@tiptap/starter-kit": "^2.1.13",
-    "@tiptap/suggestion": "^2.1.13"
+    "@tiptap/core": "^2.2.2",
+    "@tiptap/extension-character-count": "^2.2.2",
+    "@tiptap/extension-focus": "^2.2.2",
+    "@tiptap/extension-highlight": "^2.2.2",
+    "@tiptap/extension-link": "^2.2.2",
+    "@tiptap/extension-placeholder": "^2.2.2",
+    "@tiptap/extension-subscript": "^2.2.2",
+    "@tiptap/extension-superscript": "^2.2.2",
+    "@tiptap/extension-table": "^2.2.2",
+    "@tiptap/extension-table-cell": "^2.2.2",
+    "@tiptap/extension-table-header": "^2.2.2",
+    "@tiptap/extension-table-row": "^2.2.2",
+    "@tiptap/extension-task-item": "^2.2.2",
+    "@tiptap/extension-task-list": "^2.2.2",
+    "@tiptap/extension-text-align": "^2.2.2",
+    "@tiptap/extension-typography": "^2.2.2",
+    "@tiptap/extension-underline": "^2.2.2",
+    "@tiptap/pm": "^2.2.2",
+    "@tiptap/starter-kit": "^2.2.2",
+    "@tiptap/suggestion": "^2.2.2"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.1",
-    "@directus/extensions-sdk": "^10.3.0",
+    "@directus/extensions-sdk": "^10.3.3",
     "@directus/schema": "^11.0.1",
-    "@directus/types": "^11.0.3",
-    "@rushstack/eslint-patch": "^1.6.1",
-    "@tiptap/vue-3": "^2.1.13",
+    "@directus/types": "^11.0.6",
+    "@rushstack/eslint-patch": "^1.7.2",
+    "@tiptap/vue-3": "^2.2.2",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
     "@vue/tsconfig": "^0.5.1",
     "eslint": "^8.56.0",
-    "eslint-plugin-vue": "^9.19.2",
-    "prettier": "^3.1.1",
-    "rollup": "^4.9.1",
-    "rollup-plugin-node-externals": "^6.1.2",
-    "sass": "^1.69.6",
+    "eslint-plugin-vue": "^9.21.1",
+    "prettier": "^3.2.5",
+    "rollup": "^4.10.0",
+    "rollup-plugin-node-externals": "^7.0.1",
+    "sass": "^1.70.0",
     "tippy.js": "^6.3.7",
     "typescript": "~5.3.3",
-    "vue": "~3.3.13",
-    "vue-i18n": "^9.8.0"
+    "vue": "~3.4.19",
+    "vue-i18n": "^9.9.1"
   },
   "peerDependencies": {
-    "@directus/extensions-sdk": "^10.2.0",
-    "vue": "^3.3.8",
-    "vue-i18n": "^9.6.5"
+    "@directus/extensions-sdk": "^10.3.3",
+    "vue": "^3.4.19",
+    "vue-i18n": "^9.9.1"
   },
   "publishConfig": {
     "access": "public"
   },
   "packageManager": "pnpm@8.12.0",
   "optionalDependencies": {
-    "@tiptap-pro/extension-emoji": "^2.5.1",
-    "@tiptap-pro/extension-invisible-characters": "^2.5.1",
-    "@tiptap-pro/extension-unique-id": "^2.5.1"
+    "@tiptap-pro/extension-emoji": "^2.6.5",
+    "@tiptap-pro/extension-invisible-characters": "^2.6.5",
+    "@tiptap-pro/extension-unique-id": "^2.6.5"
   }
 }
