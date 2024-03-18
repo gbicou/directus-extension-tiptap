@@ -69,7 +69,7 @@ dependencies:
 optionalDependencies:
   '@tiptap-pro/extension-emoji':
     specifier: ^2.7.5
-    version: 2.7.5(@tiptap/core@2.2.4)(@tiptap/pm@2.2.4)(@tiptap/suggestion@2.2.4)(emojibase@15.3.0)
+    version: 2.7.6(@tiptap/core@2.2.4)(@tiptap/pm@2.2.4)(@tiptap/suggestion@2.2.4)(emojibase@15.3.0)
   '@tiptap-pro/extension-invisible-characters':
     specifier: ^2.7.5
     version: 2.7.5(@tiptap/core@2.2.4)(@tiptap/pm@2.2.4)
@@ -1413,8 +1413,8 @@ packages:
     resolution: {integrity: sha512-5Lrwo7VOiWEBJBhHmqNmf3TPB9ll8gcEshvYJyAIJyCZ2PF48MFOtiDHJNj8+FsNcqImaQYmxVkKBCBlyAa/wg==}
     dev: true
 
-  /@tiptap-pro/extension-emoji@2.7.5(@tiptap/core@2.2.4)(@tiptap/pm@2.2.4)(@tiptap/suggestion@2.2.4)(emojibase@15.3.0):
-    resolution: {integrity: sha512-OwzTI/uo2ya1HtduG39BhZW3pwvOuI0+kQWIzUK7j/+SU/7Iicpo+ZTMnh3svRpcqltdn9jfKPOKmARq6wEMFQ==}
+  /@tiptap-pro/extension-emoji@2.7.6(@tiptap/core@2.2.4)(@tiptap/pm@2.2.4)(@tiptap/suggestion@2.2.4)(emojibase@15.3.0):
+    resolution: {integrity: sha512-Q/k5lJztF6MsVGPPlii/bDlkTgV6ezmBivz/qMsZLw/QAC+gxlsw5LFUiwySlE2Jx5g5rIXuTmQhCiNoYfoThw==}
     requiresBuild: true
     peerDependencies:
       '@tiptap/core': ^2.0.0
