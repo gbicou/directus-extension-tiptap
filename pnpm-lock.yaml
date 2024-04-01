@@ -75,7 +75,7 @@ optionalDependencies:
     version: 2.7.5(@tiptap/core@2.2.4)(@tiptap/pm@2.2.4)
   '@tiptap-pro/extension-unique-id':
     specifier: ^2.7.5
-    version: 2.7.5(@tiptap/core@2.2.4)(@tiptap/pm@2.2.4)
+    version: 2.7.7(@tiptap/core@2.2.4)(@tiptap/pm@2.2.4)
 
 devDependencies:
   '@changesets/changelog-github':
@@ -1444,8 +1444,8 @@ packages:
     dev: false
     optional: true
 
-  /@tiptap-pro/extension-unique-id@2.7.5(@tiptap/core@2.2.4)(@tiptap/pm@2.2.4):
-    resolution: {integrity: sha512-mv4VCaHRicT6jPPsg18cJv1rIaxcxlT05ADOANnAHPsrLPK8kA6n3W6Vfk2YfmGlnHi+t0+wvi5YsMo04wrmyA==}
+  /@tiptap-pro/extension-unique-id@2.7.7(@tiptap/core@2.2.4)(@tiptap/pm@2.2.4):
+    resolution: {integrity: sha512-gRmo0QKdQ0aPgy6BrcT2uc6e+9CL8mdKgsdLWXNUBi2zCoBsHYOQeCLJzk9AVaxF6QX0j0D7LVPpKQBlQyo0hw==}
     requiresBuild: true
     peerDependencies:
       '@tiptap/core': ^2.0.0
