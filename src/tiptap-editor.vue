@@ -637,7 +637,7 @@
 
 <style scoped lang="scss">
 @import "./styles/mixins/form-grid";
-
+@import 'katex/dist/katex.min.css';
 .v-menu-content {
   svg {
     fill: var(--v-input-color);
