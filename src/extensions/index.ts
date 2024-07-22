@@ -17,7 +17,7 @@ import image, { type ImageProps } from "./image";
 import invisibleCharacters from "./invisible-characters";
 import emoji, { type EmojiProps } from "./emoji";
 import uniqueId, { type UniqueIDProps } from "./unique-id";
-
+import mathematics from "./mathematics";
 type ExtensionGroup = "mark" | "node" | "editor";
 
 export const extensionsGroups: { group: ExtensionGroup; label: string }[] = [
@@ -69,6 +69,7 @@ export const extensionsMeta: ExtensionMeta[] = [
   invisibleCharacters,
   emoji,
   uniqueId,
+  mathematics,
 ];
 
 export async function loadExtensions(props: ExtensionsProps): Promise<Extensions> {
