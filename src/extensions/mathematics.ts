@@ -8,7 +8,7 @@ const extension: ExtensionMeta = {
   defaults: {},
   options: [],
   load: async () => {
-    const { Mathematics } = await import("@tiptap-pro/extension-invisible-characters");
+    const { Mathematics } = await import("@tiptap-pro/extension-mathematics");
     return Mathematics;
   },
 };
