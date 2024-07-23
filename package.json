@@ -101,7 +101,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@9.1.4",
+  "packageManager": "pnpm@8.12.0",
   "optionalDependencies": {
     "@tiptap-pro/extension-emoji": "^2.7.5",
     "@tiptap-pro/extension-invisible-characters": "^2.7.5",
