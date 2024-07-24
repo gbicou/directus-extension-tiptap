@@ -105,6 +105,8 @@
   "optionalDependencies": {
     "@tiptap-pro/extension-emoji": "^2.10.3",
     "@tiptap-pro/extension-invisible-characters": "^2.10.3",
-    "@tiptap-pro/extension-unique-id": "^2.10.3"
+    "@tiptap-pro/extension-unique-id": "^2.10.3",
+    "@tiptap-pro/extension-mathematics": "^2.10.3",
+    "katex": "^0.16.11"
   }
 }

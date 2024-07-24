@@ -75,9 +75,15 @@ importers:
       '@tiptap-pro/extension-invisible-characters':
         specifier: ^2.10.3
         version: 2.10.3(@tiptap/core@2.5.5(@tiptap/pm@2.5.5))(@tiptap/pm@2.5.5)
+      '@tiptap-pro/extension-mathematics':
+        specifier: ^2.10.3
+        version: 2.10.3(@tiptap/core@2.5.5(@tiptap/pm@2.5.5))(@tiptap/pm@2.5.5)(katex@0.16.11)
       '@tiptap-pro/extension-unique-id':
         specifier: ^2.10.3
         version: 2.10.3(@tiptap/core@2.5.5(@tiptap/pm@2.5.5))(@tiptap/pm@2.5.5)
+      katex:
+        specifier: ^0.16.11
+        version: 0.16.11
     devDependencies:
       '@changesets/changelog-github':
         specifier: ^0.5.0
@@ -839,6 +845,13 @@ packages:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
 
+  '@tiptap-pro/extension-mathematics@2.10.3':
+    resolution: {integrity: sha512-8u3/dtfnpDrxhOHGMXfXjBh0R++AYSEH39DYPWgN2iB+q1k8j+mhy7yWklB9tX44h/tVGhBWZQrCgi0sTNGpsg==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+      '@tiptap/pm': ^2.0.0
+      katex: ^0.16.4
+
   '@tiptap-pro/extension-unique-id@2.10.3':
     resolution: {integrity: sha512-xL4OZGOEgk0Fer1U7H7T3y4Jat+tOHt+W/kagXE8Kh0S0hm1GBs4nCzuDzQS+s8YrmxiL12s7xchILKyK/Ndvw==}
     peerDependencies:
@@ -1483,6 +1496,10 @@ packages:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
 
+  commander@8.3.0:
+    resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
+    engines: {node: '>= 12'}
+
   commondir@1.0.1:
     resolution: {integrity: sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==}
 
@@ -2110,6 +2127,10 @@ packages:
 
   jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
+
+  katex@0.16.11:
+    resolution: {integrity: sha512-RQrI8rlHY92OLf3rho/Ts8i/XvjgguEjOkO1BEXcU3N8BqPpSzBNwV/G0Ukr+P/l3ivvJUE/Fa/CwbS6HesGNQ==}
+    hasBin: true
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -3939,6 +3960,13 @@ snapshots:
       '@tiptap/pm': 2.5.5
     optional: true
 
+  '@tiptap-pro/extension-mathematics@2.10.3(@tiptap/core@2.5.5(@tiptap/pm@2.5.5))(@tiptap/pm@2.5.5)(katex@0.16.11)':
+    dependencies:
+      '@tiptap/core': 2.5.5(@tiptap/pm@2.5.5)
+      '@tiptap/pm': 2.5.5
+      katex: 0.16.11
+    optional: true
+
   '@tiptap-pro/extension-unique-id@2.10.3(@tiptap/core@2.5.5(@tiptap/pm@2.5.5))(@tiptap/pm@2.5.5)':
     dependencies:
       '@tiptap/core': 2.5.5(@tiptap/pm@2.5.5)
@@ -4676,6 +4704,9 @@ snapshots:
 
   commander@7.2.0: {}
 
+  commander@8.3.0:
+    optional: true
+
   commondir@1.0.1: {}
 
   concat-map@0.0.1: {}
@@ -5367,6 +5398,11 @@ snapshots:
       universalify: 2.0.1
     optionalDependencies:
       graceful-fs: 4.2.11
+
+  katex@0.16.11:
+    dependencies:
+      commander: 8.3.0
+    optional: true
 
   keyv@4.5.4:
     dependencies:
