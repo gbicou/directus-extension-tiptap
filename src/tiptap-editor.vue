@@ -708,7 +708,7 @@
     padding: 0 8px;
     background-color: var(--theme--form--field--input--background-subdued);
     border-top: var(--theme--border-width) solid var(--theme--form--field--input--border-color);
-    color: var(--theme--form--field--input--border-color);
+    color: var(--theme--form--field--input--foreground-subdued);
     font-family: var(--theme--fonts--monospace--font-family);
     font-size: 12px;
   }
