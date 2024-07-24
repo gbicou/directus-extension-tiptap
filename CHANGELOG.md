@@ -1,5 +1,17 @@
 # [1.11.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.4...v1.11.0) (2023-08-17)
 
+## 1.16.0
+
+### Minor Changes
+
+- [`a11da80`](https://github.com/gbicou/directus-extension-tiptap/commit/a11da8039e72030364ce94012fbf65660c2f29a5) Thanks [@gbicou](https://github.com/gbicou)! - upgrade tiptap to version 2.5.5
+
+- [`6bf8f3d`](https://github.com/gbicou/directus-extension-tiptap/commit/6bf8f3de23a095ed56e11258c39f80a780bcd253) Thanks [@gbicou](https://github.com/gbicou)! - add mathematics support thanks @imalfect
+
+### Patch Changes
+
+- [`cb17021`](https://github.com/gbicou/directus-extension-tiptap/commit/cb17021d4af205cba3521fa8814fcc36321847e7) Thanks [@gbicou](https://github.com/gbicou)! - sass mixed declarations
+
 ## 1.15.0
 
 ### Minor Changes
