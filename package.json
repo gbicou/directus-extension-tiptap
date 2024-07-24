@@ -94,7 +94,7 @@
     "vue-i18n": "^9.13.1"
   },
   "peerDependencies": {
-    "@directus/extensions-sdk": "^10.3.3",
+    "@directus/extensions-sdk": "^10.3.3 || ^11.0.0",
     "vue": "^3.4.19",
     "vue-i18n": "^9.9.1"
   },
