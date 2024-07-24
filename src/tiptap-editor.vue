@@ -721,6 +721,14 @@
     --v-button-background-color-active: var(--theme--form--field--input--border-color);
     --v-button-color-active: var(--theme--form--field--input--foreground);
 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 40px;
+    padding: 2px;
+    background-color: var(--theme--form--field--input--background-subdued);
+    border-bottom: var(--theme--border-width) solid var(--theme--form--field--input--border-color);
+
     svg {
       fill: var(--theme--form--field--input--foreground);
     }
@@ -733,14 +741,6 @@
     .disabled svg {
       fill: var(--theme--form--field--input--foreground-subdued);
     }
-
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    min-height: 40px;
-    padding: 2px;
-    background-color: var(--theme--form--field--input--background-subdued);
-    border-bottom: var(--theme--border-width) solid var(--theme--form--field--input--border-color);
 
     .v-button + .v-button {
       margin-left: 2px;
