@@ -22,7 +22,8 @@
       "table_toggle_header_column": "Toggle header column",
       "table_toggle_header_cell": "Toggle header cell",
       "invisible_characters": "Invisible characters",
-      "emoji": "Insert emoji"
+      "emoji": "Insert emoji",
+      "youtube": "Insert YouTube video"
     }
   },
   "fr": {
@@ -48,7 +49,8 @@
       "table_toggle_header_column": "Basculer la colonne d'en-tête",
       "table_toggle_header_cell": "Basculer la cellule d'en-tête",
       "invisible_characters": "Caractères invisibles",
-      "emoji": "Insérer un émoji"
+      "emoji": "Insérer un émoji",
+      "youtube": "Insérer une vidéo YouTube"
     }
   }
 }

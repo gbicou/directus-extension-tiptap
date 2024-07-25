@@ -537,6 +537,16 @@
       >
         <icons.FormatClear />
       </v-button>
+      <v-button
+        v-tooltip="t('tiptap.youtube')"
+        small
+        icon
+        :disabled="props.disabled"
+        @click="addVideo()"
+        v-if="editorExtensions.includes('youtube')"
+      >
+        <icons.Video />
+      </v-button>
 
       <div class="spacer" />
 
@@ -636,7 +646,7 @@
 </template>
 
 <style scoped lang="scss">
-@import 'katex/dist/katex.min.css';
+@import "katex/dist/katex.min.css";
 @import "./styles/mixins/form-grid";
 .v-menu-content {
   svg {
@@ -1093,4 +1103,16 @@ const emojiSelected = async (emoji: string) => {
 onBeforeUnmount(() => {
   editor.destroy();
 });
+
+const addVideo = () => {
+  const url = prompt("Enter YouTube URL");
+  // Prevent editor from erroring out if user cancels prompt
+  if (url !== null) {
+    editor.commands.setYoutubeVideo({
+      src: url,
+      width: 560,
+      height: 315,
+    });
+  }
+};
 </script>
