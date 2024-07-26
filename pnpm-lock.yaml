@@ -77,7 +77,7 @@ importers:
         version: 2.10.3(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))(@tiptap/pm@2.5.6)
       '@tiptap-pro/extension-mathematics':
         specifier: ^2.10.3
-        version: 2.10.3(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))(@tiptap/pm@2.5.6)(katex@0.16.11)
+        version: 2.10.4(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))(@tiptap/pm@2.5.6)(katex@0.16.11)
       '@tiptap-pro/extension-unique-id':
         specifier: ^2.10.3
         version: 2.10.3(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))(@tiptap/pm@2.5.6)
@@ -845,8 +845,8 @@ packages:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
 
-  '@tiptap-pro/extension-mathematics@2.10.3':
-    resolution: {integrity: sha512-8u3/dtfnpDrxhOHGMXfXjBh0R++AYSEH39DYPWgN2iB+q1k8j+mhy7yWklB9tX44h/tVGhBWZQrCgi0sTNGpsg==}
+  '@tiptap-pro/extension-mathematics@2.10.4':
+    resolution: {integrity: sha512-u2f56aWI4h5SmywstthtD5LCaY3jpJi2m2GXUtdQ85vxNWI/u+aJvaxB9ohDb28VERPROEr3JXfYvvsAR21Fzw==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
@@ -3112,8 +3112,8 @@ packages:
       terser:
         optional: true
 
-  vue-demi@0.14.9:
-    resolution: {integrity: sha512-dC1TJMODGM8lxhP6wLToncaDPPNB3biVxxRDuNCYpuXwi70ou7NsGd97KVTJ2omepGId429JZt8oaZKeXbqxwg==}
+  vue-demi@0.14.10:
+    resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
     engines: {node: '>=12'}
     hasBin: true
     peerDependencies:
@@ -3960,7 +3960,7 @@ snapshots:
       '@tiptap/pm': 2.5.6
     optional: true
 
-  '@tiptap-pro/extension-mathematics@2.10.3(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))(@tiptap/pm@2.5.6)(katex@0.16.11)':
+  '@tiptap-pro/extension-mathematics@2.10.4(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))(@tiptap/pm@2.5.6)(katex@0.16.11)':
     dependencies:
       '@tiptap/core': 2.5.6(@tiptap/pm@2.5.6)
       '@tiptap/pm': 2.5.6
@@ -5685,7 +5685,7 @@ snapshots:
     dependencies:
       '@vue/devtools-api': 6.6.3
       vue: 3.4.33(typescript@5.4.5)
-      vue-demi: 0.14.9(vue@3.4.33(typescript@5.4.5))
+      vue-demi: 0.14.10(vue@3.4.33(typescript@5.4.5))
     optionalDependencies:
       typescript: 5.4.5
 
@@ -6352,7 +6352,7 @@ snapshots:
       sass: 1.77.8
       terser: 5.31.3
 
-  vue-demi@0.14.9(vue@3.4.33(typescript@5.4.5)):
+  vue-demi@0.14.10(vue@3.4.33(typescript@5.4.5)):
     dependencies:
       vue: 3.4.33(typescript@5.4.5)
 
