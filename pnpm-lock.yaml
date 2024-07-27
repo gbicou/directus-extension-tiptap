@@ -102,7 +102,7 @@ importers:
         version: 11.2.0(knex@3.1.0)(vue@3.4.33(typescript@5.4.5))
       '@rushstack/eslint-patch':
         specifier: ^1.10.3
-        version: 1.10.3
+        version: 1.10.4
       '@tiptap/vue-3':
         specifier: ^2.5.5
         version: 2.5.6(@tiptap/core@2.5.6(@tiptap/pm@2.5.6))(@tiptap/pm@2.5.6)(vue@3.4.33(typescript@5.4.5))
@@ -817,8 +817,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rushstack/eslint-patch@1.10.3':
-    resolution: {integrity: sha512-qC/xYId4NMebE6w/V33Fh9gWxLgURiNYgVNObbJl2LZv0GUUItCcCqC5axQSwRaAgaxl2mELq1rMzlswaQ0Zxg==}
+  '@rushstack/eslint-patch@1.10.4':
+    resolution: {integrity: sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==}
 
   '@sideway/address@4.1.5':
     resolution: {integrity: sha512-IqO/DUQHUkPeixNQ8n0JA6102hT9CmaljNTPmQ1u8MEhBo/R4Q8eKLN/vGZxuebwOroDB4cbpjheD4+/sKFK4Q==}
@@ -3112,8 +3112,8 @@ packages:
       terser:
         optional: true
 
-  vue-demi@0.14.9:
-    resolution: {integrity: sha512-dC1TJMODGM8lxhP6wLToncaDPPNB3biVxxRDuNCYpuXwi70ou7NsGd97KVTJ2omepGId429JZt8oaZKeXbqxwg==}
+  vue-demi@0.14.10:
+    resolution: {integrity: sha512-nMZBOwuzabUO0nLgIcc6rycZEebF6eeUfaiQx9+WSk8e29IbLvPU9feI6tqW4kTo3hvoYAJkMh8n8D0fuISphg==}
     engines: {node: '>=12'}
     hasBin: true
     peerDependencies:
@@ -3930,7 +3930,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.19.0':
     optional: true
 
-  '@rushstack/eslint-patch@1.10.3': {}
+  '@rushstack/eslint-patch@1.10.4': {}
 
   '@sideway/address@4.1.5':
     dependencies:
@@ -5685,7 +5685,7 @@ snapshots:
     dependencies:
       '@vue/devtools-api': 6.6.3
       vue: 3.4.33(typescript@5.4.5)
-      vue-demi: 0.14.9(vue@3.4.33(typescript@5.4.5))
+      vue-demi: 0.14.10(vue@3.4.33(typescript@5.4.5))
     optionalDependencies:
       typescript: 5.4.5
 
@@ -6352,7 +6352,7 @@ snapshots:
       sass: 1.77.8
       terser: 5.31.3
 
-  vue-demi@0.14.9(vue@3.4.33(typescript@5.4.5)):
+  vue-demi@0.14.10(vue@3.4.33(typescript@5.4.5)):
     dependencies:
       vue: 3.4.33(typescript@5.4.5)
 
