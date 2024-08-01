@@ -1,8 +1,3 @@
-<template>
-  <value-null v-if="!text" />
-  <v-text-overflow v-else class="tiptap-display" placement="bottom" :text="text" />
-</template>
-
 <script setup lang="ts">
 import type { JSONContent } from "@tiptap/vue-3";
 import type { TypeType, ValueType } from "./types";
@@ -30,6 +25,11 @@ const text = computed(() => {
   return "";
 });
 </script>
+
+<template>
+  <value-null v-if="!text" />
+  <v-text-overflow v-else class="tiptap-display" placement="bottom" :text="text" />
+</template>
 
 <style lang="scss" scoped>
 .tiptap-display {

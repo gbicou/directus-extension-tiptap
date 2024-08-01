@@ -2,7 +2,7 @@ import type { ExtensionMeta } from "./index";
 import { mergeAttributes, Node } from "@tiptap/core";
 import { getPublicURL } from "../utils/get-root-path";
 
-interface ImageAttributes {
+export interface ImageAttributes {
   id: string;
   alt?: string;
   filename?: string;

@@ -36,9 +36,7 @@ export default defineInterface({
           width: "full",
           note: "Add new capabilities to the editor. StarterKit is already included.",
           interface: "select-multiple-checkbox-tree",
-          options: {
-            choices: extensionsChoices,
-          },
+          options: { choices: extensionsChoices },
         },
       },
     ];

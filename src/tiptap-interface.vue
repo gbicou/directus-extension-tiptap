@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import TiptapEditor from "./tiptap-editor.vue";
+</script>
+
 <template>
   <Suspense>
     <template #default>
@@ -9,7 +13,3 @@
     </template>
   </Suspense>
 </template>
-
-<script setup lang="ts">
-import TiptapEditor from "./tiptap-editor.vue";
-</script>

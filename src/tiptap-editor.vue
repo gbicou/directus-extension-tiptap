@@ -1,43 +1,194 @@
+<script setup lang="ts">
+import { BubbleMenu, Editor, EditorContent } from "@tiptap/vue-3";
+import { computed, onBeforeUnmount, ref, watch } from "vue";
+import { useI18n } from "vue-i18n";
+import { translateShortcut } from "./utils/translate-shortcut";
+import type { TypeType, ValueType } from "./types";
+import { type ExtensionsProps, loadExtensions } from "./extensions";
+import messages from "./messages.json";
+import textAlign from "./extensions/text-align";
+import characterCount from "./extensions/character-count";
+import placeholder from "./extensions/placeholder";
+import { useLink } from "./composables/link";
+import focus from "./extensions/focus";
+import task from "./extensions/task";
+import table from "./extensions/table";
+import icons from "./icons";
+import { useImage } from "./composables/image";
+import uniqueId from "./extensions/unique-id";
+import emoji from "./extensions/emoji";
+
+const { t } = useI18n({ messages });
+
+type Props = {
+  value: ValueType | null;
+  type: TypeType;
+  disabled: boolean;
+  autofocus: boolean;
+} & ExtensionsProps;
+
+const props = withDefaults(defineProps<Props>(), {
+  value: null,
+  disabled: false,
+  autofocus: false,
+  extensions: null,
+  cdnURL: null,
+  placeholder: () => placeholder.defaults.placeholder,
+  textAlignTypes: () => textAlign.defaults.types,
+  characterCountMode: () => characterCount.defaults.mode,
+  focusMode: () => focus.defaults.mode,
+  taskItemNested: () => task.defaults.nested,
+  tableResizable: () => table.defaults.resizable,
+  emojiEnableEmoticons: () => emoji.defaults.enableEmoticons,
+  uniqueIdAttributeName: () => uniqueId.defaults.attributeName,
+  uniqueIdTypes: () => uniqueId.defaults.types,
+});
+
+const emit = defineEmits<{
+  (e: "input", value: ValueType): void;
+}>();
+
+const alignOptions = [
+  {
+    align: "left",
+    icon: icons.AlignLeft,
+    text: t("wysiwyg_options.alignleft"),
+    shortcut: translateShortcut(["meta", "shift", "l"]),
+  },
+  {
+    align: "center",
+    icon: icons.AlignCenter,
+    text: t("wysiwyg_options.aligncenter"),
+    shortcut: translateShortcut(["meta", "shift", "e"]),
+  },
+  {
+    align: "right",
+    icon: icons.AlignRight,
+    text: t("wysiwyg_options.alignright"),
+    shortcut: translateShortcut(["meta", "shift", "r"]),
+  },
+  {
+    align: "justify",
+    icon: icons.AlignJustify,
+    text: t("wysiwyg_options.alignjustify"),
+    shortcut: translateShortcut(["meta", "shift", "j"]),
+  },
+];
+
+const editorInitiated = ref<boolean>(false);
+
+const extensions = await loadExtensions(props);
+
+const editor = new Editor({
+  editable: !props.disabled,
+  content: props.value,
+  extensions,
+  autofocus: props.autofocus,
+  onUpdate: ({ editor }) => {
+    if (editor.isEmpty && !editorInitiated.value) {
+      return;
+    }
+    switch (props.type) {
+      case "json":
+        emit("input", editor.getJSON());
+        break;
+      case "text":
+        emit("input", editor.getHTML());
+        break;
+    }
+  },
+});
+
+const editorExtensions = editor.extensionManager.extensions.map((ext) => ext.name);
+
+const { linkDrawerOpen, linkHref, linkTarget, linkOpen, linkClose, linkSave, linkRemove } = useLink(editor);
+
+const { imageDrawerOpen, imageSelection, imageSelect, imageOpen, imageClose, imageSave } = useImage(editor);
+
+const textAlignActive = computed(() => {
+  return ["left", "center", "right", "justify"].find((align) => editor.isActive({ textAlign: align }));
+});
+
+watch(
+  () => props.value,
+  (value) => {
+    if (!value) {
+      return;
+    }
+
+    const isSame =
+      props.type === "json" ? JSON.stringify(editor.getJSON()) === JSON.stringify(value) : editor.getHTML() === value;
+
+    if (isSame) {
+      return;
+    }
+
+    editor.commands.setContent(value, false);
+    editorInitiated.value = true;
+  },
+  {
+    immediate: true,
+  },
+);
+
+watch(
+  () => props.disabled,
+  (disabled) => editor.setEditable(!disabled),
+);
+
+const emojiSelected = async (emoji: string) => {
+  const { emojiToShortcode } = await import("@tiptap-pro/extension-emoji");
+  const shortcode = emojiToShortcode(emoji, editor.storage.emoji.emojis);
+  if (shortcode) {
+    editor.chain().focus().setEmoji(shortcode).run();
+  }
+};
+
+onBeforeUnmount(() => {
+  editor.destroy();
+});
+</script>
+
 <template>
   <div class="tiptap-editor" :class="{ disabled: props.disabled }">
     <bubble-menu class="tiptap-editor__bubble" :editor="editor" :tippy-options="{ duration: 100 }">
       <v-chip
         v-if="editorExtensions.includes('bold') && editor.can().toggleBold()"
-        @click="editor.chain().focus().toggleBold().run()"
-        :outlined="!editor.isActive('bold')"
         v-tooltip="t('wysiwyg_options.bold')"
+        :outlined="!editor.isActive('bold')"
         clickable
         small
+        @click="editor.chain().focus().toggleBold().run()"
       >
         <icons.Bold class="icon" />
       </v-chip>
       <v-chip
         v-if="editorExtensions.includes('italic') && editor.can().toggleItalic()"
-        @click="editor.chain().focus().toggleItalic().run()"
-        :outlined="!editor.isActive('italic')"
         v-tooltip="t('wysiwyg_options.italic')"
+        :outlined="!editor.isActive('italic')"
         clickable
         small
+        @click="editor.chain().focus().toggleItalic().run()"
       >
         <icons.Italic class="icon" />
       </v-chip>
       <v-chip
         v-if="editorExtensions.includes('underline') && editor.can().toggleUnderline()"
-        @click="editor.chain().focus().toggleUnderline().run()"
-        :outlined="!editor.isActive('underline')"
         v-tooltip="t('wysiwyg_options.underline')"
+        :outlined="!editor.isActive('underline')"
         clickable
         small
+        @click="editor.chain().focus().toggleUnderline().run()"
       >
         <icons.Underline class="icon" />
       </v-chip>
       <v-chip
         v-if="editorExtensions.includes('strike') && editor.can().toggleStrike()"
-        @click="editor.chain().focus().toggleStrike().run()"
-        :outlined="!editor.isActive('strike')"
         v-tooltip="t('wysiwyg_options.strikethrough')"
+        :outlined="!editor.isActive('strike')"
         clickable
         small
+        @click="editor.chain().focus().toggleStrike().run()"
       >
         <icons.Strikethrough class="icon" />
       </v-chip>
@@ -266,7 +417,7 @@
             @click="toggle"
           >
             <template v-for="opt in alignOptions" :key="opt.align">
-              <component v-if="editor.isActive({ textAlign: opt.align })" :is="opt.icon" />
+              <component :is="opt.icon" v-if="editor.isActive({ textAlign: opt.align })" />
             </template>
             <icons.AlignLeft v-if="textAlignActive === undefined" />
           </v-button>
@@ -567,7 +718,7 @@
 
     <editor-content class="tiptap-editor__content" :editor="editor" />
 
-    <div class="tiptap-editor__info" v-if="editorExtensions.includes('characterCount')">
+    <div v-if="editorExtensions.includes('characterCount')" class="tiptap-editor__info">
       <div v-if="editorExtensions.includes('characterCount')">
         <template v-if="!editor.storage.characterCount.characters() && !editor.storage.characterCount.words()">
           ∅
@@ -636,7 +787,7 @@
 </template>
 
 <style scoped lang="scss">
-@import 'katex/dist/katex.min.css';
+@import "katex/dist/katex.min.css";
 @import "./styles/mixins/form-grid";
 .v-menu-content {
   svg {
@@ -942,155 +1093,3 @@
   }
 }
 </style>
-
-<script setup lang="ts">
-import { BubbleMenu, Editor, EditorContent } from "@tiptap/vue-3";
-import { computed, onBeforeUnmount, ref, watch } from "vue";
-import { useI18n } from "vue-i18n";
-import { translateShortcut } from "./utils/translate-shortcut";
-import type { TypeType, ValueType } from "./types";
-import { type ExtensionsProps, loadExtensions } from "./extensions";
-import messages from "./messages.json";
-import textAlign from "./extensions/text-align";
-import characterCount from "./extensions/character-count";
-// eslint-disable-next-line vue/no-dupe-keys
-import placeholder from "./extensions/placeholder";
-import { useLink } from "./composables/link";
-import focus from "./extensions/focus";
-import task from "./extensions/task";
-import table from "./extensions/table";
-import icons from "./icons";
-import { useImage } from "./composables/image";
-import uniqueId from "./extensions/unique-id";
-import emoji from "./extensions/emoji";
-
-const { t } = useI18n({ messages });
-
-type Props = {
-  value: ValueType | null;
-  type: TypeType;
-  disabled: boolean;
-  autofocus: boolean;
-} & ExtensionsProps;
-
-const props = withDefaults(defineProps<Props>(), {
-  value: null,
-  disabled: false,
-  autofocus: false,
-  extensions: null,
-  cdnURL: null,
-  placeholder: () => placeholder.defaults.placeholder,
-  textAlignTypes: () => textAlign.defaults.types,
-  characterCountMode: () => characterCount.defaults.mode,
-  focusMode: () => focus.defaults.mode,
-  taskItemNested: () => task.defaults.nested,
-  tableResizable: () => table.defaults.resizable,
-  emojiEnableEmoticons: () => emoji.defaults.enableEmoticons,
-  uniqueIdAttributeName: () => uniqueId.defaults.attributeName,
-  uniqueIdTypes: () => uniqueId.defaults.types,
-});
-
-const emit = defineEmits<{
-  (e: "input", value: ValueType): void;
-}>();
-
-const alignOptions = [
-  {
-    align: "left",
-    icon: icons.AlignLeft,
-    text: t("wysiwyg_options.alignleft"),
-    shortcut: translateShortcut(["meta", "shift", "l"]),
-  },
-  {
-    align: "center",
-    icon: icons.AlignCenter,
-    text: t("wysiwyg_options.aligncenter"),
-    shortcut: translateShortcut(["meta", "shift", "e"]),
-  },
-  {
-    align: "right",
-    icon: icons.AlignRight,
-    text: t("wysiwyg_options.alignright"),
-    shortcut: translateShortcut(["meta", "shift", "r"]),
-  },
-  {
-    align: "justify",
-    icon: icons.AlignJustify,
-    text: t("wysiwyg_options.alignjustify"),
-    shortcut: translateShortcut(["meta", "shift", "j"]),
-  },
-];
-
-const editorInitiated = ref<boolean>(false);
-
-const extensions = await loadExtensions(props);
-
-const editor = new Editor({
-  editable: !props.disabled,
-  content: props.value,
-  extensions,
-  autofocus: props.autofocus,
-  onUpdate: ({ editor }) => {
-    if (editor.isEmpty && !editorInitiated.value) {
-      return;
-    }
-    switch (props.type) {
-      case "json":
-        emit("input", editor.getJSON());
-        break;
-      case "text":
-        emit("input", editor.getHTML());
-        break;
-    }
-  },
-});
-
-const editorExtensions = editor.extensionManager.extensions.map((ext) => ext.name);
-
-const { linkDrawerOpen, linkHref, linkTarget, linkOpen, linkClose, linkSave, linkRemove } = useLink(editor);
-
-const { imageDrawerOpen, imageSelection, imageSelect, imageOpen, imageClose, imageSave } = useImage(editor);
-
-const textAlignActive = computed(() => {
-  return ["left", "center", "right", "justify"].find((align) => editor.isActive({ textAlign: align }));
-});
-
-watch(
-  () => props.value,
-  (value) => {
-    if (!value) {
-      return;
-    }
-
-    const isSame =
-      props.type === "json" ? JSON.stringify(editor.getJSON()) === JSON.stringify(value) : editor.getHTML() === value;
-
-    if (isSame) {
-      return;
-    }
-
-    editor.commands.setContent(value, false);
-    editorInitiated.value = true;
-  },
-  {
-    immediate: true,
-  },
-);
-
-watch(
-  () => props.disabled,
-  (disabled) => editor.setEditable(!disabled),
-);
-
-const emojiSelected = async (emoji: string) => {
-  const { emojiToShortcode } = await import("@tiptap-pro/extension-emoji");
-  const shortcode = emojiToShortcode(emoji, editor.storage.emoji.emojis);
-  if (shortcode) {
-    editor.chain().focus().setEmoji(shortcode).run();
-  }
-};
-
-onBeforeUnmount(() => {
-  editor.destroy();
-});
-</script>

@@ -1,22 +1,3 @@
-<template>
-  <div class="emoji-list">
-    <v-list dense>
-      <v-list-item
-        v-for="(item, index) in items"
-        :key="index"
-        clickable
-        :active="index === selectedIndex"
-        @click="selectItem(index)"
-      >
-        <v-list-item-icon>
-          {{ item.emoji }}
-        </v-list-item-icon>
-        <v-list-item-content> :{{ item.name }}: </v-list-item-content>
-      </v-list-item>
-    </v-list>
-  </div>
-</template>
-
 <script>
 export default {
   props: {
@@ -90,6 +71,25 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div class="emoji-list">
+    <v-list dense>
+      <v-list-item
+        v-for="(item, index) in items"
+        :key="index"
+        clickable
+        :active="index === selectedIndex"
+        @click="selectItem(index)"
+      >
+        <v-list-item-icon>
+          {{ item.emoji }}
+        </v-list-item-icon>
+        <v-list-item-content> :{{ item.name }}: </v-list-item-content>
+      </v-list-item>
+    </v-list>
+  </div>
+</template>
 
 <style lang="scss">
 .emoji-list {
