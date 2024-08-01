@@ -1,5 +1,19 @@
 # [1.11.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.4...v1.11.0) (2023-08-17)
 
+## 1.16.1
+
+### Patch Changes
+
+- [#117](https://github.com/gbicou/directus-extension-tiptap/pull/117) [`03bf321`](https://github.com/gbicou/directus-extension-tiptap/commit/03bf32146ded984a5d918ab49ebb17a5d1779a6c) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update dependency @tiptap-pro/extension-invisible-characters to v2.10.4
+
+- [#111](https://github.com/gbicou/directus-extension-tiptap/pull/111) [`7cf8f27`](https://github.com/gbicou/directus-extension-tiptap/commit/7cf8f27a0edfec39dd27bfdf6cb5bc2105e549f8) Thanks [@renovate](https://github.com/apps/renovate)! - fix(deps): update tiptap monorepo to v2.5.6
+
+- [#119](https://github.com/gbicou/directus-extension-tiptap/pull/119) [`a411a26`](https://github.com/gbicou/directus-extension-tiptap/commit/a411a26d905c0e2d073a984c181c57d02ebf5f41) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update dependency @tiptap-pro/extension-unique-id to v2.10.4
+
+- [#116](https://github.com/gbicou/directus-extension-tiptap/pull/116) [`b2b34b4`](https://github.com/gbicou/directus-extension-tiptap/commit/b2b34b4fdbaa5e016ce3925d8cdef3699e76b43f) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update dependency @tiptap-pro/extension-emoji to v2.10.4
+
+- [#118](https://github.com/gbicou/directus-extension-tiptap/pull/118) [`8d542cd`](https://github.com/gbicou/directus-extension-tiptap/commit/8d542cda529de793e87f6ad35eb29806a51c12b5) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): update dependency @tiptap-pro/extension-mathematics to v2.10.4
+
 ## 1.16.0
 
 ### Minor Changes
