@@ -96,7 +96,7 @@ importers:
         version: 11.0.9(@types/node@22.0.2)(@unhead/vue@1.8.16(vue@3.4.35(typescript@5.4.5)))(knex@3.1.0)(pinia@2.1.7(typescript@5.4.5)(vue@3.4.35(typescript@5.4.5)))(sass@1.77.8)(terser@5.31.3)(typescript@5.4.5)
       '@directus/schema':
         specifier: ^11.0.3
-        version: 11.0.3
+        version: 11.0.4
       '@directus/types':
         specifier: ^11.2.0
         version: 11.2.0(knex@3.1.0)(vue@3.4.35(typescript@5.4.5))
@@ -270,6 +270,9 @@ packages:
 
   '@directus/schema@11.0.3':
     resolution: {integrity: sha512-5pU8+2+ENleleAnkLqQM028k6FB/tEuzGZeUTEFI6QFEG1Jmh/qNBEnvaMkXjDDFlPuZx9Tci1C56l26NoumQA==}
+
+  '@directus/schema@11.0.4':
+    resolution: {integrity: sha512-dawYNRHh4NZSDRzmBm7lhWLy1IYvZytkeWzOgrP17GnUG7fCS4cOVKIpVG14r0TTOKps6d7bZdTCrwWQG6hT2w==}
 
   '@directus/system-data@1.1.0':
     resolution: {integrity: sha512-ETOoTyUXHQJD1NemdlJSADm32GoljQGhZUbg8bB31GAmBnGghTx+E16zzcb1TxRHEqQhV7PfLOrtwEksSTIw8Q==}
@@ -3488,6 +3491,19 @@ snapshots:
       - tedious
 
   '@directus/schema@11.0.3':
+    dependencies:
+      knex: 3.1.0
+    transitivePeerDependencies:
+      - better-sqlite3
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+
+  '@directus/schema@11.0.4':
     dependencies:
       knex: 3.1.0
     transitivePeerDependencies:
