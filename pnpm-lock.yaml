@@ -77,7 +77,7 @@ importers:
         version: 2.10.7(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)
       '@tiptap-pro/extension-mathematics':
         specifier: ^2.10.7
-        version: 2.10.7(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)(katex@0.16.11)
+        version: 2.10.9(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)(katex@0.16.11)
       '@tiptap-pro/extension-unique-id':
         specifier: ^2.10.7
         version: 2.10.7(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)
@@ -845,8 +845,8 @@ packages:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
 
-  '@tiptap-pro/extension-mathematics@2.10.7':
-    resolution: {integrity: sha512-+/bOV8MqwnIivIutt3rLvk4Rj85zzahkiXWv5Q0LQ0DEkRLw/rB3Vqq2izBeDzBCG6S9mkeSHPCtWfakNU9KXQ==}
+  '@tiptap-pro/extension-mathematics@2.10.9':
+    resolution: {integrity: sha512-afP2WpAe6fEPAg03Qymwy8xeqUExYpg2DgJ2dO4rYMJz6xAyYTC6xQsJ7rIaneVmrrwQ5beUNzwrAMp5J0SXvA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
@@ -3947,7 +3947,7 @@ snapshots:
       '@tiptap/pm': 2.5.8
     optional: true
 
-  '@tiptap-pro/extension-mathematics@2.10.7(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)(katex@0.16.11)':
+  '@tiptap-pro/extension-mathematics@2.10.9(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)(katex@0.16.11)':
     dependencies:
       '@tiptap/core': 2.5.8(@tiptap/pm@2.5.8)
       '@tiptap/pm': 2.5.8
