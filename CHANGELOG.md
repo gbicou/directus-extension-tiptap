@@ -1,5 +1,13 @@
 # [1.11.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.4...v1.11.0) (2023-08-17)
 
+## 1.18.0
+
+### Minor Changes
+
+- [`4334659`](https://github.com/gbicou/directus-extension-tiptap/commit/43346598321f0f2421b6d245eac8f895b27db202) Thanks [@gbicou](https://github.com/gbicou)! - upgrade tiptap to version 2.8
+
+- [`94957b3`](https://github.com/gbicou/directus-extension-tiptap/commit/94957b3be71158d489094986429bf429d22e7cba) Thanks [@gbicou](https://github.com/gbicou)! - upgrade @directus packages to version 12
+
 ## 1.17.0
 
 ### Minor Changes
