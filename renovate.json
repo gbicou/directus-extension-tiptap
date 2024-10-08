@@ -3,6 +3,7 @@
   "extends": [
     "config:recommended"
   ],
+  "addLabels": ["dependencies"],
   "hostRules": [
     {
       "matchHost": "registry.tiptap.dev",
