@@ -90,13 +90,13 @@
     "tippy.js": "6.3.7",
     "typescript": "5.4.5",
     "typescript-eslint": "8.0.0",
-    "vue": "3.4.35",
-    "vue-i18n": "9.13.1"
+    "vue": "3.4.38",
+    "vue-i18n": "9.14.1"
   },
   "peerDependencies": {
     "@directus/extensions-sdk": "12.0.2",
-    "vue": "3.4.19",
-    "vue-i18n": "9.9.1"
+    "vue": "3.4.38",
+    "vue-i18n": "9.14.1"
   },
   "publishConfig": {
     "access": "public"
