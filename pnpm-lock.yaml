@@ -9,141 +9,141 @@ importers:
   .:
     dependencies:
       '@tiptap/core':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/pm@2.5.8)
       '@tiptap/extension-character-count':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)
       '@tiptap/extension-focus':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)
       '@tiptap/extension-highlight':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))
       '@tiptap/extension-link':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)
       '@tiptap/extension-placeholder':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)
       '@tiptap/extension-subscript':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))
       '@tiptap/extension-superscript':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))
       '@tiptap/extension-table':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)
       '@tiptap/extension-table-cell':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))
       '@tiptap/extension-table-header':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))
       '@tiptap/extension-table-row':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))
       '@tiptap/extension-task-item':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)
       '@tiptap/extension-task-list':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))
       '@tiptap/extension-text-align':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))
       '@tiptap/extension-typography':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))
       '@tiptap/extension-underline':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))
       '@tiptap/pm':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8
       '@tiptap/starter-kit':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/pm@2.5.8)
       '@tiptap/suggestion':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)
     optionalDependencies:
       '@tiptap-pro/extension-emoji':
-        specifier: ^2.10.7
+        specifier: 2.10.7
         version: 2.10.7(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)(@tiptap/suggestion@2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8))(emojibase@15.3.0)
       '@tiptap-pro/extension-invisible-characters':
-        specifier: ^2.10.7
+        specifier: 2.10.7
         version: 2.10.7(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)
       '@tiptap-pro/extension-mathematics':
-        specifier: ^2.10.7
+        specifier: 2.10.7
         version: 2.10.7(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)(katex@0.16.11)
       '@tiptap-pro/extension-unique-id':
-        specifier: ^2.10.7
+        specifier: 2.10.7
         version: 2.10.7(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)
       katex:
-        specifier: ^0.16.11
+        specifier: 0.16.11
         version: 0.16.11
     devDependencies:
       '@changesets/changelog-github':
-        specifier: ^0.5.0
+        specifier: 0.5.0
         version: 0.5.0
       '@changesets/cli':
-        specifier: ^2.27.7
+        specifier: 2.27.7
         version: 2.27.7
       '@directus/extensions-sdk':
-        specifier: ^11.0.9
+        specifier: 11.0.9
         version: 11.0.9(@types/node@22.0.2)(@unhead/vue@1.8.16(vue@3.4.35(typescript@5.4.5)))(knex@3.1.0)(pinia@2.1.7(typescript@5.4.5)(vue@3.4.35(typescript@5.4.5)))(sass@1.77.8)(terser@5.31.3)(typescript@5.4.5)
       '@directus/schema':
-        specifier: ^11.0.3
+        specifier: 11.0.3
         version: 11.0.3
       '@directus/types':
-        specifier: ^11.2.0
+        specifier: 11.2.0
         version: 11.2.0(knex@3.1.0)(vue@3.4.35(typescript@5.4.5))
       '@eslint/js':
-        specifier: ^9.8.0
+        specifier: 9.8.0
         version: 9.8.0
       '@tiptap/vue-3':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@tiptap/core@2.5.8(@tiptap/pm@2.5.8))(@tiptap/pm@2.5.8)(vue@3.4.35(typescript@5.4.5))
       '@vue/tsconfig':
-        specifier: ^0.5.1
+        specifier: 0.5.1
         version: 0.5.1
       eslint:
-        specifier: ^9.8.0
+        specifier: 9.8.0
         version: 9.8.0
       eslint-plugin-prettier:
-        specifier: ^5.2.1
+        specifier: 5.2.1
         version: 5.2.1(eslint-config-prettier@9.1.0(eslint@9.8.0))(eslint@9.8.0)(prettier@3.3.3)
       eslint-plugin-vue:
-        specifier: ^9.27.0
+        specifier: 9.27.0
         version: 9.27.0(eslint@9.8.0)
       prettier:
-        specifier: ^3.3.3
+        specifier: 3.3.3
         version: 3.3.3
       rollup:
-        specifier: ^4.19.2
+        specifier: 4.19.2
         version: 4.19.2
       rollup-plugin-node-externals:
-        specifier: ^7.1.2
+        specifier: 7.1.2
         version: 7.1.2(rollup@4.19.2)
       sass:
-        specifier: ^1.77.8
+        specifier: 1.77.8
         version: 1.77.8
       tippy.js:
-        specifier: ^6.3.7
+        specifier: 6.3.7
         version: 6.3.7
       typescript:
-        specifier: ~5.4.5
+        specifier: 5.4.5
         version: 5.4.5
       typescript-eslint:
-        specifier: ^8.0.0
+        specifier: 8.0.0
         version: 8.0.0(eslint@9.8.0)(typescript@5.4.5)
       vue:
-        specifier: ~3.4.35
+        specifier: 3.4.35
         version: 3.4.35(typescript@5.4.5)
       vue-i18n:
-        specifier: ^9.13.1
+        specifier: 9.13.1
         version: 9.13.1(vue@3.4.35(typescript@5.4.5))
 
 packages:
