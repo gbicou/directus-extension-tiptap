@@ -98,8 +98,8 @@ importers:
         specifier: 12.1.0
         version: 12.1.0
       '@directus/types':
-        specifier: 12.0.1
-        version: 12.0.1(knex@3.1.0)(vue@3.4.38(typescript@5.4.5))
+        specifier: 12.1.0
+        version: 12.1.0(knex@3.1.0)(vue@3.4.38(typescript@5.4.5))
       '@eslint/js':
         specifier: 9.12.0
         version: 9.12.0
@@ -271,6 +271,9 @@ packages:
   '@directus/schema@12.1.0':
     resolution: {integrity: sha512-56qIDmw6yHR8UFIfwUOEyHJ169uxdl4Sa4YncnQyaANOvuKmpXwxmZ5nf0zQmSx8S7TJZ8kc1NhpyKMMpr80NA==}
 
+  '@directus/schema@12.1.1':
+    resolution: {integrity: sha512-FRD3sE/IDrnhyJVNB93uaLM+fa69XSoMmLm/dla6Cygyli9MhDgWBF4PiWDv4P08FobtakLSIV7QvpHJhZRXOQ==}
+
   '@directus/system-data@2.0.0':
     resolution: {integrity: sha512-zMLVKbDjz2F8e8hhvuOY70Ig/zlxMPbFsFBuKVHp2GQIS+lzrdvFJSxGEMFI3ZSZzUfzbN0vNuYVTBR2S/eW/w==}
 
@@ -283,6 +286,17 @@ packages:
 
   '@directus/types@12.0.1':
     resolution: {integrity: sha512-U+51RHJPRgb1Z4oyh/hn5sT9IOaDbskH83pfnGmhlOdmS2bPqyxg7zImfE2pyFxpKRWX8rEzarmyOGv2HNO+ug==}
+    peerDependencies:
+      knex: '3'
+      vue: ^3.4
+    peerDependenciesMeta:
+      knex:
+        optional: true
+      vue:
+        optional: true
+
+  '@directus/types@12.1.0':
+    resolution: {integrity: sha512-5Y83A9SMH81U2rWUj6veSwx3wvnunc2wVFnvrY70GdiVLUC+wOobExZdapS2lnhleEgYNjKVlLlQGwzSCAYzlg==}
     peerDependencies:
       knex: '3'
       vue: ^3.4
@@ -3461,6 +3475,19 @@ snapshots:
       - supports-color
       - tedious
 
+  '@directus/schema@12.1.1':
+    dependencies:
+      knex: 3.1.0
+    transitivePeerDependencies:
+      - better-sqlite3
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+
   '@directus/system-data@2.0.0': {}
 
   '@directus/themes@1.0.0(@unhead/vue@1.8.16(vue@3.4.38(typescript@5.4.5)))(pinia@2.1.7(typescript@5.4.5)(vue@3.4.38(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))':
@@ -3492,10 +3519,10 @@ snapshots:
       - supports-color
       - tedious
 
-  '@directus/types@12.0.1(knex@3.1.0)(vue@3.4.38(typescript@5.4.5))':
+  '@directus/types@12.1.0(knex@3.1.0)(vue@3.4.38(typescript@5.4.5))':
     dependencies:
       '@directus/constants': 12.0.0
-      '@directus/schema': 12.1.0
+      '@directus/schema': 12.1.1
       '@types/geojson': 7946.0.14
     optionalDependencies:
       knex: 3.1.0
