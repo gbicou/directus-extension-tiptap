@@ -122,8 +122,8 @@ importers:
         specifier: 5.2.1
         version: 5.2.1(eslint-config-prettier@9.1.0(eslint@9.12.0))(eslint@9.12.0)(prettier@3.4.2)
       eslint-plugin-vue:
-        specifier: 9.28.0
-        version: 9.28.0(eslint@9.12.0)
+        specifier: 9.32.0
+        version: 9.32.0(eslint@9.12.0)
       prettier:
         specifier: 3.4.2
         version: 3.4.2
@@ -2071,8 +2071,8 @@ packages:
       eslint-config-prettier:
         optional: true
 
-  eslint-plugin-vue@9.28.0:
-    resolution: {integrity: sha512-ShrihdjIhOTxs+MfWun6oJWuk+g/LAhN+CiuOl/jjkG3l0F2AuK5NMTaWqyvBgkFtpYmyks6P4603mLmhNJW8g==}
+  eslint-plugin-vue@9.32.0:
+    resolution: {integrity: sha512-b/Y05HYmnB/32wqVcjxjHZzNpwxj1onBOvqW89W+V+XNG1dRuaFbNd3vT9CLbr2LXjEoq+3vn8DanWf7XU22Ug==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -5608,7 +5608,7 @@ snapshots:
     optionalDependencies:
       eslint-config-prettier: 9.1.0(eslint@9.12.0)
 
-  eslint-plugin-vue@9.28.0(eslint@9.12.0):
+  eslint-plugin-vue@9.32.0(eslint@9.12.0):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.1(eslint@9.12.0)
       eslint: 9.12.0
