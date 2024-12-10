@@ -95,14 +95,14 @@ importers:
         specifier: 12.1.4
         version: 12.1.4(@types/node@22.10.1)(@unhead/vue@1.8.16(vue@3.5.13(typescript@5.4.5)))(knex@3.1.0)(pinia@2.1.7(typescript@5.4.5)(vue@3.5.13(typescript@5.4.5)))(sass@1.82.0)(terser@5.37.0)(typescript@5.4.5)
       '@directus/schema':
-        specifier: 12.1.0
-        version: 12.1.0
+        specifier: 12.1.1
+        version: 12.1.1
       '@directus/sdk':
         specifier: 18.0.1
         version: 18.0.1
       '@directus/types':
-        specifier: 12.0.1
-        version: 12.0.1(knex@3.1.0)(vue@3.5.13(typescript@5.4.5))
+        specifier: 12.2.2
+        version: 12.2.2(knex@3.1.0)(vue@3.5.13(typescript@5.4.5))
       '@eslint/js':
         specifier: 9.16.0
         version: 9.16.0
@@ -251,9 +251,6 @@ packages:
     peerDependencies:
       vue: ^3.4
 
-  '@directus/constants@12.0.0':
-    resolution: {integrity: sha512-mzVUldDJJ4WbfFnWHSGtZKrofSAyuKli3KRZ/9spGhyhJuzCory+QKEtYrWyhxFUeV3ZwODxD5RHKHP5l3ya5Q==}
-
   '@directus/constants@12.0.1':
     resolution: {integrity: sha512-KrYZALAduiACQRKkVX1dDor8gOX/uJjpZVrKD8GvvWNOKeEK5/mTU8oHlCeyuLfPamN1gjSGhD6XeXblttL/Xg==}
 
@@ -279,9 +276,6 @@ packages:
       vue-router:
         optional: true
 
-  '@directus/schema@12.1.0':
-    resolution: {integrity: sha512-56qIDmw6yHR8UFIfwUOEyHJ169uxdl4Sa4YncnQyaANOvuKmpXwxmZ5nf0zQmSx8S7TJZ8kc1NhpyKMMpr80NA==}
-
   '@directus/schema@12.1.1':
     resolution: {integrity: sha512-FRD3sE/IDrnhyJVNB93uaLM+fa69XSoMmLm/dla6Cygyli9MhDgWBF4PiWDv4P08FobtakLSIV7QvpHJhZRXOQ==}
 
@@ -298,17 +292,6 @@ packages:
       '@unhead/vue': '1'
       pinia: '2'
       vue: ^3.4
-
-  '@directus/types@12.0.1':
-    resolution: {integrity: sha512-U+51RHJPRgb1Z4oyh/hn5sT9IOaDbskH83pfnGmhlOdmS2bPqyxg7zImfE2pyFxpKRWX8rEzarmyOGv2HNO+ug==}
-    peerDependencies:
-      knex: '3'
-      vue: ^3.4
-    peerDependenciesMeta:
-      knex:
-        optional: true
-      vue:
-        optional: true
 
   '@directus/types@12.2.2':
     resolution: {integrity: sha512-PR0wQkdTH2PYnnYdvZpJ01nMbEbhIfW9PUvT+vJvnnpVmycE/Y+garvaRDWI9183tXfSL8uvItixhUs1gdqV4w==}
@@ -3796,8 +3779,6 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@directus/constants@12.0.0': {}
-
   '@directus/constants@12.0.1': {}
 
   '@directus/extensions-sdk@12.1.4(@types/node@22.10.1)(@unhead/vue@1.8.16(vue@3.5.13(typescript@5.4.5)))(knex@3.1.0)(pinia@2.1.7(typescript@5.4.5)(vue@3.5.13(typescript@5.4.5)))(sass@1.82.0)(terser@5.37.0)(typescript@5.4.5)':
@@ -3876,19 +3857,6 @@ snapshots:
       - supports-color
       - tedious
 
-  '@directus/schema@12.1.0':
-    dependencies:
-      knex: 3.1.0
-    transitivePeerDependencies:
-      - better-sqlite3
-      - mysql
-      - mysql2
-      - pg
-      - pg-native
-      - sqlite3
-      - supports-color
-      - tedious
-
   '@directus/schema@12.1.1':
     dependencies:
       knex: 3.1.0
@@ -3917,14 +3885,14 @@ snapshots:
       pinia: 2.1.7(typescript@5.4.5)(vue@3.5.13(typescript@5.4.5))
       vue: 3.5.11(typescript@5.4.5)
 
-  '@directus/types@12.0.1(knex@3.1.0)(vue@3.5.13(typescript@5.4.5))':
+  '@directus/types@12.2.2(knex@3.1.0)(vue@3.5.11(typescript@5.4.5))':
     dependencies:
-      '@directus/constants': 12.0.0
-      '@directus/schema': 12.1.0
+      '@directus/constants': 12.0.1
+      '@directus/schema': 12.1.1
       '@types/geojson': 7946.0.14
     optionalDependencies:
       knex: 3.1.0
-      vue: 3.5.13(typescript@5.4.5)
+      vue: 3.5.11(typescript@5.4.5)
     transitivePeerDependencies:
       - better-sqlite3
       - mysql
@@ -3935,14 +3903,14 @@ snapshots:
       - supports-color
       - tedious
 
-  '@directus/types@12.2.2(knex@3.1.0)(vue@3.5.11(typescript@5.4.5))':
+  '@directus/types@12.2.2(knex@3.1.0)(vue@3.5.13(typescript@5.4.5))':
     dependencies:
       '@directus/constants': 12.0.1
       '@directus/schema': 12.1.1
       '@types/geojson': 7946.0.14
     optionalDependencies:
       knex: 3.1.0
-      vue: 3.5.11(typescript@5.4.5)
+      vue: 3.5.13(typescript@5.4.5)
     transitivePeerDependencies:
       - better-sqlite3
       - mysql
