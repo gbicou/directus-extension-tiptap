@@ -1,0 +1,29 @@
+name: Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare and Build
+        uses: ./.github/actions/prepare
+        with:
+          tiptap-pro-token: ${{ secrets.TIPTAP_PRO_TOKEN }}
+
+      - name: Start services using Docker Compose
+        run: docker compose -f docker-compose.test.yml up -d
+
+      - name: Wait for services to start
+        run: pnpm wait-on http://localhost:8055
+
+      - name: Run tests
+        run: pnpm test

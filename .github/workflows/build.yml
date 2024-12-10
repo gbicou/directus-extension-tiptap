@@ -8,24 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - name: Prepare and Build
+        uses: ./.github/actions/prepare
         with:
-          run_install: false
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
-
-      - name: Setup tiptap pro registry
-        run: pnpm config set //registry.tiptap.dev/:_authToken $TIPTAP_PRO_TOKEN
-        env:
-          TIPTAP_PRO_TOKEN: ${{ secrets.TIPTAP_PRO_TOKEN }}
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build
-        run: pnpm build
+          tiptap-pro-token: ${{ secrets.TIPTAP_PRO_TOKEN }}
