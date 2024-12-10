@@ -70,17 +70,17 @@ importers:
         version: 2.10.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)
     optionalDependencies:
       '@tiptap-pro/extension-emoji':
-        specifier: 2.11.9
-        version: 2.11.9(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)(@tiptap/suggestion@2.10.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3))(emojibase@15.3.0)
+        specifier: 2.16.3
+        version: 2.16.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)(@tiptap/suggestion@2.10.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3))(emojibase@15.3.0)
       '@tiptap-pro/extension-invisible-characters':
-        specifier: 2.11.9
-        version: 2.11.9(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)
+        specifier: 2.16.3
+        version: 2.16.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)
       '@tiptap-pro/extension-mathematics':
-        specifier: 2.11.9
-        version: 2.11.9(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)(katex@0.16.15)
+        specifier: 2.16.3
+        version: 2.16.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)(katex@0.16.15)
       '@tiptap-pro/extension-unique-id':
-        specifier: 2.11.9
-        version: 2.11.9(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)
+        specifier: 2.16.3
+        version: 2.16.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)
       katex:
         specifier: 0.16.15
         version: 0.16.15
@@ -1171,28 +1171,28 @@ packages:
   '@sinclair/typebox@0.33.15':
     resolution: {integrity: sha512-R50kz7xohLjhwgmAiw+6qOAYkeFXsK8i1CbEQB1qJTiHMK5WywpvGIHJenE3n4t7dqj3bas+H1cD5dTZIfrAEw==}
 
-  '@tiptap-pro/extension-emoji@2.11.9':
-    resolution: {integrity: sha512-xe3kYOlI1sYc6LXpO0Jw8UDvyyBqdJjkLO7AcFpBuAyD9GkCNIi8HyqjvNo2fMRUwkvPXACogWjKUR2b7pnGzQ==}
+  '@tiptap-pro/extension-emoji@2.16.3':
+    resolution: {integrity: sha512-CDHtXzQSUHMMBZl4D0L+Ot1Qs9swVJCLT5Ck+zTvvvOPsZwlew/RiWYz8fX/ifVd7clnXBjd8SuG2xhb9zY6Kw==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
       '@tiptap/suggestion': ^2.0.0
 
-  '@tiptap-pro/extension-invisible-characters@2.11.9':
-    resolution: {integrity: sha512-0VBS31aOKdTNA0ZR4/wwWa3TbX1l/nyxlAGPDRm7VpQjAG2nM3RlLsSIMIuMlEvu3Grn37cfS/fb18g8EaEw0w==}
+  '@tiptap-pro/extension-invisible-characters@2.16.3':
+    resolution: {integrity: sha512-IhtgGhUDC1ujFwgU/hKyAvdJ33rZxmHn+Wmy2B01LGbI44WWmGyqkWOv9z+c0SgxdIAcp08bOM7q5gUrBIOY9Q==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
 
-  '@tiptap-pro/extension-mathematics@2.11.9':
-    resolution: {integrity: sha512-CkbX5Pg87fGxsBSxLtYV0GL23ahzgAL9SFm/7pqClsNQSGpssROshmMII2NljO0klkcG1sW6tzH6dC9cgw5icA==}
+  '@tiptap-pro/extension-mathematics@2.16.3':
+    resolution: {integrity: sha512-HyfWbpR16zSd0GGQ1NM182n9wEZAs13jK8Gih9stz00a2CTEyW2wyXei/W0CDGb/uNM9dQ5vg1uHef15CYaw3A==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
       katex: ^0.16.4
 
-  '@tiptap-pro/extension-unique-id@2.11.9':
-    resolution: {integrity: sha512-+pfw1CdZr2kWJxTpaQM9Z3i/78uklDANKiyTnsr2jEGp/pl6Z1ANySV+p3SNfV0HWLQ84niavm5jEXeHvxGbFw==}
+  '@tiptap-pro/extension-unique-id@2.16.3':
+    resolution: {integrity: sha512-iYV4VkJLezZIlX4l62m7n1nNBCvgPSxLj3cdlJddSx/BymCn19q/lllyxmILpr1QLriQOdSV+yZOmpPbH7yeHA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
@@ -4556,7 +4556,7 @@ snapshots:
 
   '@sinclair/typebox@0.33.15': {}
 
-  '@tiptap-pro/extension-emoji@2.11.9(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)(@tiptap/suggestion@2.10.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3))(emojibase@15.3.0)':
+  '@tiptap-pro/extension-emoji@2.16.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)(@tiptap/suggestion@2.10.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3))(emojibase@15.3.0)':
     dependencies:
       '@tiptap/core': 2.10.3(@tiptap/pm@2.10.3)
       '@tiptap/pm': 2.10.3
@@ -4568,20 +4568,20 @@ snapshots:
       - emojibase
     optional: true
 
-  '@tiptap-pro/extension-invisible-characters@2.11.9(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)':
+  '@tiptap-pro/extension-invisible-characters@2.16.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)':
     dependencies:
       '@tiptap/core': 2.10.3(@tiptap/pm@2.10.3)
       '@tiptap/pm': 2.10.3
     optional: true
 
-  '@tiptap-pro/extension-mathematics@2.11.9(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)(katex@0.16.15)':
+  '@tiptap-pro/extension-mathematics@2.16.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)(katex@0.16.15)':
     dependencies:
       '@tiptap/core': 2.10.3(@tiptap/pm@2.10.3)
       '@tiptap/pm': 2.10.3
       katex: 0.16.15
     optional: true
 
-  '@tiptap-pro/extension-unique-id@2.11.9(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)':
+  '@tiptap-pro/extension-unique-id@2.16.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)':
     dependencies:
       '@tiptap/core': 2.10.3(@tiptap/pm@2.10.3)
       '@tiptap/pm': 2.10.3
