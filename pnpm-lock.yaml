@@ -98,8 +98,8 @@ importers:
         specifier: 12.1.1
         version: 12.1.1
       '@directus/sdk':
-        specifier: 18.0.1
-        version: 18.0.1
+        specifier: 18.0.3
+        version: 18.0.3
       '@directus/types':
         specifier: 12.2.2
         version: 12.2.2(knex@3.1.0)(vue@3.5.13(typescript@5.4.5))
@@ -279,8 +279,8 @@ packages:
   '@directus/schema@12.1.1':
     resolution: {integrity: sha512-FRD3sE/IDrnhyJVNB93uaLM+fa69XSoMmLm/dla6Cygyli9MhDgWBF4PiWDv4P08FobtakLSIV7QvpHJhZRXOQ==}
 
-  '@directus/sdk@18.0.1':
-    resolution: {integrity: sha512-vUYhqn7qwuaIcqbVRhQtKhjGB9DNhumnzauOg0M8dVnuxk6BgW1W6ZYzkhXmP1vcsU3RohM1l8KPTxOkjikktg==}
+  '@directus/sdk@18.0.3':
+    resolution: {integrity: sha512-PnEDRDqr2x/DG3HZ3qxU7nFp2nW6zqJqswjii57NhriXgTz4TBUI8NmSdzQvnyHuTL9J0nedYfQGfW4v8odS1A==}
     engines: {node: '>=18.0.0'}
 
   '@directus/system-data@2.1.2':
@@ -3870,7 +3870,7 @@ snapshots:
       - supports-color
       - tedious
 
-  '@directus/sdk@18.0.1': {}
+  '@directus/sdk@18.0.3': {}
 
   '@directus/system-data@2.1.2': {}
 
