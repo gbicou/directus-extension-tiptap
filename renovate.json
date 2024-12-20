@@ -22,6 +22,6 @@
   ],
   "lockFileMaintenance": {
     "enabled": true,
-    "autoMerge": true
+    "automerge": true
   }
 }
