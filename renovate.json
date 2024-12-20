@@ -13,6 +13,15 @@
     {
       "groupName": "Directus",
       "matchPackageNames": ["@directus/**"]
+    },
+    {
+      "matchUpdateTypes": ["patch", "pin", "digest"],
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
     }
-  ]
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "autoMerge": true
+  }
 }
