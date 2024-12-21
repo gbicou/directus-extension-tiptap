@@ -70,8 +70,8 @@ importers:
         version: 2.10.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)
     optionalDependencies:
       '@tiptap-pro/extension-emoji':
-        specifier: 2.16.3
-        version: 2.16.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)(@tiptap/suggestion@2.10.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3))(emojibase@15.3.0)
+        specifier: 2.17.0
+        version: 2.17.0(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)(@tiptap/suggestion@2.10.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3))(emojibase@15.3.0)
       '@tiptap-pro/extension-invisible-characters':
         specifier: 2.16.3
         version: 2.16.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)
@@ -1171,8 +1171,8 @@ packages:
   '@sinclair/typebox@0.33.15':
     resolution: {integrity: sha512-R50kz7xohLjhwgmAiw+6qOAYkeFXsK8i1CbEQB1qJTiHMK5WywpvGIHJenE3n4t7dqj3bas+H1cD5dTZIfrAEw==}
 
-  '@tiptap-pro/extension-emoji@2.16.3':
-    resolution: {integrity: sha512-CDHtXzQSUHMMBZl4D0L+Ot1Qs9swVJCLT5Ck+zTvvvOPsZwlew/RiWYz8fX/ifVd7clnXBjd8SuG2xhb9zY6Kw==}
+  '@tiptap-pro/extension-emoji@2.17.0':
+    resolution: {integrity: sha512-81Oxme0kt5v6TwUVXRmrcRzQSjDL3qZY+cxMr0y9bt3sRhK1a9b0tuX+eYLTzQXUCvBw9LvBoE2pX/ZgFxQ9Qw==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
@@ -4556,7 +4556,7 @@ snapshots:
 
   '@sinclair/typebox@0.33.15': {}
 
-  '@tiptap-pro/extension-emoji@2.16.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)(@tiptap/suggestion@2.10.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3))(emojibase@15.3.0)':
+  '@tiptap-pro/extension-emoji@2.17.0(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3)(@tiptap/suggestion@2.10.3(@tiptap/core@2.10.3(@tiptap/pm@2.10.3))(@tiptap/pm@2.10.3))(emojibase@15.3.0)':
     dependencies:
       '@tiptap/core': 2.10.3(@tiptap/pm@2.10.3)
       '@tiptap/pm': 2.10.3
