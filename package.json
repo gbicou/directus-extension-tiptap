@@ -111,7 +111,7 @@
     "@tiptap-pro/extension-emoji": "2.16.3",
     "@tiptap-pro/extension-invisible-characters": "2.16.3",
     "@tiptap-pro/extension-mathematics": "2.16.3",
-    "@tiptap-pro/extension-unique-id": "2.16.3",
+    "@tiptap-pro/extension-unique-id": "2.17.1",
     "katex": "0.16.18"
   }
 }
