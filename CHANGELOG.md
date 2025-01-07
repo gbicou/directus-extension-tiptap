@@ -1,5 +1,23 @@
 # [1.11.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.4...v1.11.0) (2023-08-17)
 
+## 1.18.2
+
+### Patch Changes
+
+- [#182](https://github.com/gbicou/directus-extension-tiptap/pull/182) [`6c54e5d`](https://github.com/gbicou/directus-extension-tiptap/commit/6c54e5d5db3892040db4cbdb39f5cb1f333defcc) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `sass` to `1.83.1`.
+
+- [#171](https://github.com/gbicou/directus-extension-tiptap/pull/171) [`aa256ae`](https://github.com/gbicou/directus-extension-tiptap/commit/aa256aed9ce55f8a44e11f334be488c85c21b91f) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@tiptap-pro/extension-emoji` to `2.17.1`.
+
+- [#179](https://github.com/gbicou/directus-extension-tiptap/pull/179) [`87bd575`](https://github.com/gbicou/directus-extension-tiptap/commit/87bd575c09597c19e0278a65349d33ed7d31b884) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `katex` to `0.16.19`.
+
+- [#172](https://github.com/gbicou/directus-extension-tiptap/pull/172) [`1e1d277`](https://github.com/gbicou/directus-extension-tiptap/commit/1e1d277f703e906cc05d8a953679675fa8b818e8) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@tiptap-pro/extension-invisible-characters` to `2.17.1`.
+
+- [#183](https://github.com/gbicou/directus-extension-tiptap/pull/183) [`b007bef`](https://github.com/gbicou/directus-extension-tiptap/commit/b007befabcdc482df5b80f8f0da980a62b336706) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `typescript-eslint` to `8.19.1`.
+
+- [#174](https://github.com/gbicou/directus-extension-tiptap/pull/174) [`f68bf5d`](https://github.com/gbicou/directus-extension-tiptap/commit/f68bf5d17f2c9795dccff146ac1d67b8b23caaec) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@tiptap-pro/extension-unique-id` to `2.17.1`.
+
+- [#173](https://github.com/gbicou/directus-extension-tiptap/pull/173) [`ef75d7a`](https://github.com/gbicou/directus-extension-tiptap/commit/ef75d7ad0529d75433f96a8d58b6e21512977e48) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@tiptap-pro/extension-mathematics` to `2.17.1`.
+
 ## 1.18.1
 
 ### Patch Changes
