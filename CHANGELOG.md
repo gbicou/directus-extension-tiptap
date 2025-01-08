@@ -1,5 +1,41 @@
 # [1.11.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.4...v1.11.0) (2023-08-17)
 
+## 1.18.3
+
+### Patch Changes
+
+- [#186](https://github.com/gbicou/directus-extension-tiptap/pull/186) [`1f616a4`](https://github.com/gbicou/directus-extension-tiptap/commit/1f616a43a91543e6486859c58a042b14b9ae3206) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@tiptap-pro/extension-mathematics` to `2.17.2`.
+
+- [#185](https://github.com/gbicou/directus-extension-tiptap/pull/185) [`def23ee`](https://github.com/gbicou/directus-extension-tiptap/commit/def23eea0672320048f97d589d17d4a454851a22) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@tiptap-pro/extension-invisible-characters` to `2.17.2`.
+
+- [#184](https://github.com/gbicou/directus-extension-tiptap/pull/184) [`229893c`](https://github.com/gbicou/directus-extension-tiptap/commit/229893c10983cf367d3b1436faebe43b3db1bc8d) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@tiptap-pro/extension-emoji` to `2.17.2`.
+
+- [#192](https://github.com/gbicou/directus-extension-tiptap/pull/192) [`5b638d1`](https://github.com/gbicou/directus-extension-tiptap/commit/5b638d1e12c8429b2be456fbb965d9b8c737474f) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@tiptap/core` to `2.11.0`.
+  Updated dependency `@tiptap/extension-character-count` to `2.11.0`.
+  Updated dependency `@tiptap/extension-focus` to `2.11.0`.
+  Updated dependency `@tiptap/extension-highlight` to `2.11.0`.
+  Updated dependency `@tiptap/extension-link` to `2.11.0`.
+  Updated dependency `@tiptap/extension-placeholder` to `2.11.0`.
+  Updated dependency `@tiptap/extension-subscript` to `2.11.0`.
+  Updated dependency `@tiptap/extension-superscript` to `2.11.0`.
+  Updated dependency `@tiptap/extension-table` to `2.11.0`.
+  Updated dependency `@tiptap/extension-table-cell` to `2.11.0`.
+  Updated dependency `@tiptap/extension-table-header` to `2.11.0`.
+  Updated dependency `@tiptap/extension-table-row` to `2.11.0`.
+  Updated dependency `@tiptap/extension-task-item` to `2.11.0`.
+  Updated dependency `@tiptap/extension-task-list` to `2.11.0`.
+  Updated dependency `@tiptap/extension-text-align` to `2.11.0`.
+  Updated dependency `@tiptap/extension-typography` to `2.11.0`.
+  Updated dependency `@tiptap/extension-underline` to `2.11.0`.
+  Updated dependency `@tiptap/pm` to `2.11.0`.
+  Updated dependency `@tiptap/starter-kit` to `2.11.0`.
+  Updated dependency `@tiptap/suggestion` to `2.11.0`.
+  Updated dependency `@tiptap/vue-3` to `2.11.0`.
+
+- [#187](https://github.com/gbicou/directus-extension-tiptap/pull/187) [`7effc2e`](https://github.com/gbicou/directus-extension-tiptap/commit/7effc2efdf992ef28b61383f482d54523304ece7) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@tiptap-pro/extension-unique-id` to `2.17.2`.
+
+- [#190](https://github.com/gbicou/directus-extension-tiptap/pull/190) [`4c2303a`](https://github.com/gbicou/directus-extension-tiptap/commit/4c2303af7682a77ee7adbf5033ee4e8f0f9669ab) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `packageManager` to `pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a`.
+
 ## 1.18.2
 
 ### Patch Changes
