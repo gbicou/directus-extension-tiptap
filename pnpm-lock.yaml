@@ -70,8 +70,8 @@ importers:
         version: 2.10.4(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)
     optionalDependencies:
       '@tiptap-pro/extension-emoji':
-        specifier: 2.17.1
-        version: 2.17.1(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)(@tiptap/suggestion@2.10.4(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4))(emojibase@15.3.0)
+        specifier: 2.17.2
+        version: 2.17.2(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)(@tiptap/suggestion@2.10.4(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4))(emojibase@15.3.0)
       '@tiptap-pro/extension-invisible-characters':
         specifier: 2.17.1
         version: 2.17.1(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)
@@ -79,8 +79,8 @@ importers:
         specifier: 2.17.2
         version: 2.17.2(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)(katex@0.16.19)
       '@tiptap-pro/extension-unique-id':
-        specifier: 2.17.1
-        version: 2.17.1(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)
+        specifier: 2.17.2
+        version: 2.17.2(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)
       katex:
         specifier: 0.16.19
         version: 0.16.19
@@ -1171,8 +1171,8 @@ packages:
   '@sinclair/typebox@0.33.15':
     resolution: {integrity: sha512-R50kz7xohLjhwgmAiw+6qOAYkeFXsK8i1CbEQB1qJTiHMK5WywpvGIHJenE3n4t7dqj3bas+H1cD5dTZIfrAEw==}
 
-  '@tiptap-pro/extension-emoji@2.17.1':
-    resolution: {integrity: sha512-gLLWvNO2F1iPh/BbR8O2OPNzY61u7oe3w4Fw/4ICCh/kpDy4FKejoX7AL7Ztc08ZRaIW/BSbEEUrlJ35Kmd6oQ==}
+  '@tiptap-pro/extension-emoji@2.17.2':
+    resolution: {integrity: sha512-dXjU/YV/ESQGUP0u9xfhLcT73sGvZxQNo+uRp/O9dMQIKyCTqeRUex10u+2DlFsyk6MMXMSlSBNu29Ar7g0iUA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
@@ -1191,8 +1191,8 @@ packages:
       '@tiptap/pm': ^2.0.0
       katex: ^0.16.4
 
-  '@tiptap-pro/extension-unique-id@2.17.1':
-    resolution: {integrity: sha512-KiVl2zc7pZIOH+2DZ7EeIDSU/Uuh+XR+huhT87um0XMNMXcFUtby9VK2sFFWbrGwOoaB3gLQj9CUsL/Dz5h4YQ==}
+  '@tiptap-pro/extension-unique-id@2.17.2':
+    resolution: {integrity: sha512-m0QsuexZ+4wlWedGGkCXTnpfz/Ppxy32zh5iNyJcQ9bVnKnR9t8S2YaOnM4aLKT1/pkIvXTofa6+/7ObmeyB6g==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
@@ -4556,7 +4556,7 @@ snapshots:
 
   '@sinclair/typebox@0.33.15': {}
 
-  '@tiptap-pro/extension-emoji@2.17.1(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)(@tiptap/suggestion@2.10.4(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4))(emojibase@15.3.0)':
+  '@tiptap-pro/extension-emoji@2.17.2(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)(@tiptap/suggestion@2.10.4(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4))(emojibase@15.3.0)':
     dependencies:
       '@tiptap/core': 2.10.4(@tiptap/pm@2.10.4)
       '@tiptap/pm': 2.10.4
@@ -4581,7 +4581,7 @@ snapshots:
       katex: 0.16.19
     optional: true
 
-  '@tiptap-pro/extension-unique-id@2.17.1(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)':
+  '@tiptap-pro/extension-unique-id@2.17.2(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)':
     dependencies:
       '@tiptap/core': 2.10.4(@tiptap/pm@2.10.4)
       '@tiptap/pm': 2.10.4
