@@ -79,8 +79,8 @@ importers:
         specifier: 2.17.1
         version: 2.17.1(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)(katex@0.16.19)
       '@tiptap-pro/extension-unique-id':
-        specifier: 2.17.1
-        version: 2.17.1(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)
+        specifier: 2.17.2
+        version: 2.17.2(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)
       katex:
         specifier: 0.16.19
         version: 0.16.19
@@ -1191,8 +1191,8 @@ packages:
       '@tiptap/pm': ^2.0.0
       katex: ^0.16.4
 
-  '@tiptap-pro/extension-unique-id@2.17.1':
-    resolution: {integrity: sha512-KiVl2zc7pZIOH+2DZ7EeIDSU/Uuh+XR+huhT87um0XMNMXcFUtby9VK2sFFWbrGwOoaB3gLQj9CUsL/Dz5h4YQ==}
+  '@tiptap-pro/extension-unique-id@2.17.2':
+    resolution: {integrity: sha512-m0QsuexZ+4wlWedGGkCXTnpfz/Ppxy32zh5iNyJcQ9bVnKnR9t8S2YaOnM4aLKT1/pkIvXTofa6+/7ObmeyB6g==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
@@ -4581,7 +4581,7 @@ snapshots:
       katex: 0.16.19
     optional: true
 
-  '@tiptap-pro/extension-unique-id@2.17.1(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)':
+  '@tiptap-pro/extension-unique-id@2.17.2(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)':
     dependencies:
       '@tiptap/core': 2.10.4(@tiptap/pm@2.10.4)
       '@tiptap/pm': 2.10.4
