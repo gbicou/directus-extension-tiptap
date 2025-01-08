@@ -73,8 +73,8 @@ importers:
         specifier: 2.17.2
         version: 2.17.2(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)(@tiptap/suggestion@2.10.4(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4))(emojibase@15.3.0)
       '@tiptap-pro/extension-invisible-characters':
-        specifier: 2.17.1
-        version: 2.17.1(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)
+        specifier: 2.17.2
+        version: 2.17.2(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)
       '@tiptap-pro/extension-mathematics':
         specifier: 2.17.2
         version: 2.17.2(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)(katex@0.16.19)
@@ -1178,8 +1178,8 @@ packages:
       '@tiptap/pm': ^2.0.0
       '@tiptap/suggestion': ^2.0.0
 
-  '@tiptap-pro/extension-invisible-characters@2.17.1':
-    resolution: {integrity: sha512-SHf3qpV9bD7/E8N3O7wGBz4h8MaEkCAKHT6f7fQDQfDmITkTuOt0ZiXpHuXh6kM01LnIDSQ+7G3mR45sPb6QUQ==}
+  '@tiptap-pro/extension-invisible-characters@2.17.2':
+    resolution: {integrity: sha512-XrdWpR29ZmEWtpR89g8s6LcOo6DNEYmaIVJyNgHXpv0GusMmJRZ72UC/M5b3rGtaVE/+buxtTPOQ6xIXqxYXFg==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
@@ -4568,7 +4568,7 @@ snapshots:
       - emojibase
     optional: true
 
-  '@tiptap-pro/extension-invisible-characters@2.17.1(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)':
+  '@tiptap-pro/extension-invisible-characters@2.17.2(@tiptap/core@2.10.4(@tiptap/pm@2.10.4))(@tiptap/pm@2.10.4)':
     dependencies:
       '@tiptap/core': 2.10.4(@tiptap/pm@2.10.4)
       '@tiptap/pm': 2.10.4
