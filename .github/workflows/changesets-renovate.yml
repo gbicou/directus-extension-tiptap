@@ -16,7 +16,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          fetch-depth: 0
+          token: '${{ secrets.PAT }}'
+          fetch-depth: 2
 
       - name: Git Identity
         run: |
