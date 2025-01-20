@@ -82,8 +82,8 @@ importers:
         specifier: 2.17.2
         version: 2.17.2(@tiptap/core@2.11.0(@tiptap/pm@2.11.0))(@tiptap/pm@2.11.0)
       katex:
-        specifier: 0.16.19
-        version: 0.16.19
+        specifier: 0.16.21
+        version: 0.16.21
     devDependencies:
       '@changesets/changelog-github':
         specifier: 0.5.0
@@ -2441,6 +2441,10 @@ packages:
 
   katex@0.16.19:
     resolution: {integrity: sha512-3IA6DYVhxhBabjSLTNO9S4+OliA3Qvb8pBQXMfC4WxXJgLwZgnfDl0BmB4z6nBMdznBsZ+CGM8DrGZ5hcguDZg==}
+    hasBin: true
+
+  katex@0.16.21:
+    resolution: {integrity: sha512-XvqR7FgOHtWupfMiigNzmh+MgUVmDGU2kXZm899ZkPfcuoPuFxyHmXsgATDpFZDAXCI8tvinaVcDo8PIIJSo4A==}
     hasBin: true
 
   keyv@4.5.4:
@@ -5979,6 +5983,11 @@ snapshots:
       graceful-fs: 4.2.11
 
   katex@0.16.19:
+    dependencies:
+      commander: 8.3.0
+    optional: true
+
+  katex@0.16.21:
     dependencies:
       commander: 8.3.0
     optional: true
