@@ -68,22 +68,6 @@ importers:
       '@tiptap/suggestion':
         specifier: 2.11.5
         version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-    optionalDependencies:
-      '@tiptap-pro/extension-emoji':
-        specifier: 2.17.4
-        version: 2.17.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)(@tiptap/suggestion@2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5))(emojibase@16.0.0)
-      '@tiptap-pro/extension-invisible-characters':
-        specifier: 2.17.4
-        version: 2.17.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-      '@tiptap-pro/extension-mathematics':
-        specifier: 2.17.4
-        version: 2.17.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)(katex@0.16.21)
-      '@tiptap-pro/extension-unique-id':
-        specifier: 2.17.3
-        version: 2.17.3(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-      katex:
-        specifier: 0.16.21
-        version: 0.16.21
     devDependencies:
       '@changesets/changelog-github':
         specifier: 0.5.0
@@ -157,6 +141,22 @@ importers:
       wait-on:
         specifier: 8.0.2
         version: 8.0.2
+    optionalDependencies:
+      '@tiptap-pro/extension-emoji':
+        specifier: 2.17.4
+        version: 2.17.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)(@tiptap/suggestion@2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5))(emojibase@16.0.0)
+      '@tiptap-pro/extension-invisible-characters':
+        specifier: 2.17.4
+        version: 2.17.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
+      '@tiptap-pro/extension-mathematics':
+        specifier: 2.17.4
+        version: 2.17.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)(katex@0.16.21)
+      '@tiptap-pro/extension-unique-id':
+        specifier: 2.17.3
+        version: 2.17.3(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
+      katex:
+        specifier: 0.16.21
+        version: 0.16.21
 
 packages:
 
