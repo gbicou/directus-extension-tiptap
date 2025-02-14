@@ -110,7 +110,7 @@
   "optionalDependencies": {
     "@tiptap-pro/extension-emoji": "2.17.4",
     "@tiptap-pro/extension-invisible-characters": "2.17.3",
-    "@tiptap-pro/extension-mathematics": "2.17.2",
+    "@tiptap-pro/extension-mathematics": "2.17.4",
     "@tiptap-pro/extension-unique-id": "2.17.3",
     "katex": "0.16.21"
   }
