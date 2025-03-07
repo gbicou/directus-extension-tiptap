@@ -110,5 +110,12 @@
     "@tiptap-pro/extension-mathematics": "2.17.4",
     "@tiptap-pro/extension-unique-id": "2.17.3",
     "katex": "0.16.21"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "vue-demi"
+    ]
   }
 }
