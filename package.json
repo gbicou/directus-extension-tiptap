@@ -47,7 +47,6 @@
     "dev": "directus-extension build -w --no-minify",
     "link": "directus-extension link",
     "lint": "eslint .",
-    "release": "changeset publish",
     "test": "vitest run"
   },
   "dependencies": {
