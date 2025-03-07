@@ -1,5 +1,12 @@
 # [1.11.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.4...v1.11.0) (2023-08-17)
 
+## [1.18.5](https://github.com/gbicou/directus-extension-tiptap/compare/directus-extension-tiptap-v1.18.4...directus-extension-tiptap-v1.18.5) (2025-03-07)
+
+
+### Bug Fixes
+
+* publish workflow ([e71a500](https://github.com/gbicou/directus-extension-tiptap/commit/e71a500193b856781e57a64cdd4c3add4a204a17))
+
 ## [1.18.4](https://github.com/gbicou/directus-extension-tiptap/compare/directus-extension-tiptap-v1.18.3...directus-extension-tiptap-v1.18.4) (2025-03-07)
 
 
