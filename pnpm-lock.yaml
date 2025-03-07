@@ -68,22 +68,6 @@ importers:
       '@tiptap/suggestion':
         specifier: 2.11.5
         version: 2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-    optionalDependencies:
-      '@tiptap-pro/extension-emoji':
-        specifier: 2.17.4
-        version: 2.17.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)(@tiptap/suggestion@2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5))(emojibase@16.0.0)
-      '@tiptap-pro/extension-invisible-characters':
-        specifier: 2.17.4
-        version: 2.17.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-      '@tiptap-pro/extension-mathematics':
-        specifier: 2.17.4
-        version: 2.17.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)(katex@0.16.21)
-      '@tiptap-pro/extension-unique-id':
-        specifier: 2.17.3
-        version: 2.17.3(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
-      katex:
-        specifier: 0.16.21
-        version: 0.16.21
     devDependencies:
       '@directus/extensions-sdk':
         specifier: 13.0.3
@@ -148,6 +132,22 @@ importers:
       vue-i18n:
         specifier: 10.0.5
         version: 10.0.5(vue@3.5.13(typescript@5.7.3))
+    optionalDependencies:
+      '@tiptap-pro/extension-emoji':
+        specifier: 2.17.4
+        version: 2.17.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)(@tiptap/suggestion@2.11.5(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5))(emojibase@16.0.0)
+      '@tiptap-pro/extension-invisible-characters':
+        specifier: 2.17.4
+        version: 2.17.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
+      '@tiptap-pro/extension-mathematics':
+        specifier: 2.17.4
+        version: 2.17.4(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)(katex@0.16.21)
+      '@tiptap-pro/extension-unique-id':
+        specifier: 2.17.3
+        version: 2.17.3(@tiptap/core@2.11.5(@tiptap/pm@2.11.5))(@tiptap/pm@2.11.5)
+      katex:
+        specifier: 0.16.21
+        version: 0.16.21
 
 packages:
 
