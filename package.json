@@ -73,8 +73,6 @@
     "@tiptap/suggestion": "2.11.5"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "0.5.0",
-    "@changesets/cli": "2.27.12",
     "@directus/extensions-sdk": "13.0.1",
     "@directus/schema": "13.0.0",
     "@directus/sdk": "19.0.1",
@@ -95,8 +93,7 @@
     "typescript-eslint": "8.24.0",
     "vitest": "3.0.5",
     "vue": "3.5.13",
-    "vue-i18n": "10.0.5",
-    "wait-on": "8.0.2"
+    "vue-i18n": "10.0.5"
   },
   "peerDependencies": {
     "@directus/extensions-sdk": "13.0.1",

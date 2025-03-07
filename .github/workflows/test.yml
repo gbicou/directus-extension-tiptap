@@ -11,16 +11,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare and Build
+      - name: Prepare
         uses: ./.github/actions/prepare
         with:
           tiptap-pro-token: ${{ secrets.TIPTAP_PRO_TOKEN }}
 
-      - name: Start services using Docker Compose
-        run: docker compose -f docker-compose.test.yml up -d
+      - name: Build
+        run: pnpm build
 
-      - name: Wait for services to start
-        run: pnpm wait-on http://localhost:8055
+      - name: Start docker services
+        uses: hoverkraft-tech/compose-action@v2
+        with:
+          compose-file: docker-compose.test.yaml
+          up-flags: '--wait'
 
       - name: Run tests
         run: pnpm test

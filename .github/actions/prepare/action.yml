@@ -1,10 +1,6 @@
 name: Prepare
-description: Install dependencies and build
+description: Install dependencies
 inputs:
-  build:
-    description: Build
-    required: false
-    default: 'true'
   tiptap-pro-token:
     description: Tiptap pro token
     required: true
@@ -31,7 +27,3 @@ runs:
       shell: bash
       run: pnpm install --frozen-lockfile
 
-    - name: Build
-      if: inputs.build == 'true'
-      shell: bash
-      run: pnpm build
