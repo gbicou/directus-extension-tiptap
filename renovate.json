@@ -15,6 +15,10 @@
       "matchPackageNames": ["@directus/**"]
     },
     {
+      "groupName": "TipTap PRO",
+      "matchPackageNames": ["@tiptap-pro/**"]
+    },
+    {
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "matchDepTypes": ["devDependencies"],
       "automerge": true
