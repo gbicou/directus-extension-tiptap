@@ -93,12 +93,12 @@
     "typescript-eslint": "8.26.0",
     "vitest": "3.0.8",
     "vue": "3.5.13",
-    "vue-i18n": "10.0.5"
+    "vue-i18n": "10.0.6"
   },
   "peerDependencies": {
     "@directus/extensions-sdk": "13.0.3",
     "vue": "3.5.13",
-    "vue-i18n": "10.0.5"
+    "vue-i18n": "10.0.6"
   },
   "publishConfig": {
     "access": "public"
