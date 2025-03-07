@@ -9,15 +9,14 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-
+    env:
+      TIPTAP_PRO_TOKEN: ${{ secrets.TIPTAP_PRO_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Prepare
         uses: ./.github/actions/prepare
-        with:
-          tiptap-pro-token: ${{ secrets.TIPTAP_PRO_TOKEN }}
 
       - name: Build
         run: pnpm build

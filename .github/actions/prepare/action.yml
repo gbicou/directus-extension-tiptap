@@ -1,9 +1,5 @@
 name: Prepare
 description: Install dependencies
-inputs:
-  tiptap-pro-token:
-    description: Tiptap pro token
-    required: true
 
 runs:
   using: composite
@@ -16,12 +12,12 @@ runs:
       with:
         node-version-file: '.nvmrc'
         cache: 'pnpm'
+        scope: "@bicou"
+        registry-url: "https://registry.npmjs.org/"
 
     - name: Setup tiptap pro registry
       shell: bash
       run: pnpm config set //registry.tiptap.dev/:_authToken $TIPTAP_PRO_TOKEN
-      env:
-        TIPTAP_PRO_TOKEN: ${{ inputs.tiptap-pro-token }}
 
     - name: Install dependencies
       shell: bash
