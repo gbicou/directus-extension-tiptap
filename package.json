@@ -104,10 +104,10 @@
   },
   "packageManager": "pnpm@10.7.0+sha512.6b865ad4b62a1d9842b61d674a393903b871d9244954f652b8842c2b553c72176b278f64c463e52d40fff8aba385c235c8c9ecf5cc7de4fd78b8bb6d49633ab6",
   "optionalDependencies": {
-    "@tiptap-pro/extension-emoji": "2.17.5",
-    "@tiptap-pro/extension-invisible-characters": "2.17.5",
-    "@tiptap-pro/extension-mathematics": "2.17.5",
-    "@tiptap-pro/extension-unique-id": "2.17.5",
+    "@tiptap-pro/extension-emoji": "2.17.6",
+    "@tiptap-pro/extension-invisible-characters": "2.17.6",
+    "@tiptap-pro/extension-mathematics": "2.17.6",
+    "@tiptap-pro/extension-unique-id": "2.17.6",
     "katex": "0.16.21"
   },
   "pnpm": {
