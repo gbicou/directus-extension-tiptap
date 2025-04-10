@@ -141,13 +141,13 @@ importers:
         version: 2.17.6(@tiptap/core@2.11.7(@tiptap/pm@2.11.7))(@tiptap/pm@2.11.7)
       '@tiptap-pro/extension-mathematics':
         specifier: 2.17.6
-        version: 2.17.6(@tiptap/core@2.11.7(@tiptap/pm@2.11.7))(@tiptap/pm@2.11.7)(katex@0.16.21)
+        version: 2.17.6(@tiptap/core@2.11.7(@tiptap/pm@2.11.7))(@tiptap/pm@2.11.7)(katex@0.16.22)
       '@tiptap-pro/extension-unique-id':
         specifier: 2.17.6
         version: 2.17.6(@tiptap/core@2.11.7(@tiptap/pm@2.11.7))(@tiptap/pm@2.11.7)
       katex:
-        specifier: 0.16.21
-        version: 0.16.21
+        specifier: 0.16.22
+        version: 0.16.22
 
 packages:
 
@@ -2362,8 +2362,8 @@ packages:
   jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
 
-  katex@0.16.21:
-    resolution: {integrity: sha512-XvqR7FgOHtWupfMiigNzmh+MgUVmDGU2kXZm899ZkPfcuoPuFxyHmXsgATDpFZDAXCI8tvinaVcDo8PIIJSo4A==}
+  katex@0.16.22:
+    resolution: {integrity: sha512-XCHRdUw4lf3SKBaJe4EvgqIuWwkPSo9XoeO8GjQW94Bp7TWv9hNhzZjZ+OH9yf1UmLygb7DIT5GSFQiyt16zYg==}
     hasBin: true
 
   keyv@4.5.4:
@@ -4241,11 +4241,11 @@ snapshots:
       '@tiptap/pm': 2.11.7
     optional: true
 
-  '@tiptap-pro/extension-mathematics@2.17.6(@tiptap/core@2.11.7(@tiptap/pm@2.11.7))(@tiptap/pm@2.11.7)(katex@0.16.21)':
+  '@tiptap-pro/extension-mathematics@2.17.6(@tiptap/core@2.11.7(@tiptap/pm@2.11.7))(@tiptap/pm@2.11.7)(katex@0.16.22)':
     dependencies:
       '@tiptap/core': 2.11.7(@tiptap/pm@2.11.7)
       '@tiptap/pm': 2.11.7
-      katex: 0.16.21
+      katex: 0.16.22
     optional: true
 
   '@tiptap-pro/extension-unique-id@2.17.6(@tiptap/core@2.11.7(@tiptap/pm@2.11.7))(@tiptap/pm@2.11.7)':
@@ -5541,7 +5541,7 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  katex@0.16.21:
+  katex@0.16.22:
     dependencies:
       commander: 8.3.0
     optional: true
