@@ -1,5 +1,12 @@
 # [1.11.0](https://github.com/gbicou/directus-extension-tiptap/compare/v1.10.4...v1.11.0) (2023-08-17)
 
+## [1.18.7](https://github.com/gbicou/directus-extension-tiptap/compare/directus-extension-tiptap-v1.18.6...directus-extension-tiptap-v1.18.7) (2025-05-06)
+
+
+### Bug Fixes
+
+* **deps:** update tiptap monorepo to v2.12.0 ([#310](https://github.com/gbicou/directus-extension-tiptap/issues/310)) ([6462c22](https://github.com/gbicou/directus-extension-tiptap/commit/6462c220bcf4165dd1d330b4bb47230199acdb90))
+
 ## [1.18.6](https://github.com/gbicou/directus-extension-tiptap/compare/directus-extension-tiptap-v1.18.5...directus-extension-tiptap-v1.18.6) (2025-04-05)
 
 
