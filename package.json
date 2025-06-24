@@ -84,7 +84,7 @@
     "eslint-plugin-prettier": "5.5.0",
     "eslint-plugin-vue": "10.2.0",
     "prettier": "3.5.3",
-    "rollup": "4.43.0",
+    "rollup": "4.44.0",
     "rollup-plugin-node-externals": "8.0.1",
     "sass": "1.89.2",
     "tippy.js": "6.3.7",
