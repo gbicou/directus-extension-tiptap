@@ -79,8 +79,8 @@ importers:
         specifier: 19.1.0
         version: 19.1.0
       '@directus/types':
-        specifier: 13.1.2
-        version: 13.1.2(knex@3.1.0)(vue@3.5.16(typescript@5.8.3))
+        specifier: 13.2.0
+        version: 13.2.0(knex@3.1.0)(vue@3.5.16(typescript@5.8.3))
       '@eslint/js':
         specifier: 9.29.0
         version: 9.29.0
@@ -221,6 +221,17 @@ packages:
 
   '@directus/types@13.1.2':
     resolution: {integrity: sha512-a8s7uaAnGkqBfhR7wCrdb+XOA+7WDrT49Ol9kIj9/uXEI+jMvh+TsGViDPG5caZkSk9+y0S9wb3HHffuTDkmGA==}
+    peerDependencies:
+      knex: '3'
+      vue: ^3.4
+    peerDependenciesMeta:
+      knex:
+        optional: true
+      vue:
+        optional: true
+
+  '@directus/types@13.2.0':
+    resolution: {integrity: sha512-zibYxdaqAKSakOsjAaPkUzyKZ5K61/icYsvIC6UgQjcYv+dwKfoH7C6JXV3xk1MirsbfF9wTTzam6+4tm1m+YQ==}
     peerDependencies:
       knex: '3'
       vue: ^3.4
@@ -3661,7 +3672,7 @@ snapshots:
       - supports-color
       - tedious
 
-  '@directus/types@13.1.2(knex@3.1.0)(vue@3.5.16(typescript@5.8.3))':
+  '@directus/types@13.2.0(knex@3.1.0)(vue@3.5.16(typescript@5.8.3))':
     dependencies:
       '@directus/constants': 13.0.1
       '@directus/schema': 13.0.1
