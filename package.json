@@ -102,7 +102,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@10.12.2+sha512.a32540185b964ee30bb4e979e405adc6af59226b438ee4cc19f9e8773667a66d302f5bfee60a39d3cac69e35e4b96e708a71dd002b7e9359c4112a1722ac323f",
+  "packageManager": "pnpm@10.18.2+sha512.9fb969fa749b3ade6035e0f109f0b8a60b5d08a1a87fdf72e337da90dcc93336e2280ca4e44f2358a649b83c17959e9993e777c2080879f3801e6f0d999ad3dd",
   "optionalDependencies": {
     "@tiptap-pro/extension-emoji": "2.21.4",
     "@tiptap-pro/extension-invisible-characters": "2.21.4",
