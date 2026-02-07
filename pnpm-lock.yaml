@@ -109,8 +109,8 @@ importers:
         specifier: 4.44.1
         version: 4.44.1
       rollup-plugin-node-externals:
-        specifier: 8.0.1
-        version: 8.0.1(rollup@4.44.1)
+        specifier: 8.1.2
+        version: 8.1.2(rollup@4.44.1)
       sass:
         specifier: 1.89.2
         version: 1.89.2
@@ -3410,8 +3410,8 @@ packages:
       esbuild: '>=0.18.0'
       rollup: ^1.20.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
 
-  rollup-plugin-node-externals@8.0.1:
-    resolution: {integrity: sha512-j6uve/BPEyHCmQuXpu5/LT5qXw69QLIi6YnFrs6F7tmGFXjkFDT0zqZMt0KaMuWSvkcxJFBklsKfYYoKKEPwyw==}
+  rollup-plugin-node-externals@8.1.2:
+    resolution: {integrity: sha512-EuB6/lolkMLK16gvibUjikERq5fCRVIGwD2xue/CrM8D0pz5GXD2V6N8IrgxegwbcUoKkUFI8VYCEEv8MMvgpA==}
     engines: {node: '>= 21 || ^20.6.0 || ^18.19.0'}
     peerDependencies:
       rollup: ^4.0.0
@@ -7418,7 +7418,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  rollup-plugin-node-externals@8.0.1(rollup@4.44.1):
+  rollup-plugin-node-externals@8.1.2(rollup@4.44.1):
     dependencies:
       rollup: 4.44.1
 
@@ -7818,7 +7818,7 @@ snapshots:
       espree: 10.4.0
       esquery: 1.6.0
       lodash: 4.17.21
-      semver: 7.7.2
+      semver: 7.7.3
     transitivePeerDependencies:
       - supports-color
 
