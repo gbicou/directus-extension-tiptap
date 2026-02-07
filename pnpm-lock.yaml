@@ -134,17 +134,17 @@ importers:
         version: 11.1.6(vue@3.5.16(typescript@5.8.3))
     optionalDependencies:
       '@tiptap-pro/extension-emoji':
-        specifier: 2.21.4
-        version: 2.21.4(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)(@tiptap/suggestion@2.14.0(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0))(emojibase@16.0.0)
+        specifier: 2.21.5
+        version: 2.21.5(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)(@tiptap/suggestion@2.14.0(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0))(emojibase@16.0.0)
       '@tiptap-pro/extension-invisible-characters':
-        specifier: 2.21.4
-        version: 2.21.4(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)
+        specifier: 2.21.5
+        version: 2.21.5(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)
       '@tiptap-pro/extension-mathematics':
-        specifier: 2.21.4
-        version: 2.21.4(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)(katex@0.16.22)
+        specifier: 2.21.5
+        version: 2.21.5(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)(katex@0.16.22)
       '@tiptap-pro/extension-unique-id':
-        specifier: 2.21.4
-        version: 2.21.4(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)
+        specifier: 2.21.5
+        version: 2.21.5(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)
       katex:
         specifier: 0.16.22
         version: 0.16.22
@@ -1533,31 +1533,31 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@tiptap-pro/extension-emoji@2.21.4':
-    resolution: {integrity: sha512-beUBQ/6+JtNmt7BP3THyBZui0j2bM/Zr/nRhDdRDmlOS5tuuFS01+9rxviNAZsDUJqNjPyxNC09GRICZ5grX7A==}
+  '@tiptap-pro/extension-emoji@2.21.5':
+    resolution: {integrity: sha512-7chNHpBTHpKq4nHRRAUX684gp7p1pnrUL/M9cEoq++paF11E9LeDpn2TfPOd7pb+7gTib8vpr6KbzpZaAkfz3w==}
     deprecated: '"@tiptap-pro/extension-emoji" was made open source and can now be installed from "@tiptap/extension-emoji" instead.'
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
       '@tiptap/suggestion': ^2.0.0
 
-  '@tiptap-pro/extension-invisible-characters@2.21.4':
-    resolution: {integrity: sha512-qQvbhJ6gmNiQBdNQ10aP/rO6vU0+hkN3Xigm37XFj80VBZsRV9+ObwQl4tmwEH4I2Hj1taM6uKVTgY7k9XPs6w==}
+  '@tiptap-pro/extension-invisible-characters@2.21.5':
+    resolution: {integrity: sha512-+GbjM0A6bqbLy+EDeeQlv/uGzs16bMVuHsNmlV5VNuUMC+sgqx1Wl97qyiktiFtG2eh8QYFCSpBLYkq3JRR2iQ==}
     deprecated: '"@tiptap-pro/extension-invisible-characters" was made open source and can now be installed from "@tiptap/extension-invisible-characters" instead.'
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
 
-  '@tiptap-pro/extension-mathematics@2.21.4':
-    resolution: {integrity: sha512-ktUJWqZJE4PZuwKP6kLxvDxpdDCmkY2F3RxMXQCOrPNXGXaNXmSurba6ItTLWLwtWhy/fxMHqtZ+LdpVtkyO8g==}
+  '@tiptap-pro/extension-mathematics@2.21.5':
+    resolution: {integrity: sha512-YQvaJViVpfCrUqtpt3XmSmDV0K1pwqkm3fN36R2EiUbvXk9z25AAfQ/T/69P6CSPNYIe8CV1SKx5UZnSysOqTw==}
     deprecated: '"@tiptap-pro/extension-mathematics" was made open source and can now be installed from "@tiptap/extension-mathematics" instead.'
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
       katex: ^0.16.4
 
-  '@tiptap-pro/extension-unique-id@2.21.4':
-    resolution: {integrity: sha512-1kJm6k/bhwRPlH+0jheYRR65GjDAkpQtAYRYhOk9wh3bDbtOi7nQa4o1VJdEdRkptZ+rBbsYaptNJI5MV6EEhQ==}
+  '@tiptap-pro/extension-unique-id@2.21.5':
+    resolution: {integrity: sha512-JVbVifL3lQZLTr7qbv+bYWbq3UkepqIxzpurwHAqUHPRKqcBAbqo6VFvW/eHe5XyapVieMmX35xKM3SJ5+iBtw==}
     deprecated: '"@tiptap-pro/extension-unique-id" was made open source and can now be installed from "@tiptap/extension-unique-id" instead.'
     peerDependencies:
       '@tiptap/core': ^2.0.0
@@ -5441,7 +5441,7 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@tiptap-pro/extension-emoji@2.21.4(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)(@tiptap/suggestion@2.14.0(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0))(emojibase@16.0.0)':
+  '@tiptap-pro/extension-emoji@2.21.5(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)(@tiptap/suggestion@2.14.0(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0))(emojibase@16.0.0)':
     dependencies:
       '@tiptap/core': 2.14.0(@tiptap/pm@2.14.0)
       '@tiptap/pm': 2.14.0
@@ -5453,20 +5453,20 @@ snapshots:
       - emojibase
     optional: true
 
-  '@tiptap-pro/extension-invisible-characters@2.21.4(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)':
+  '@tiptap-pro/extension-invisible-characters@2.21.5(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)':
     dependencies:
       '@tiptap/core': 2.14.0(@tiptap/pm@2.14.0)
       '@tiptap/pm': 2.14.0
     optional: true
 
-  '@tiptap-pro/extension-mathematics@2.21.4(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)(katex@0.16.22)':
+  '@tiptap-pro/extension-mathematics@2.21.5(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)(katex@0.16.22)':
     dependencies:
       '@tiptap/core': 2.14.0(@tiptap/pm@2.14.0)
       '@tiptap/pm': 2.14.0
       katex: 0.16.22
     optional: true
 
-  '@tiptap-pro/extension-unique-id@2.21.4(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)':
+  '@tiptap-pro/extension-unique-id@2.21.5(@tiptap/core@2.14.0(@tiptap/pm@2.14.0))(@tiptap/pm@2.14.0)':
     dependencies:
       '@tiptap/core': 2.14.0(@tiptap/pm@2.14.0)
       '@tiptap/pm': 2.14.0
@@ -7818,7 +7818,7 @@ snapshots:
       espree: 10.4.0
       esquery: 1.6.0
       lodash: 4.17.21
-      semver: 7.7.2
+      semver: 7.7.3
     transitivePeerDependencies:
       - supports-color
 
