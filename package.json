@@ -108,7 +108,7 @@
     "@tiptap-pro/extension-invisible-characters": "2.21.4",
     "@tiptap-pro/extension-mathematics": "2.21.4",
     "@tiptap-pro/extension-unique-id": "2.21.4",
-    "katex": "0.16.22"
+    "katex": "0.16.30"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
