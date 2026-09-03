@@ -78,7 +78,7 @@
     "@directus/types": "14.1.0",
     "@eslint/js": "9.29.0",
     "@tiptap/vue-3": "2.14.0",
-    "@vue/tsconfig": "0.8.1",
+    "@vue/tsconfig": "0.9.1",
     "dotenv": "16.6.1",
     "eslint": "9.29.0",
     "eslint-plugin-prettier": "5.5.6",
