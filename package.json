@@ -72,10 +72,10 @@
     "@tiptap/suggestion": "2.14.0"
   },
   "devDependencies": {
-    "@directus/extensions-sdk": "17.0.7",
-    "@directus/schema": "13.0.5",
-    "@directus/sdk": "21.1.0",
-    "@directus/types": "14.1.0",
+    "@directus/extensions-sdk": "17.1.4",
+    "@directus/schema": "13.0.8",
+    "@directus/sdk": "21.3.0",
+    "@directus/types": "14.3.1",
     "@eslint/js": "9.29.0",
     "@tiptap/vue-3": "2.14.0",
     "@vue/tsconfig": "0.8.1",
@@ -95,7 +95,7 @@
     "vue-i18n": "11.1.6"
   },
   "peerDependencies": {
-    "@directus/extensions-sdk": "17.0.7",
+    "@directus/extensions-sdk": "17.1.4",
     "vue": "3.5.32",
     "vue-i18n": "11.1.6"
   },
