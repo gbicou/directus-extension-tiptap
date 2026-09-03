@@ -91,12 +91,12 @@
     "typescript": "5.9.3",
     "typescript-eslint": "8.59.1",
     "vitest": "3.2.7",
-    "vue": "3.5.32",
+    "vue": "3.5.42",
     "vue-i18n": "11.1.6"
   },
   "peerDependencies": {
     "@directus/extensions-sdk": "17.0.7",
-    "vue": "3.5.32",
+    "vue": "3.5.42",
     "vue-i18n": "11.1.6"
   },
   "publishConfig": {
