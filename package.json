@@ -50,7 +50,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@tiptap/core": "2.14.0",
+    "@tiptap/core": "3.30.4",
     "@tiptap/extension-character-count": "2.14.0",
     "@tiptap/extension-focus": "2.14.0",
     "@tiptap/extension-highlight": "2.14.0",
